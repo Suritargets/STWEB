@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { CtaButton } from '@/components/shared/cta-button'
 
@@ -137,7 +138,15 @@ const rateColor: Record<string, string> = {
 type Tab = 'business' | 'individual'
 
 export default function PricingClient() {
-  const [tab, setTab] = useState<Tab>('business')
+  const searchParams = useSearchParams()
+  const [tab, setTab] = useState<Tab>(
+    searchParams.get('tab') === 'individual' ? 'individual' : 'business'
+  )
+
+  useEffect(() => {
+    const t = searchParams.get('tab')
+    if (t === 'individual' || t === 'business') setTab(t)
+  }, [searchParams])
 
   const services = tab === 'business' ? businessServices : individualServices
 
