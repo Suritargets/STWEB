@@ -31,11 +31,11 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           fields: {
-            Name:          data.naam,
+            Naam:          data.naam,
             Bedrijfsnaam:  data.bedrijfsnaam,
             Email:         data.email,
             Telefoon:      data.telefoon ?? '',
-            Diensten:      data.services.join(', '),
+            Services:      data.services.join(', '),
             Budget:        data.budget ?? '',
             Bericht:       data.bericht,
             ...(data.andersText ? { Anders: data.andersText } : {}),
