@@ -15,7 +15,7 @@ export const contactSchema = z.object({
   email: z.string().email('Ongeldig e-mailadres'),
   telefoon: z.string().optional(),
   service: z.enum(SERVICE_OPTIONS, {
-    errorMap: () => ({ message: 'Selecteer een service' }),
+    error: 'Selecteer een service',
   }),
   bericht: z.string().min(10, 'Bericht moet minimaal 10 tekens bevatten'),
 })
