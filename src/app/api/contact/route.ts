@@ -31,7 +31,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           fields: {
-            Naam:          data.naam,
+            Name:          data.naam,
             Bedrijfsnaam:  data.bedrijfsnaam,
             Email:         data.email,
             Telefoon:      data.telefoon ?? '',
