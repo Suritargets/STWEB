@@ -1,16 +1,62 @@
 import type { Metadata } from 'next'
-import { ComingSoon } from '@/components/shared/coming-soon'
+import Link from 'next/link'
+import { getAllPosts } from '@/lib/mdx'
+import { SectionHeading } from '@/components/shared/section-heading'
+import { AnimatedSection } from '@/components/shared/animated-section'
 
 export const metadata: Metadata = {
   title: 'Cases',
-  description: 'Projectcases van Suritargets — binnenkort beschikbaar.',
+  description: 'Projectcases van Suritargets — bewezen resultaten voor Caribische organisaties.',
 }
 
 export default function CaseStudiesPage() {
+  const posts = getAllPosts('case-studies')
   return (
-    <ComingSoon
-      title="Cases"
-      description="Binnenkort publiceren wij onze projectcases en resultaten."
-    />
+    <div className="min-h-screen">
+      <section className="px-[var(--section-padding-x)] py-[var(--section-padding-y)]">
+        <div className="max-w-[1440px] mx-auto">
+          <SectionHeading
+            label="CASES"
+            title="Bewezen resultaten"
+            titleEn="Our case studies"
+            description="Concrete projecten, meetbare impact. Lees hoe wij Caribische organisaties vooruit helpen."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            {posts.map((post) => (
+              <AnimatedSection key={post.slug}>
+                <Link
+                  href={`/case-studies/${post.slug}`}
+                  className="block bg-surface border border-border p-8 hover:border-gold transition-colors group"
+                >
+                  {post.featured && (
+                    <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-gold border border-gold px-2 py-0.5 mb-4 inline-block">
+                      Featured
+                    </span>
+                  )}
+                  <p className="text-xs font-mono text-muted-foreground mb-2">
+                    {new Date(post.date).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long' })}
+                    {' · '}{post.readingTime}
+                  </p>
+                  <h2 className="text-xl font-bold text-foreground mb-2 group-hover:text-gold transition-colors">
+                    {post.title}
+                  </h2>
+                  {post.titleEn && (
+                    <p className="text-xs font-mono text-muted-foreground mb-3">{post.titleEn}</p>
+                  )}
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{post.summary}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {post.tags.map((tag) => (
+                      <span key={tag} className="text-[10px] font-mono bg-background border border-border px-2 py-0.5 text-muted-foreground">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </Link>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }

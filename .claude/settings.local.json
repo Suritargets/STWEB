@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm info:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"const p = require\\(''D:/apps lab/surtargets/node_modules/next-mdx-remote/package.json''\\); console.log\\(''next-mdx-remote:'', p.version\\)\")",
+      "Bash(node -e \"const p = require\\(''D:/apps lab/surtargets/node_modules/gray-matter/package.json''\\); console.log\\(''gray-matter:'', p.version\\)\")",
+      "Bash(node -e \"const p = require\\(''D:/apps lab/surtargets/node_modules/reading-time/package.json''\\); console.log\\(''reading-time:'', p.version\\)\")",
+      "Bash(node -e \"const rt = require\\(''D:/apps lab/surtargets/node_modules/reading-time''\\); console.log\\(typeof rt, typeof rt.default, Object.keys\\(rt\\)\\)\")",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/@remotion/core/package.json''\\).version\\)\")",
+      "Bash(node -e \"const r = require\\(''''D:/apps lab/surtargets/node_modules/@remotion/core''''\\); console.log\\(Object.keys\\(r\\).join\\(''''\\\\n''''\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''''D:/apps lab/surtargets/node_modules/@remotion/player''''\\); console.log\\(Object.keys\\(r\\).join\\(''''\\\\n''''\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''D:/apps lab/surtargets/node_modules/@remotion/core''\\); console.log\\(''AbsoluteFill'' in r, ''Sequence'' in r, ''interpolate'' in r\\)\")",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const r = require\\(''D:/apps lab/surtargets/node_modules/@remotion/core''\\); console.log\\(r.Sequence.toString\\(\\).substring\\(0, 200\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''D:/apps lab/surtargets/node_modules/@remotion/player''\\); console.log\\(r.Player.toString\\(\\).substring\\(0, 300\\)\\)\")",
+      "Bash(node -e \"const d=require\\(''''/dev/stdin''''\\); console.log\\(JSON.stringify\\(d.exports||d.main,null,2\\)\\)\")",
+      "Bash(node -e \"const d=require\\(''''D:/apps lab/surtargets/node_modules/@remotion/google-fonts/package.json''''\\); console.log\\(JSON.stringify\\({main:d.main,exports:d.exports},null,2\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''D:/apps lab/surtargets/node_modules/@remotion/google-fonts/dist/cjs/Inter.js''\\); console.log\\(Object.keys\\(r\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''''D:/apps lab/surtargets/node_modules/@remotion/cli/dist/config.js''''\\); console.log\\(Object.keys\\(r\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''''D:/apps lab/surtargets/node_modules/@remotion/cli/dist/config''''\\); console.log\\(Object.keys\\(r\\)\\)\")",
+      "Bash(node -e \"const {Config} = require\\(''D:/apps lab/surtargets/node_modules/@remotion/cli/dist/config''\\); console.log\\(Object.keys\\(Config\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''D:/apps lab/surtargets/node_modules/@remotion/core''\\); console.log\\(Object.keys\\(r\\)\\)\")",
+      "Bash(node -e \"const d=require\\(''''D:/apps lab/surtargets/node_modules/@remotion/cli/package.json''''\\); console.log\\(JSON.stringify\\({main:d.main,exports:Object.keys\\(d.exports||{}\\)},null,2\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''D:/apps lab/surtargets/node_modules/@remotion/cli/dist/index.js''\\); console.log\\(Object.keys\\(r\\).slice\\(0,20\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''D:/apps lab/surtargets/node_modules/@remotion/core/dist/Composition.js''\\); console.log\\(Object.keys\\(r\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''D:/apps lab/surtargets/node_modules/@remotion/core/dist/Composition.js''\\); console.log\\(r.Composition.toString\\(\\).substring\\(0,400\\)\\)\")",
+      "Bash(node -e \"const r = require\\(''''D:/apps lab/surtargets/node_modules/@remotion/cli/dist/config/index.js''''\\); console.log\\(Object.keys\\(r\\)\\)\")",
+      "Bash(node -e \"const d=require\\(''''D:/apps lab/surtargets/node_modules/@remotion/cli/package.json''''\\); console.log\\(JSON.stringify\\(d.exports,null,2\\)\\)\")",
+      "Bash(npx next:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

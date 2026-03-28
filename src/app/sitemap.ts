@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { services } from '@/lib/services-data'
+import { getAllSlugs } from '@/lib/mdx'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com'
@@ -18,5 +19,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...servicePages]
+  const caseStudySlugs = getAllSlugs('case-studies').map((slug) => ({
+    url: `${baseUrl}/case-studies/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  const insightSlugs = getAllSlugs('insights').map((slug) => ({
+    url: `${baseUrl}/insights/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [...staticPages, ...servicePages, ...caseStudySlugs, ...insightSlugs]
 }

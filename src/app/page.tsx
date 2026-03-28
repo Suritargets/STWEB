@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { SectionHeading } from '@/components/shared/section-heading'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
+import { ExplainerSection } from '@/components/shared/explainer-section'
 import { services } from '@/lib/services-data'
 
 export const metadata: Metadata = {
@@ -245,7 +246,22 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* ── 4. TRUST SIGNALS / STATS ────────────────────────────────── */}
+      {/* ── 4. EXPLAINER VIDEO ──────────────────────────────────────── */}
+      <AnimatedSection delay={70}>
+        <section className="px-[var(--section-padding-x)] py-[var(--section-padding-y)] border-t border-border">
+          <div className="max-w-[1440px] mx-auto">
+            <SectionHeading
+              label="VIDEO"
+              title="Wie zijn wij?"
+              titleEn="Watch our explainer"
+              className="mb-8"
+            />
+            <ExplainerSection />
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* ── 5. TRUST SIGNALS / STATS ────────────────────────────────── */}
       <AnimatedSection delay={80}>
         <section
           className="bg-surface border-t border-b border-border
@@ -269,7 +285,7 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* ── 5. CTA BANNER ───────────────────────────────────────────── */}
+      {/* ── 6. CTA BANNER ───────────────────────────────────────────── */}
       <AnimatedSection delay={100}>
         <section
           className="px-[var(--section-padding-x)] py-[var(--section-padding-y)]
