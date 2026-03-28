@@ -12,6 +12,14 @@ export async function POST(request: Request) {
 
     const data = result.data
 
+    const BUDGET_LABELS: Record<string, string> = {
+      'onder-5k':  'Onder $5.000',
+      '5k-15k':    '$5.000 – $15.000',
+      '15k-50k':   '$15.000 – $50.000',
+      'boven-50k': 'Boven $50.000',
+      'onbekend':  'Nog niet bekend',
+    }
+
     const SERVICE_LABELS: Record<string, string> = {
       'dashboarding':    'Dashboarding & Data Visualisatie',
       'web-applicaties': 'Web & Applicaties',
@@ -45,7 +53,7 @@ export async function POST(request: Request) {
             Email:         data.email,
             Telefoon:      data.telefoon ?? '',
             Services:      data.services.map(s => SERVICE_LABELS[s] ?? s),
-            Budget:        data.budget ?? '',
+            Budget:        data.budget ? (BUDGET_LABELS[data.budget] ?? data.budget) : '',
             Bericht:       data.bericht,
             ...(data.andersText ? { Anders: data.andersText } : {}),
           },
