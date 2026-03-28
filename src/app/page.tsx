@@ -6,8 +6,11 @@ import { CtaButton } from '@/components/shared/cta-button'
 import { ExplainerSection } from '@/components/shared/explainer-section'
 import { services } from '@/lib/services-data'
 
+import { HeroMockup } from '@/components/home/hero-mockup'
+import { ParticleBackground } from '@/components/home/particle-background'
+
 export const metadata: Metadata = {
-  title: 'Business Intelligence & Digital Solutions',
+  title: 'Business Technology & Innovation Solutions',
   description:
     'Suritargets levert strategische bedrijfsondersteuning, web applicaties, en digitale oplossingen in Suriname.',
 }
@@ -36,105 +39,61 @@ const WHY_ITEMS = [
   },
 ]
 
-const STATS = [
-  { value: '5+', label: 'Service clusters' },
-  { value: '10+ jaar', label: 'Expertise' },
-  { value: 'Paramaribo', label: 'Hoofdkantoor' },
-  { value: 'Suriname & regio', label: 'Bereik' },
-]
 
 export default function HomePage() {
   return (
     <>
       {/* ── 1. HERO ─────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-        style={{ backgroundImage: GRID_BG }}
+        className="relative overflow-hidden"
+        style={{ background: 'linear-gradient(160deg, #ffffff 0%, #f0f2ff 50%, #e8ecff 100%)' }}
         aria-label="Hero"
       >
-        {/* Radial vignette — darkens the grid toward edges */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse 80% 70% at 50% 50%, transparent 20%, #0B1628 80%)',
-          }}
-          aria-hidden="true"
-        />
-
-        {/* Horizontal rule lines — pure geometry */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/2 left-0 right-0 h-px bg-border opacity-40" />
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border opacity-40" />
-        </div>
-
-        {/* Gold corner markers */}
-        <div
-          className="absolute top-8 left-8 w-8 h-8 border-t border-l border-gold opacity-60"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute top-8 right-8 w-8 h-8 border-t border-r border-gold opacity-60"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-20 left-8 w-8 h-8 border-b border-l border-gold opacity-60"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-20 right-8 w-8 h-8 border-b border-r border-gold opacity-60"
-          aria-hidden="true"
-        />
+        {/* Particle canvas */}
+        <ParticleBackground />
 
         {/* Content */}
-        <div className="relative z-10 max-w-[1440px] mx-auto px-[var(--section-padding-x)] text-center">
-          {/* Mono label */}
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-gold mb-8 opacity-90">
-            Suritargets — Paramaribo, Suriname
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-[var(--section-padding-x)] pt-28 pb-0 text-center">
+          {/* Mono slogan */}
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-[#2B3494] mb-6 opacity-60">
+            Business Technology &amp; Innovation Solutions
           </p>
 
           {/* Main headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1.05] mb-6">
-            Strategische groei
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-[#0B1628] leading-[1.05] mb-6">
+            Wij bouwen digitale tools
             <br />
-            <span className="text-gold">in het Caribisch gebied</span>
+            <span className="text-[#2B3494]">voor uw business</span>
           </h1>
 
-          {/* English subtitle */}
-          <p className="font-mono text-base md:text-lg text-gold opacity-80 mb-12 tracking-wide">
-            Business Intelligence &amp; Digital Solutions
+          {/* Subtitle */}
+          <p className="text-base md:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Van dashboards en web applicaties tot ERP-systemen en AI-marketing —
+            op maat gebouwd voor de Caribische markt.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <CtaButton href="/services" variant="primary">
-              Onze diensten
+              Bekijk onze diensten
             </CtaButton>
-            <CtaButton href="/about" variant="ghost">
-              Over ons
+            <CtaButton href="/contact" variant="ghost">
+              Gratis gesprek
             </CtaButton>
+          </div>
+
+          {/* App mockup — full width container */}
+          <div className="w-full max-w-6xl mx-auto">
+            <HeroMockup />
           </div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Bottom fade */}
         <div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50"
+          className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, transparent, #f9fafb)' }}
           aria-hidden="true"
-        >
-          <span className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
-            Scroll
-          </span>
-          <svg
-            className="w-4 h-4 text-gold animate-bounce"
-            fill="none"
-            viewBox="0 0 16 16"
-            stroke="currentColor"
-            strokeWidth={2}
-            aria-hidden="true"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8 3v10M3 9l5 5 5-5" />
-          </svg>
-        </div>
+        />
       </section>
 
       {/* ── 2. SERVICES GRID ────────────────────────────────────────── */}
@@ -261,26 +220,26 @@ export default function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* ── 5. TRUST SIGNALS / STATS ────────────────────────────────── */}
+      {/* ── 5. PARTNERS ─────────────────────────────────────────────── */}
       <AnimatedSection delay={80}>
         <section
           className="bg-surface border-t border-b border-border
-                     px-[var(--section-padding-x)] py-[var(--section-padding-y)]"
-          aria-label="Statistieken"
+                     px-[var(--section-padding-x)] py-12"
+          aria-label="Partners"
         >
           <div className="max-w-[1440px] mx-auto">
-            <ul className="grid grid-cols-2 md:grid-cols-4 gap-8 list-none p-0">
-              {STATS.map((stat) => (
-                <li key={stat.label} className="flex flex-col gap-2">
-                  <span className="font-mono text-3xl md:text-4xl font-bold text-gold leading-none">
-                    {stat.value}
-                  </span>
-                  <span className="text-xs font-mono tracking-[0.15em] uppercase text-muted-foreground">
-                    {stat.label}
-                  </span>
-                </li>
+            <p className="text-center text-[10px] font-mono tracking-[0.3em] uppercase text-muted-foreground mb-8">
+              Onze partners
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-32 h-10 rounded bg-border/60 animate-pulse"
+                  aria-hidden="true"
+                />
               ))}
-            </ul>
+            </div>
           </div>
         </section>
       </AnimatedSection>

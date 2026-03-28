@@ -37,33 +37,34 @@
   --radius-lg: var(--radius);
 }
 
-/* Brand palette — navy/gold, dark-first */
+/* Brand palette — Suritargets white/blue/red */
 :root {
-  --background:             #0B1628;
-  --foreground:             #E8EDF5;
-  --card:                   #111E35;
-  --card-foreground:        #E8EDF5;
-  --popover:                #111E35;
-  --popover-foreground:     #E8EDF5;
-  --primary:                #C9A84C;
-  --primary-foreground:     #0B1628;
-  --secondary:              #172440;
-  --secondary-foreground:   #E8EDF5;
-  --muted:                  #172440;
-  --muted-foreground:       #6B7A99;
-  --accent:                 #C9A84C;
-  --accent-foreground:      #0B1628;
-  --destructive:            oklch(0.577 0.245 27.325);
-  --border:                 #1E3050;
-  --input:                  #172440;
-  --ring:                   #C9A84C;
+  --background:             #FFFFFF;
+  --foreground:             #1A1A2E;
+  --card:                   #F4F5FA;
+  --card-foreground:        #1A1A2E;
+  --popover:                #FFFFFF;
+  --popover-foreground:     #1A1A2E;
+  --primary:                #2B3494;
+  --primary-foreground:     #FFFFFF;
+  --secondary:              #EAEBF5;
+  --secondary-foreground:   #2B3494;
+  --muted:                  #EAEBF5;
+  --muted-foreground:       #6B7280;
+  --accent:                 #E8192C;
+  --accent-foreground:      #FFFFFF;
+  --destructive:            #E8192C;
+  --border:                 #DCDFF0;
+  --input:                  #EAEBF5;
+  --ring:                   #2B3494;
   --radius:                 0.25rem;
 
-  --surface:                #111E35;
-  --gold:                   #C9A84C;
-  --gold-hover:             #DDB95A;
-  --on-dark:                #E8EDF5;
-  --muted-text:             #6B7A99;
+  /* --gold maps to brand blue so all text-gold / border-gold / bg-gold keep working */
+  --surface:                #F4F5FA;
+  --gold:                   #2B3494;
+  --gold-hover:             #E8192C;
+  --on-dark:                #FFFFFF;
+  --muted-text:             #6B7280;
 
   --section-padding-y: clamp(4rem, 8vw, 8rem);
   --section-padding-x: clamp(1.25rem, 5vw, 5rem);
@@ -75,7 +76,7 @@
   * { box-sizing: border-box; @apply border-border; }
   html { @apply font-sans; }
   body { @apply bg-background text-foreground antialiased; }
-  :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 }
 
 /* Scroll animations */

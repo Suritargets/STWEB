@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 80" fill="none">
+  <!-- Target/bullseye icon -->
+  <!-- Outer blue ring -->
+  <circle cx="40" cy="40" r="38" fill="#2B3494"/>
+  <!-- White middle ring -->
+  <circle cx="40" cy="40" r="26" fill="#FFFFFF"/>
+  <!-- Red center -->
+  <circle cx="40" cy="40" r="14" fill="#E8192C"/>
+
+  <!-- Left arrow/chevron 1 (overlapping the circle, blue) -->
+  <polygon points="8,40 24,22 24,58" fill="#2B3494"/>
+  <!-- Left arrow/chevron 2 (slightly offset) -->
+  <polygon points="18,40 32,26 32,54" fill="#2B3494"/>
+
+  <!-- Arrow points cut into red center -->
+  <polygon points="26,40 38,30 38,50" fill="#E8192C"/>
+
+  <!-- SURITARGETS text -->
+  <text x="90" y="52" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="30" letter-spacing="1" fill="#2B3494">SURITARGETS</text>
+</svg>

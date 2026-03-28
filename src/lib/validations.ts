@@ -1,23 +1,27 @@
 import { z } from 'zod'
 
 export const SERVICE_OPTIONS = [
-  'business-support',
-  'web-applications',
-  'research',
+  'dashboarding',
+  'web-applicaties',
+  'marketing-ai',
   'forensics',
   'education',
   'anders',
 ] as const
 
-export const contactSchema = z.object({
-  naam: z.string().min(2, 'Naam is verplicht'),
-  bedrijfsnaam: z.string().min(1, 'Bedrijfsnaam is verplicht'),
-  email: z.string().email('Ongeldig e-mailadres'),
-  telefoon: z.string().optional(),
-  service: z.enum(SERVICE_OPTIONS, {
-    error: 'Selecteer een service',
-  }),
-  bericht: z.string().min(10, 'Bericht moet minimaal 10 tekens bevatten'),
+export const offerteSchema = z.object({
+  naam:           z.string().min(2, 'Naam is verplicht'),
+  bedrijfsnaam:   z.string().min(1, 'Bedrijfsnaam is verplicht'),
+  email:          z.string().email('Ongeldig e-mailadres'),
+  telefoon:       z.string().optional(),
+  services:       z.array(z.enum(SERVICE_OPTIONS)).min(1, 'Selecteer minimaal één dienst'),
+  andersText:     z.string().optional(),
+  budget:         z.string().optional(),
+  bericht:        z.string().min(10, 'Toelichting moet minimaal 10 tekens bevatten'),
 })
 
-export type ContactFormData = z.infer<typeof contactSchema>
+export type OfferteFormData = z.infer<typeof offerteSchema>
+
+// Keep old alias for any other imports
+export const contactSchema = offerteSchema
+export type ContactFormData = OfferteFormData

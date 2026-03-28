@@ -1,16 +1,10 @@
 'use client'
-
-import dynamic from 'next/dynamic'
-
-const ExplainerPlayer = dynamic(
-  () => import('./explainer-player').then((m) => m.ExplainerPlayer),
-  { ssr: false }
-)
+import { InfomercialGraphic } from './infomercial-graphic'
 
 export function ExplainerSection() {
   return (
-    <div className="border border-border">
-      <ExplainerPlayer />
+    <div className="border border-border overflow-hidden">
+      <InfomercialGraphic />
     </div>
   )
 }

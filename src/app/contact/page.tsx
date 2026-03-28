@@ -86,7 +86,7 @@ export default function ContactPage() {
             {/* Right column — form */}
             <div className="bg-surface border border-border p-6 md:p-8">
               <h2 className="text-lg font-semibold text-foreground mb-6">
-                Stuur ons een bericht
+                Offerte aanvragen
               </h2>
               <ContactForm />
             </div>

@@ -4,75 +4,82 @@ import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
-import { SERVICE_OPTIONS } from '@/lib/validations'
-import type { ContactFormData } from '@/lib/validations'
+
+const SERVICES = [
+  { id: 'dashboarding',    label: 'Dashboarding & Data Visualisatie' },
+  { id: 'web-applicaties', label: 'Web & Applicaties' },
+  { id: 'marketing-ai',    label: 'Marketing met AI' },
+  { id: 'forensics',       label: 'Forensics & Integriteit' },
+  { id: 'education',       label: 'Education & Training' },
+  { id: 'anders',          label: 'Anders' },
+]
+
+const BUDGET_OPTIONS = [
+  { value: '',          label: 'Selecteer een indicatie' },
+  { value: 'onder-5k',  label: 'Onder $5.000' },
+  { value: '5k-15k',    label: '$5.000 – $15.000' },
+  { value: '15k-50k',   label: '$15.000 – $50.000' },
+  { value: 'boven-50k', label: 'Boven $50.000' },
+  { value: 'onbekend',  label: 'Nog niet bekend' },
+]
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
-const SERVICE_LABELS: Record<typeof SERVICE_OPTIONS[number], string> = {
-  'business-support': 'Business Support',
-  'web-applications': 'Web Applicaties',
-  'research': 'Research',
-  'forensics': 'Forensics',
-  'education': 'Education',
-  'anders': 'Anders',
-}
-
-const INITIAL_FORM: ContactFormData = {
-  naam: '',
-  bedrijfsnaam: '',
-  email: '',
-  telefoon: '',
-  service: 'business-support',
-  bericht: '',
-}
-
 export function ContactForm() {
-  const [form, setForm] = useState<ContactFormData>(INITIAL_FORM)
-  const [status, setStatus] = useState<Status>('idle')
-  const [errors, setErrors] = useState<Record<string, string[]>>({})
+  const [naam,          setNaam]          = useState('')
+  const [bedrijfsnaam,  setBedrijfsnaam]  = useState('')
+  const [email,         setEmail]         = useState('')
+  const [telefoon,      setTelefoon]      = useState('')
+  const [services,      setServices]      = useState<string[]>([])
+  const [andersText,    setAndersText]    = useState('')
+  const [budget,        setBudget]        = useState('')
+  const [bericht,       setBericht]       = useState('')
+  const [status,        setStatus]        = useState<Status>('idle')
+  const [errors,        setErrors]        = useState<Record<string, string>>({})
 
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) {
-    const { name, value } = e.target
-    setForm((prev) => ({ ...prev, [name]: value }))
-    // Clear field error on change
-    if (errors[name]) {
-      setErrors((prev) => {
-        const next = { ...prev }
-        delete next[name]
-        return next
-      })
-    }
+  const andersSelected = services.includes('anders')
+
+  function toggleService(id: string) {
+    setServices(prev =>
+      prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id]
+    )
+    if (errors.services) setErrors(prev => { const n = { ...prev }; delete n.services; return n })
   }
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setStatus('loading')
+
+    const newErrors: Record<string, string> = {}
+    if (!naam.trim())                                    newErrors.naam          = 'Naam is verplicht'
+    if (!bedrijfsnaam.trim())                            newErrors.bedrijfsnaam  = 'Bedrijfsnaam is verplicht'
+    if (!email.trim() || !email.includes('@'))           newErrors.email         = 'Geldig e-mailadres is verplicht'
+    if (services.length === 0)                           newErrors.services      = 'Selecteer minimaal één dienst'
+    if (andersSelected && !andersText.trim())            newErrors.andersText    = 'Vul in welke dienst u zoekt'
+    if (!bericht.trim() || bericht.length < 10)         newErrors.bericht       = 'Toelichting is te kort'
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
+      return
+    }
+
     setErrors({})
+    setStatus('loading')
 
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          naam, bedrijfsnaam, email, telefoon,
+          services,
+          andersText: andersSelected ? andersText : undefined,
+          budget,
+          bericht,
+        }),
       })
 
-      if (res.status === 422) {
-        const json = await res.json()
-        setErrors(json.error?.fieldErrors ?? {})
-        setStatus('idle')
-        return
-      }
-
-      if (!res.ok) {
-        setStatus('error')
-        return
-      }
-
+      if (!res.ok) { setStatus('error'); return }
       setStatus('success')
-      setForm(INITIAL_FORM)
     } catch {
       setStatus('error')
     }
@@ -80,10 +87,10 @@ export function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-surface border border-gold/40 px-6 py-10 text-center">
-        <p className="text-gold font-semibold text-lg mb-2">Bericht ontvangen</p>
+      <div className="border border-gold/40 px-6 py-10 text-center">
+        <p className="text-gold font-semibold text-lg mb-2">Aanvraag ontvangen</p>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Uw bericht is ontvangen. We nemen binnen 2 werkdagen contact op.
+          Uw offerte-aanvraag is ontvangen. We nemen binnen 2 werkdagen contact op.
         </p>
       </div>
     )
@@ -93,29 +100,20 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
+
       {/* Naam */}
       <div className="space-y-1.5">
         <Label htmlFor="naam" className="text-foreground">
           Naam <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <Input
-          id="naam"
-          name="naam"
-          type="text"
-          autoComplete="name"
-          required
-          disabled={isLoading}
-          value={form.naam}
-          onChange={handleChange}
-          aria-describedby={errors.naam ? 'naam-error' : undefined}
-          aria-invalid={!!errors.naam}
+          id="naam" type="text" autoComplete="name"
+          disabled={isLoading} value={naam}
+          onChange={e => setNaam(e.target.value)}
           placeholder="Uw volledige naam"
+          aria-invalid={!!errors.naam}
         />
-        {errors.naam && (
-          <p id="naam-error" role="alert" className="text-xs text-destructive">
-            {errors.naam[0]}
-          </p>
-        )}
+        {errors.naam && <p className="text-xs text-destructive">{errors.naam}</p>}
       </div>
 
       {/* Bedrijfsnaam */}
@@ -124,23 +122,13 @@ export function ContactForm() {
           Bedrijfsnaam <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <Input
-          id="bedrijfsnaam"
-          name="bedrijfsnaam"
-          type="text"
-          autoComplete="organization"
-          required
-          disabled={isLoading}
-          value={form.bedrijfsnaam}
-          onChange={handleChange}
-          aria-describedby={errors.bedrijfsnaam ? 'bedrijfsnaam-error' : undefined}
-          aria-invalid={!!errors.bedrijfsnaam}
+          id="bedrijfsnaam" type="text" autoComplete="organization"
+          disabled={isLoading} value={bedrijfsnaam}
+          onChange={e => setBedrijfsnaam(e.target.value)}
           placeholder="Naam van uw bedrijf"
+          aria-invalid={!!errors.bedrijfsnaam}
         />
-        {errors.bedrijfsnaam && (
-          <p id="bedrijfsnaam-error" role="alert" className="text-xs text-destructive">
-            {errors.bedrijfsnaam[0]}
-          </p>
-        )}
+        {errors.bedrijfsnaam && <p className="text-xs text-destructive">{errors.bedrijfsnaam}</p>}
       </div>
 
       {/* Email */}
@@ -149,98 +137,110 @@ export function ContactForm() {
           E-mailadres <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <Input
-          id="email"
-          name="email"
-          type="email"
-          autoComplete="email"
-          required
-          disabled={isLoading}
-          value={form.email}
-          onChange={handleChange}
-          aria-describedby={errors.email ? 'email-error' : undefined}
-          aria-invalid={!!errors.email}
+          id="email" type="email" autoComplete="email"
+          disabled={isLoading} value={email}
+          onChange={e => setEmail(e.target.value)}
           placeholder="u@bedrijf.com"
+          aria-invalid={!!errors.email}
         />
-        {errors.email && (
-          <p id="email-error" role="alert" className="text-xs text-destructive">
-            {errors.email[0]}
-          </p>
-        )}
+        {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
       </div>
 
-      {/* Telefoon (optional) */}
+      {/* Telefoon */}
       <div className="space-y-1.5">
         <Label htmlFor="telefoon" className="text-foreground">
           Telefoonnummer{' '}
           <span className="text-muted-foreground font-normal">(optioneel)</span>
         </Label>
         <Input
-          id="telefoon"
-          name="telefoon"
-          type="tel"
-          autoComplete="tel"
-          disabled={isLoading}
-          value={form.telefoon ?? ''}
-          onChange={handleChange}
+          id="telefoon" type="tel" autoComplete="tel"
+          disabled={isLoading} value={telefoon}
+          onChange={e => setTelefoon(e.target.value)}
           placeholder="+597 000 0000"
         />
       </div>
 
-      {/* Service */}
-      <div className="space-y-1.5">
-        <Label htmlFor="service" className="text-foreground">
-          Service <span className="text-destructive" aria-hidden="true">*</span>
+      {/* Diensten — checkboxes met conditioneel veld */}
+      <div className="space-y-2">
+        <Label className="text-foreground">
+          Dienst(en) <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
-        <select
-          id="service"
-          name="service"
-          required
-          disabled={isLoading}
-          value={form.service}
-          onChange={handleChange}
-          aria-describedby={errors.service ? 'service-error' : undefined}
-          aria-invalid={!!errors.service}
-          className="w-full bg-surface border border-border text-foreground px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gold disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {SERVICE_OPTIONS.map((opt) => (
-            <option key={opt} value={opt}>
-              {SERVICE_LABELS[opt]}
-            </option>
+        <div className="space-y-2.5 pt-1">
+          {SERVICES.map(service => (
+            <div key={service.id}>
+              <label className="flex items-center gap-3 cursor-pointer group">
+                <input
+                  type="checkbox"
+                  checked={services.includes(service.id)}
+                  onChange={() => toggleService(service.id)}
+                  disabled={isLoading}
+                  className="w-4 h-4 accent-[#C9A84C] cursor-pointer shrink-0"
+                />
+                <span className="text-sm text-foreground group-hover:text-[#2B3494] transition-colors">
+                  {service.label}
+                </span>
+              </label>
+
+              {/* Conditioneel veld: Anders */}
+              {service.id === 'anders' && andersSelected && (
+                <div className="mt-2 pl-7">
+                  <Input
+                    type="text"
+                    disabled={isLoading}
+                    value={andersText}
+                    onChange={e => setAndersText(e.target.value)}
+                    placeholder="Welke dienst zoekt u?"
+                    aria-invalid={!!errors.andersText}
+                  />
+                  {errors.andersText && (
+                    <p className="text-xs text-destructive mt-1">{errors.andersText}</p>
+                  )}
+                </div>
+              )}
+            </div>
           ))}
-        </select>
-        {errors.service && (
-          <p id="service-error" role="alert" className="text-xs text-destructive">
-            {errors.service[0]}
-          </p>
-        )}
+        </div>
+        {errors.services && <p className="text-xs text-destructive">{errors.services}</p>}
       </div>
 
-      {/* Bericht */}
+      {/* Budget */}
+      <div className="space-y-1.5">
+        <Label htmlFor="budget" className="text-foreground">
+          Budget indicatie{' '}
+          <span className="text-muted-foreground font-normal">(optioneel)</span>
+        </Label>
+        <select
+          id="budget"
+          disabled={isLoading}
+          value={budget}
+          onChange={e => setBudget(e.target.value)}
+          className="w-full bg-surface border border-border text-foreground px-3 py-2 text-sm
+                     focus:outline-none focus:ring-2 focus:ring-gold disabled:opacity-50"
+        >
+          {BUDGET_OPTIONS.map(opt => (
+            <option key={opt.value} value={opt.value}>{opt.label}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* Toelichting */}
       <div className="space-y-1.5">
         <Label htmlFor="bericht" className="text-foreground">
-          Bericht <span className="text-destructive" aria-hidden="true">*</span>
+          Toelichting <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <Textarea
           id="bericht"
-          name="bericht"
-          required
           disabled={isLoading}
-          value={form.bericht}
-          onChange={handleChange}
-          aria-describedby={errors.bericht ? 'bericht-error' : undefined}
-          aria-invalid={!!errors.bericht}
-          placeholder="Beschrijf uw project of vraag..."
+          value={bericht}
+          onChange={e => setBericht(e.target.value)}
+          placeholder="Beschrijf uw project, wensen of vragen..."
           rows={5}
           className="min-h-[120px] resize-y"
+          aria-invalid={!!errors.bericht}
         />
-        {errors.bericht && (
-          <p id="bericht-error" role="alert" className="text-xs text-destructive">
-            {errors.bericht[0]}
-          </p>
-        )}
+        {errors.bericht && <p className="text-xs text-destructive">{errors.bericht}</p>}
       </div>
 
-      {/* Global error */}
       {status === 'error' && (
         <p role="alert" className="text-sm text-destructive">
           Er ging iets mis. Probeer het later opnieuw.
@@ -250,10 +250,12 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-gold text-[#0B1628] font-semibold py-3 px-6 text-sm tracking-wide hover:bg-[var(--gold-hover)] transition-colors disabled:opacity-50"
+        className="w-full bg-gold text-white font-semibold py-3 px-6 text-sm tracking-wide
+                   hover:bg-[var(--gold-hover)] transition-colors disabled:opacity-50"
       >
-        {isLoading ? 'Verzenden...' : 'Bericht versturen'}
+        {isLoading ? 'Verzenden...' : 'Offerte aanvragen'}
       </button>
+
     </form>
   )
 }

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 90" fill="none">
+  <!-- ===== ICON (white + red on transparent, for blue header) ===== -->
+  <!-- White ring: outer circle minus inner hole (evenodd) -->
+  <path d="
+    M 48 2
+    A 43 43 0 1 1 47.9999 2
+    Z
+    M 48 19
+    A 26 26 0 1 0 48.0001 19
+    Z
+  " fill="#FFFFFF" fill-rule="evenodd"/>
+
+  <!-- Red center -->
+  <circle cx="48" cy="45" r="15" fill="#E8192C"/>
+
+  <!-- Arrow 1 (back) — white triangle -->
+  <polygon points="2,9 2,81 30,45" fill="#FFFFFF"/>
+  <!-- Arrow 2 (front) — white triangle, offset right -->
+  <polygon points="15,20 15,70 38,45" fill="#FFFFFF"/>
+
+  <!-- Blue gaps between arrows (matches nav background) -->
+  <line x1="2"  y1="9"  x2="15" y2="20" stroke="#2B3494" stroke-width="3"/>
+  <line x1="2"  y1="81" x2="15" y2="70" stroke="#2B3494" stroke-width="3"/>
+  <line x1="15" y1="20" x2="30" y2="45" stroke="#2B3494" stroke-width="3"/>
+  <line x1="15" y1="70" x2="30" y2="45" stroke="#2B3494" stroke-width="3"/>
+
+  <!-- ===== WORDMARK ===== -->
+  <text
+    x="104" y="63"
+    font-family="'Arial Black', Arial, sans-serif"
+    font-weight="900"
+    font-size="48"
+    letter-spacing="-1"
+    fill="#FFFFFF"
+  >SURITARGETS</text>
+</svg>

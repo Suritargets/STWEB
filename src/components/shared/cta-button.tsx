@@ -15,9 +15,9 @@ export function CtaButton({ href, children, variant = 'primary', className }: Pr
       className={cn(
         'inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-200',
         variant === 'primary' &&
-          'bg-gold text-[#0B1628] hover:bg-[var(--gold-hover)]',
+          'bg-gold text-white hover:bg-[var(--gold-hover)]',
         variant === 'ghost' &&
-          'border border-gold text-gold hover:bg-gold hover:text-[#0B1628]',
+          'border border-gold text-gold hover:bg-[var(--gold-hover)] hover:border-[var(--gold-hover)] hover:text-white',
         className
       )}
     >

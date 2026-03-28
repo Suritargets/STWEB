@@ -96,7 +96,7 @@ export default async function ServiceDetailPage({
             <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-4">
               {label} — Suritargets
             </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground mb-3">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#2B3494] mb-3">
               {service.name}
             </h1>
             <p className="text-lg md:text-xl font-mono text-gold mb-8">
