@@ -40,7 +40,7 @@ export async function sendContactNotification(data: ContactFormData): Promise<vo
       <p><strong>Bedrijf:</strong> ${escapeHtml(data.bedrijfsnaam)}</p>
       <p><strong>E-mail:</strong> ${escapeHtml(data.email)}</p>
       <p><strong>Telefoon:</strong> ${data.telefoon ? escapeHtml(data.telefoon) : '—'}</p>
-      <p><strong>Service:</strong> ${escapeHtml(data.service)}</p>
+      <p><strong>Diensten:</strong> ${escapeHtml(data.services.join(', '))}</p>
       <hr/>
       <pre style="white-space:pre-wrap">${escapeHtml(data.bericht)}</pre>
     `,
