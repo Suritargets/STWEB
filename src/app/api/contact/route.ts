@@ -12,6 +12,15 @@ export async function POST(request: Request) {
 
     const data = result.data
 
+    const SERVICE_LABELS: Record<string, string> = {
+      'dashboarding':    'Dashboarding & Data Visualisatie',
+      'web-applicaties': 'Web & Applicaties',
+      'marketing-ai':    'Marketing met AI',
+      'forensics':       'Forensics & Integriteit',
+      'education':       'Education & Training',
+      'anders':          'Anders',
+    }
+
     const token     = process.env.AIRTABLE_API_TOKEN
     const baseId    = process.env.AIRTABLE_BASE_ID
     const tableName = process.env.AIRTABLE_TABLE_NAME ?? 'Table 1'
@@ -35,7 +44,7 @@ export async function POST(request: Request) {
             Bedrijfsnaam:  data.bedrijfsnaam,
             Email:         data.email,
             Telefoon:      data.telefoon ?? '',
-            Services:      data.services,
+            Services:      data.services.map(s => SERVICE_LABELS[s] ?? s),
             Budget:        data.budget ?? '',
             Bericht:       data.bericht,
             ...(data.andersText ? { Anders: data.andersText } : {}),
