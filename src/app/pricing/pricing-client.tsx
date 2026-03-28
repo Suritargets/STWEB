@@ -86,10 +86,10 @@ const individualServices: Array<{ name: string; description: string; rate: strin
   },
   {
     name: 'Education 1-op-1',
-    description: 'Persoonlijke begeleiding in AI, tech en moderne vaardigheden.',
+    description: 'Persoonlijke begeleiding op maat — wij leggen uw vraagstuk uit in uw eigen tempo.',
     rate: 'Consultant',
     rateValue: 45,
-    items: ['AI praktijktraining', 'Trading met AI', 'Vibe Coding & applicatieontwikkeling'],
+    items: ['AI & Technologie', 'Trading met AI', 'Blockchain & Development'],
     comingSoon: false,
   },
   {
