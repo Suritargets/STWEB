@@ -5,7 +5,7 @@ import { useState } from 'react'
 import {
   Menu, X, ChevronDown,
   BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
-  Shield, BookOpen, Rocket, Link2, UserCircle, Lightbulb,
+  Shield, BookOpen, Rocket, Bitcoin, UserCircle, Lightbulb,
 } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
@@ -82,7 +82,7 @@ const individualLinks: NavService[] = [
     label: 'Begeleiding in Blockchain',
     href: '/pricing?tab=individual',
     description: 'Web3, blockchain fundamentals en smart contracts.',
-    Icon: Link2,
+    Icon: Bitcoin,
   },
   {
     label: 'Digital Trail / Resume Social',
