@@ -15,8 +15,8 @@ export const siteConfig = {
   nav: [
     { label: 'Over ons', href: '/about', comingSoon: false },
     { label: 'Services', href: '/services', comingSoon: false },
-    { label: 'Cases', href: '/case-studies', comingSoon: true },
-    { label: 'Insights', href: '/insights', comingSoon: true },
+    { label: 'Cases', href: '/case-studies', comingSoon: false },
+    { label: 'Insights', href: '/insights', comingSoon: false },
   ],
   social: {
     linkedin: 'https://linkedin.com/company/suritargets',
