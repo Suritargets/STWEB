@@ -35,7 +35,7 @@ export async function POST(request: Request) {
             Bedrijfsnaam:  data.bedrijfsnaam,
             Email:         data.email,
             Telefoon:      data.telefoon ?? '',
-            Services:      data.services.join(', '),
+            Services:      data.services,
             Budget:        data.budget ?? '',
             Bericht:       data.bericht,
             ...(data.andersText ? { Anders: data.andersText } : {}),
