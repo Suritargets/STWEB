@@ -1,10 +1,10 @@
 import React from 'react'
-import { Composition } from '@remotion/core'
+import { Composition } from 'remotion'
 import { ExplainerVideo } from './ExplainerVideo'
 
 export const Root = () => (
   <Composition
-    name="SuritargetsExplainer"
+    id="SuritargetsExplainer"
     component={ExplainerVideo}
     durationInFrames={2700}
     fps={30}
