@@ -17,8 +17,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>
 }): Promise<Metadata> {
-  const { slug } = await params
-  const post = getPostBySlug('insights', slug)
+  const { locale, slug } = await params
+  const post = getPostBySlug('insights', slug, locale)
   if (!post) return {}
   return { title: post.title, description: post.summary }
 }
@@ -29,7 +29,7 @@ export default async function InsightPage({
   params: Promise<{ locale: string; slug: string }>
 }) {
   const { locale, slug } = await params
-  const post = getPostBySlug('insights', slug)
+  const post = getPostBySlug('insights', slug, locale)
   if (!post) notFound()
 
   const t = await getTranslations({ locale, namespace: 'insights' })
