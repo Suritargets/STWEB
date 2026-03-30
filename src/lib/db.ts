@@ -71,6 +71,42 @@ export async function getSubmissions() {
   return rows as Submission[]
 }
 
+export async function getSubmissionById(id: number): Promise<Submission | null> {
+  const db = sql()
+  const rows = await db`SELECT * FROM submissions WHERE id = ${id}`
+  return (rows[0] as Submission) ?? null
+}
+
+export async function updateSubmission(id: number, data: {
+  naam: string
+  bedrijfsnaam: string
+  email: string
+  telefoon: string | null
+  services: string[]
+  budget: string | null
+  bericht: string
+  anders_text: string | null
+}) {
+  const db = sql()
+  await db`
+    UPDATE submissions SET
+      naam = ${data.naam},
+      bedrijfsnaam = ${data.bedrijfsnaam},
+      email = ${data.email},
+      telefoon = ${data.telefoon},
+      services = ${data.services},
+      budget = ${data.budget},
+      bericht = ${data.bericht},
+      anders_text = ${data.anders_text}
+    WHERE id = ${id}
+  `
+}
+
+export async function deleteSubmission(id: number) {
+  const db = sql()
+  await db`DELETE FROM submissions WHERE id = ${id}`
+}
+
 export type Stats = {
   total: number
   thisMonth: number

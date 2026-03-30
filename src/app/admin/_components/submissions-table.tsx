@@ -1,5 +1,6 @@
 'use client'
 import { useState, useMemo } from 'react'
+import { useRouter } from 'next/navigation'
 import type { Submission } from '@/lib/db'
 
 const SERVICE_LABELS: Record<string, string> = {
@@ -25,6 +26,7 @@ function formatCSVDate(iso: string) {
 type Tab = 'all' | 'new'
 
 export default function SubmissionsTable({ submissions }: { submissions: Submission[] }) {
+  const router = useRouter()
   const [tab, setTab] = useState<Tab>('all')
   const [page, setPage] = useState(1)
   const [perPage, setPerPage] = useState(10)
@@ -308,11 +310,12 @@ export default function SubmissionsTable({ submissions }: { submissions: Submiss
               paginated.map(s => (
                 <tr
                   key={s.id}
-                  className={`border-b border-zinc-50 hover:bg-zinc-50/80 transition-colors align-middle ${
+                  onClick={() => router.push(`/admin/dashboard/requests/${s.id}`)}
+                  className={`border-b border-zinc-50 hover:bg-zinc-50/80 transition-colors align-middle cursor-pointer ${
                     selected.has(s.id) ? 'bg-blue-50/40' : ''
                   }`}
                 >
-                  <td className="px-4 py-3">
+                  <td className="px-4 py-3" onClick={e => e.stopPropagation()}>
                     <input
                       type="checkbox"
                       checked={selected.has(s.id)}
