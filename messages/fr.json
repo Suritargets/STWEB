@@ -433,6 +433,55 @@
         "Rapport écrit et discret",
         "Accompagnement sur les prochaines étapes"
       ]
+    },
+    "business-consulting": {
+      "name": "Business Consulting & Advisory",
+      "nameEn": "Business Consulting & Advisory",
+      "shortDescription": "Conseils stratégiques et accompagnement pour les entreprises cherchant à croître, optimiser ou se restructurer.",
+      "description": "Nous aidons les entreprises du Suriname et des Caraïbes à relever les défis stratégiques qui comptent vraiment. De l'optimisation des activités et l'amélioration des processus à la stratégie de croissance et la restructuration, nous apportons une expertise internationale en management à votre organisation. Pratique, immédiatement applicable et adapté à votre contexte local.",
+      "whoIsItFor": "Propriétaires, directeurs et managers d'entreprises confrontés à des défis de croissance, souhaitant optimiser leurs opérations ou ayant besoin d'une réorientation stratégique.",
+      "deliverables": [
+        "Analyse et conseil stratégique d'entreprise",
+        "Stratégie de croissance et d'expansion",
+        "Optimisation des processus et amélioration de l'efficacité",
+        "Structure organisationnelle et restructuration",
+        "Accompagnement en gestion du changement",
+        "Plan d'affaires et projections financières",
+        "Rapports de gestion et cadres KPI"
+      ]
+    },
+    "startup-to-founder": {
+      "name": "From Startup to Founder",
+      "nameEn": "From Startup to Founder",
+      "shortDescription": "De l'idée de startup à une entreprise réelle — accompagnement pour les entrepreneurs ambitieux au Suriname.",
+      "description": "Vous avez une idée plus grande qu'un projet secondaire. Nous vous guidons à travers tout le parcours: de la validation de votre concept à la mise en place de votre structure d'entreprise, l'attraction de vos premiers clients et la construction d'une base évolutive. Pas de théorie, des étapes pratiques qui fonctionnent sur le marché caribéen.",
+      "whoIsItFor": "Entrepreneurs ambitieux et startups au Suriname qui veulent construire une entreprise sérieuse et cherchent l'accompagnement de quelqu'un qui connaît à la fois le marché local et les meilleures pratiques internationales.",
+      "deliverables": [
+        "Validation du concept et étude de marché",
+        "Développement du modèle économique (canvas)",
+        "Stratégie go-to-market pour le Suriname et la région",
+        "Conseil en immatriculation et configuration juridique",
+        "Pitch deck et présentation aux investisseurs",
+        "Premiers clients et stratégie de vente",
+        "Plan de croissance et feuille de route des jalons",
+        "Mentorat et sessions de responsabilité"
+      ]
+    },
+    "pioneering-fundamentals": {
+      "name": "Pioneering Fundamentals",
+      "nameEn": "Pioneering Fundamentals",
+      "shortDescription": "Les fondamentaux de l'entrepreneuriat et de l'innovation — pour ceux qui sont prêts à commencer.",
+      "description": "Pioneering Fundamentals est le point de départ pour tous ceux qui veulent se consacrer sérieusement à l'entrepreneuriat et à l'innovation. Vous apprenez les principes fondamentaux qui distinguent les pionniers qui réussissent: de la mentalité et du leadership personnel à la reconnaissance des opportunités et au premier pas. Pratique, personnel et immédiatement applicable.",
+      "whoIsItFor": "Personnes qui souhaitent se lancer dans l'entrepreneuriat ou l'innovation mais n'ont pas encore de point de départ clair. Idéal pour les jeunes talents, les personnes en reconversion et tous ceux prêts pour une nouvelle direction.",
+      "deliverables": [
+        "Mentalité entrepreneuriale et leadership personnel",
+        "Reconnaître les opportunités dans votre environnement",
+        "Principes fondamentaux de l'innovation et de la créativité",
+        "Cartographier vos forces personnelles",
+        "Vos premiers pas en tant qu'entrepreneur",
+        "Plan d'action personnel",
+        "Sessions de coaching 1 pour 1"
+      ]
     }
   },
   "caseStudies": {

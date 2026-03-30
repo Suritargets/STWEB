@@ -433,6 +433,55 @@
         "Informe escrito y discreto",
         "Orientación sobre los próximos pasos"
       ]
+    },
+    "business-consulting": {
+      "name": "Business Consulting & Advisory",
+      "nameEn": "Business Consulting & Advisory",
+      "shortDescription": "Asesoría estratégica y orientación para empresas que buscan crecer, optimizar o reestructurarse.",
+      "description": "Ayudamos a empresas en Surinam y el Caribe con los desafíos estratégicos que realmente importan. Desde la optimización empresarial y la mejora de procesos hasta la estrategia de crecimiento y la reestructuración, llevamos experiencia de gestión internacional a su organización. Práctico, aplicable de inmediato y adaptado a su contexto local.",
+      "whoIsItFor": "Propietarios, directores y gerentes de empresas que enfrentan desafíos de crecimiento, buscan optimizar sus operaciones o necesitan una reorientación estratégica.",
+      "deliverables": [
+        "Análisis y asesoría estratégica empresarial",
+        "Estrategia de crecimiento y expansión",
+        "Optimización de procesos y mejora de eficiencia",
+        "Estructura organizacional y reestructuración",
+        "Orientación en gestión del cambio",
+        "Plan de negocio y proyecciones financieras",
+        "Informes de gestión y marcos KPI"
+      ]
+    },
+    "startup-to-founder": {
+      "name": "From Startup to Founder",
+      "nameEn": "From Startup to Founder",
+      "shortDescription": "De la idea de startup a un negocio real — orientación para emprendedores ambiciosos en Surinam.",
+      "description": "Tienes una idea más grande que un proyecto secundario. Te guiamos a través de todo el recorrido: desde validar tu concepto hasta establecer tu estructura empresarial, atraer tus primeros clientes y construir una base escalable. Sin teoría, solo pasos prácticos que funcionan en el mercado caribeño.",
+      "whoIsItFor": "Emprendedores ambiciosos y startups en Surinam que quieren construir un negocio serio y buscan orientación de alguien que conoce tanto el mercado local como las mejores prácticas internacionales.",
+      "deliverables": [
+        "Validación de concepto e investigación de mercado",
+        "Desarrollo de modelo de negocio (canvas)",
+        "Estrategia go-to-market para Surinam y región",
+        "Asesoría en registro empresarial y configuración legal",
+        "Pitch deck y presentación para inversores",
+        "Primeros clientes y estrategia de ventas",
+        "Plan de crecimiento y hoja de ruta de hitos",
+        "Mentoría y sesiones de responsabilidad"
+      ]
+    },
+    "pioneering-fundamentals": {
+      "name": "Pioneering Fundamentals",
+      "nameEn": "Pioneering Fundamentals",
+      "shortDescription": "Los fundamentos del emprendimiento y la innovación — para quienes están listos para comenzar.",
+      "description": "Pioneering Fundamentals es el punto de partida para quienes quieren dedicarse seriamente al emprendimiento y la innovación. Aprenderás los principios fundamentales que distinguen a los pioneros exitosos: desde la mentalidad y el autoliderazgo hasta reconocer oportunidades y dar el primer paso. Práctico, personal y aplicable de inmediato.",
+      "whoIsItFor": "Personas que quieren comenzar a emprender o innovar pero aún no tienen un punto de partida claro. Ideal para jóvenes talentos, cambios de carrera y cualquiera listo para una nueva dirección.",
+      "deliverables": [
+        "Mentalidad emprendedora y autoliderazgo",
+        "Reconocer oportunidades en tu entorno",
+        "Principios fundamentales de innovación y creatividad",
+        "Mapear tus fortalezas personales",
+        "Dar tus primeros pasos como emprendedor",
+        "Plan de acción personal",
+        "Sesiones de coaching 1 a 1"
+      ]
     }
   },
   "caseStudies": {

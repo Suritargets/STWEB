@@ -433,6 +433,55 @@
         "Discreet written reporting",
         "Guidance on next steps"
       ]
+    },
+    "business-consulting": {
+      "name": "Business Consulting & Advisory",
+      "nameEn": "Business Consulting & Advisory",
+      "shortDescription": "Strategic advice and guidance for businesses looking to grow, optimize or restructure.",
+      "description": "We help businesses in Suriname and the Caribbean with strategic challenges that truly matter. From business optimization and process improvement to growth strategy and restructuring, we bring international management expertise to your organization. Practical, immediately applicable and tailored to your local context.",
+      "whoIsItFor": "Owners, directors and managers of businesses facing growth challenges, looking to optimize their operations or in need of strategic realignment.",
+      "deliverables": [
+        "Strategic business analysis and advice",
+        "Growth and expansion strategy",
+        "Process optimization and efficiency improvement",
+        "Organizational structure and restructuring",
+        "Change management guidance",
+        "Business plan and financial projections",
+        "Management reporting and KPI frameworks"
+      ]
+    },
+    "startup-to-founder": {
+      "name": "From Startup to Founder",
+      "nameEn": "From Startup to Founder",
+      "shortDescription": "From startup idea to functioning business — guidance for ambitious entrepreneurs in Suriname.",
+      "description": "You have an idea bigger than a side project. We guide you through the full journey: from validating your concept to setting up your business structure, attracting your first customers and building a scalable foundation. No theory, just practical steps that work in the Caribbean market.",
+      "whoIsItFor": "Ambitious entrepreneurs and startups in Suriname who want to build a serious business and seek guidance from someone who knows both the local market and international best practices.",
+      "deliverables": [
+        "Concept validation and market research",
+        "Business model development (canvas)",
+        "Go-to-market strategy for Suriname and region",
+        "Business registration and legal setup advice",
+        "Pitch deck and investor presentation",
+        "First customers and sales strategy",
+        "Growth plan and milestones roadmap",
+        "Mentorship and accountability sessions"
+      ]
+    },
+    "pioneering-fundamentals": {
+      "name": "Pioneering Fundamentals",
+      "nameEn": "Pioneering Fundamentals",
+      "shortDescription": "The fundamentals of entrepreneurship and innovation — for those ready to start.",
+      "description": "Pioneering Fundamentals is the starting point for anyone who wants to seriously pursue entrepreneurship and innovation. You learn the core principles that distinguish successful pioneers: from mindset and self-leadership to recognizing opportunities and taking the first step. Practical, personal and immediately applicable, even without prior knowledge.",
+      "whoIsItFor": "Individuals who want to start entrepreneurship or innovation but do not yet have a clear starting point. Ideal for young talent, career changers and anyone ready for a new direction.",
+      "deliverables": [
+        "Entrepreneurial mindset and self-leadership",
+        "Recognizing opportunities in your environment",
+        "Core principles of innovation and creativity",
+        "Mapping your personal strengths",
+        "Taking your first steps as an entrepreneur",
+        "Personal action plan",
+        "1-on-1 coaching sessions"
+      ]
     }
   },
   "caseStudies": {
