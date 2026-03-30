@@ -52,7 +52,7 @@ export async function POST(request: Request) {
             Bedrijfsnaam:  data.bedrijfsnaam,
             Email:         data.email,
             ...(data.telefoon ? { Telefoon: data.telefoon } : {}),
-            Services:      data.services.map(s => SERVICE_LABELS[s] ?? s),
+            Services:      data.services.map(s => SERVICE_LABELS[s] ?? s).join(', '),
             ...(data.budget   ? { Budget: BUDGET_LABELS[data.budget] ?? data.budget } : {}),
             Bericht:       data.andersText
                              ? `${data.bericht}\n\nAnders: ${data.andersText}`
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
 
     if (!airtableRes.ok) {
       const err = await airtableRes.json()
-      console.error('Airtable error:', JSON.stringify(err))
+      console.error('Airtable error full:', JSON.stringify(err, null, 2))
       return NextResponse.json({ error: 'Airtable error', detail: err }, { status: 500 })
     }
 
