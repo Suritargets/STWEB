@@ -7,6 +7,7 @@ import {
   Menu, X, ChevronDown,
   BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
   Shield, BookOpen, Rocket, Bitcoin, UserCircle,
+  Briefcase, TrendingUp, Compass,
 } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
@@ -26,11 +27,14 @@ const businessLinks: NavService[] = [
   { labelKey: 'dashboarding', href: '/services/dashboarding', descKey: 'dashboardingDesc', Icon: BarChart2 },
   { labelKey: 'webApps', href: '/services/web-applications', descKey: 'webAppsDesc', Icon: Monitor },
   { labelKey: 'marketingAi', href: '/services/marketing-ai', descKey: 'marketingAiDesc', Icon: Sparkles },
+  { labelKey: 'businessConsulting', href: '/services/business-consulting', descKey: 'businessConsultingDesc', Icon: Briefcase },
+  { labelKey: 'startupToFounder', href: '/services/startup-to-founder', descKey: 'startupToFounderDesc', Icon: TrendingUp },
   { labelKey: 'forensics', href: '/services/forensics', descKey: 'forensicsDesc', Icon: ShieldCheck },
   { labelKey: 'educationTeams', href: '/services/education', descKey: 'educationTeamsDesc', Icon: GraduationCap },
 ]
 
 const individualLinks: NavService[] = [
+  { labelKey: 'pioneeringFundamentals', href: '/services/pioneering-fundamentals', descKey: 'pioneeringFundamentalsDesc', Icon: Compass },
   { labelKey: 'education1op1', href: '/services/education-1op1', descKey: 'education1op1Desc', Icon: BookOpen },
   { labelKey: 'begeleidingInnovation', href: '/services/begeleiding-innovation', descKey: 'begeleidingInnovationDesc', Icon: Rocket },
   { labelKey: 'begeleidingBlockchain', href: '/services/begeleiding-blockchain', descKey: 'begeleidingBlockchainDesc', Icon: Bitcoin },

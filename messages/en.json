@@ -36,7 +36,13 @@
     "cases": "Cases",
     "casesDesc": "Results that speak for themselves",
     "insights": "Insights",
-    "insightsDesc": "Analysis and trends from the region"
+    "insightsDesc": "Analysis and trends from the region",
+    "businessConsulting": "Business Consulting",
+    "businessConsultingDesc": "Strategic advice and guidance for growth and optimization.",
+    "startupToFounder": "From Startup to Founder",
+    "startupToFounderDesc": "From idea to functioning business — for ambitious entrepreneurs.",
+    "pioneeringFundamentals": "Pioneering Fundamentals",
+    "pioneeringFundamentalsDesc": "The fundamentals of entrepreneurship and innovation."
   },
   "footer": {
     "services": "Services",

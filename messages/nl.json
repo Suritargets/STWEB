@@ -36,7 +36,13 @@
     "cases": "Cases",
     "casesDesc": "Resultaten die voor zich spreken",
     "insights": "Insights",
-    "insightsDesc": "Analyses en trends uit de regio"
+    "insightsDesc": "Analyses en trends uit de regio",
+    "businessConsulting": "Business Consulting",
+    "businessConsultingDesc": "Strategisch advies en begeleiding voor groei en optimalisatie.",
+    "startupToFounder": "From Startup to Founder",
+    "startupToFounderDesc": "Van idee naar werkend bedrijf — begeleiding voor ambitieuze ondernemers.",
+    "pioneeringFundamentals": "Pioneering Fundamentals",
+    "pioneeringFundamentalsDesc": "De grondbeginselen van ondernemerschap en innovatie."
   },
   "footer": {
     "services": "Services",

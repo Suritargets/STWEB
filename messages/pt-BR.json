@@ -36,7 +36,13 @@
     "cases": "Casos",
     "casesDesc": "Resultados que falam por si",
     "insights": "Insights",
-    "insightsDesc": "Análises e tendências da região"
+    "insightsDesc": "Análises e tendências da região",
+    "businessConsulting": "Business Consulting",
+    "businessConsultingDesc": "Consultoria estratégica e orientação para crescimento e otimização.",
+    "startupToFounder": "From Startup to Founder",
+    "startupToFounderDesc": "Da ideia a um negócio real — para empreendedores ambiciosos.",
+    "pioneeringFundamentals": "Pioneering Fundamentals",
+    "pioneeringFundamentalsDesc": "Os fundamentos do empreendedorismo e da inovação."
   },
   "footer": {
     "services": "Serviços",

@@ -117,7 +117,75 @@ export const services: ServiceCluster[] = [
     icon: 'graduation-cap',
   },
 
+  {
+    slug: 'business-consulting',
+    type: 'business',
+    name: 'Business Consulting & Advisory',
+    nameEn: 'Business Consulting & Advisory',
+    shortDescription: 'Strategisch advies en begeleiding voor bedrijven die willen groeien, optimaliseren of herstructureren.',
+    shortDescriptionEn: 'Strategic advice and guidance for businesses looking to grow, optimize or restructure.',
+    description:
+      'Wij helpen bedrijven in Suriname en de Caribische regio met strategische vraagstukken die echt tellen. Van bedrijfsoptimalisatie en procesverbetering tot groeistrategie en herstructurering — wij brengen internationale management expertise naar uw organisatie. Praktisch, direct toepasbaar en afgestemd op uw lokale context.',
+    whoIsItFor:
+      'Eigenaren, directeuren en managers van bedrijven die tegen groeiuitdagingen aanlopen, hun operatie willen optimaliseren of een strategische heroriëntatie nodig hebben.',
+    deliverables: [
+      'Strategische bedrijfsanalyse en advies',
+      'Groei- en expansiestrategie',
+      'Procesoptimalisatie en efficiencyverbetering',
+      'Organisatiestructuur en herstructurering',
+      'Change management begeleiding',
+      'Businessplan en financiële projecties',
+      'Managementrapportages en KPI-frameworks',
+    ],
+    icon: 'briefcase',
+  },
+  {
+    slug: 'startup-to-founder',
+    type: 'business',
+    name: 'From Startup to Founder',
+    nameEn: 'From Startup to Founder',
+    shortDescription: 'Van startup idee naar werkend bedrijf — begeleiding voor ambitieuze ondernemers in Suriname.',
+    shortDescriptionEn: 'From startup idea to functioning business — guidance for ambitious entrepreneurs in Suriname.',
+    description:
+      'U heeft een idee dat groter is dan een bijproject. Wij begeleiden u door het volledige traject: van het valideren van uw concept tot het opzetten van uw bedrijfsstructuur, het aantrekken van uw eerste klanten en het bouwen van een fundament dat schaalbaar is. Geen theorie — praktische stappen die werken in de Caribische markt.',
+    whoIsItFor:
+      'Ambitieuze ondernemers en startups in Suriname die een serieus bedrijf willen bouwen en begeleiding zoeken van iemand die de lokale markt én internationale best practices kent.',
+    deliverables: [
+      'Conceptvalidatie en marktonderzoek',
+      'Business model ontwikkeling (canvas)',
+      'Go-to-market strategie voor Suriname & regio',
+      'Bedrijfsregistratie en juridische opzet advies',
+      'Pitch deck en investeerderspresentatie',
+      'Eerste klanten & salesstrategie',
+      'Groeiplan en mijlpalen roadmap',
+      'Mentorschap en accountability sessies',
+    ],
+    icon: 'trending-up',
+  },
+
   /* ─── Individual services ──────────────────────────────── */
+  {
+    slug: 'pioneering-fundamentals',
+    type: 'individual',
+    name: 'Pioneering Fundamentals',
+    nameEn: 'Pioneering Fundamentals',
+    shortDescription: 'De grondbeginselen van ondernemerschap en innovatie — voor wie klaar is om te beginnen.',
+    shortDescriptionEn: 'The fundamentals of entrepreneurship and innovation — for those ready to start.',
+    description:
+      'Pioneering Fundamentals is het startpunt voor iedereen die serieus aan de slag wil met ondernemen en innovatie. U leert de kernprincipes die succesvolle pioniers onderscheiden: van mindset en zelfleiderschap tot het herkennen van kansen en het nemen van de eerste stap. Praktisch, persoonlijk en direct toepasbaar — ook zonder voorkennis.',
+    whoIsItFor:
+      'Particulieren die willen beginnen met ondernemen of innoveren maar nog geen duidelijk startpunt hebben. Ideaal voor jong talent, herintreders en iedereen die klaar is voor een nieuwe richting.',
+    deliverables: [
+      'Ondernemers mindset & zelfleiderschap',
+      'Kansen herkennen in uw omgeving',
+      'Basisprincipes van innovatie en creativiteit',
+      'Uw persoonlijke sterktes in kaart brengen',
+      'Eerste stappen zetten als ondernemer',
+      'Persoonlijk actieplan',
+      '1-op-1 coachingssessies',
+    ],
+    icon: 'compass',
+  },
   {
     slug: 'education-1op1',
     type: 'individual',
