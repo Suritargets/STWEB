@@ -1,26 +1,39 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { compileMDX } from 'next-mdx-remote/rsc'
-import { getAllSlugs, getPostBySlug } from '@/lib/mdx'
-import { SectionHeading } from '@/components/shared/section-heading'
-import { CtaButton } from '@/components/shared/cta-button'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
+import { getAllSlugs, getPostBySlug } from '@/lib/mdx'
+import { CtaButton } from '@/components/shared/cta-button'
 
 export async function generateStaticParams() {
-  return getAllSlugs('case-studies').map((slug) => ({ slug }))
+  const slugs = getAllSlugs('case-studies')
+  const locales = ['nl', 'en', 'es', 'pt-BR', 'fr']
+  return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })))
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>
+}): Promise<Metadata> {
   const { slug } = await params
   const post = getPostBySlug('case-studies', slug)
   if (!post) return {}
   return { title: post.title, description: post.summary }
 }
 
-export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
+export default async function CaseStudyPage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>
+}) {
+  const { locale, slug } = await params
   const post = getPostBySlug('case-studies', slug)
   if (!post) notFound()
+
+  const t = await getTranslations({ locale, namespace: 'caseStudies' })
+  const tc = await getTranslations({ locale, namespace: 'common' })
 
   const { content } = await compileMDX({
     source: post.content,
@@ -32,9 +45,9 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       {/* Breadcrumb */}
       <div className="px-[var(--section-padding-x)] pt-8 max-w-[1440px] mx-auto">
         <nav aria-label="breadcrumb" className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
-          <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+          <Link href={`/${locale}`} className="hover:text-gold transition-colors">{tc('home')}</Link>
           <span>/</span>
-          <Link href="/case-studies" className="hover:text-gold transition-colors">Cases</Link>
+          <Link href={`/${locale}/case-studies`} className="hover:text-gold transition-colors">{t('breadcrumb')}</Link>
           <span>/</span>
           <span aria-current="page" className="text-foreground">{post.title}</span>
         </nav>
@@ -44,7 +57,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <section className="px-[var(--section-padding-x)] py-[var(--section-padding-y)]">
         <div className="max-w-[1440px] mx-auto max-w-3xl">
           <p className="text-xs font-mono text-muted-foreground mb-4">
-            {new Date(post.date).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long' })}
+            {new Date(post.date).toLocaleDateString(locale === 'nl' ? 'nl-NL' : locale, { year: 'numeric', month: 'long' })}
             {' · '}{post.readingTime}
             {post.client && ` · ${post.client}`}
           </p>
@@ -84,12 +97,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <section className="px-[var(--section-padding-x)] py-16 border-t border-border">
         <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h2 className="text-2xl font-bold text-foreground">Soortgelijke resultaten voor uw organisatie?</h2>
-            <p className="text-muted-foreground mt-1">Neem contact op voor een vrijblijvend gesprek.</p>
+            <h2 className="text-2xl font-bold text-foreground">{t('ctaTitle')}</h2>
+            <p className="text-muted-foreground mt-1">{t('ctaBody')}</p>
           </div>
           <div className="flex gap-4">
-            <CtaButton href="/contact" variant="primary">Contact opnemen</CtaButton>
-            <CtaButton href="/case-studies" variant="ghost">Meer cases</CtaButton>
+            <CtaButton href={`/${locale}/contact`} variant="primary">{t('ctaButton')}</CtaButton>
+            <CtaButton href={`/${locale}/case-studies`} variant="ghost">{t('ctaGhost')}</CtaButton>
           </div>
         </div>
       </section>

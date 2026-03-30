@@ -1,0 +1,463 @@
+{
+  "nav": {
+    "services": "Services",
+    "company": "Entreprise",
+    "pricing": "Tarifs",
+    "signUp": "S'inscrire",
+    "getStarted": "Commencer",
+    "voorBedrijven": "Pour les Entreprises",
+    "voorIndividuen": "Pour les Particuliers",
+    "comingSoonTitle": "Nous y travaillons",
+    "comingSoonBody": "Notre plateforme est en cours de construction. Bientôt, vous pourrez créer un compte et commencer immédiatement.",
+    "comingSoonClose": "Fermer",
+    "langLabel": "Choisir la langue",
+    "dashboarding": "Tableaux de bord et visualisation",
+    "dashboardingDesc": "Tableaux BI personnalisés et KPIs en temps réel.",
+    "webApps": "Web et Applications",
+    "webAppsDesc": "Plateformes, systèmes ERP et applications web sur mesure.",
+    "marketingAi": "Marketing avec IA",
+    "marketingAiDesc": "Contenu, campagnes et analyse d'audience par IA.",
+    "forensics": "Forensics et Intégrité",
+    "forensicsDesc": "Investigations forensiques et audits de conformité.",
+    "educationTeams": "Formation (Équipes)",
+    "educationTeamsDesc": "Ateliers IA, automatisation et technologie pour équipes.",
+    "education1op1": "Formation individuelle",
+    "education1op1Desc": "Accompagnement personnel en IA, technologie et compétences modernes.",
+    "begeleidingInnovation": "Accompagnement Innovation",
+    "begeleidingInnovationDesc": "De l'idée au business plan — coaching sur mesure.",
+    "begeleidingBlockchain": "Accompagnement Blockchain",
+    "begeleidingBlockchainDesc": "Web3, fondamentaux blockchain et contrats intelligents.",
+    "digitalTrail": "Empreinte numérique / Profil social",
+    "digitalTrailDesc": "Mise en place de votre présence numérique et profil en ligne.",
+    "forensicsPersonal": "Forensics et Intégrité (Personnel)",
+    "forensicsPersonalDesc": "Conseil forensique personnel et investigation discrète.",
+    "overOns": "À propos",
+    "overOnsDesc": "Qui nous sommes et ce qui nous anime",
+    "cases": "Études de cas",
+    "casesDesc": "Des résultats qui parlent d'eux-mêmes",
+    "insights": "Perspectives",
+    "insightsDesc": "Analyses et tendances de la région"
+  },
+  "footer": {
+    "services": "Services",
+    "company": "Entreprise",
+    "overOns": "À propos",
+    "cases": "Cas clients",
+    "insights": "Articles",
+    "contact": "Contact",
+    "rights": "Tous droits réservés.",
+    "location": "Paramaribo, Suriname",
+    "voorBedrijven": "Pour les entreprises",
+    "voorIndividuen": "Pour les particuliers"
+  },
+  "common": {
+    "contact": "Nous contacter",
+    "allServices": "Tous les services",
+    "moreInfo": "Plus d'info",
+    "moreInformation": "Plus d'informations",
+    "home": "Accueil",
+    "services": "Services",
+    "gratisgesprek": "Consultation gratuite"
+  },
+  "home": {
+    "meta": {
+      "title": "Solutions Technologiques et d'Innovation pour les Entreprises",
+      "description": "Suritargets fournit un soutien stratégique aux entreprises, des applications web et des solutions numériques au Suriname."
+    },
+    "hero": {
+      "slogan": "Business Technology & Innovation Solutions",
+      "title": "Nous construisons des outils numériques",
+      "titleBlue": "pour votre entreprise",
+      "subtitle": "Des tableaux de bord et applications web aux systèmes ERP et au marketing IA — construits sur mesure pour le marché caribéen.",
+      "cta1": "Voir nos services",
+      "cta2": "Consultation gratuite"
+    },
+    "services": {
+      "label": "SERVICES",
+      "title": "Ce que nous faisons",
+      "titleEn": "Our Services",
+      "description": "Cinq clusters spécialisés qui ensemble soutiennent le cycle d'activité complet — de la stratégie à l'exécution."
+    },
+    "why": {
+      "label": "POURQUOI",
+      "title": "Expertise locale, standard international",
+      "titleEn": "Why choose us",
+      "items": [
+        {
+          "number": "01",
+          "title": "Compréhension caribéenne",
+          "description": "Nous connaissons le marché local, les réglementations et le contexte culturel du Suriname et de la région caribéenne. Cela fait la différence entre un conseil qui semble bon sur papier et un conseil qui fonctionne vraiment."
+        },
+        {
+          "number": "02",
+          "title": "Méthodes éprouvées",
+          "description": "Notre approche est basée sur des cadres prouvés internationalement — du développement agile de produits aux normes forensiques. Nous traduisons les meilleures pratiques mondiales dans votre réalité locale."
+        },
+        {
+          "number": "03",
+          "title": "Approche personnelle",
+          "description": "Pas de gestionnaires de comptes, pas de transferts. Vous travaillez directement avec les spécialistes qui exécutent votre projet. Des lignes courtes, une communication claire, un engagement total."
+        }
+      ]
+    },
+    "video": {
+      "label": "VIDÃ‰O",
+      "title": "Qui sommes-nous ?",
+      "titleEn": "Watch our explainer"
+    },
+    "partners": {
+      "label": "Nos partenaires"
+    },
+    "cta": {
+      "title": "Prêt à grandir ?",
+      "subtitle": "Ready to grow your business?",
+      "button": "Nous contacter"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Ã€ propos",
+      "description": "Suritargets est basé à Paramaribo et offre une qualité internationale aux entreprises caribéennes."
+    },
+    "hero": {
+      "label": "Ã€ propos de Suritargets",
+      "title": "Ã€ propos de Suritargets",
+      "subtitle": "Basé à Paramaribo. Focalisé sur la région."
+    },
+    "mission": {
+      "label": "MISSION",
+      "title": "Nous croyons en la force locale",
+      "titleEn": "Our mission",
+      "body1": "Les entreprises caribéennes méritent l'accès aux mêmes ressources stratégiques et numériques que leurs concurrents internationaux. Nous le rendons possible — sans compromis sur la qualité.",
+      "body2": "Notre mission est d'équiper les entreprises caribéennes avec l'intelligence stratégique et les capacités numériques nécessaires pour prospérer.",
+      "quote": "Qualité internationale, ancrage local."
+    },
+    "story": {
+      "label": "HISTOIRE",
+      "title": "Fondée au Suriname",
+      "titleEn": "Founded in Paramaribo",
+      "body1": "Suritargets a été fondée à Paramaribo avec une vision claire : apporter des services d'entreprise de niveau international au marché caribéen.",
+      "body2": "Trop souvent, les entreprises locales faisaient face à un choix impossible : des cabinets de conseil étrangers coûteux ou des alternatives locales sous-financées. Nous comblons ce fossé.",
+      "body3": "Avec des spécialistes en intelligence d'affaires, développement logiciel, recherche juridique et éducation, nous construisons une base qui renforce structurellement la région.",
+      "stat1number": "5",
+      "stat1label": "Clusters de services",
+      "stat2number": "SUR",
+      "stat2label": "Basé à Paramaribo",
+      "stat3number": "âˆž",
+      "stat3label": "Vision à long terme"
+    },
+    "values": {
+      "label": "VALEURS",
+      "title": "Ce que nous défendons",
+      "titleEn": "Our values",
+      "description": "Trois principes qui guident chaque décision et chaque livrable.",
+      "items": [
+        {
+          "nl": "Integriteit",
+          "en": "Integrity",
+          "description": "Pas de détours, pas d'agenda caché. Communication directe et conseils honnêtes — même quand ce n'est pas ce que vous voulez entendre."
+        },
+        {
+          "nl": "Vakmanschap",
+          "en": "Craftsmanship",
+          "description": "Chaque livrable porte notre nom. Nous livrons au plus haut niveau ou nous ne livrons pas."
+        },
+        {
+          "nl": "Vertrouwen",
+          "en": "Trust",
+          "description": "Nous construisons des relations à long terme. Les victoires rapides sont agréables ; les partenariats durables sont notre objectif."
+        }
+      ]
+    },
+    "team": {
+      "label": "NOTRE Ã‰QUIPE",
+      "title": "Des spécialistes. Pas des généralistes.",
+      "titleEn": "The people behind Suritargets",
+      "body": "Notre équipe est composée de spécialistes en intelligence d'affaires, développement logiciel, recherche juridique et éducation. Chaque projet est guidé par la bonne expertise — pas par celui qui est disponible.",
+      "cta": "Nous contacter"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "Contactez Suritargets pour une conversation sans engagement sur votre projet."
+    },
+    "label": "CONTACT",
+    "title": "Nous contacter",
+    "titleEn": "Get in touch",
+    "description": "Nous sommes prêts à répondre à vos questions et à discuter de votre projet.",
+    "responseTimeLabel": "Temps de réponse",
+    "responseTime": "1–2 jours ouvrables",
+    "addressLabel": "Adresse",
+    "emailLabel": "E-mail",
+    "formTitle": "Demander un devis"
+  },
+  "services": {
+    "meta": {
+      "title": "Services",
+      "description": "Services aux entreprises et aux particuliers : tableaux de bord, applications web, marketing, forensique, éducation et accompagnement personnel."
+    },
+    "hero": {
+      "label": "Suritargets",
+      "title": "Nos services",
+      "subtitle": "Pour les entreprises et les particuliers.",
+      "body": "De la stratégie d'entreprise à l'accompagnement personnel — chaque parcours est sur mesure, conçu pour votre contexte et vos objectifs spécifiques."
+    },
+    "tabs": {
+      "business": "Pour les Entreprises",
+      "individual": "Pour les Particuliers"
+    },
+    "cta": {
+      "label": "Sur mesure",
+      "title": "Chaque service est personnalisé.",
+      "body": "Contactez-nous pour discuter de votre situation.",
+      "button": "Nous contacter"
+    },
+    "detail": {
+      "breadcrumbServices": "Services",
+      "forWhom": "Pour qui",
+      "included": "Inclus",
+      "whatsIncluded": "Ce qui est inclus",
+      "process": "Comment nous travaillons",
+      "howWeWork": "Notre processus",
+      "related": "Connexe",
+      "otherServices": "Autres services",
+      "ctaLabel": "Commencer",
+      "ctaTitle": "Lancez votre projet",
+      "ctaBody": "Prêt à commencer ? Contactez-nous pour une conversation sans engagement sur votre situation et vos objectifs.",
+      "ctaButton": "Nous contacter",
+      "ctaGhost": "Tous les services",
+      "moreInfo": "Plus d'informations",
+      "processSteps": [
+        {
+          "number": "01",
+          "title": "Consultation initiale",
+          "description": "Nous commençons par une conversation sans engagement pour clarifier vos objectifs, contexte et attentes."
+        },
+        {
+          "number": "02",
+          "title": "Analyse",
+          "description": "Analyse approfondie de votre situation et de vos objectifs pour concevoir une approche sur mesure."
+        },
+        {
+          "number": "03",
+          "title": "Exécution",
+          "description": "Exécution experte avec des rapports d'avancement réguliers et des lignes de communication directes."
+        },
+        {
+          "number": "04",
+          "title": "Livraison",
+          "description": "Résultat final avec suivi post-livraison — nous restons disponibles une fois le projet terminé."
+        }
+      ]
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Tarifs",
+      "description": "Tarifs horaires transparents par type de service chez Suritargets."
+    },
+    "hero": {
+      "label": "Tarifs transparents",
+      "title": "Tarifs",
+      "subtitle": "Tarifs horaires fixes par type de service. Pas de frais cachés — vous savez toujours où vous en êtes."
+    },
+    "tabs": {
+      "business": "Pour les Entreprises",
+      "individual": "Pour les Particuliers"
+    },
+    "rateLabel": "tarif",
+    "perHour": "/h",
+    "from": "à partir de",
+    "soon": "bientôt",
+    "contactButton": "Contact",
+    "cta": {
+      "businessTitle": "Grand projet ou collaboration à long terme ?",
+      "businessBody": "Pour les projets de plusieurs semaines ou les partenariats continus, nous préparons volontiers un devis personnalisé.",
+      "individualTitle": "Prêt à commencer ?",
+      "individualBody": "Planifiez un appel introductif gratuit et découvrez ce que nous pouvons faire pour vous.",
+      "businessButton": "Demander un devis",
+      "individualButton": "Consultation gratuite"
+    }
+  },
+  "servicesData": {
+    "dashboarding": {
+      "name": "Tableaux de Bord & Visualisation de Données",
+      "nameEn": "Dashboarding & Data Visualization",
+      "shortDescription": "Tableaux de bord et visualisations de données sur mesure pour de meilleures décisions.",
+      "description": "Nous construisons des tableaux de bord et des plateformes de visualisation de données entièrement personnalisés. Des aperçus de KPI en temps réel aux outils complexes d'intelligence d'affaires — conçus pour vos données, vos processus et votre équipe.",
+      "whoIsItFor": "Les organisations qui ont des données mais n'arrivent pas à en tirer une image claire. Idéal pour la direction, les équipes financières et les départements opérationnels.",
+      "deliverables": [
+        "Développement de tableaux de bord personnalisés",
+        "Visualisation de données en temps réel",
+        "Rapports KPI et de gestion",
+        "Intégration de pipelines de données",
+        "Graphiques et analyses interactifs",
+        "Intégrations ERP et systèmes"
+      ]
+    },
+    "web-applications": {
+      "name": "Web & Applications",
+      "nameEn": "Web & Application Development",
+      "shortDescription": "Applications web, plateformes et outils personnalisés — construits de zéro.",
+      "description": "Du concept à la plateforme en ligne : nous construisons des applications web et d'entreprise qui s'alignent sur vos processus. Y compris des systèmes ERP sur mesure, des outils internes et des plateformes orientées client.",
+      "whoIsItFor": "Les entreprises qui ont besoin d'une plateforme personnalisée, d'un système ERP, d'un outil interne ou d'une application orientée client.",
+      "deliverables": [
+        "Développement d'applications web",
+        "Systèmes ERP personnalisés",
+        "Applications financières",
+        "Outils d'entreprise internes",
+        "Design UI/UX (wireframes, prototypes)",
+        "Interfaces responsive mobile-first"
+      ]
+    },
+    "marketing-ai": {
+      "name": "Marketing avec IA",
+      "nameEn": "AI-Powered Marketing Services",
+      "shortDescription": "Marketing plus intelligent avec l'IA — contenu, campagnes et analyses à un niveau supérieur.",
+      "description": "Nous combinons l'expertise marketing avec la technologie IA pour donner aux entreprises caribéennes un avantage concurrentiel. De la création de contenu alimentée par IA aux campagnes automatisées et à l'analyse client.",
+      "whoIsItFor": "Les entreprises et marques du Suriname et de la région qui souhaitent renforcer leurs efforts marketing avec une technologie intelligente.",
+      "deliverables": [
+        "Création de contenu IA & copywriting",
+        "Stratégie de campagnes automatisées",
+        "Analyse d'audience avec IA",
+        "Automatisation des réseaux sociaux",
+        "SEO & visibilité numérique",
+        "Rapports de performance marketing"
+      ]
+    },
+    "forensics": {
+      "name": "Forensique & Intégrité",
+      "nameEn": "Forensics & Integrity Services",
+      "shortDescription": "Investigation forensique numérique et audits d'intégrité.",
+      "description": "Nous fournissons des investigations forensiques numériques, des audits de conformité et des révisions d'intégrité pour les gouvernements, les institutions financières et les entreprises. Confidentiel, approfondi et indépendant.",
+      "whoIsItFor": "Les agences gouvernementales, institutions financières et entreprises qui ont besoin d'une investigation forensique indépendante.",
+      "deliverables": [
+        "Investigation forensique numérique",
+        "Audit de conformité et d'intégrité",
+        "Rapports et recommandations",
+        "Accompagnement en réponse aux incidents"
+      ]
+    },
+    "education": {
+      "name": "Formation",
+      "nameEn": "Education & Skills Development",
+      "shortDescription": "Formation pratique en IA, trading, automatisation et développement d'applications.",
+      "description": "Suritargets Education propose des cours orientés pratique pour les professionnels et entrepreneurs qui veulent suivre le rythme de la technologie. Des fondamentaux de l'IA au vibe coding et aux applications financières.",
+      "whoIsItFor": "Les professionnels, entrepreneurs et équipes qui souhaitent développer des compétences concrètes en IA, technologie et gestion d'entreprise moderne.",
+      "deliverables": [
+        "IA — formation pratique en Intelligence Artificielle",
+        "Trading avec IA — stratégies de trading automatisées",
+        "Automatisation — processus et flux de travail",
+        "Vibe Coding — construire avec le développement guidé par IA",
+        "Développement d'applications — de l'idée au produit",
+        "Applications financières — outils et plateformes FinTech",
+        "ERP sur mesure — implémentation et gestion"
+      ]
+    },
+    "education-1op1": {
+      "name": "Formation 1 pour 1",
+      "nameEn": "Personal Education & Coaching",
+      "shortDescription": "Accompagnement personnel en IA, technologie et compétences modernes — à votre propre rythme.",
+      "description": "Vous avez une question ou voulez mieux comprendre quelque chose — nous l'expliquons à votre rythme, à votre niveau. Que ce soit IA & Technologie, Trading avec IA ou Blockchain & Développement : nous vous guidons de manière pratique et personnelle.",
+      "whoIsItFor": "Les particuliers et professionnels qui ont besoin d'explications supplémentaires ou souhaitent comprendre un nouveau sujet sans formation en groupe.",
+      "deliverables": [
+        "Sessions personnelles à votre rythme",
+        "Explication et applications IA & Technologie",
+        "Trading avec IA — stratégie et outils",
+        "Bases de Blockchain & Développement",
+        "Exercices pratiques et exemples",
+        "Suivi par chat après la session"
+      ]
+    },
+    "begeleiding-innovation": {
+      "name": "Coaching en Innovation",
+      "nameEn": "Innovation Coaching",
+      "shortDescription": "De l'idée au premier pas — nous vous guidons du concept au business case.",
+      "description": "Vous avez une idée mais ne savez pas par où commencer. Nous vous aidons à la développer, à tester sa faisabilité et à déterminer les premières étapes concrètes. Pas de conseils vagues — nous travaillons ensemble sur un plan clair.",
+      "whoIsItFor": "Les entrepreneurs et particuliers avec une idée ou un plan qu'ils souhaitent développer mais ne savent pas encore comment commencer.",
+      "deliverables": [
+        "Développer et structurer votre idée",
+        "Validation et vérification de faisabilité",
+        "Exploration de marché et analyse de cible",
+        "Déterminer les premières étapes et plan d'action",
+        "Sessions de coaching personnel",
+        "Résumé écrit du plan"
+      ]
+    },
+    "begeleiding-blockchain": {
+      "name": "Accompagnement en Blockchain",
+      "nameEn": "Blockchain & Web3 Guidance",
+      "shortDescription": "Comprendre la blockchain de manière pratique — des bases à votre cas d'usage.",
+      "description": "Vous voulez comprendre comment fonctionne la blockchain et ce qu'elle peut signifier pour vous ? Nous l'expliquons de manière pratique et compréhensible. Des bases de la crypto et du Web3 à l'exploration de votre propre cas d'usage — sans jargon, avec de vrais exemples.",
+      "whoIsItFor": "Les particuliers et entrepreneurs qui souhaitent comprendre la blockchain et découvrir comment elle peut être pertinente pour leur situation.",
+      "deliverables": [
+        "Bases de la blockchain en langage simple",
+        "Crypto & Web3 expliqués pratiquement",
+        "Explorer votre propre cas d'usage",
+        "Vue d'ensemble des outils et plateformes pertinents",
+        "Sessions personnelles de questions-réponses",
+        "Exemples pratiques de la région"
+      ]
+    },
+    "digital-trail": {
+      "name": "Empreinte Numérique / Resume Social",
+      "nameEn": "Digital Presence & Personal Branding",
+      "shortDescription": "Construisez votre présence professionnelle en ligne — pour que les bonnes personnes vous trouvent.",
+      "description": "Votre profil en ligne est votre carte de visite numérique. Nous vous aidons à construire une présence professionnelle solide — de l'optimisation LinkedIn à un portfolio numérique personnel — pour que vous vous démarquiez auprès des bonnes personnes et opportunités.",
+      "whoIsItFor": "Les particuliers qui souhaitent faire progresser leur carrière, cherchent un emploi ou des missions, ou veulent construire leur réputation professionnelle en ligne.",
+      "deliverables": [
+        "Audit et optimisation du profil LinkedIn",
+        "Configuration du portfolio numérique personnel",
+        "Stratégie de réputation en ligne",
+        "Conseils de contenu pour la visibilité",
+        "Conseil en personal branding",
+        "Plan d'action pour la présence en ligne"
+      ]
+    },
+    "forensics-personal": {
+      "name": "Forensique & Intégrité (Personnel)",
+      "nameEn": "Personal Forensics & Integrity",
+      "shortDescription": "Conseil forensique personnel et investigation discrète pour votre situation.",
+      "description": "Vous avez une situation personnelle nécessitant discrétion et investigation ? Nous vous aidons de manière confidentielle. Que ce soit un conseil forensique personnel, une investigation confidentielle ou un rapport discret — nous traitons votre cas avec le soin nécessaire.",
+      "whoIsItFor": "Les particuliers dans une situation où ils ont besoin d'une investigation ou d'un conseil indépendant et confidentiel.",
+      "deliverables": [
+        "Conseil forensique personnel sur mesure",
+        "Investigation confidentielle",
+        "Rapport écrit et discret",
+        "Accompagnement sur les prochaines étapes"
+      ]
+    }
+  },
+  "caseStudies": {
+    "meta": {
+      "title": "Études de cas",
+      "description": "Études de cas de Suritargets — résultats prouvés pour les organisations caribéennes."
+    },
+    "label": "CAS",
+    "title": "Résultats prouvés",
+    "titleEn": "Our case studies",
+    "description": "Projets concrets, impact mesurable. Lisez comment nous aidons les organisations caribéennes à avancer.",
+    "breadcrumb": "Cas",
+    "featured": "En vedette",
+    "ctaTitle": "Des résultats similaires pour votre organisation ?",
+    "ctaBody": "Contactez-nous pour une conversation sans engagement.",
+    "ctaButton": "Prendre contact",
+    "ctaGhost": "Plus de cas"
+  },
+  "insights": {
+    "meta": {
+      "title": "Perspectives",
+      "description": "Analyses et perspectives du marché caribéen — rédigées par les spécialistes de Suritargets."
+    },
+    "label": "PERSPECTIVES",
+    "title": "Perspectives du marché",
+    "titleEn": "Analysis & perspectives",
+    "description": "Analyses et perspectives du marché caribéen — rédigées par les spécialistes de Suritargets.",
+    "breadcrumb": "Perspectives",
+    "ctaTitle": "Vous souhaitez en savoir plus sur notre approche ?",
+    "ctaBody": "Contactez-nous pour une conversation sans engagement.",
+    "ctaButton": "Prendre contact",
+    "ctaGhost": "Plus de perspectives"
+  }
+}

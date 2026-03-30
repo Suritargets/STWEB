@@ -1,0 +1,463 @@
+{
+  "nav": {
+    "services": "Services",
+    "company": "Company",
+    "pricing": "Pricing",
+    "signUp": "Sign up",
+    "getStarted": "Get started",
+    "voorBedrijven": "Voor Bedrijven",
+    "voorIndividuen": "Voor Individuen",
+    "comingSoonTitle": "We are working on it",
+    "comingSoonBody": "Ons platform wordt momenteel gebouwd. Binnenkort kunt u hier een account aanmaken en direct aan de slag.",
+    "comingSoonClose": "Sluiten",
+    "langLabel": "Taal kiezen",
+    "dashboarding": "Dashboarding & Data Visualisatie",
+    "dashboardingDesc": "Custom BI-dashboards en real-time KPI-overzichten.",
+    "webApps": "Web & Applicaties",
+    "webAppsDesc": "Custom platforms, ERP-systemen en web applicaties.",
+    "marketingAi": "Marketing met AI",
+    "marketingAiDesc": "AI-gedreven content, campagnes en doelgroepanalyse.",
+    "forensics": "Forensics & Integriteit",
+    "forensicsDesc": "Forensisch onderzoek en compliance-audits voor organisaties.",
+    "educationTeams": "Education (Teams)",
+    "educationTeamsDesc": "AI, automatisering en tech-workshops voor teams.",
+    "education1op1": "Education 1-op-1",
+    "education1op1Desc": "Persoonlijke begeleiding in AI, tech en moderne skills.",
+    "begeleidingInnovation": "Begeleiding in Innovation",
+    "begeleidingInnovationDesc": "Van idee naar businesscase — coaching op maat.",
+    "begeleidingBlockchain": "Begeleiding in Blockchain",
+    "begeleidingBlockchainDesc": "Web3, blockchain fundamentals en smart contracts.",
+    "digitalTrail": "Digital Trail / Resume Social",
+    "digitalTrailDesc": "Opzet van uw digitale aanwezigheid en online profiel.",
+    "forensicsPersonal": "Forensics & Integriteit (Persoonlijk)",
+    "forensicsPersonalDesc": "Persoonlijk forensisch advies en discreet onderzoek.",
+    "overOns": "Over ons",
+    "overOnsDesc": "Wie wij zijn en wat ons drijft",
+    "cases": "Cases",
+    "casesDesc": "Resultaten die voor zich spreken",
+    "insights": "Insights",
+    "insightsDesc": "Analyses en trends uit de regio"
+  },
+  "footer": {
+    "services": "Services",
+    "company": "Company",
+    "overOns": "Over ons",
+    "cases": "Cases",
+    "insights": "Insights",
+    "contact": "Contact",
+    "rights": "Alle rechten voorbehouden.",
+    "location": "Paramaribo, Suriname",
+    "voorBedrijven": "Voor Bedrijven",
+    "voorIndividuen": "Voor Individuen"
+  },
+  "common": {
+    "contact": "Neem contact op",
+    "allServices": "Alle diensten",
+    "moreInfo": "Meer info",
+    "moreInformation": "Meer informatie",
+    "home": "Home",
+    "services": "Diensten",
+    "gratisgesprek": "Gratis gesprek"
+  },
+  "home": {
+    "meta": {
+      "title": "Business Technology & Innovation Solutions",
+      "description": "Suritargets levert strategische bedrijfsondersteuning, web applicaties, en digitale oplossingen in Suriname."
+    },
+    "hero": {
+      "slogan": "Business Technology & Innovation Solutions",
+      "title": "Wij bouwen digitale tools",
+      "titleBlue": "voor uw business",
+      "subtitle": "Van dashboards en web applicaties tot ERP-systemen en AI-marketing — op maat gebouwd voor de Caribische markt.",
+      "cta1": "Bekijk onze diensten",
+      "cta2": "Gratis gesprek"
+    },
+    "services": {
+      "label": "DIENSTEN",
+      "title": "Wat wij doen",
+      "titleEn": "Our Services",
+      "description": "Vijf gespecialiseerde clusters die samen de volledige bedrijfscyclus ondersteunen — van strategie tot uitvoering."
+    },
+    "why": {
+      "label": "WAAROM",
+      "title": "Lokale expertise, internationale standaard",
+      "titleEn": "Why choose us",
+      "items": [
+        {
+          "number": "01",
+          "title": "Caribisch begrip",
+          "description": "Wij kennen de lokale markt, de regelgeving en de culturele context van Suriname en de bredere Caribische regio. Dat maakt het verschil tussen advies dat op papier klopt en advies dat écht werkt."
+        },
+        {
+          "number": "02",
+          "title": "Bewezen methoden",
+          "description": "Onze aanpak is gebaseerd op internationaal bewezen frameworks — van agile productontwikkeling tot forensische standaarden. Wij vertalen mondiale best practices naar uw lokale realiteit."
+        },
+        {
+          "number": "03",
+          "title": "Persoonlijke aanpak",
+          "description": "Geen accountmanagers, geen doorverbinden. U werkt rechtstreeks met de specialisten die uw project uitvoeren. Snelle lijnen, heldere communicatie, volledige betrokkenheid."
+        }
+      ]
+    },
+    "video": {
+      "label": "VIDEO",
+      "title": "Wie zijn wij?",
+      "titleEn": "Watch our explainer"
+    },
+    "partners": {
+      "label": "Onze partners"
+    },
+    "cta": {
+      "title": "Klaar om te groeien?",
+      "subtitle": "Ready to grow your business?",
+      "button": "Neem contact op"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Over ons",
+      "description": "Suritargets is gevestigd in Paramaribo en levert internationale kwaliteit voor Caribische bedrijven."
+    },
+    "hero": {
+      "label": "Over Suritargets",
+      "title": "Over Suritargets",
+      "subtitle": "Gevestigd in Paramaribo. Gericht op de regio."
+    },
+    "mission": {
+      "label": "MISSIE",
+      "title": "Wij geloven in lokale kracht",
+      "titleEn": "Our mission",
+      "body1": "Caribische bedrijven verdienen toegang tot dezelfde strategische intelligentie en digitale middelen als hun internationale concurrenten. Wij maken dat mogelijk — zonder concessies aan kwaliteit.",
+      "body2": "Our mission is to equip Caribbean businesses with the strategic intelligence and digital capabilities needed to thrive.",
+      "quote": "Internationale kwaliteit, lokale verankering."
+    },
+    "story": {
+      "label": "VERHAAL",
+      "title": "Opgericht in Suriname",
+      "titleEn": "Founded in Paramaribo",
+      "body1": "Suritargets werd opgericht in Paramaribo met een heldere visie: internationaal-niveau bedrijfsdiensten naar de Caribische markt brengen.",
+      "body2": "Te vaak stonden lokale bedrijven voor een onmogelijke keuze: dure buitenlandse consultancies of ondergefinancierde lokale alternatieven. Wij overbruggen dat gat.",
+      "body3": "Met specialisten in business intelligence, softwareontwikkeling, juridisch onderzoek en educatie bouwen wij aan een fundament dat de regio structureel versterkt.",
+      "stat1number": "5",
+      "stat1label": "Dienstverleningen",
+      "stat2number": "SUR",
+      "stat2label": "Gevestigd in Paramaribo",
+      "stat3number": "âˆž",
+      "stat3label": "Langetermijnvisie"
+    },
+    "values": {
+      "label": "WAARDEN",
+      "title": "Waar wij voor staan",
+      "titleEn": "Our values",
+      "description": "Drie principes die elke beslissing en elk deliverable sturen.",
+      "items": [
+        {
+          "nl": "Integriteit",
+          "en": "Integrity",
+          "description": "Geen omwegen, geen verborgen agenda. Directe communicatie en eerlijk advies — ook als dat niet is wat u wilt horen."
+        },
+        {
+          "nl": "Vakmanschap",
+          "en": "Craftsmanship",
+          "description": "Elk deliverable draagt onze naam. We leveren op het hoogste niveau of we leveren niet."
+        },
+        {
+          "nl": "Vertrouwen",
+          "en": "Trust",
+          "description": "We bouwen langetermijnrelaties. Snelle wins zijn leuk; duurzame partnerships zijn ons doel."
+        }
+      ]
+    },
+    "team": {
+      "label": "ONS TEAM",
+      "title": "Specialisten. Geen generalisten.",
+      "titleEn": "The people behind Suritargets",
+      "body": "Ons team bestaat uit specialisten in business intelligence, softwareontwikkeling, juridisch onderzoek en educatie. Elk project wordt begeleid door de juiste expertise — niet door wie beschikbaar is.",
+      "cta": "Neem contact op"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "Neem contact op met Suritargets voor een vrijblijvend gesprek over uw project."
+    },
+    "label": "CONTACT",
+    "title": "Neem contact op",
+    "titleEn": "Get in touch",
+    "description": "Wij staan klaar om uw vragen te beantwoorden en uw project te bespreken.",
+    "responseTimeLabel": "Reactietijd",
+    "responseTime": "1–2 werkdagen",
+    "addressLabel": "Adres",
+    "emailLabel": "E-mail",
+    "formTitle": "Offerte aanvragen"
+  },
+  "services": {
+    "meta": {
+      "title": "Diensten",
+      "description": "Business en individuele diensten: dashboards, web applicaties, marketing, forensics, education en persoonlijke begeleiding."
+    },
+    "hero": {
+      "label": "Suritargets",
+      "title": "Onze diensten",
+      "subtitle": "Voor bedrijven én individuen.",
+      "body": "Van business strategie tot persoonlijke begeleiding — elk traject is maatwerk, ontworpen voor uw specifieke context en doelen."
+    },
+    "tabs": {
+      "business": "Voor Bedrijven",
+      "individual": "Voor Individuen"
+    },
+    "cta": {
+      "label": "Maatwerk",
+      "title": "Elke dienst is maatwerk.",
+      "body": "Neem contact op om uw situatie te bespreken.",
+      "button": "Neem contact op"
+    },
+    "detail": {
+      "breadcrumbServices": "Diensten",
+      "forWhom": "Voor wie",
+      "included": "Inbegrepen",
+      "whatsIncluded": "Wat is inbegrepen",
+      "process": "Werkwijze",
+      "howWeWork": "Hoe wij werken",
+      "related": "Gerelateerd",
+      "otherServices": "Andere diensten",
+      "ctaLabel": "Aan de slag",
+      "ctaTitle": "Start uw project",
+      "ctaBody": "Klaar om te beginnen? Neem contact op voor een vrijblijvend gesprek over uw situatie en doelen.",
+      "ctaButton": "Neem contact op",
+      "ctaGhost": "Alle diensten",
+      "moreInfo": "Meer informatie",
+      "processSteps": [
+        {
+          "number": "01",
+          "title": "Intake",
+          "description": "We beginnen met een vrijblijvend gesprek om uw doelen, context en verwachtingen helder te krijgen."
+        },
+        {
+          "number": "02",
+          "title": "Analyse",
+          "description": "Grondige analyse van uw situatie en doelen, zodat we een aanpak op maat kunnen ontwerpen."
+        },
+        {
+          "number": "03",
+          "title": "Uitvoering",
+          "description": "Vakkundige uitvoering met regelmatige voortgangsrapportage en directe communicatielijnen."
+        },
+        {
+          "number": "04",
+          "title": "Oplevering",
+          "description": "Eindresultaat met nazorg en follow-up — we blijven beschikbaar nadat het project is afgerond."
+        }
+      ]
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Pricing",
+      "description": "Transparante uurtarieven per type dienstverlening bij Suritargets."
+    },
+    "hero": {
+      "label": "Transparante tarieven",
+      "title": "Pricing",
+      "subtitle": "Vaste uurtarieven per type dienstverlening. Geen verborgen kosten — u weet altijd waar u aan toe bent."
+    },
+    "tabs": {
+      "business": "Voor Bedrijven",
+      "individual": "Voor Individuen"
+    },
+    "rateLabel": "rate",
+    "perHour": "/uur",
+    "from": "vanaf",
+    "soon": "soon",
+    "contactButton": "Contact",
+    "cta": {
+      "businessTitle": "Groot project of langdurige samenwerking?",
+      "businessBody": "Voor trajecten van meerdere weken of vaste samenwerking maken wij graag een maatwerkofferte.",
+      "individualTitle": "Klaar om te starten?",
+      "individualBody": "Plan een gratis kennismakingsgesprek en ontdek wat wij voor u kunnen betekenen.",
+      "businessButton": "Offerte aanvragen",
+      "individualButton": "Gratis gesprek"
+    }
+  },
+  "servicesData": {
+    "dashboarding": {
+      "name": "Dashboarding & Data Visualisatie",
+      "nameEn": "Dashboarding & Data Visualization",
+      "shortDescription": "Op maat gemaakte dashboards en data visualisaties voor betere besluitvorming.",
+      "description": "Wij bouwen volledig op maat gemaakte dashboards en data visualisatie platformen. Van real-time KPI-overzichten tot complexe business intelligence tools — ontworpen voor uw data, uw processen en uw team. Geen standaard software, alles custom made.",
+      "whoIsItFor": "Organisaties die data hebben maar er geen helder beeld uit kunnen halen. Ideaal voor management, financiële teams en operationele afdelingen.",
+      "deliverables": [
+        "Custom dashboard ontwikkeling",
+        "Real-time data visualisatie",
+        "KPI & management rapportage",
+        "Data pipeline integratie",
+        "Interactieve grafieken en analyses",
+        "ERP & systeem koppelingen"
+      ]
+    },
+    "web-applications": {
+      "name": "Web & Applicaties",
+      "nameEn": "Web & Application Development",
+      "shortDescription": "Custom web applicaties, platforms en tools — volledig op maat gebouwd.",
+      "description": "Van concept tot live platform: wij bouwen web- en business applicaties die aansluiten op uw processen. Inclusief ERP-systemen op maat, interne tools en klantgerichte platforms. Geen van-de-plank-templates — alles custom made voor uw organisatie.",
+      "whoIsItFor": "Bedrijven die een custom platform, ERP-systeem, interne tool of klantgerichte applicatie nodig hebben.",
+      "deliverables": [
+        "Web applicatie ontwikkeling",
+        "ERP systemen op maat",
+        "Financiële applicaties",
+        "Interne bedrijfstools",
+        "UI/UX design (wireframes, prototypes)",
+        "Mobile-first responsive interfaces"
+      ]
+    },
+    "marketing-ai": {
+      "name": "Marketing met AI",
+      "nameEn": "AI-Powered Marketing Services",
+      "shortDescription": "Slimmere marketing met AI — content, campagnes en analyse op een hoger niveau.",
+      "description": "Wij combineren marketingexpertise met AI-technologie om Caribische bedrijven een competitief voordeel te geven. Van AI-gedreven contentcreatie tot geautomatiseerde campagnes en klantanalyse — marketing die werkt én schaalbaar is.",
+      "whoIsItFor": "Bedrijven en merken in Suriname en de regio die hun marketinginspanningen willen versterken met slimme technologie.",
+      "deliverables": [
+        "AI contentcreatie & copywriting",
+        "Geautomatiseerde campagnestrategie",
+        "Doelgroepanalyse met AI",
+        "Social media automatisering",
+        "SEO & digitale zichtbaarheid",
+        "Marketingperformance rapportage"
+      ]
+    },
+    "forensics": {
+      "name": "Forensics & Integriteit",
+      "nameEn": "Forensics & Integrity Services",
+      "shortDescription": "Digitaal forensisch onderzoek en integriteitsaudits.",
+      "description": "Wij bieden digitaal forensisch onderzoek, compliance-audits en integriteitsreviews voor overheid, financiële instellingen en bedrijven. Vertrouwelijk, grondig en onafhankelijk.",
+      "whoIsItFor": "Overheidsinstanties, financiële instellingen, en bedrijven die een onafhankelijk forensisch onderzoek nodig hebben.",
+      "deliverables": [
+        "Digitaal forensisch onderzoek",
+        "Compliance & integriteitsaudit",
+        "Rapportage & aanbevelingen",
+        "Incident response begeleiding"
+      ]
+    },
+    "education": {
+      "name": "Education",
+      "nameEn": "Education & Skills Development",
+      "shortDescription": "Praktische trainingen in AI, trading, automatisering en applicatieontwikkeling.",
+      "description": "Suritargets Education biedt praktijkgerichte cursussen voor professionals en ondernemers die willen meegroeien met technologie. Van AI-basiskennis tot vibe coding en financiële applicaties — toegankelijk, direct toepasbaar en volledig op de Caribische markt afgestemd.",
+      "whoIsItFor": "Professionals, ondernemers en teams die concrete vaardigheden willen opbouwen in AI, technologie en moderne bedrijfsvoering.",
+      "deliverables": [
+        "AI — Artificial Intelligence praktijktraining",
+        "Trading met AI — geautomatiseerde handelsstrategieën",
+        "Automatisering — processen en workflows",
+        "Vibe Coding — bouwen met AI-gestuurde development",
+        "Applicatieontwikkeling — van idee naar werkend product",
+        "Financiële applicaties — FinTech tools en platforms",
+        "ERP op maat — implementatie en beheer"
+      ]
+    },
+    "education-1op1": {
+      "name": "Education 1-op-1",
+      "nameEn": "Personal Education & Coaching",
+      "shortDescription": "Persoonlijke begeleiding in AI, tech en moderne skills — op uw eigen tempo.",
+      "description": "U heeft een vraag of wil iets beter begrijpen — wij leggen het uit in uw eigen tempo, op uw niveau. Of het nu gaat om AI & Technologie, Trading met AI of Blockchain & Development: wij begeleiden u praktisch en persoonlijk.",
+      "whoIsItFor": "Particulieren en professionals die extra uitleg nodig hebben of een nieuw onderwerp willen begrijpen zonder een groepstraining te volgen.",
+      "deliverables": [
+        "Persoonlijke sessies op uw tempo",
+        "AI & Technologie uitleg en toepassingen",
+        "Trading met AI — strategie en tools",
+        "Blockchain & Development basics",
+        "Praktische oefeningen en voorbeelden",
+        "Follow-up via chat na de sessie"
+      ]
+    },
+    "begeleiding-innovation": {
+      "name": "Begeleiding in Innovation",
+      "nameEn": "Innovation Coaching",
+      "shortDescription": "Van idee naar eerste stap — wij begeleiden u van concept tot businesscase.",
+      "description": "U heeft een idee maar weet niet waar te beginnen. Wij helpen u het uit te werken, de haalbaarheid te toetsen en de eerste concrete stappen te bepalen. Geen vage adviezen — we werken samen aan een helder plan.",
+      "whoIsItFor": "Ondernemers en particulieren met een idee of plan dat ze willen uitwerken maar nog niet weten hoe te starten.",
+      "deliverables": [
+        "Uw idee uitwerken en structureren",
+        "Validatie en haalbaarheidscheck",
+        "Marktverkenning en doelgroepanalyse",
+        "Eerste stappen en actieplan bepalen",
+        "Persoonlijke coaching sessies",
+        "Schriftelijke samenvatting van het plan"
+      ]
+    },
+    "begeleiding-blockchain": {
+      "name": "Begeleiding in Blockchain",
+      "nameEn": "Blockchain & Web3 Guidance",
+      "shortDescription": "Begrijp blockchain praktisch — van basics tot uw eigen use case.",
+      "description": "Wil u begrijpen hoe blockchain werkt en wat het voor u kan betekenen? Wij leggen het praktisch en begrijpelijk uit. Van de basisprincipes van crypto en Web3 tot het verkennen van uw eigen use case — zonder jargon, met echte voorbeelden.",
+      "whoIsItFor": "Particulieren en ondernemers die blockchain willen begrijpen en willen ontdekken hoe het relevant kan zijn voor hun situatie.",
+      "deliverables": [
+        "Blockchain basics in begrijpelijke taal",
+        "Crypto & Web3 praktisch uitgelegd",
+        "Uw eigen use case verkennen",
+        "Overzicht van relevante tools en platforms",
+        "Persoonlijke Q&A sessies",
+        "Praktische voorbeelden uit de regio"
+      ]
+    },
+    "digital-trail": {
+      "name": "Digital Trail / Resume Social",
+      "nameEn": "Digital Presence & Personal Branding",
+      "shortDescription": "Uw professionele aanwezigheid online opbouwen — zodat u gevonden wordt.",
+      "description": "Uw online profiel is uw digitale visitekaartje. Wij helpen u een sterke professionele aanwezigheid op te bouwen — van LinkedIn optimalisatie tot een persoonlijk digitaal portfolio — zodat u opvalt bij de juiste mensen en kansen.",
+      "whoIsItFor": "Particulieren die hun carrière willen versterken, op zoek zijn naar werk of opdrachten, of hun professionele reputatie online willen opbouwen.",
+      "deliverables": [
+        "LinkedIn profiel audit en optimalisatie",
+        "Persoonlijk digitaal portfolio opzet",
+        "Online reputatie strategie",
+        "Content tips voor zichtbaarheid",
+        "Personal branding advies",
+        "Actieplan voor online aanwezigheid"
+      ]
+    },
+    "forensics-personal": {
+      "name": "Forensics & Integriteit (Persoonlijk)",
+      "nameEn": "Personal Forensics & Integrity",
+      "shortDescription": "Persoonlijk forensisch advies en discreet onderzoek voor uw situatie.",
+      "description": "Heeft u een persoonlijke situatie waarbij discretie en onderzoek nodig zijn? Wij helpen u vertrouwelijk. Of het nu gaat om persoonlijk forensisch advies, een vertrouwelijk onderzoek of een discrete rapportage — wij behandelen uw zaak met de nodige zorgvuldigheid.",
+      "whoIsItFor": "Particulieren die in een situatie zitten waarbij zij behoefte hebben aan onafhankelijk, vertrouwelijk onderzoek of advies.",
+      "deliverables": [
+        "Persoonlijk forensisch advies op maat",
+        "Vertrouwelijk onderzoek",
+        "Discrete en schriftelijke rapportage",
+        "Begeleiding bij vervolgstappen"
+      ]
+    }
+  },
+  "caseStudies": {
+    "meta": {
+      "title": "Cases",
+      "description": "Projectcases van Suritargets — bewezen resultaten voor Caribische organisaties."
+    },
+    "label": "CASES",
+    "title": "Bewezen resultaten",
+    "titleEn": "Our case studies",
+    "description": "Concrete projecten, meetbare impact. Lees hoe wij Caribische organisaties vooruit helpen.",
+    "breadcrumb": "Cases",
+    "featured": "Featured",
+    "ctaTitle": "Soortgelijke resultaten voor uw organisatie?",
+    "ctaBody": "Neem contact op voor een vrijblijvend gesprek.",
+    "ctaButton": "Contact opnemen",
+    "ctaGhost": "Meer cases"
+  },
+  "insights": {
+    "meta": {
+      "title": "Insights",
+      "description": "Analyses en inzichten uit de Caribische markt — geschreven door de specialisten van Suritargets."
+    },
+    "label": "INSIGHTS",
+    "title": "Marktinzichten",
+    "titleEn": "Analysis & perspectives",
+    "description": "Analyses en inzichten uit de Caribische markt — geschreven door de specialisten van Suritargets.",
+    "breadcrumb": "Insights",
+    "ctaTitle": "Meer weten over onze aanpak?",
+    "ctaBody": "Neem contact op voor een vrijblijvend gesprek.",
+    "ctaButton": "Contact opnemen",
+    "ctaGhost": "Meer inzichten"
+  }
+}

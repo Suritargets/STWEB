@@ -19,6 +19,8 @@ export const siteConfig = {
     { label: 'Insights', href: '/insights', comingSoon: false },
   ],
   social: {
-    linkedin: 'https://linkedin.com/company/suritargets',
+    linkedin: 'https://www.linkedin.com/company/suritargets/?viewAsMember=true',
+    youtube: 'https://youtube.com/@suritargets',
+    tiktok: 'https://tiktok.com/@suritargets',
   },
 } as const

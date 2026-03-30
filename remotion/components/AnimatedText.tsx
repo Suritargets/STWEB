@@ -1,5 +1,5 @@
 import React from 'react'
-import { interpolate, useCurrentFrame } from '@remotion/core'
+import { interpolate, useCurrentFrame } from 'remotion'
 
 type Props = {
   children: React.ReactNode

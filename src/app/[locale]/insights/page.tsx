@@ -1,40 +1,53 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
 import { getAllPosts } from '@/lib/mdx'
 import { SectionHeading } from '@/components/shared/section-heading'
 import { AnimatedSection } from '@/components/shared/animated-section'
 
-export const metadata: Metadata = {
-  title: 'Cases',
-  description: 'Projectcases van Suritargets — bewezen resultaten voor Caribische organisaties.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'insights.meta' })
+  return { title: t('title'), description: t('description') }
 }
 
-export default function CaseStudiesPage() {
-  const posts = getAllPosts('case-studies')
+export default async function InsightsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'insights' })
+  const posts = getAllPosts('insights')
+
   return (
     <div className="min-h-screen">
       <section className="px-[var(--section-padding-x)] py-[var(--section-padding-y)]">
         <div className="max-w-[1440px] mx-auto">
           <SectionHeading
-            label="CASES"
-            title="Bewezen resultaten"
-            titleEn="Our case studies"
-            description="Concrete projecten, meetbare impact. Lees hoe wij Caribische organisaties vooruit helpen."
+            label={t('label')}
+            title={t('title')}
+            titleEn={t('titleEn')}
+            description={t('description')}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             {posts.map((post) => (
               <AnimatedSection key={post.slug}>
                 <Link
-                  href={`/case-studies/${post.slug}`}
+                  href={`/${locale}/insights/${post.slug}`}
                   className="block bg-surface border border-border p-8 hover:border-gold transition-colors group"
                 >
-                  {post.featured && (
+                  {post.category && (
                     <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-gold border border-gold px-2 py-0.5 mb-4 inline-block">
-                      Featured
+                      {post.category}
                     </span>
                   )}
                   <p className="text-xs font-mono text-muted-foreground mb-2">
-                    {new Date(post.date).toLocaleDateString('nl-NL', { year: 'numeric', month: 'long' })}
+                    {new Date(post.date).toLocaleDateString(locale === 'nl' ? 'nl-NL' : locale, { year: 'numeric', month: 'long' })}
                     {' · '}{post.readingTime}
                   </p>
                   <h2 className="text-xl font-bold text-foreground mb-2 group-hover:text-gold transition-colors">

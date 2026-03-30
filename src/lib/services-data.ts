@@ -1,5 +1,6 @@
 export type ServiceCluster = {
   slug: string
+  type: 'business' | 'individual'
   name: string
   nameEn: string
   shortDescription: string
@@ -13,6 +14,7 @@ export type ServiceCluster = {
 export const services: ServiceCluster[] = [
   {
     slug: 'dashboarding',
+    type: 'business',
     name: 'Dashboarding & Data Visualisatie',
     nameEn: 'Dashboarding & Data Visualization',
     shortDescription: 'Op maat gemaakte dashboards en data visualisaties voor betere besluitvorming.',
@@ -33,6 +35,7 @@ export const services: ServiceCluster[] = [
   },
   {
     slug: 'web-applications',
+    type: 'business',
     name: 'Web & Applicaties',
     nameEn: 'Web & Application Development',
     shortDescription: 'Custom web applicaties, platforms en tools — volledig op maat gebouwd.',
@@ -53,6 +56,7 @@ export const services: ServiceCluster[] = [
   },
   {
     slug: 'marketing-ai',
+    type: 'business',
     name: 'Marketing met AI',
     nameEn: 'AI-Powered Marketing Services',
     shortDescription: 'Slimmere marketing met AI — content, campagnes en analyse op een hoger niveau.',
@@ -73,6 +77,7 @@ export const services: ServiceCluster[] = [
   },
   {
     slug: 'forensics',
+    type: 'business',
     name: 'Forensics & Integriteit',
     nameEn: 'Forensics & Integrity Services',
     shortDescription: 'Digitaal forensisch onderzoek en integriteitsaudits.',
@@ -91,6 +96,7 @@ export const services: ServiceCluster[] = [
   },
   {
     slug: 'education',
+    type: 'business',
     name: 'Education',
     nameEn: 'Education & Skills Development',
     shortDescription: 'Praktische trainingen in AI, trading, automatisering en applicatieontwikkeling.',
@@ -109,5 +115,110 @@ export const services: ServiceCluster[] = [
       'ERP op maat — implementatie en beheer',
     ],
     icon: 'graduation-cap',
+  },
+
+  /* ─── Individual services ──────────────────────────────── */
+  {
+    slug: 'education-1op1',
+    type: 'individual',
+    name: 'Education 1-op-1',
+    nameEn: 'Personal Education & Coaching',
+    shortDescription: 'Persoonlijke begeleiding in AI, tech en moderne skills — op uw eigen tempo.',
+    shortDescriptionEn: 'One-on-one education in AI, technology and modern skills at your own pace.',
+    description:
+      'U heeft een vraag of wil iets beter begrijpen — wij leggen het uit in uw eigen tempo, op uw niveau. Of het nu gaat om AI & Technologie, Trading met AI of Blockchain & Development: wij begeleiden u praktisch en persoonlijk.',
+    whoIsItFor:
+      'Particulieren en professionals die extra uitleg nodig hebben of een nieuw onderwerp willen begrijpen zonder een groepstraining te volgen.',
+    deliverables: [
+      'Persoonlijke sessies op uw tempo',
+      'AI & Technologie uitleg en toepassingen',
+      'Trading met AI — strategie en tools',
+      'Blockchain & Development basics',
+      'Praktische oefeningen en voorbeelden',
+      'Follow-up via chat na de sessie',
+    ],
+    icon: 'book-open',
+  },
+  {
+    slug: 'begeleiding-innovation',
+    type: 'individual',
+    name: 'Begeleiding in Innovation',
+    nameEn: 'Innovation Coaching',
+    shortDescription: 'Van idee naar eerste stap — wij begeleiden u van concept tot businesscase.',
+    shortDescriptionEn: 'From idea to first step — we guide you from concept to business case.',
+    description:
+      'U heeft een idee maar weet niet waar te beginnen. Wij helpen u het uit te werken, de haalbaarheid te toetsen en de eerste concrete stappen te bepalen. Geen vage adviezen — we werken samen aan een helder plan.',
+    whoIsItFor:
+      'Ondernemers en particulieren met een idee of plan dat ze willen uitwerken maar nog niet weten hoe te starten.',
+    deliverables: [
+      'Uw idee uitwerken en structureren',
+      'Validatie en haalbaarheidscheck',
+      'Marktverkenning en doelgroepanalyse',
+      'Eerste stappen en actieplan bepalen',
+      'Persoonlijke coaching sessies',
+      'Schriftelijke samenvatting van het plan',
+    ],
+    icon: 'rocket',
+  },
+  {
+    slug: 'begeleiding-blockchain',
+    type: 'individual',
+    name: 'Begeleiding in Blockchain',
+    nameEn: 'Blockchain & Web3 Guidance',
+    shortDescription: 'Begrijp blockchain praktisch — van basics tot uw eigen use case.',
+    shortDescriptionEn: 'Understand blockchain practically — from basics to your own use case.',
+    description:
+      'Wil u begrijpen hoe blockchain werkt en wat het voor u kan betekenen? Wij leggen het praktisch en begrijpelijk uit. Van de basisprincipes van crypto en Web3 tot het verkennen van uw eigen use case — zonder jargon, met echte voorbeelden.',
+    whoIsItFor:
+      'Particulieren en ondernemers die blockchain willen begrijpen en willen ontdekken hoe het relevant kan zijn voor hun situatie.',
+    deliverables: [
+      'Blockchain basics in begrijpelijke taal',
+      'Crypto & Web3 praktisch uitgelegd',
+      'Uw eigen use case verkennen',
+      'Overzicht van relevante tools en platforms',
+      'Persoonlijke Q&A sessies',
+      'Praktische voorbeelden uit de regio',
+    ],
+    icon: 'bitcoin',
+  },
+  {
+    slug: 'digital-trail',
+    type: 'individual',
+    name: 'Digital Trail / Resume Social',
+    nameEn: 'Digital Presence & Personal Branding',
+    shortDescription: 'Uw professionele aanwezigheid online opbouwen — zodat u gevonden wordt.',
+    shortDescriptionEn: 'Build your professional online presence so the right people find you.',
+    description:
+      'Uw online profiel is uw digitale visitekaartje. Wij helpen u een sterke professionele aanwezigheid op te bouwen — van LinkedIn optimalisatie tot een persoonlijk digitaal portfolio — zodat u opvalt bij de juiste mensen en kansen.',
+    whoIsItFor:
+      'Particulieren die hun carrière willen versterken, op zoek zijn naar werk of opdrachten, of hun professionele reputatie online willen opbouwen.',
+    deliverables: [
+      'LinkedIn profiel audit en optimalisatie',
+      'Persoonlijk digitaal portfolio opzet',
+      'Online reputatie strategie',
+      'Content tips voor zichtbaarheid',
+      'Personal branding advies',
+      'Actieplan voor online aanwezigheid',
+    ],
+    icon: 'user-circle',
+  },
+  {
+    slug: 'forensics-personal',
+    type: 'individual',
+    name: 'Forensics & Integriteit (Persoonlijk)',
+    nameEn: 'Personal Forensics & Integrity',
+    shortDescription: 'Persoonlijk forensisch advies en discreet onderzoek voor uw situatie.',
+    shortDescriptionEn: 'Personal forensic advice and discreet investigation for your situation.',
+    description:
+      'Heeft u een persoonlijke situatie waarbij discretie en onderzoek nodig zijn? Wij helpen u vertrouwelijk. Of het nu gaat om persoonlijk forensisch advies, een vertrouwelijk onderzoek of een discrete rapportage — wij behandelen uw zaak met de nodige zorgvuldigheid.',
+    whoIsItFor:
+      'Particulieren die in een situatie zitten waarbij zij behoefte hebben aan onafhankelijk, vertrouwelijk onderzoek of advies.',
+    deliverables: [
+      'Persoonlijk forensisch advies op maat',
+      'Vertrouwelijk onderzoek',
+      'Discrete en schriftelijke rapportage',
+      'Begeleiding bij vervolgstappen',
+    ],
+    icon: 'shield',
   },
 ]

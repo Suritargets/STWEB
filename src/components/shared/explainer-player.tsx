@@ -1,13 +1,16 @@
 'use client'
 
 import { Player } from '@remotion/player'
+import { useLocale } from 'next-intl'
 import { ExplainerVideo } from '../../../remotion/ExplainerVideo'
 
 export function ExplainerPlayer() {
+  const locale = useLocale()
+
   return (
     <Player
       component={ExplainerVideo}
-      inputProps={{}}
+      inputProps={{ locale }}
       durationInFrames={2700}
       fps={30}
       compositionWidth={1920}

@@ -1,14 +1,16 @@
 'use client'
-import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
+import { Link, useRouter, usePathname } from '@/i18n/navigation'
 import {
   Menu, X, ChevronDown,
   BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
-  Shield, BookOpen, Rocket, Bitcoin, UserCircle, Lightbulb,
+  Shield, BookOpen, Rocket, Bitcoin, UserCircle,
 } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
+import ReactCountryFlag from 'react-country-flag'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -18,92 +20,50 @@ import {
 } from '@/components/ui/navigation-menu'
 import type { LucideIcon } from 'lucide-react'
 
-type NavService = { label: string; href: string; description: string; Icon: LucideIcon }
+type NavService = { labelKey: string; href: string; descKey: string; Icon: LucideIcon }
 
 const businessLinks: NavService[] = [
-  {
-    label: 'Dashboarding & Data Visualisatie',
-    href: '/services/dashboarding',
-    description: 'Custom BI-dashboards en real-time KPI-overzichten.',
-    Icon: BarChart2,
-  },
-  {
-    label: 'Web & Applicaties',
-    href: '/services/web-applications',
-    description: 'Custom platforms, ERP-systemen en web applicaties.',
-    Icon: Monitor,
-  },
-  {
-    label: 'Marketing met AI',
-    href: '/services/marketing-ai',
-    description: 'AI-gedreven content, campagnes en doelgroepanalyse.',
-    Icon: Sparkles,
-  },
-  {
-    label: 'Forensics & Integriteit',
-    href: '/services/forensics',
-    description: 'Forensisch onderzoek en compliance-audits voor organisaties.',
-    Icon: ShieldCheck,
-  },
-  {
-    label: 'Education (Teams)',
-    href: '/services/education',
-    description: 'AI, automatisering en tech-workshops voor teams.',
-    Icon: GraduationCap,
-  },
+  { labelKey: 'dashboarding', href: '/services/dashboarding', descKey: 'dashboardingDesc', Icon: BarChart2 },
+  { labelKey: 'webApps', href: '/services/web-applications', descKey: 'webAppsDesc', Icon: Monitor },
+  { labelKey: 'marketingAi', href: '/services/marketing-ai', descKey: 'marketingAiDesc', Icon: Sparkles },
+  { labelKey: 'forensics', href: '/services/forensics', descKey: 'forensicsDesc', Icon: ShieldCheck },
+  { labelKey: 'educationTeams', href: '/services/education', descKey: 'educationTeamsDesc', Icon: GraduationCap },
 ]
 
 const individualLinks: NavService[] = [
-  {
-    label: 'Forensics & Integrity',
-    href: '/pricing?tab=individual',
-    description: 'Persoonlijk forensisch advies en integriteitsonderzoek.',
-    Icon: Shield,
-  },
-  {
-    label: 'Workshop Innovation',
-    href: '/pricing?tab=individual',
-    description: 'Hands-on innovatieworkshops voor ondernemers.',
-    Icon: Lightbulb,
-  },
-  {
-    label: 'Education 1-op-1',
-    href: '/pricing?tab=individual',
-    description: 'Persoonlijke begeleiding in AI, tech en moderne skills.',
-    Icon: BookOpen,
-  },
-  {
-    label: 'Begeleiding in Innovation',
-    href: '/pricing?tab=individual',
-    description: 'Van idee naar businesscase — coaching op maat.',
-    Icon: Rocket,
-  },
-  {
-    label: 'Begeleiding in Blockchain',
-    href: '/pricing?tab=individual',
-    description: 'Web3, blockchain fundamentals en smart contracts.',
-    Icon: Bitcoin,
-  },
-  {
-    label: 'Digital Trail / Resume Social',
-    href: '/pricing?tab=individual',
-    description: 'Opzet van uw digitale aanwezigheid en online profiel.',
-    Icon: UserCircle,
-  },
+  { labelKey: 'education1op1', href: '/services/education-1op1', descKey: 'education1op1Desc', Icon: BookOpen },
+  { labelKey: 'begeleidingInnovation', href: '/services/begeleiding-innovation', descKey: 'begeleidingInnovationDesc', Icon: Rocket },
+  { labelKey: 'begeleidingBlockchain', href: '/services/begeleiding-blockchain', descKey: 'begeleidingBlockchainDesc', Icon: Bitcoin },
+  { labelKey: 'digitalTrail', href: '/services/digital-trail', descKey: 'digitalTrailDesc', Icon: UserCircle },
+  { labelKey: 'forensicsPersonal', href: '/services/forensics-personal', descKey: 'forensicsPersonalDesc', Icon: Shield },
 ]
 
-const companyLinks = [
-  { label: 'Over ons', href: '/about', description: 'Wie wij zijn en wat ons drijft' },
-  { label: 'Cases', href: '/case-studies', description: 'Resultaten die voor zich spreken' },
-  { label: 'Insights', href: '/insights', description: 'Analyses en trends uit de regio' },
+const LANGS = [
+  { locale: 'nl', label: 'Nederlands', code: 'NL' },
+  { locale: 'en', label: 'English',    code: 'GB' },
+  { locale: 'es', label: 'Español',    code: 'ES' },
+  { locale: 'pt-BR', label: 'Português (BR)', code: 'BR' },
+  { locale: 'fr', label: 'Français',   code: 'FR' },
 ]
 
 export default function Nav() {
+  const t = useTranslations('nav')
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [companyOpen, setCompanyOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
+  const [signupOpen, setSignupOpen] = useState(false)
+
+  function switchLocale(newLocale: string) {
+    router.replace(pathname, { locale: newLocale })
+    setLangOpen(false)
+  }
 
   return (
+    <>
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#2B3494] shadow-md">
       <div className="max-w-[1440px] mx-auto px-[var(--section-padding-x)] h-16 flex items-center justify-between">
         {/* Logo */}
@@ -126,7 +86,7 @@ export default function Nav() {
               {/* Services mega menu */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-4">
-                  Services
+                  {t('services')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="w-[680px] p-5 grid grid-cols-2 gap-0 divide-x divide-border">
@@ -134,11 +94,11 @@ export default function Nav() {
                     {/* Business column */}
                     <div className="pr-5">
                       <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-muted-foreground mb-3 px-1">
-                        Voor Bedrijven
+                        {t('voorBedrijven')}
                       </p>
                       <ul className="flex flex-col gap-0.5">
                         {businessLinks.map((item) => (
-                          <li key={item.label}>
+                          <li key={item.labelKey}>
                             <Link
                               href={item.href}
                               className="flex items-start gap-3 select-none rounded-md px-2 py-2.5 hover:bg-[#2B3494]/5 transition-colors group"
@@ -148,10 +108,10 @@ export default function Nav() {
                               </span>
                               <span>
                                 <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494] leading-tight">
-                                  {item.label}
+                                  {t(item.labelKey)}
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-0.5 leading-snug">
-                                  {item.description}
+                                  {t(item.descKey)}
                                 </p>
                               </span>
                             </Link>
@@ -163,11 +123,11 @@ export default function Nav() {
                     {/* Individual column */}
                     <div className="pl-5">
                       <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-muted-foreground mb-3 px-1">
-                        Voor Individuen
+                        {t('voorIndividuen')}
                       </p>
                       <ul className="flex flex-col gap-0.5">
                         {individualLinks.map((item) => (
-                          <li key={item.label}>
+                          <li key={item.labelKey}>
                             <Link
                               href={item.href}
                               className="flex items-start gap-3 select-none rounded-md px-2 py-2.5 hover:bg-[#2B3494]/5 transition-colors group"
@@ -177,10 +137,10 @@ export default function Nav() {
                               </span>
                               <span>
                                 <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494] leading-tight">
-                                  {item.label}
+                                  {t(item.labelKey)}
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-0.5 leading-snug">
-                                  {item.description}
+                                  {t(item.descKey)}
                                 </p>
                               </span>
                             </Link>
@@ -196,25 +156,28 @@ export default function Nav() {
               {/* Company dropdown */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-4">
-                  Company
+                  {t('company')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="w-[280px] p-3 flex flex-col gap-1">
-                    {companyLinks.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="block select-none rounded-md p-3 hover:bg-[#2B3494]/5 transition-colors group"
-                        >
-                          <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494]">
-                            {item.label}
-                          </p>
-                          <p className="text-xs text-muted-foreground mt-0.5">
-                            {item.description}
-                          </p>
-                        </Link>
-                      </li>
-                    ))}
+                    <li>
+                      <Link href="/about" className="block select-none rounded-md p-3 hover:bg-[#2B3494]/5 transition-colors group">
+                        <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494]">{t('overOns')}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{t('overOnsDesc')}</p>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/case-studies" className="block select-none rounded-md p-3 hover:bg-[#2B3494]/5 transition-colors group">
+                        <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494]">{t('cases')}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{t('casesDesc')}</p>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/insights" className="block select-none rounded-md p-3 hover:bg-[#2B3494]/5 transition-colors group">
+                        <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494]">{t('insights')}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{t('insightsDesc')}</p>
+                      </Link>
+                    </li>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -225,24 +188,54 @@ export default function Nav() {
             href="/pricing"
             className="text-sm text-white/80 hover:text-white transition-colors px-4 h-9 flex items-center"
           >
-            Pricing
+            {t('pricing')}
           </Link>
         </div>
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="text-sm text-white/80 hover:text-white transition-colors px-2"
+          <button
+            onClick={() => setSignupOpen(true)}
+            className="inline-flex items-center px-4 py-2 text-xs font-semibold border border-white/40 text-white hover:bg-white/10 transition-colors"
           >
-            Contact
-          </Link>
+            {t('signUp')}
+          </button>
           <Link
             href="/contact"
             className="inline-flex items-center px-4 py-2 text-xs font-semibold bg-white text-[#2B3494] hover:bg-white/90 transition-colors"
           >
-            Gratis gesprek
+            {t('getStarted')}
           </Link>
+          {/* Language switcher */}
+          <div className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors px-2 py-1"
+              aria-label={t('langLabel')}
+            >
+              <ReactCountryFlag countryCode={LANGS.find((l) => l.locale === locale)?.code ?? 'NL'} svg style={{ width: '1.25em', height: '1.25em', borderRadius: 2 }} />
+              <ChevronDown size={11} className={cn('transition-transform', langOpen && 'rotate-180')} />
+            </button>
+            {langOpen && (
+              <div className="absolute right-0 top-full mt-1 bg-white border border-border rounded-sm shadow-lg z-50 py-1 min-w-[160px]">
+                {LANGS.map(({ locale: loc, label, code }) => (
+                  <button
+                    key={loc}
+                    onClick={() => switchLocale(loc)}
+                    className={cn(
+                      'w-full flex items-center justify-between px-4 py-2 text-sm transition-colors hover:bg-surface',
+                      locale === loc ? 'text-[#2B3494] font-semibold' : 'text-foreground'
+                    )}
+                  >
+                    <span className="flex items-center gap-2">
+                      <ReactCountryFlag countryCode={code} svg style={{ width: '1.25em', height: '1.25em', borderRadius: 2 }} />
+                      {label}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile toggle */}
@@ -262,27 +255,27 @@ export default function Nav() {
             className="flex items-center justify-between w-full text-sm text-white/80 hover:text-white transition-colors py-2"
             onClick={() => setServicesOpen(!servicesOpen)}
           >
-            Services
+            {t('services')}
             <ChevronDown size={16} className={cn('transition-transform', servicesOpen && 'rotate-180')} />
           </button>
           {servicesOpen && (
             <div className="pl-4 flex flex-col gap-1 mb-2">
-              <p className="text-[10px] font-mono tracking-widest uppercase text-white/40 py-1">Voor Bedrijven</p>
+              <p className="text-[10px] font-mono tracking-widest uppercase text-white/40 py-1">{t('voorBedrijven')}</p>
               {businessLinks.map((item) => (
-                <Link key={item.label} href={item.href}
+                <Link key={item.labelKey} href={item.href}
                   className="text-sm text-white/70 hover:text-white transition-colors py-1.5"
                   onClick={() => setOpen(false)}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </Link>
               ))}
-              <p className="text-[10px] font-mono tracking-widest uppercase text-white/40 py-1 mt-2">Voor Individuen</p>
+              <p className="text-[10px] font-mono tracking-widest uppercase text-white/40 py-1 mt-2">{t('voorIndividuen')}</p>
               {individualLinks.map((item) => (
-                <Link key={item.label} href={item.href}
+                <Link key={item.labelKey} href={item.href}
                   className="text-sm text-white/70 hover:text-white transition-colors py-1.5"
                   onClick={() => setOpen(false)}
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </Link>
               ))}
             </div>
@@ -292,25 +285,26 @@ export default function Nav() {
             className="flex items-center justify-between w-full text-sm text-white/80 hover:text-white transition-colors py-2"
             onClick={() => setCompanyOpen(!companyOpen)}
           >
-            Company
+            {t('company')}
             <ChevronDown size={16} className={cn('transition-transform', companyOpen && 'rotate-180')} />
           </button>
           {companyOpen && (
             <div className="pl-4 flex flex-col gap-1 mb-2">
-              {companyLinks.map((item) => (
-                <Link key={item.href} href={item.href}
-                  className="text-sm text-white/70 hover:text-white transition-colors py-1.5"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              <Link href="/about" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>
+                {t('overOns')}
+              </Link>
+              <Link href="/case-studies" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>
+                {t('cases')}
+              </Link>
+              <Link href="/insights" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>
+                {t('insights')}
+              </Link>
             </div>
           )}
 
           <Link href="/pricing" className="text-sm text-white/80 hover:text-white transition-colors py-2"
             onClick={() => setOpen(false)}>
-            Pricing
+            {t('pricing')}
           </Link>
 
           <div className="pt-2 flex flex-col gap-3">
@@ -321,11 +315,78 @@ export default function Nav() {
             <Link href="/contact"
               className="inline-flex items-center px-4 py-2 text-xs font-semibold bg-white text-[#2B3494] hover:bg-white/90 transition-colors w-fit"
               onClick={() => setOpen(false)}>
-              Gratis gesprek
+              {t('getStarted')}
             </Link>
+          </div>
+
+          {/* Mobile language switcher */}
+          <div className="pt-3 border-t border-white/20 flex flex-wrap gap-2">
+            {LANGS.map(({ locale: loc, code, label }) => (
+              <button
+                key={loc}
+                onClick={() => { switchLocale(loc); setOpen(false) }}
+                className={cn(
+                  'flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-sm transition-colors',
+                  locale === loc ? 'bg-white text-[#2B3494] font-semibold' : 'text-white/70 hover:text-white border border-white/20'
+                )}
+              >
+                <ReactCountryFlag countryCode={code} svg style={{ width: '1.25em', height: '1.25em', borderRadius: 2 }} />
+                <span>{label}</span>
+              </button>
+            ))}
           </div>
         </div>
       )}
     </header>
+
+      {/* Sign up — Coming Soon modal */}
+      {signupOpen && (
+        <div
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
+          onClick={() => setSignupOpen(false)}
+        >
+          <div
+            className="relative bg-white max-w-md w-full rounded-sm overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Image */}
+            <div className="h-52 bg-[#2B3494] flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-6xl mb-2">🚀</div>
+                <p className="text-white/60 text-xs font-mono tracking-widest uppercase">Suritargets</p>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="px-8 py-8 text-center">
+              <p className="text-xs font-mono tracking-[0.3em] uppercase text-[#2B3494]/60 mb-3">
+                Coming Soon
+              </p>
+              <h2 className="text-2xl font-black text-[#2B3494] mb-3">
+                {t('comingSoonTitle')}
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                {t('comingSoonBody')}
+              </p>
+              <button
+                onClick={() => setSignupOpen(false)}
+                className="inline-flex items-center px-6 py-2.5 text-xs font-semibold bg-[#2B3494] text-white hover:bg-[#2B3494]/90 transition-colors"
+              >
+                {t('comingSoonClose')}
+              </button>
+            </div>
+
+            {/* Close X */}
+            <button
+              onClick={() => setSignupOpen(false)}
+              className="absolute top-3 right-3 text-white/60 hover:text-white transition-colors"
+              aria-label={t('comingSoonClose')}
+            >
+              <X size={18} />
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
