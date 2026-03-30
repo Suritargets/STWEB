@@ -1,9 +1,9 @@
-import { createContactsTable } from '../src/lib/db'
+import { ensureSubmissionsTable } from '../src/lib/db'
 
 async function main() {
   console.log('Running migrations...')
-  await createContactsTable()
-  console.log('Migration complete: contacts table ready')
+  await ensureSubmissionsTable()
+  console.log('Migration complete: submissions table ready')
   process.exit(0)
 }
 

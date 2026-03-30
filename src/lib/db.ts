@@ -1,41 +1,72 @@
-import mysql from 'mysql2/promise'
+import { neon } from '@neondatabase/serverless'
 
-// Lazy singleton — safe during next build static analysis
-let _pool: mysql.Pool | null = null
-
-function getPool(): mysql.Pool {
-  if (!_pool) {
-    _pool = mysql.createPool({
-      host: process.env.DB_HOST,
-      port: Number(process.env.DB_PORT ?? 3306),
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      waitForConnections: true,
-      connectionLimit: 10,
-      timezone: '+00:00',
-    })
-  }
-  return _pool
+function sql() {
+  return neon(process.env.DATABASE_URL!)
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function query<T = unknown>(sql: string, values?: any[]): Promise<T> {
-  const [rows] = await getPool().execute(sql, values)
-  return rows as T
+export type Submission = {
+  id: number
+  naam: string
+  bedrijfsnaam: string
+  email: string
+  telefoon: string | null
+  services: string[]
+  budget: string | null
+  bericht: string
+  anders_text: string | null
+  created_at: string
 }
 
-export async function createContactsTable(): Promise<void> {
-  await query(`
-    CREATE TABLE IF NOT EXISTS contacts (
-      id          INT AUTO_INCREMENT PRIMARY KEY,
-      naam        VARCHAR(255) NOT NULL,
-      bedrijfsnaam VARCHAR(255) NOT NULL,
-      email       VARCHAR(255) NOT NULL,
-      telefoon    VARCHAR(50),
-      service     VARCHAR(100) NOT NULL,
-      bericht     TEXT NOT NULL,
-      created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+export async function ensureSubmissionsTable() {
+  const db = sql()
+  await db`
+    CREATE TABLE IF NOT EXISTS submissions (
+      id            SERIAL PRIMARY KEY,
+      naam          TEXT NOT NULL,
+      bedrijfsnaam  TEXT NOT NULL,
+      email         TEXT NOT NULL,
+      telefoon      TEXT,
+      services      TEXT[],
+      budget        TEXT,
+      bericht       TEXT,
+      anders_text   TEXT,
+      created_at    TIMESTAMPTZ DEFAULT NOW()
     )
-  `)
+  `
+}
+
+export async function insertSubmission(data: {
+  naam: string
+  bedrijfsnaam: string
+  email: string
+  telefoon?: string
+  services: string[]
+  budget?: string
+  bericht: string
+  andersText?: string
+}) {
+  const db = sql()
+  const rows = await db`
+    INSERT INTO submissions (naam, bedrijfsnaam, email, telefoon, services, budget, bericht, anders_text)
+    VALUES (
+      ${data.naam},
+      ${data.bedrijfsnaam},
+      ${data.email},
+      ${data.telefoon ?? null},
+      ${data.services},
+      ${data.budget ?? null},
+      ${data.bericht},
+      ${data.andersText ?? null}
+    )
+    RETURNING id
+  `
+  return rows[0] as { id: number }
+}
+
+export async function getSubmissions() {
+  const db = sql()
+  const rows = await db`
+    SELECT * FROM submissions ORDER BY created_at DESC
+  `
+  return rows as Submission[]
 }
