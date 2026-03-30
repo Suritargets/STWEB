@@ -31,12 +31,16 @@ export async function POST(request: Request) {
 
     const token     = process.env.AIRTABLE_API_TOKEN
     const baseId    = process.env.AIRTABLE_BASE_ID
-    const tableName = process.env.AIRTABLE_TABLE_NAME ?? 'Table 1'
+    // Table name in "Leads Suritargets" base — rename in Airtable if you change it
+    const tableName = 'Table 1'
 
     if (!token || !baseId) {
       console.error('Airtable env vars missing')
       return NextResponse.json({ error: 'Configuration error' }, { status: 500 })
     }
+
+    console.log(`Airtable target: base=${baseId} table="${tableName}"`)
+
 
     const airtableRes = await fetch(
       `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`,
