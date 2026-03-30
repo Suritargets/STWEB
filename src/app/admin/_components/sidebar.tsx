@@ -2,12 +2,12 @@ import Link from 'next/link'
 import LogoutButton from './logout-button'
 
 const navItems = [
-  { href: '/admin/dashboard', label: 'Dashboard', icon: '▦', active: true },
-  { href: '/admin/dashboard/requests',  label: 'Aanvragen',  icon: '📋', active: false },
-  { href: '#', label: 'Analytics',  icon: '📊', soon: true },
-  { href: '#', label: 'CMS',        icon: '✏️',  soon: true },
-  { href: '#', label: 'SEO',        icon: '🔍',  soon: true },
-  { href: '#', label: 'Instellingen', icon: '⚙️', soon: true },
+  { href: '/admin/dashboard', label: 'Dashboard', icon: '▦' },
+  { href: '/admin/dashboard/requests', label: 'Aanvragen', icon: '📋' },
+  { href: '/admin/dashboard/cms', label: 'CMS', icon: '✏️' },
+  { href: '/admin/dashboard/seo', label: 'SEO', icon: '🔍' },
+  { href: '#', label: 'Analytics', icon: '📊', soon: true },
+  { href: '/admin/dashboard/settings', label: 'Instellingen', icon: '⚙️' },
 ]
 
 export default function Sidebar() {
