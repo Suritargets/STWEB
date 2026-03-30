@@ -3,7 +3,7 @@ import LogoutButton from './logout-button'
 
 const navItems = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: '▦', active: true },
-  { href: '/admin/requests',  label: 'Aanvragen',  icon: '📋', active: false },
+  { href: '/admin/dashboard/requests',  label: 'Aanvragen',  icon: '📋', active: false },
   { href: '#', label: 'Analytics',  icon: '📊', soon: true },
   { href: '#', label: 'CMS',        icon: '✏️',  soon: true },
   { href: '#', label: 'SEO',        icon: '🔍',  soon: true },
