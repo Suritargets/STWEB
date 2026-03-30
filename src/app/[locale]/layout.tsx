@@ -1,24 +1,11 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import Nav from '@/components/layout/nav'
 import Footer from '@/components/layout/footer'
-import '../globals.css'
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-  display: 'swap',
-})
+import { LangSetter } from '@/components/shared/lang-setter'
 
 export async function generateMetadata({
   params,
@@ -64,17 +51,13 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html
-      lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
-    >
-      <body className="min-h-full flex flex-col bg-background text-foreground antialiased">
-        <NextIntlClientProvider messages={messages}>
-          <Nav />
-          <main className="flex-1 pt-16">{children}</main>
-          <Footer />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <div className="flex flex-col min-h-full bg-background text-foreground">
+      <LangSetter locale={locale} />
+      <NextIntlClientProvider messages={messages}>
+        <Nav />
+        <main className="flex-1 pt-16">{children}</main>
+        <Footer />
+      </NextIntlClientProvider>
+    </div>
   )
 }
