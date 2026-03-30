@@ -43,7 +43,11 @@ function localized(data: Record<string, unknown>, field: string, locale: string)
 }
 
 export function getPostBySlug(type: ContentType, slug: string, locale = 'nl'): Post | null {
-  const filePath = path.join(contentRoot, type, `${slug}.mdx`)
+  // Try locale-specific file first, fallback to default (NL)
+  const localePath = path.join(contentRoot, type, locale, `${slug}.mdx`)
+  const defaultPath = path.join(contentRoot, type, `${slug}.mdx`)
+  const filePath = (locale !== 'nl' && fs.existsSync(localePath)) ? localePath : defaultPath
+
   if (!fs.existsSync(filePath)) return null
   const raw = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(raw)
