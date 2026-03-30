@@ -8,6 +8,7 @@ import {
   BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
   Shield, BookOpen, Rocket, Bitcoin, UserCircle,
   Briefcase, TrendingUp, Compass,
+  Users, FolderOpen, Lightbulb,
 } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
@@ -163,25 +164,24 @@ export default function Nav() {
                   {t('company')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="w-[280px] p-3 flex flex-col gap-1">
-                    <li>
-                      <Link href="/about" className="block select-none rounded-md p-3 hover:bg-[#2B3494]/5 transition-colors group">
-                        <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494]">{t('overOns')}</p>
-                        <p className="text-xs text-muted-foreground mt-0.5">{t('overOnsDesc')}</p>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/case-studies" className="block select-none rounded-md p-3 hover:bg-[#2B3494]/5 transition-colors group">
-                        <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494]">{t('cases')}</p>
-                        <p className="text-xs text-muted-foreground mt-0.5">{t('casesDesc')}</p>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/insights" className="block select-none rounded-md p-3 hover:bg-[#2B3494]/5 transition-colors group">
-                        <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494]">{t('insights')}</p>
-                        <p className="text-xs text-muted-foreground mt-0.5">{t('insightsDesc')}</p>
-                      </Link>
-                    </li>
+                  <ul className="w-[280px] p-3 flex flex-col gap-0.5">
+                    {([
+                      { href: '/about',        icon: Users,      labelKey: 'overOns',  descKey: 'overOnsDesc'  },
+                      { href: '/case-studies', icon: FolderOpen, labelKey: 'cases',    descKey: 'casesDesc'    },
+                      { href: '/insights',     icon: Lightbulb,  labelKey: 'insights', descKey: 'insightsDesc' },
+                    ] as const).map(({ href, icon: Icon, labelKey, descKey }) => (
+                      <li key={href}>
+                        <Link href={href} className="flex items-start gap-3 select-none rounded-md px-2 py-2.5 hover:bg-[#2B3494]/5 transition-colors group">
+                          <span className="mt-0.5 shrink-0 w-7 h-7 flex items-center justify-center rounded-md bg-[#2B3494]/8 text-[#2B3494] group-hover:bg-[#2B3494] group-hover:text-white transition-colors">
+                            <Icon size={14} />
+                          </span>
+                          <span>
+                            <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494] leading-tight">{t(labelKey)}</p>
+                            <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{t(descKey)}</p>
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>

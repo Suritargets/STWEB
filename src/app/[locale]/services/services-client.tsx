@@ -3,8 +3,29 @@ import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import {
+  BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
+  Briefcase, TrendingUp, Compass, BookOpen, Rocket, Bitcoin,
+  UserCircle, Shield, type LucideIcon,
+} from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { services } from '@/lib/services-data'
+
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+  'bar-chart':        BarChart2,
+  'monitor':          Monitor,
+  'sparkles':         Sparkles,
+  'shield-check':     ShieldCheck,
+  'graduation-cap':   GraduationCap,
+  'briefcase':        Briefcase,
+  'trending-up':      TrendingUp,
+  'compass':          Compass,
+  'book-open':        BookOpen,
+  'rocket':           Rocket,
+  'bitcoin':          Bitcoin,
+  'user-circle':      UserCircle,
+  'shield':           Shield,
+}
 
 type Tab = 'business' | 'individual'
 
@@ -64,6 +85,7 @@ export default function ServicesClient() {
               >
                 <div className="flex items-start justify-between mb-6">
                   <span className="text-xs font-mono tracking-[0.2em] uppercase text-gold">{label}</span>
+                  {(() => { const Icon = SERVICE_ICONS[service.icon] ?? BarChart2; return <Icon size={28} strokeWidth={1.5} className="text-gold opacity-70" /> })()}
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-1">
                   {ts(`${service.slug}.name`)}

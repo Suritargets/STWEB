@@ -84,13 +84,24 @@ export default function PricingClient() {
       </section>
 
       {/* Rate reference bar */}
-      <section className="bg-[#1e2570] px-[var(--section-padding-x)] py-4">
-        <div className="max-w-[1440px] mx-auto flex flex-wrap justify-center gap-6 md:gap-12">
+      <section className="bg-[#2B3494] border-t border-white/10 px-[var(--section-padding-x)] py-6">
+        <div className="max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-3">
           {tiers.map((tier) => (
-            <div key={tier.tier} className="flex items-baseline gap-2">
+            <div
+              key={tier.tier}
+              className={cn(
+                'flex flex-col gap-1 px-5 py-4 border rounded-sm',
+                tier.highlight
+                  ? 'border-white/40 bg-white/10'
+                  : 'border-white/15 bg-white/5'
+              )}
+            >
               <span className="text-white/50 text-[10px] font-mono tracking-widest uppercase">{tier.tier}</span>
-              <span className="text-white font-black text-lg">USD {tier.rate}</span>
-              <span className="text-white/40 text-xs">{t('perHour')}</span>
+              <div className="flex items-baseline gap-1">
+                <span className="text-white font-black text-xl leading-none">USD {tier.rate}</span>
+                <span className="text-white/40 text-[11px]">{t('perHour')}</span>
+              </div>
+              <p className="text-white/40 text-[10px] leading-snug mt-0.5 hidden md:block">{tier.tagline}</p>
             </div>
           ))}
         </div>

@@ -2,6 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
+import {
+  BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
+  Briefcase, TrendingUp, Compass, BookOpen, Rocket, Bitcoin,
+  UserCircle, Shield, type LucideIcon,
+} from 'lucide-react'
 import { SectionHeading } from '@/components/shared/section-heading'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
@@ -9,6 +14,22 @@ import { ExplainerSection } from '@/components/shared/explainer-section'
 import { services } from '@/lib/services-data'
 import { HeroMockup } from '@/components/home/hero-mockup'
 import { ParticleBackground } from '@/components/home/particle-background'
+
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+  'bar-chart':        BarChart2,
+  'monitor':          Monitor,
+  'sparkles':         Sparkles,
+  'shield-check':     ShieldCheck,
+  'graduation-cap':   GraduationCap,
+  'briefcase':        Briefcase,
+  'trending-up':      TrendingUp,
+  'compass':          Compass,
+  'book-open':        BookOpen,
+  'rocket':           Rocket,
+  'bitcoin':          Bitcoin,
+  'user-circle':      UserCircle,
+  'shield':           Shield,
+}
 
 export async function generateMetadata({
   params,
@@ -85,8 +106,8 @@ function HomeContent() {
                     className="group block h-full bg-surface border border-border p-8 transition-all duration-200 hover:border-gold focus-visible:border-gold relative overflow-hidden"
                   >
                     <span className="absolute left-0 top-0 bottom-0 w-[3px] bg-gold scale-y-0 group-hover:scale-y-100 transition-transform duration-200 origin-bottom" aria-hidden="true" />
-                    <span className="font-mono text-4xl font-bold text-gold opacity-80 block mb-6 leading-none">
-                      {service.slug.charAt(0).toUpperCase()}
+                    <span className="block mb-6 leading-none text-gold opacity-80">
+                      {(() => { const Icon = SERVICE_ICONS[service.icon] ?? BarChart2; return <Icon size={36} strokeWidth={1.5} /> })()}
                     </span>
                     <h3 className="text-lg font-bold text-foreground mb-3 tracking-tight">
                       {ts(`${service.slug}.name`)}

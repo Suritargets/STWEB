@@ -51,11 +51,12 @@ export async function POST(request: Request) {
             Naam:          data.naam,
             Bedrijfsnaam:  data.bedrijfsnaam,
             Email:         data.email,
-            Telefoon:      data.telefoon ?? '',
+            ...(data.telefoon ? { Telefoon: data.telefoon } : {}),
             Services:      data.services.map(s => SERVICE_LABELS[s] ?? s),
-            Budget:        data.budget ? (BUDGET_LABELS[data.budget] ?? data.budget) : '',
-            Bericht:       data.bericht,
-            ...(data.andersText ? { Anders: data.andersText } : {}),
+            ...(data.budget   ? { Budget: BUDGET_LABELS[data.budget] ?? data.budget } : {}),
+            Bericht:       data.andersText
+                             ? `${data.bericht}\n\nAnders: ${data.andersText}`
+                             : data.bericht,
           },
         }),
       }
