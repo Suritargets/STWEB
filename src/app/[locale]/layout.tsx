@@ -27,8 +27,15 @@ export async function generateMetadata({
       type: 'website',
       locale: locale.replace('-', '_'),
       siteName: 'Suritargets',
+      title: 'Suritargets — Business Intelligence & Digital Solutions',
+      description: t('description'),
+      url: `https://suritargets.com/${locale}`,
     },
-    twitter: { card: 'summary_large_image' },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Suritargets — Business Intelligence & Digital Solutions',
+      description: t('description'),
+    },
     robots: { index: true, follow: true },
   }
 }
