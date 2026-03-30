@@ -6,15 +6,12 @@ export default function LogoutButton() {
 
   async function handleLogout() {
     await fetch('/api/admin/logout', { method: 'POST' })
-    router.refresh()
+    router.push('/admin/login')
   }
 
   return (
-    <button
-      onClick={handleLogout}
-      className="text-white/70 hover:text-white text-xs font-medium transition-colors"
-    >
-      Uitloggen
+    <button onClick={handleLogout} className="text-xs text-zinc-400 hover:text-zinc-700 transition-colors" title="Uitloggen">
+      ↩
     </button>
   )
 }

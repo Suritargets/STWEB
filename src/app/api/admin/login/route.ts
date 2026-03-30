@@ -1,28 +1,27 @@
 import { NextResponse } from 'next/server'
-import { createHash } from 'crypto'
-
-function makeToken(password: string) {
-  return createHash('sha256')
-    .update(password + (process.env.ADMIN_PASSWORD ?? ''))
-    .digest('hex')
-}
+import { makeSessionToken } from '@/lib/auth'
 
 export async function POST(request: Request) {
   try {
-    const { password } = await request.json() as { password: string }
+    const { email, password } = await request.json() as { email: string; password: string }
+    const adminEmail = process.env.ADMIN_EMAIL
+    const adminPassword = process.env.ADMIN_PASSWORD
 
-    if (!process.env.ADMIN_PASSWORD || password !== process.env.ADMIN_PASSWORD) {
-      return NextResponse.json({ error: 'Ongeldig wachtwoord' }, { status: 401 })
+    if (!adminEmail || !adminPassword) {
+      return NextResponse.json({ error: 'Server not configured' }, { status: 500 })
+    }
+    if (email !== adminEmail || password !== adminPassword) {
+      return NextResponse.json({ error: 'Ongeldige inloggegevens' }, { status: 401 })
     }
 
-    const token = makeToken(password)
+    const token = makeSessionToken(password)
     const response = NextResponse.json({ success: true })
     response.cookies.set('admin_session', token, {
       httpOnly: true,
-      secure:   process.env.NODE_ENV === 'production',
+      secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
-      maxAge:   60 * 60 * 24 * 7, // 7 days
-      path:     '/',
+      maxAge: 60 * 60 * 24 * 7,
+      path: '/',
     })
     return response
   } catch {
