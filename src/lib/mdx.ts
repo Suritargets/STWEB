@@ -46,23 +46,27 @@ export function getPostBySlug(type: ContentType, slug: string, locale = 'nl'): P
   // Try locale-specific file first, fallback to default (NL)
   const localePath = path.join(contentRoot, type, locale, `${slug}.mdx`)
   const defaultPath = path.join(contentRoot, type, `${slug}.mdx`)
-  const filePath = (locale !== 'nl' && fs.existsSync(localePath)) ? localePath : defaultPath
+  const hasLocaleFile = locale !== 'nl' && fs.existsSync(localePath)
+  const filePath = hasLocaleFile ? localePath : defaultPath
 
   if (!fs.existsSync(filePath)) return null
   const raw = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(raw)
+
+  // Locale-specific files already have the correct language in their fields
+  // Only use localized() when reading the default (NL) file for a non-NL locale
   return {
     slug,
-    title: localized(data, 'title', locale) ?? data.title,
+    title: hasLocaleFile ? data.title : (localized(data, 'title', locale) ?? data.title),
     titleEn: data.titleEn,
     date: data.date,
-    summary: localized(data, 'summary', locale) ?? data.summary,
-    tags: (data[`tags_${locale}`] as string[] | undefined) ?? (data.tags as string[] | undefined) ?? [],
+    summary: hasLocaleFile ? data.summary : (localized(data, 'summary', locale) ?? data.summary),
+    tags: hasLocaleFile ? (data.tags ?? []) : ((data[`tags_${locale}`] as string[] | undefined) ?? (data.tags as string[] | undefined) ?? []),
     readingTime: readingTime(content).text,
     featured: data.featured ?? false,
     client: data.client,
     service: data.service,
-    category: localized(data, 'category', locale) ?? data.category,
+    category: hasLocaleFile ? data.category : (localized(data, 'category', locale) ?? data.category),
     content,
   }
 }
