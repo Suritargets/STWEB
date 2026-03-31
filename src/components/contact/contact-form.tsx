@@ -36,9 +36,14 @@ export function ContactForm() {
 
   const andersSelected = services.includes('anders')
 
+  const klantTypeMap: Record<'bedrijf' | 'individu', 'business' | 'individual'> = {
+    bedrijf: 'business',
+    individu: 'individual',
+  }
+
   // Filter services by selected klantType, show all if nothing selected yet
   const filteredServices = klantType
-    ? allServices.filter(s => s.type === klantType)
+    ? allServices.filter(s => s.type === klantTypeMap[klantType])
     : allServices
 
   function toggleService(id: string) {
@@ -48,10 +53,10 @@ export function ContactForm() {
     if (errors.services) setErrors(prev => { const n = { ...prev }; delete n.services; return n })
   }
 
-  function handleKlantTypeChange(type: KlantType) {
+  function handleKlantTypeChange(type: 'bedrijf' | 'individu') {
     setKlantType(type)
     // Clear selected services that don't belong to new type
-    const validSlugs = allServices.filter(s => s.type === type).map(s => s.slug)
+    const validSlugs = allServices.filter(s => s.type === klantTypeMap[type]).map(s => s.slug)
     setServices(prev => prev.filter(s => validSlugs.includes(s) || s === 'anders'))
     if (errors.klantType) setErrors(prev => { const n = { ...prev }; delete n.klantType; return n })
   }
