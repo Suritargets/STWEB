@@ -167,17 +167,17 @@
       "description": "Trois principes qui guident chaque décision et chaque livrable.",
       "items": [
         {
-          "nl": "Integriteit",
+          "nl": "Intégrité",
           "en": "Integrity",
           "description": "Pas de détours, pas d'agenda caché. Communication directe et conseils honnêtes — même quand ce n'est pas ce que vous voulez entendre."
         },
         {
-          "nl": "Vakmanschap",
+          "nl": "Excellence",
           "en": "Craftsmanship",
           "description": "Chaque livrable porte notre nom. Nous livrons au plus haut niveau ou nous ne livrons pas."
         },
         {
-          "nl": "Vertrouwen",
+          "nl": "Confiance",
           "en": "Trust",
           "description": "Nous construisons des relations à long terme. Les victoires rapides sont agréables ; les partenariats durables sont notre objectif."
         }
@@ -522,5 +522,48 @@
     "ctaBody": "Contactez-nous pour une conversation sans engagement.",
     "ctaButton": "Prendre contact",
     "ctaGhost": "Plus de perspectives"
+  },
+  "contactForm": {
+    "formTitle": "Demander un devis",
+    "naam": "Nom",
+    "naamPlaceholder": "Votre nom complet",
+    "naamError": "Le nom est obligatoire",
+    "bedrijf": "Nom de l'entreprise",
+    "bedrijfPlaceholder": "Nom de votre entreprise",
+    "bedrijfError": "Le nom de l'entreprise est obligatoire",
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "vous@entreprise.com",
+    "emailError": "Une adresse e-mail valide est requise",
+    "telefoon": "Téléphone",
+    "telefonOptional": "(facultatif)",
+    "diensten": "Service(s)",
+    "dienstenError": "Veuillez sélectionner au moins un service",
+    "andersPlaceholder": "Quel service recherchez-vous ?",
+    "andersError": "Veuillez préciser le service dont vous avez besoin",
+    "budget": "Budget estimé",
+    "toelichting": "Message",
+    "toelichtingPlaceholder": "Décrivez votre projet, vos souhaits ou vos questions...",
+    "toelichtingError": "Le message est trop court",
+    "submit": "Demander un devis",
+    "sending": "Envoi en cours...",
+    "successTitle": "Demande reçue",
+    "successBody": "Votre demande de devis a été reçue. Nous vous contacterons dans les 2 jours ouvrables.",
+    "errorMsg": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+    "services": {
+      "dashboarding": "Tableaux de Bord & Visualisation de Données",
+      "webApplicaties": "Web & Applications",
+      "marketingAi": "Marketing avec IA",
+      "forensics": "Forensique & Intégrité",
+      "education": "Formation & Développement",
+      "anders": "Autre"
+    },
+    "budget_options": {
+      "placeholder": "Sélectionnez une option",
+      "onder5k": "Moins de $5 000",
+      "v5k15k": "$5 000 – $15 000",
+      "v15k50k": "$15 000 – $50 000",
+      "boven50k": "Plus de $50 000",
+      "onbekend": "Pas encore déterminé"
+    }
   }
 }

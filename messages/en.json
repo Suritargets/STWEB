@@ -522,5 +522,48 @@
     "ctaBody": "Contact us for a no-obligation conversation.",
     "ctaButton": "Get in touch",
     "ctaGhost": "More insights"
+  },
+  "contactForm": {
+    "formTitle": "Request a quote",
+    "naam": "Name",
+    "naamPlaceholder": "Your full name",
+    "naamError": "Name is required",
+    "bedrijf": "Company name",
+    "bedrijfPlaceholder": "Your company name",
+    "bedrijfError": "Company name is required",
+    "email": "Email address",
+    "emailPlaceholder": "you@company.com",
+    "emailError": "A valid email address is required",
+    "telefoon": "Phone number",
+    "telefonOptional": "(optional)",
+    "diensten": "Service(s)",
+    "dienstenError": "Please select at least one service",
+    "andersPlaceholder": "Which service are you looking for?",
+    "andersError": "Please specify the service you need",
+    "budget": "Budget indication",
+    "toelichting": "Message",
+    "toelichtingPlaceholder": "Describe your project, wishes or questions...",
+    "toelichtingError": "Message is too short",
+    "submit": "Request quote",
+    "sending": "Sending...",
+    "successTitle": "Request received",
+    "successBody": "Your quote request has been received. We will be in touch within 2 business days.",
+    "errorMsg": "Something went wrong. Please try again later.",
+    "services": {
+      "dashboarding": "Dashboarding & Data Visualization",
+      "webApplicaties": "Web & Applications",
+      "marketingAi": "Marketing with AI",
+      "forensics": "Forensics & Integrity",
+      "education": "Education & Training",
+      "anders": "Other"
+    },
+    "budget_options": {
+      "placeholder": "Select an indication",
+      "onder5k": "Under $5,000",
+      "v5k15k": "$5,000 – $15,000",
+      "v15k50k": "$15,000 – $50,000",
+      "boven50k": "Above $50,000",
+      "onbekend": "Not yet determined"
+    }
   }
 }

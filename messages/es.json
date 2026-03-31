@@ -167,17 +167,17 @@
       "description": "Tres principios que guían cada decisión y cada entregable.",
       "items": [
         {
-          "nl": "Integriteit",
+          "nl": "Integridad",
           "en": "Integrity",
           "description": "Sin rodeos, sin agenda oculta. Comunicación directa y asesoramiento honesto — incluso cuando no es lo que quiere escuchar."
         },
         {
-          "nl": "Vakmanschap",
+          "nl": "Excelencia",
           "en": "Craftsmanship",
           "description": "Cada entregable lleva nuestro nombre. Entregamos al más alto nivel o no entregamos en absoluto."
         },
         {
-          "nl": "Vertrouwen",
+          "nl": "Confianza",
           "en": "Trust",
           "description": "Construimos relaciones a largo plazo. Las victorias rápidas están bien; las asociaciones sostenibles son nuestro objetivo."
         }
@@ -522,5 +522,48 @@
     "ctaBody": "Contáctenos para una conversación sin compromiso.",
     "ctaButton": "Ponerse en contacto",
     "ctaGhost": "Más perspectivas"
+  },
+  "contactForm": {
+    "formTitle": "Solicitar presupuesto",
+    "naam": "Nombre",
+    "naamPlaceholder": "Su nombre completo",
+    "naamError": "El nombre es obligatorio",
+    "bedrijf": "Nombre de empresa",
+    "bedrijfPlaceholder": "Nombre de su empresa",
+    "bedrijfError": "El nombre de empresa es obligatorio",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "usted@empresa.com",
+    "emailError": "Se requiere una dirección de correo válida",
+    "telefoon": "Teléfono",
+    "telefonOptional": "(opcional)",
+    "diensten": "Servicio(s)",
+    "dienstenError": "Seleccione al menos un servicio",
+    "andersPlaceholder": "¿Qué servicio busca?",
+    "andersError": "Por favor especifique el servicio que necesita",
+    "budget": "Presupuesto estimado",
+    "toelichting": "Mensaje",
+    "toelichtingPlaceholder": "Describa su proyecto, deseos o preguntas...",
+    "toelichtingError": "El mensaje es demasiado corto",
+    "submit": "Solicitar presupuesto",
+    "sending": "Enviando...",
+    "successTitle": "Solicitud recibida",
+    "successBody": "Su solicitud ha sido recibida. Le contactaremos en un plazo de 2 días hábiles.",
+    "errorMsg": "Algo salió mal. Por favor intente de nuevo más tarde.",
+    "services": {
+      "dashboarding": "Dashboarding & Visualización de Datos",
+      "webApplicaties": "Web & Aplicaciones",
+      "marketingAi": "Marketing con IA",
+      "forensics": "Forense & Integridad",
+      "education": "Educación & Formación",
+      "anders": "Otro"
+    },
+    "budget_options": {
+      "placeholder": "Seleccione una opción",
+      "onder5k": "Menos de $5.000",
+      "v5k15k": "$5.000 – $15.000",
+      "v15k50k": "$15.000 – $50.000",
+      "boven50k": "Más de $50.000",
+      "onbekend": "Aún no definido"
+    }
   }
 }

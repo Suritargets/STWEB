@@ -1,31 +1,34 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 
-const SERVICES = [
-  { id: 'dashboarding',    label: 'Dashboarding & Data Visualisatie' },
-  { id: 'web-applicaties', label: 'Web & Applicaties' },
-  { id: 'marketing-ai',    label: 'Marketing met AI' },
-  { id: 'forensics',       label: 'Forensics & Integriteit' },
-  { id: 'education',       label: 'Education & Training' },
-  { id: 'anders',          label: 'Anders' },
-]
-
-const BUDGET_OPTIONS = [
-  { value: '',          label: 'Selecteer een indicatie' },
-  { value: 'onder-5k',  label: 'Onder $5.000' },
-  { value: '5k-15k',    label: '$5.000 – $15.000' },
-  { value: '15k-50k',   label: '$15.000 – $50.000' },
-  { value: 'boven-50k', label: 'Boven $50.000' },
-  { value: 'onbekend',  label: 'Nog niet bekend' },
-]
-
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
 export function ContactForm() {
+  const t = useTranslations('contactForm')
+
+  const SERVICES = [
+    { id: 'dashboarding',    label: t('services.dashboarding') },
+    { id: 'web-applicaties', label: t('services.webApplicaties') },
+    { id: 'marketing-ai',    label: t('services.marketingAi') },
+    { id: 'forensics',       label: t('services.forensics') },
+    { id: 'education',       label: t('services.education') },
+    { id: 'anders',          label: t('services.anders') },
+  ]
+
+  const BUDGET_OPTIONS = [
+    { value: '',          label: t('budget_options.placeholder') },
+    { value: 'onder-5k',  label: t('budget_options.onder5k') },
+    { value: '5k-15k',    label: t('budget_options.v5k15k') },
+    { value: '15k-50k',   label: t('budget_options.v15k50k') },
+    { value: 'boven-50k', label: t('budget_options.boven50k') },
+    { value: 'onbekend',  label: t('budget_options.onbekend') },
+  ]
+
   const [naam,          setNaam]          = useState('')
   const [bedrijfsnaam,  setBedrijfsnaam]  = useState('')
   const [email,         setEmail]         = useState('')
@@ -50,12 +53,12 @@ export function ContactForm() {
     e.preventDefault()
 
     const newErrors: Record<string, string> = {}
-    if (!naam.trim())                                    newErrors.naam          = 'Naam is verplicht'
-    if (!bedrijfsnaam.trim())                            newErrors.bedrijfsnaam  = 'Bedrijfsnaam is verplicht'
-    if (!email.trim() || !email.includes('@'))           newErrors.email         = 'Geldig e-mailadres is verplicht'
-    if (services.length === 0)                           newErrors.services      = 'Selecteer minimaal één dienst'
-    if (andersSelected && !andersText.trim())            newErrors.andersText    = 'Vul in welke dienst u zoekt'
-    if (!bericht.trim() || bericht.length < 10)         newErrors.bericht       = 'Toelichting is te kort'
+    if (!naam.trim())                                    newErrors.naam          = t('naamError')
+    if (!bedrijfsnaam.trim())                            newErrors.bedrijfsnaam  = t('bedrijfError')
+    if (!email.trim() || !email.includes('@'))           newErrors.email         = t('emailError')
+    if (services.length === 0)                           newErrors.services      = t('dienstenError')
+    if (andersSelected && !andersText.trim())            newErrors.andersText    = t('andersError')
+    if (!bericht.trim() || bericht.length < 10)         newErrors.bericht       = t('toelichtingError')
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
@@ -88,9 +91,9 @@ export function ContactForm() {
   if (status === 'success') {
     return (
       <div className="border border-gold/40 px-6 py-10 text-center">
-        <p className="text-gold font-semibold text-lg mb-2">Aanvraag ontvangen</p>
+        <p className="text-gold font-semibold text-lg mb-2">{t('successTitle')}</p>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Uw offerte-aanvraag is ontvangen. We nemen binnen 2 werkdagen contact op.
+          {t('successBody')}
         </p>
       </div>
     )
@@ -104,13 +107,13 @@ export function ContactForm() {
       {/* Naam */}
       <div className="space-y-1.5">
         <Label htmlFor="naam" className="text-foreground">
-          Naam <span className="text-destructive" aria-hidden="true">*</span>
+          {t('naam')} <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <Input
           id="naam" type="text" autoComplete="name"
           disabled={isLoading} value={naam}
           onChange={e => setNaam(e.target.value)}
-          placeholder="Uw volledige naam"
+          placeholder={t('naamPlaceholder')}
           aria-invalid={!!errors.naam}
         />
         {errors.naam && <p className="text-xs text-destructive">{errors.naam}</p>}
@@ -119,13 +122,13 @@ export function ContactForm() {
       {/* Bedrijfsnaam */}
       <div className="space-y-1.5">
         <Label htmlFor="bedrijfsnaam" className="text-foreground">
-          Bedrijfsnaam <span className="text-destructive" aria-hidden="true">*</span>
+          {t('bedrijf')} <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <Input
           id="bedrijfsnaam" type="text" autoComplete="organization"
           disabled={isLoading} value={bedrijfsnaam}
           onChange={e => setBedrijfsnaam(e.target.value)}
-          placeholder="Naam van uw bedrijf"
+          placeholder={t('bedrijfPlaceholder')}
           aria-invalid={!!errors.bedrijfsnaam}
         />
         {errors.bedrijfsnaam && <p className="text-xs text-destructive">{errors.bedrijfsnaam}</p>}
@@ -134,13 +137,13 @@ export function ContactForm() {
       {/* Email */}
       <div className="space-y-1.5">
         <Label htmlFor="email" className="text-foreground">
-          E-mailadres <span className="text-destructive" aria-hidden="true">*</span>
+          {t('email')} <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <Input
           id="email" type="email" autoComplete="email"
           disabled={isLoading} value={email}
           onChange={e => setEmail(e.target.value)}
-          placeholder="u@bedrijf.com"
+          placeholder={t('emailPlaceholder')}
           aria-invalid={!!errors.email}
         />
         {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
@@ -149,8 +152,8 @@ export function ContactForm() {
       {/* Telefoon */}
       <div className="space-y-1.5">
         <Label htmlFor="telefoon" className="text-foreground">
-          Telefoonnummer{' '}
-          <span className="text-muted-foreground font-normal">(optioneel)</span>
+          {t('telefoon')}{' '}
+          <span className="text-muted-foreground font-normal">{t('telefonOptional')}</span>
         </Label>
         <Input
           id="telefoon" type="tel" autoComplete="tel"
@@ -160,10 +163,10 @@ export function ContactForm() {
         />
       </div>
 
-      {/* Diensten — checkboxes met conditioneel veld */}
+      {/* Diensten */}
       <div className="space-y-2">
         <Label className="text-foreground">
-          Dienst(en) <span className="text-destructive" aria-hidden="true">*</span>
+          {t('diensten')} <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <div className="space-y-2.5 pt-1">
           {SERVICES.map(service => (
@@ -181,7 +184,6 @@ export function ContactForm() {
                 </span>
               </label>
 
-              {/* Conditioneel veld: Anders */}
               {service.id === 'anders' && andersSelected && (
                 <div className="mt-2 pl-7">
                   <Input
@@ -189,7 +191,7 @@ export function ContactForm() {
                     disabled={isLoading}
                     value={andersText}
                     onChange={e => setAndersText(e.target.value)}
-                    placeholder="Welke dienst zoekt u?"
+                    placeholder={t('andersPlaceholder')}
                     aria-invalid={!!errors.andersText}
                   />
                   {errors.andersText && (
@@ -206,8 +208,8 @@ export function ContactForm() {
       {/* Budget */}
       <div className="space-y-1.5">
         <Label htmlFor="budget" className="text-foreground">
-          Budget indicatie{' '}
-          <span className="text-muted-foreground font-normal">(optioneel)</span>
+          {t('budget')}{' '}
+          <span className="text-muted-foreground font-normal">{t('telefonOptional')}</span>
         </Label>
         <select
           id="budget"
@@ -226,14 +228,14 @@ export function ContactForm() {
       {/* Toelichting */}
       <div className="space-y-1.5">
         <Label htmlFor="bericht" className="text-foreground">
-          Toelichting <span className="text-destructive" aria-hidden="true">*</span>
+          {t('toelichting')} <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <Textarea
           id="bericht"
           disabled={isLoading}
           value={bericht}
           onChange={e => setBericht(e.target.value)}
-          placeholder="Beschrijf uw project, wensen of vragen..."
+          placeholder={t('toelichtingPlaceholder')}
           rows={5}
           className="min-h-[120px] resize-y"
           aria-invalid={!!errors.bericht}
@@ -243,7 +245,7 @@ export function ContactForm() {
 
       {status === 'error' && (
         <p role="alert" className="text-sm text-destructive">
-          Er ging iets mis. Probeer het later opnieuw.
+          {t('errorMsg')}
         </p>
       )}
 
@@ -253,7 +255,7 @@ export function ContactForm() {
         className="w-full bg-gold text-white font-semibold py-3 px-6 text-sm tracking-wide
                    hover:bg-[var(--gold-hover)] transition-colors disabled:opacity-50"
       >
-        {isLoading ? 'Verzenden...' : 'Offerte aanvragen'}
+        {isLoading ? t('sending') : t('submit')}
       </button>
 
     </form>
