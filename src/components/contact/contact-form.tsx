@@ -5,20 +5,13 @@ import { useTranslations } from 'next-intl'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
+import { services as allServices } from '@/lib/services-data'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
+type KlantType = 'bedrijf' | 'individu' | ''
 
 export function ContactForm() {
   const t = useTranslations('contactForm')
-
-  const SERVICES = [
-    { id: 'dashboarding',    label: t('services.dashboarding') },
-    { id: 'web-applicaties', label: t('services.webApplicaties') },
-    { id: 'marketing-ai',    label: t('services.marketingAi') },
-    { id: 'forensics',       label: t('services.forensics') },
-    { id: 'education',       label: t('services.education') },
-    { id: 'anders',          label: t('services.anders') },
-  ]
 
   const BUDGET_OPTIONS = [
     { value: '',          label: t('budget_options.placeholder') },
@@ -33,6 +26,7 @@ export function ContactForm() {
   const [bedrijfsnaam,  setBedrijfsnaam]  = useState('')
   const [email,         setEmail]         = useState('')
   const [telefoon,      setTelefoon]      = useState('')
+  const [klantType,     setKlantType]     = useState<KlantType>('')
   const [services,      setServices]      = useState<string[]>([])
   const [andersText,    setAndersText]    = useState('')
   const [budget,        setBudget]        = useState('')
@@ -42,11 +36,24 @@ export function ContactForm() {
 
   const andersSelected = services.includes('anders')
 
+  // Filter services by selected klantType, show all if nothing selected yet
+  const filteredServices = klantType
+    ? allServices.filter(s => s.type === klantType)
+    : allServices
+
   function toggleService(id: string) {
     setServices(prev =>
       prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id]
     )
     if (errors.services) setErrors(prev => { const n = { ...prev }; delete n.services; return n })
+  }
+
+  function handleKlantTypeChange(type: KlantType) {
+    setKlantType(type)
+    // Clear selected services that don't belong to new type
+    const validSlugs = allServices.filter(s => s.type === type).map(s => s.slug)
+    setServices(prev => prev.filter(s => validSlugs.includes(s) || s === 'anders'))
+    if (errors.klantType) setErrors(prev => { const n = { ...prev }; delete n.klantType; return n })
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -56,6 +63,7 @@ export function ContactForm() {
     if (!naam.trim())                                    newErrors.naam          = t('naamError')
     if (!bedrijfsnaam.trim())                            newErrors.bedrijfsnaam  = t('bedrijfError')
     if (!email.trim() || !email.includes('@'))           newErrors.email         = t('emailError')
+    if (!klantType)                                      newErrors.klantType     = t('klantTypeError')
     if (services.length === 0)                           newErrors.services      = t('dienstenError')
     if (andersSelected && !andersText.trim())            newErrors.andersText    = t('andersError')
     if (!bericht.trim() || bericht.length < 10)         newErrors.bericht       = t('toelichtingError')
@@ -74,6 +82,7 @@ export function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           naam, bedrijfsnaam, email, telefoon,
+          klantType,
           services,
           andersText: andersSelected ? andersText : undefined,
           budget,
@@ -92,9 +101,7 @@ export function ContactForm() {
     return (
       <div className="border border-gold/40 px-6 py-10 text-center">
         <p className="text-gold font-semibold text-lg mb-2">{t('successTitle')}</p>
-        <p className="text-muted-foreground text-sm leading-relaxed">
-          {t('successBody')}
-        </p>
+        <p className="text-muted-foreground text-sm leading-relaxed">{t('successBody')}</p>
       </div>
     )
   }
@@ -163,44 +170,82 @@ export function ContactForm() {
         />
       </div>
 
+      {/* Klant type */}
+      <div className="space-y-2">
+        <Label className="text-foreground">
+          {t('klantTypeLabel')} <span className="text-destructive" aria-hidden="true">*</span>
+        </Label>
+        <div className="flex gap-4 pt-1">
+          {(['bedrijf', 'individu'] as const).map(type => (
+            <label key={type} className="flex items-center gap-2.5 cursor-pointer group">
+              <input
+                type="radio"
+                name="klantType"
+                value={type}
+                checked={klantType === type}
+                onChange={() => handleKlantTypeChange(type)}
+                disabled={isLoading}
+                className="w-4 h-4 accent-[#C9A84C] cursor-pointer"
+              />
+              <span className="text-sm text-foreground group-hover:text-[#2B3494] transition-colors font-medium">
+                {type === 'bedrijf' ? t('klantTypeBedrijf') : t('klantTypeIndividu')}
+              </span>
+            </label>
+          ))}
+        </div>
+        {errors.klantType && <p className="text-xs text-destructive">{errors.klantType}</p>}
+      </div>
+
       {/* Diensten */}
       <div className="space-y-2">
         <Label className="text-foreground">
           {t('diensten')} <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <div className="space-y-2.5 pt-1">
-          {SERVICES.map(service => (
-            <div key={service.id}>
-              <label className="flex items-center gap-3 cursor-pointer group">
-                <input
-                  type="checkbox"
-                  checked={services.includes(service.id)}
-                  onChange={() => toggleService(service.id)}
-                  disabled={isLoading}
-                  className="w-4 h-4 accent-[#C9A84C] cursor-pointer shrink-0"
-                />
-                <span className="text-sm text-foreground group-hover:text-[#2B3494] transition-colors">
-                  {service.label}
-                </span>
-              </label>
-
-              {service.id === 'anders' && andersSelected && (
-                <div className="mt-2 pl-7">
-                  <Input
-                    type="text"
-                    disabled={isLoading}
-                    value={andersText}
-                    onChange={e => setAndersText(e.target.value)}
-                    placeholder={t('andersPlaceholder')}
-                    aria-invalid={!!errors.andersText}
-                  />
-                  {errors.andersText && (
-                    <p className="text-xs text-destructive mt-1">{errors.andersText}</p>
-                  )}
-                </div>
-              )}
-            </div>
+          {filteredServices.map(service => (
+            <label key={service.slug} className="flex items-center gap-3 cursor-pointer group">
+              <input
+                type="checkbox"
+                checked={services.includes(service.slug)}
+                onChange={() => toggleService(service.slug)}
+                disabled={isLoading}
+                className="w-4 h-4 accent-[#C9A84C] cursor-pointer shrink-0"
+              />
+              <span className="text-sm text-foreground group-hover:text-[#2B3494] transition-colors">
+                {t(`services.${service.slug.replace(/-/g, '-')}`)}
+              </span>
+            </label>
           ))}
+          {/* Anders */}
+          <div>
+            <label className="flex items-center gap-3 cursor-pointer group">
+              <input
+                type="checkbox"
+                checked={andersSelected}
+                onChange={() => toggleService('anders')}
+                disabled={isLoading}
+                className="w-4 h-4 accent-[#C9A84C] cursor-pointer shrink-0"
+              />
+              <span className="text-sm text-foreground group-hover:text-[#2B3494] transition-colors">
+                {t('services.anders')}
+              </span>
+            </label>
+            {andersSelected && (
+              <div className="mt-2 pl-7">
+                <Input
+                  type="text"
+                  disabled={isLoading}
+                  value={andersText}
+                  onChange={e => setAndersText(e.target.value)}
+                  placeholder={t('andersPlaceholder')}
+                  aria-invalid={!!errors.andersText}
+                />
+                {errors.andersText && (
+                  <p className="text-xs text-destructive mt-1">{errors.andersText}</p>
+                )}
+              </div>
+            )}
+          </div>
         </div>
         {errors.services && <p className="text-xs text-destructive">{errors.services}</p>}
       </div>
@@ -244,9 +289,7 @@ export function ContactForm() {
       </div>
 
       {status === 'error' && (
-        <p role="alert" className="text-sm text-destructive">
-          {t('errorMsg')}
-        </p>
+        <p role="alert" className="text-sm text-destructive">{t('errorMsg')}</p>
       )}
 
       <button

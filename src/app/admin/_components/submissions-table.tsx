@@ -4,9 +4,13 @@ import { useRouter } from 'next/navigation'
 import type { Submission } from '@/lib/db'
 
 const SERVICE_LABELS: Record<string, string> = {
-  'dashboarding': 'Dashboarding', 'web-applicaties': 'Web & Apps',
+  'dashboarding': 'Dashboarding', 'web-applications': 'Web & Apps',
   'marketing-ai': 'Marketing AI', 'forensics': 'Forensics',
-  'education': 'Education', 'anders': 'Anders',
+  'education': 'Education', 'business-consulting': 'Consulting',
+  'startup-to-founder': 'Startup→Founder', 'pioneering-fundamentals': 'Pioneering',
+  'education-1op1': 'Edu 1-op-1', 'begeleiding-innovation': 'Innovation',
+  'begeleiding-blockchain': 'Blockchain', 'digital-trail': 'Digital Trail',
+  'forensics-personal': 'Forensics (Persoonlijk)', 'anders': 'Anders',
 }
 const BUDGET_LABELS: Record<string, string> = {
   'onder-5k': '< $5k', '5k-15k': '$5k–15k', 'boven-50k': '> $50k', 'onbekend': 'Onbekend',
@@ -92,12 +96,13 @@ export default function SubmissionsTable({ submissions }: { submissions: Submiss
 
   // ─── Export CSV ───
   function exportCSV(rows: Submission[]) {
-    const headers = ['Naam', 'Bedrijfsnaam', 'Email', 'Telefoon', 'Diensten', 'Budget', 'Bericht', 'Datum']
+    const headers = ['Naam', 'Bedrijfsnaam', 'Email', 'Telefoon', 'Type', 'Diensten', 'Budget', 'Bericht', 'Datum']
     const csvRows = rows.map(s => [
       s.naam,
       s.bedrijfsnaam,
       s.email,
       s.telefoon ?? '',
+      s.klant_type ?? '',
       (s.services ?? []).map(slug => SERVICE_LABELS[slug] ?? slug).join('; '),
       s.budget ? (BUDGET_LABELS[s.budget] ?? s.budget) : '',
       (s.bericht ?? '').replace(/"/g, '""'),
@@ -293,7 +298,7 @@ export default function SubmissionsTable({ submissions }: { submissions: Submiss
                   className="rounded border-zinc-300 accent-[#2B3494]"
                 />
               </th>
-              {['Naam', 'Bedrijf', 'Email', 'Diensten', 'Budget', 'Status', 'Datum'].map(h => (
+              {['Naam', 'Bedrijf', 'Email', 'Type', 'Diensten', 'Budget', 'Status', 'Datum'].map(h => (
                 <th key={h} className="text-left px-4 py-3 text-xs font-medium text-zinc-500 whitespace-nowrap">{h}</th>
               ))}
               <th className="w-8" />
@@ -302,7 +307,7 @@ export default function SubmissionsTable({ submissions }: { submissions: Submiss
           <tbody>
             {paginated.length === 0 ? (
               <tr>
-                <td colSpan={9} className="text-center py-12 text-sm text-zinc-400">
+                <td colSpan={10} className="text-center py-12 text-sm text-zinc-400">
                   Geen resultaten gevonden
                 </td>
               </tr>
@@ -327,6 +332,15 @@ export default function SubmissionsTable({ submissions }: { submissions: Submiss
                   <td className="px-4 py-3 text-zinc-600 whitespace-nowrap">{s.bedrijfsnaam}</td>
                   <td className="px-4 py-3">
                     <a href={`mailto:${s.email}`} className="text-[#2B3494] hover:underline whitespace-nowrap text-xs">{s.email}</a>
+                  </td>
+                  <td className="px-4 py-3">
+                    {s.klant_type ? (
+                      <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded whitespace-nowrap ${
+                        s.klant_type === 'bedrijf' ? 'bg-blue-50 text-blue-700' : 'bg-purple-50 text-purple-700'
+                      }`}>
+                        {s.klant_type === 'bedrijf' ? 'Bedrijf' : 'Individu'}
+                      </span>
+                    ) : <span className="text-zinc-300">—</span>}
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex flex-wrap gap-1 min-w-[100px]">

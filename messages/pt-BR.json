@@ -551,10 +551,18 @@
     "errorMsg": "Algo deu errado. Por favor tente novamente mais tarde.",
     "services": {
       "dashboarding": "Dashboarding & Visualização de Dados",
-      "webApplicaties": "Web & Aplicações",
-      "marketingAi": "Marketing com IA",
+      "web-applications": "Web & Aplicações",
+      "marketing-ai": "Marketing com IA",
       "forensics": "Forense & Integridade",
       "education": "Educação & Treinamento",
+      "business-consulting": "Business Consulting & Advisory",
+      "startup-to-founder": "From Startup to Founder",
+      "pioneering-fundamentals": "Pioneering Fundamentals",
+      "education-1op1": "Educação 1 a 1",
+      "begeleiding-innovation": "Coaching em Inovação",
+      "begeleiding-blockchain": "Orientação em Blockchain",
+      "digital-trail": "Trilha Digital / Resume Social",
+      "forensics-personal": "Forense & Integridade (Pessoal)",
       "anders": "Outro"
     },
     "budget_options": {
@@ -564,6 +572,10 @@
       "v15k50k": "$15.000 – $50.000",
       "boven50k": "Acima de $50.000",
       "onbekend": "Ainda não definido"
-    }
+    },
+    "klantTypeLabel": "Sou um",
+    "klantTypeBedrijf": "Empresa",
+    "klantTypeIndividu": "Particular",
+    "klantTypeError": "Selecione empresa ou particular"
   }
 }

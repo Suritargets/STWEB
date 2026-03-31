@@ -551,10 +551,18 @@
     "errorMsg": "Er ging iets mis. Probeer het later opnieuw.",
     "services": {
       "dashboarding": "Dashboarding & Data Visualisatie",
-      "webApplicaties": "Web & Applicaties",
-      "marketingAi": "Marketing met AI",
+      "web-applications": "Web & Applicaties",
+      "marketing-ai": "Marketing met AI",
       "forensics": "Forensics & Integriteit",
       "education": "Education & Training",
+      "business-consulting": "Business Consulting & Advisory",
+      "startup-to-founder": "From Startup to Founder",
+      "pioneering-fundamentals": "Pioneering Fundamentals",
+      "education-1op1": "Education 1-op-1",
+      "begeleiding-innovation": "Begeleiding in Innovation",
+      "begeleiding-blockchain": "Begeleiding in Blockchain",
+      "digital-trail": "Digital Trail / Resume Social",
+      "forensics-personal": "Forensics & Integriteit (Persoonlijk)",
       "anders": "Anders"
     },
     "budget_options": {
@@ -564,6 +572,10 @@
       "v15k50k": "$15.000 – $50.000",
       "boven50k": "Boven $50.000",
       "onbekend": "Nog niet bekend"
-    }
+    },
+    "klantTypeLabel": "Ik ben een",
+    "klantTypeBedrijf": "Bedrijf",
+    "klantTypeIndividu": "Individu",
+    "klantTypeError": "Selecteer bedrijf of individu"
   }
 }

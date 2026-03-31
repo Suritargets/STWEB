@@ -20,6 +20,7 @@ export async function POST(request: Request) {
       bedrijfsnaam: data.bedrijfsnaam,
       email:       data.email,
       telefoon:    data.telefoon,
+      klantType:   data.klantType,
       services:    data.services,
       budget:      data.budget,
       bericht:     data.bericht,
