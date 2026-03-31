@@ -118,6 +118,14 @@
       "title": "Pronto para crescer?",
       "subtitle": "Ready to grow your business?",
       "button": "Entre em contato"
+    },
+    "heroMockup": {
+      "tabs": {
+        "dashboard": "Dashboard & BI",
+        "webapp": "Aplicação Web",
+        "erp": "Sistema ERP",
+        "marketing": "Marketing com IA"
+      }
     }
   },
   "about": {

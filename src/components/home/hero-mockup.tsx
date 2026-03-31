@@ -221,16 +221,20 @@ function MarketingSkeleton() {
 }
 
 /* ─── Tabs ────────────────────────────────────────────────────── */
-const TABS = [
-  { id: 'dashboard', label: 'Dashboard & BI',    dot: '#2B3494' },
-  { id: 'webapp',    label: 'Web Applicatie',     dot: '#1e5a9e' },
-  { id: 'erp',       label: 'ERP Systeem',        dot: '#153975' },
-  { id: 'marketing', label: 'Marketing met AI',   dot: '#4a5acd' },
-]
+type TabLabels = { dashboard: string; webapp: string; erp: string; marketing: string }
+
+const TAB_DOTS = { dashboard: '#2B3494', webapp: '#1e5a9e', erp: '#153975', marketing: '#4a5acd' }
 
 /* ─── Main export ─────────────────────────────────────────────── */
-export function HeroMockup() {
+export function HeroMockup({ labels }: { labels?: TabLabels }) {
   const [active, setActive] = useState('dashboard')
+
+  const tabs = [
+    { id: 'dashboard', label: labels?.dashboard ?? 'Dashboard & BI',    dot: TAB_DOTS.dashboard },
+    { id: 'webapp',    label: labels?.webapp    ?? 'Web Applicatie',     dot: TAB_DOTS.webapp },
+    { id: 'erp',       label: labels?.erp       ?? 'ERP Systeem',        dot: TAB_DOTS.erp },
+    { id: 'marketing', label: labels?.marketing ?? 'Marketing met AI',   dot: TAB_DOTS.marketing },
+  ]
 
   return (
     <div className="relative w-full mx-auto">
@@ -262,7 +266,7 @@ export function HeroMockup() {
         {/* Tab bar */}
         <div className="flex border-b border-white/[0.07] px-4 gap-0"
           style={{ background: '#0a0d25' }}>
-          {TABS.map((t) => (
+          {tabs.map((t) => (
             <button
               key={t.id}
               onClick={() => setActive(t.id)}

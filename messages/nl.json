@@ -118,6 +118,14 @@
       "title": "Klaar om te groeien?",
       "subtitle": "Ready to grow your business?",
       "button": "Neem contact op"
+    },
+    "heroMockup": {
+      "tabs": {
+        "dashboard": "Dashboard & BI",
+        "webapp": "Web Applicatie",
+        "erp": "ERP Systeem",
+        "marketing": "Marketing met AI"
+      }
     }
   },
   "about": {
