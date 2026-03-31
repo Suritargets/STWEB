@@ -79,13 +79,13 @@
       "cta2": "Consulta gratuita"
     },
     "services": {
-      "label": "SERVIÃ‡OS",
+      "label": "SERVIÇOS",
       "title": "O que fazemos",
       "titleEn": "Our Services",
       "description": "Cinco clusters especializados que juntos apoiam o ciclo empresarial completo — da estratégia à execução."
     },
     "why": {
-      "label": "POR QUÃŠ",
+      "label": "POR QUÊ",
       "title": "Expertise local, padrão internacional",
       "titleEn": "Why choose us",
       "items": [
@@ -131,7 +131,7 @@
       "subtitle": "Sediada em Paramaribo. Focada na região."
     },
     "mission": {
-      "label": "MISSÃƒO",
+      "label": "MISSÃO",
       "title": "Acreditamos na força local",
       "titleEn": "Our mission",
       "body1": "As empresas caribenhas merecem acesso à mesma inteligência estratégica e recursos digitais que seus concorrentes internacionais. Tornamos isso possível — sem abrir mão da qualidade.",
@@ -139,7 +139,7 @@
       "quote": "Qualidade internacional, raízes locais."
     },
     "story": {
-      "label": "HISTÃ“RIA",
+      “label”: “HISTÓRIA”,
       "title": "Fundada no Suriname",
       "titleEn": "Founded in Paramaribo",
       "body1": "A Suritargets foi fundada em Paramaribo com uma visão clara: trazer serviços empresariais de nível internacional para o mercado caribenho.",
@@ -337,7 +337,7 @@
       "nameEn": "Forensics & Integrity Services",
       "shortDescription": "Investigação forense digital e auditorias de integridade.",
       "description": "Oferecemos investigações forenses digitais, auditorias de conformidade e revisões de integridade para governo, instituições financeiras e empresas. Confidencial, completo e independente.",
-      "whoIsItFor": "Ã“rgãos governamentais, instituições financeiras e empresas que precisam de uma investigação forense independente.",
+      “whoIsItFor”: “Órgãos governamentais, instituições financeiras e empresas que precisam de uma investigação forense independente.",
       "deliverables": [
         "Investigação forense digital",
         "Auditoria de conformidade e integridade",

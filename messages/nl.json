@@ -1,13 +1,13 @@
 {
   "nav": {
-    "services": "Services",
-    "company": "Company",
-    "pricing": "Pricing",
-    "signUp": "Sign up",
-    "getStarted": "Get started",
+    "services": "Diensten",
+    "company": "Bedrijf",
+    "pricing": "Prijzen",
+    "signUp": "Aanmelden",
+    "getStarted": "Aan de slag",
     "voorBedrijven": "Voor Bedrijven",
     "voorIndividuen": "Voor Individuen",
-    "comingSoonTitle": "We are working on it",
+    "comingSoonTitle": "We werken eraan",
     "comingSoonBody": "Ons platform wordt momenteel gebouwd. Binnenkort kunt u hier een account aanmaken en direct aan de slag.",
     "comingSoonClose": "Sluiten",
     "langLabel": "Taal kiezen",
@@ -45,8 +45,8 @@
     "pioneeringFundamentalsDesc": "De grondbeginselen van ondernemerschap en innovatie."
   },
   "footer": {
-    "services": "Services",
-    "company": "Company",
+    "services": "Diensten",
+    "company": "Bedrijf",
     "overOns": "Over ons",
     "cases": "Cases",
     "insights": "Insights",
