@@ -77,8 +77,9 @@ export default function Nav() {
           <Image
             src="/logo-white.svg"
             alt={siteConfig.name}
-            width={200}
-            height={36}
+            width={0}
+            height={0}
+            sizes="100vw"
             priority
             className="h-9 w-auto"
           />
