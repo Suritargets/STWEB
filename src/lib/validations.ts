@@ -44,3 +44,21 @@ export type OfferteFormData = z.infer<typeof offerteSchema>
 // Keep old alias for any other imports
 export const contactSchema = offerteSchema
 export type ContactFormData = OfferteFormData
+
+export const enrollmentSchema = z.object({
+  courseSlug:      z.string().min(1),
+  courseName:      z.string().min(1),
+  enrollmentType:  z.enum(['individual', 'team']),
+  clientType:      z.enum(['zakelijk', 'particulier']),
+  naam:            z.string().min(2, 'Naam is verplicht'),
+  bedrijfsnaam:    z.string().optional(),
+  email:           z.string().email('Ongeldig e-mailadres'),
+  telefoon:        z.string().optional(),
+  deelnemers:      z.number().int().min(1),
+  uren:            z.number().int().optional(),
+  totalUsd:        z.number().positive(),
+  calculatorData:  z.record(z.unknown()).optional(),
+  opmerkingen:     z.string().optional(),
+})
+
+export type EnrollmentFormData = z.infer<typeof enrollmentSchema>
