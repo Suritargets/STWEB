@@ -87,7 +87,9 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
       telefoon:       telefoon || undefined,
       deelnemers:     calcResult?.deelnemers ?? 5,
       uren:           calcResult?.uren,
-      totalUsd:       calcResult?.totalUsd ?? 0,
+      totalUsd:       isFinance
+        ? Number((financeData as Record<string, unknown>)?.totalUsd ?? 0)
+        : (calcResult?.totalUsd ?? 0),
       calculatorData: isFinance ? financeData : calcResult?.calculatorData,
       opmerkingen:    opmerkingen || undefined,
     }

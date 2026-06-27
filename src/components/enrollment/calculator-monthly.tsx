@@ -7,16 +7,17 @@ type Props = {
   priceTeam: number
   monthlyPrice: number
   months: number
+  minCount?: number
   onChange: (result: CalcResult) => void
 }
 
 function fmt(n: number) { return '$' + n.toLocaleString('en-US') }
 
-export function CalculatorMonthly({ priceTeam, monthlyPrice, months, onChange }: Props) {
-  const [count, setCount] = useState(5)
+export function CalculatorMonthly({ priceTeam, monthlyPrice, months, minCount = 1, onChange }: Props) {
+  const [count, setCount] = useState(minCount)
 
   useEffect(() => {
-    const total = count * priceTeam
+    const total = count * monthlyPrice * months
     onChange({
       deelnemers: count,
       totalUsd: total,
@@ -29,13 +30,13 @@ export function CalculatorMonthly({ priceTeam, monthlyPrice, months, onChange }:
       <div>
         <div className="flex justify-between items-center mb-2">
           <label className="text-sm font-medium text-white">
-            Deelnemers <span className="text-white/50 text-xs">(min. 5)</span>
+            Deelnemers {minCount > 1 && <span className="text-white/50 text-xs">(min. {minCount})</span>}
           </label>
           <span className="text-lg font-bold text-white">{count}</span>
         </div>
         <input
           type="range"
-          min={5}
+          min={minCount}
           max={50}
           value={count}
           onChange={e => setCount(Number(e.target.value))}
@@ -51,7 +52,7 @@ export function CalculatorMonthly({ priceTeam, monthlyPrice, months, onChange }:
         ))}
         <div className="border-t border-white/20 pt-2 flex justify-between">
           <span className="font-semibold text-white">Totaal ({months} mnd)</span>
-          <span className="text-xl font-black text-white">{fmt(count * priceTeam)}</span>
+          <span className="text-xl font-black text-white">{fmt(count * monthlyPrice * months)}</span>
         </div>
       </div>
     </div>
