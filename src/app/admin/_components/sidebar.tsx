@@ -7,6 +7,7 @@ import {
   Search,
   BarChart3,
   Settings,
+  ShoppingBag,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import LogoutButton from './logout-button'
@@ -21,6 +22,7 @@ type NavItem = {
 const navItems: NavItem[] = [
   { href: '/admin/dashboard',          label: 'Dashboard',     icon: LayoutDashboard },
   { href: '/admin/dashboard/requests', label: 'Aanvragen',     icon: ClipboardList },
+  { href: '/admin/dashboard/orders',   label: 'Orders',        icon: ShoppingBag },
   { href: '/admin/dashboard/cms',      label: 'CMS',           icon: Pencil },
   { href: '/admin/dashboard/seo',      label: 'SEO',           icon: Search },
   { href: '#',                         label: 'Analytics',     icon: BarChart3, soon: true },
