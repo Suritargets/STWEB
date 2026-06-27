@@ -49,7 +49,13 @@ function fmt(n: number) {
   return '$' + n.toLocaleString('en-US')
 }
 
-export function FinanceCalc({ labels }: { labels: CalcLabels }) {
+export function FinanceCalc({
+  labels,
+  onRequestQuote,
+}: {
+  labels: CalcLabels
+  onRequestQuote?: (data: Record<string, unknown>) => void
+}) {
   const [prem, setPrem] = useState(2)
   const [std, setStd] = useState(3)
   const [uc, setUc] = useState(2)
@@ -107,6 +113,7 @@ export function FinanceCalc({ labels }: { labels: CalcLabels }) {
               </div>
               <input
                 type="range" min={min} max={max} value={val}
+                title={label}
                 onChange={e => set(+e.target.value)}
                 className="w-full h-1 bg-white/20 rounded appearance-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#E8192C] [&::-webkit-slider-thumb]:cursor-pointer"
               />
@@ -121,6 +128,7 @@ export function FinanceCalc({ labels }: { labels: CalcLabels }) {
             </div>
             <input
               type="range" min={45} max={150} step={5} value={rate}
+              title={labels.rate}
               onChange={e => setRate(+e.target.value)}
               className="w-full h-1 bg-white/20 rounded appearance-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#E8192C] [&::-webkit-slider-thumb]:cursor-pointer"
             />
@@ -134,6 +142,7 @@ export function FinanceCalc({ labels }: { labels: CalcLabels }) {
             </div>
             <input
               type="range" min={0} max={8} value={sup}
+              title={labels.support}
               onChange={e => setSup(+e.target.value)}
               className="w-full h-1 bg-white/20 rounded appearance-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#E8192C] [&::-webkit-slider-thumb]:cursor-pointer"
             />
@@ -146,6 +155,7 @@ export function FinanceCalc({ labels }: { labels: CalcLabels }) {
               {(['annual', 'monthly'] as const).map(m => (
                 <button
                   key={m}
+                  type="button"
                   onClick={() => setMode(m)}
                   className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold transition-colors ${
                     mode === m ? 'bg-[#E8192C] text-white' : 'text-white/60 hover:text-white'
@@ -223,6 +233,20 @@ export function FinanceCalc({ labels }: { labels: CalcLabels }) {
             </div>
             {filler > 0 && (
               <p className="mt-3 text-[11px] text-[#E8192C]/80">{labels.seatWarn1} — {filler} {labels.seatWarn2}</p>
+            )}
+
+            {onRequestQuote && (
+              <button
+                type="button"
+                onClick={() => onRequestQuote({
+                  premSeats: prem, stdSeats: std, usecases: uc,
+                  rate, support: sup, mode,
+                  totalHours: hours, totalUsd: omzetYear,
+                })}
+                className="w-full mt-4 bg-[#E63946] hover:bg-[#c0303b] text-white font-semibold py-3 rounded-lg transition-colors"
+              >
+                Offerte aanvragen
+              </button>
             )}
           </div>
         </div>
