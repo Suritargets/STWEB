@@ -59,6 +59,14 @@ export const enrollmentSchema = z.object({
   totalUsd:        z.number().positive(),
   calculatorData:  z.record(z.string(), z.unknown()).optional(),
   opmerkingen:     z.string().optional(),
+}).superRefine((data, ctx) => {
+  if (data.clientType === 'zakelijk' && !data.bedrijfsnaam?.trim()) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Bedrijfsnaam is verplicht voor zakelijke inschrijvingen',
+      path: ['bedrijfsnaam'],
+    })
+  }
 })
 
 export type EnrollmentFormData = z.infer<typeof enrollmentSchema>

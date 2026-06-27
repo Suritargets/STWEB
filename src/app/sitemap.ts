@@ -1,11 +1,14 @@
 import type { MetadataRoute } from 'next'
 import { services } from '@/lib/services-data'
 import { getAllSlugs } from '@/lib/mdx'
+import { routing } from '@/i18n/routing'
+
+const LOCALES = routing.locales
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com'
 
-  const staticPages = [
+  const staticPaths = [
     '', '/about', '/services', '/contact', '/pricing',
     '/portfolio',
     '/education',
@@ -18,33 +21,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/education/knowledge-base-rag',
     '/education/research-development',
     '/education/data-aggregation',
-  ].map((path) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: path === '' ? 1 : path.startsWith('/education') ? 0.8 : 0.8,
-  }))
+  ]
 
-  const servicePages = services.map((s) => ({
-    url: `${baseUrl}/services/${s.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+  const servicePaths = services.map((s) => `/services/${s.slug}`)
+  const caseStudyPaths = getAllSlugs('case-studies').map((slug) => `/case-studies/${slug}`)
+  const insightPaths = getAllSlugs('insights').map((slug) => `/insights/${slug}`)
 
-  const caseStudySlugs = getAllSlugs('case-studies').map((slug) => ({
-    url: `${baseUrl}/case-studies/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
+  const allPaths = [...staticPaths, ...servicePaths, ...caseStudyPaths, ...insightPaths]
 
-  const insightSlugs = getAllSlugs('insights').map((slug) => ({
-    url: `${baseUrl}/insights/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+  const entries: MetadataRoute.Sitemap = []
 
-  return [...staticPages, ...servicePages, ...caseStudySlugs, ...insightSlugs]
+  for (const locale of LOCALES) {
+    for (const path of allPaths) {
+      entries.push({
+        url: `${baseUrl}/${locale}${path}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: path === '' ? 1 : path.startsWith('/education') ? 0.8 : 0.7,
+      })
+    }
+  }
+
+  return entries
 }

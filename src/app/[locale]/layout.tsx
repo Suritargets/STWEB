@@ -37,6 +37,12 @@ export async function generateMetadata({
       description: t('description'),
     },
     robots: { index: true, follow: true },
+    alternates: {
+      canonical: `https://suritargets.com/${locale}`,
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, `https://suritargets.com/${l}`])
+      ),
+    },
   }
 }
 
