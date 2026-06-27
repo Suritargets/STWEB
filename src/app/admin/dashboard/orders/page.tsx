@@ -1,6 +1,8 @@
 import { getEnrollments } from '@/lib/enrollments'
 import OrdersTable from './_components/orders-table'
 
+export const dynamic = 'force-dynamic'
+
 export default async function OrdersPage() {
   const enrollments = await getEnrollments().catch(() => [])
   return (
