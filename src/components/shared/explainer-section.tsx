@@ -4,7 +4,7 @@ import { InfomercialGraphic } from './infomercial-graphic'
 
 const ExplainerPlayer = dynamic(
   () => import('./explainer-player').then((m) => m.ExplainerPlayer),
-  { ssr: false, loading: () => <InfomercialGraphic /> }
+  { loading: () => <InfomercialGraphic /> }
 )
 
 export function ExplainerSection() {

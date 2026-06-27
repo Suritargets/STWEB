@@ -4,6 +4,10 @@ import { Player } from '@remotion/player'
 import { useLocale } from 'next-intl'
 import { ExplainerVideo } from '../../../remotion/ExplainerVideo'
 
+if (typeof window === 'undefined') {
+  // @remotion/player requires a browser environment; skip module-level side-effects on the server.
+}
+
 export function ExplainerPlayer() {
   const locale = useLocale()
 
