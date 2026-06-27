@@ -101,6 +101,10 @@ export function SlugPageContent({ slug }: { slug: Slug }) {
             <p className="mt-6 text-xl md:text-2xl text-muted-foreground font-mono max-w-xl">
               {t(`${key}.subtitle`)}
             </p>
+            <div className="mt-8 inline-flex items-center gap-2 border border-[#E63946]/40 bg-[#E63946]/10 text-[#E63946] text-sm font-semibold px-4 py-2 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-[#E63946] animate-pulse" />
+              Coming Soon — Meld je aan voor updates
+            </div>
           </AnimatedSection>
           <AnimatedSection delay={100}>
             <div className="mt-16 flex items-center gap-4">
