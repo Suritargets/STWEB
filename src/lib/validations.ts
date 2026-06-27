@@ -57,7 +57,7 @@ export const enrollmentSchema = z.object({
   deelnemers:      z.number().int().min(1),
   uren:            z.number().int().optional(),
   totalUsd:        z.number().positive(),
-  calculatorData:  z.record(z.unknown()).optional(),
+  calculatorData:  z.record(z.string(), z.unknown()).optional(),
   opmerkingen:     z.string().optional(),
 })
 
