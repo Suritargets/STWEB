@@ -7,8 +7,8 @@ import {
   Menu, X, ChevronDown,
   BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
   Shield, BookOpen, Rocket, Bitcoin, UserCircle,
-  Briefcase, TrendingUp, Compass,
-  Users, FolderOpen, Lightbulb,
+  Briefcase, TrendingUp, Compass, Calculator, Zap,
+  Users, FolderOpen, Lightbulb, LayoutGrid,
 } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
@@ -59,6 +59,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [companyOpen, setCompanyOpen] = useState(false)
+  const [educationOpen, setEducationOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [signupOpen, setSignupOpen] = useState(false)
 
@@ -158,6 +159,105 @@ export default function Nav() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
+              {/* Education mega menu */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-4">
+                  {t('education')}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[680px] p-5 flex flex-col gap-0">
+                    <div className="grid grid-cols-2 gap-0 divide-x divide-border">
+
+                      {/* Courses column */}
+                      <div className="pr-5">
+                        <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-muted-foreground mb-3 px-1">
+                          {t('courses')}
+                        </p>
+                        <ul className="flex flex-col gap-0.5">
+                          {([
+                            { href: '/education/ai-courses',          icon: Sparkles,   labelKey: 'aiCourses',       descKey: 'aiCoursesDesc',       badge: null      },
+                            { href: '/education/ai-hands-on-deck',    icon: Zap,        labelKey: 'aiHandsOnDeck',   descKey: 'aiHandsOnDeckDesc',   badge: 'Q3 2026' },
+                            { href: '/education/trading-courses',     icon: TrendingUp, labelKey: 'tradingCourses',  descKey: 'tradingCoursesDesc',  badge: null      },
+                            { href: '/education/it-courses',          icon: Monitor,    labelKey: 'itCourses',       descKey: 'itCoursesDesc',       badge: null      },
+                            { href: '/education/business-courses',    icon: Briefcase,  labelKey: 'businessCourses', descKey: 'businessCoursesDesc', badge: null      },
+                          ] as const).map(({ href, icon: Icon, labelKey, descKey, badge }) => (
+                            <li key={href}>
+                              <Link href={href} className="flex items-start gap-3 select-none rounded-md px-2 py-2.5 hover:bg-[#2B3494]/5 transition-colors group">
+                                <span className="mt-0.5 shrink-0 w-7 h-7 flex items-center justify-center rounded-md bg-[#2B3494]/8 text-[#2B3494] group-hover:bg-[#2B3494] group-hover:text-white transition-colors">
+                                  <Icon size={14} />
+                                </span>
+                                <span className="flex-1">
+                                  <span className="flex items-center gap-2">
+                                    <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494] leading-tight">{t(labelKey)}</p>
+                                    {badge && <span className="font-mono text-[9px] tracking-widest uppercase font-bold text-[#E8192C] bg-[#E8192C]/8 px-1.5 py-0.5 rounded-full">{badge}</span>}
+                                  </span>
+                                  <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{t(descKey)}</p>
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Education Software column */}
+                      <div className="pl-5">
+                        <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-muted-foreground mb-3 px-1">
+                          {t('eduSoftwareLabel')}
+                        </p>
+                        <ul className="flex flex-col gap-0.5">
+                          {([
+                            { href: 'https://edu.suritargets.com',       icon: GraduationCap, labelKey: 'eduPlatform',    descKey: 'eduPlatformDesc',    external: true  },
+                            { href: '/education/knowledge-base-rag',     icon: BookOpen,      labelKey: 'knowledgeBase',  descKey: 'knowledgeBaseDesc',  external: false },
+                            { href: '/education/research-development',   icon: Compass,       labelKey: 'researchDev',    descKey: 'researchDevDesc',    external: false },
+                            { href: '/education/data-aggregation',       icon: BarChart2,     labelKey: 'dataAggregation', descKey: 'dataAggregationDesc', external: false },
+                          ] as const).map(({ href, icon: Icon, labelKey, descKey, external }) => (
+                            <li key={href}>
+                              <Link
+                                href={href}
+                                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                                className="flex items-start gap-3 select-none rounded-md px-2 py-2.5 hover:bg-[#2B3494]/5 transition-colors group"
+                              >
+                                <span className="mt-0.5 shrink-0 w-7 h-7 flex items-center justify-center rounded-md bg-[#2B3494]/8 text-[#2B3494] group-hover:bg-[#2B3494] group-hover:text-white transition-colors">
+                                  <Icon size={14} />
+                                </span>
+                                <span>
+                                  <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494] leading-tight">{t(labelKey)}</p>
+                                  <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{t(descKey)}</p>
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                    </div>
+
+                    {/* In-house Training — full-width row */}
+                    <div className="mt-3 pt-3 border-t border-border">
+                      <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-muted-foreground mb-2 px-1">
+                        {t('inhouseLabel')}
+                      </p>
+                      <Link
+                        href="/education/finance-accounting-claude"
+                        className="flex items-center gap-3 select-none rounded-md px-2 py-2.5 hover:bg-[#2B3494]/5 transition-colors group"
+                      >
+                        <span className="shrink-0 w-7 h-7 flex items-center justify-center rounded-md bg-[#E8192C]/10 text-[#E8192C] group-hover:bg-[#2B3494] group-hover:text-white transition-colors">
+                          <Calculator size={14} />
+                        </span>
+                        <span className="flex-1">
+                          <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494] leading-tight">{t('financeClaudeInhouse')}</p>
+                          <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{t('financeClaudeInhouseDesc')}</p>
+                        </span>
+                        <span className="font-mono text-[10px] tracking-widest uppercase font-bold text-[#E8192C] bg-[#E8192C]/8 px-2 py-0.5 rounded-full whitespace-nowrap">
+                          Claude Desktop + Excel
+                        </span>
+                      </Link>
+                    </div>
+
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
               {/* Company dropdown */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-4">
@@ -188,6 +288,12 @@ export default function Nav() {
 
             </NavigationMenuList>
           </NavigationMenu>
+          <Link
+            href="/portfolio"
+            className="text-sm text-white/80 hover:text-white transition-colors px-4 h-9 flex items-center"
+          >
+            {t('portfolio')}
+          </Link>
           <Link
             href="/pricing"
             className="text-sm text-white/80 hover:text-white transition-colors px-4 h-9 flex items-center"
@@ -287,6 +393,34 @@ export default function Nav() {
 
           <button
             className="flex items-center justify-between w-full text-sm text-white/80 hover:text-white transition-colors py-2"
+            onClick={() => setEducationOpen(!educationOpen)}
+          >
+            {t('education')}
+            <ChevronDown size={16} className={cn('transition-transform', educationOpen && 'rotate-180')} />
+          </button>
+          {educationOpen && (
+            <div className="pl-4 flex flex-col gap-1 mb-2">
+              <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/40 pt-1 pb-0.5">{t('courses')}</p>
+              <Link href="/education/ai-courses" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('aiCourses')}</Link>
+              <Link href="/education/ai-hands-on-deck" className="text-sm text-white/70 hover:text-white transition-colors py-1.5 flex items-center gap-2" onClick={() => setOpen(false)}>
+                {t('aiHandsOnDeck')}
+                <span className="font-mono text-[9px] tracking-widest uppercase font-bold text-[#E8192C]">Q3 2026</span>
+              </Link>
+              <Link href="/education/trading-courses" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('tradingCourses')}</Link>
+              <Link href="/education/it-courses" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('itCourses')}</Link>
+              <Link href="/education/business-courses" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('businessCourses')}</Link>
+              <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/40 pt-2 pb-0.5">{t('eduSoftwareLabel')}</p>
+              <Link href="https://edu.suritargets.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('eduPlatform')}</Link>
+              <Link href="/education/knowledge-base-rag" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('knowledgeBase')}</Link>
+              <Link href="/education/research-development" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('researchDev')}</Link>
+              <Link href="/education/data-aggregation" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('dataAggregation')}</Link>
+              <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/40 pt-2 pb-0.5">{t('inhouseLabel')}</p>
+              <Link href="/education/finance-accounting-claude" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('financeClaudeInhouse')}</Link>
+            </div>
+          )}
+
+          <button
+            className="flex items-center justify-between w-full text-sm text-white/80 hover:text-white transition-colors py-2"
             onClick={() => setCompanyOpen(!companyOpen)}
           >
             {t('company')}
@@ -300,12 +434,16 @@ export default function Nav() {
               <Link href="/case-studies" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>
                 {t('cases')}
               </Link>
-              <Link href="/insights" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>
+                  <Link href="/insights" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>
                 {t('insights')}
               </Link>
             </div>
           )}
 
+          <Link href="/portfolio" className="text-sm text-white/80 hover:text-white transition-colors py-2"
+            onClick={() => setOpen(false)}>
+            {t('portfolio')}
+          </Link>
           <Link href="/pricing" className="text-sm text-white/80 hover:text-white transition-colors py-2"
             onClick={() => setOpen(false)}>
             {t('pricing')}

@@ -37,6 +37,34 @@
     "casesDesc": "Results that speak for themselves",
     "insights": "Insights",
     "insightsDesc": "Analysis and trends from the region",
+    "portfolio": "Portfolio",
+    "portfolioDesc": "Websites and projects we have built",
+    "education": "Education",
+    "eduSoftware": "Edu Software",
+    "eduSoftwareDesc": "Software platform for educational institutions",
+    "aiCourses": "AI Courses",
+    "aiCoursesDesc": "Learn to work with AI tools and automation",
+    "tradingCourses": "Trading Courses",
+    "tradingCoursesDesc": "Stocks, crypto and financial markets",
+    "itCourses": "IT Courses",
+    "itCoursesDesc": "Programming, networking and cybersecurity",
+    "businessCourses": "Business Courses",
+    "businessCoursesDesc": "Entrepreneurship, management and growth",
+    "courses": "Courses",
+    "eduSoftwareLabel": "Education Software",
+    "aiHandsOnDeck": "AI – Hands On Deck",
+    "aiHandsOnDeckDesc": "Practical AI training · Q3 2026 edition",
+    "inhouseLabel": "In-house Training",
+    "financeClaudeInhouse": "Finance & Accounting Training",
+    "financeClaudeInhouseDesc": "Claude Desktop + Excel for accounting firms",
+    "eduPlatform": "Education Platform",
+    "eduPlatformDesc": "LMS platform for schools and training bureaus",
+    "knowledgeBase": "Knowledge Base RAG",
+    "knowledgeBaseDesc": "Smart knowledge base with AI-powered search",
+    "researchDev": "Research & Development",
+    "researchDevDesc": "R&D tools for researchers and innovation teams",
+    "dataAggregation": "Data Aggregation",
+    "dataAggregationDesc": "Analysis and aggregation of educational datasets",
     "businessConsulting": "Business Consulting",
     "businessConsultingDesc": "Strategic advice and guidance for growth and optimization.",
     "startupToFounder": "From Startup to Founder",
@@ -49,6 +77,7 @@
     "company": "Company",
     "overOns": "About us",
     "cases": "Cases",
+    "portfolio": "Portfolio",
     "insights": "Insights",
     "contact": "Contact",
     "rights": "All rights reserved.",
@@ -514,5 +543,100 @@
     "ctaBody": "Contact us for a no-obligation conversation.",
     "ctaButton": "Get in touch",
     "ctaGhost": "More insights"
+  },
+  "portfolio": {
+    "meta": {
+      "title": "Portfolio — Suritargets",
+      "description": "Websites and digital projects built by Suritargets for clients in Suriname and the Caribbean region."
+    },
+    "hero": {
+      "label": "Portfolio",
+      "title": "Our projects",
+      "subtitle": "Websites and digital products we have designed and built."
+    },
+    "work": {
+      "label": "Work",
+      "title": "What we have built",
+      "titleEn": "What we built"
+    },
+    "northresort": { "description": "Modern website for a Surinamese resort — fully responsive, with booking integration and a sleek visual design that reflects the atmosphere of the location." },
+    "melkcentrale": { "description": "Corporate website for Melk Centrale Suriname — clear, professional and tailored to their target audience in the Surinamese market." },
+    "edu": { "description": "E-learning platform by Suritargets — built for online training, courses and knowledge sharing across the Caribbean region." },
+    "logixlayer": { "description": "AI-powered automation platform for Caribbean businesses — open-source, scalable and designed to make business processes smarter and more efficient." },
+    "cta": {
+      "label": "Collaborate",
+      "title": "Ready to start a project?",
+      "body": "Get in touch and tell us what you want to build.",
+      "button": "Get in touch"
+    },
+    "screenshotAlt": "Screenshot of"
+  },
+  "education": {
+    "meta": { "title": "Education — Suritargets", "description": "Training, courses and educational software by Suritargets for the Caribbean market." },
+    "hero": { "label": "Education", "title": "Learn & grow", "subtitle": "Practical training and software for individuals and organisations across the Caribbean region." },
+    "categories": { "label": "Offerings", "title": "Our educational programs", "titleEn": "Our educational programs" },
+    "software": { "title": "Our education software", "titleEn": "Our education software" },
+    "inhouse": { "title": "In-house Training", "titleEn": "Tailored programmes for your team" },
+    "more": "Learn more",
+    "topicsLabel": "Content",
+    "cta": { "label": "Enroll", "title": "Ready to get started?", "body": "Get in touch for more information or to register.", "button": "Get in touch" },
+    "edu_software": {
+      "description": "A complete software platform for schools, training bureaus and educational institutions — manage courses, participants and certificates in one place.",
+      "title": "Edu Software", "subtitle": "Smart platform for educational institutions.",
+      "topicsTitle": "What the platform offers", "topicsTitleEn": "Platform features",
+      "topics": ["Course management and scheduling", "Participant management and progress tracking", "Combine online and in-person classes", "Certificate issuance and LinkedIn badge", "Reports and analytics", "Custom branding for your institution"]
+    },
+    "ai_courses": {
+      "description": "Learn to work with AI tools like ChatGPT, automation and data analysis — practical and immediately applicable in your work.",
+      "title": "AI Courses", "subtitle": "Understanding and applying AI in practice.",
+      "topicsTitle": "What you will learn", "topicsTitleEn": "What you will learn",
+      "topics": ["What is AI and how does it work (2026 Q3)", "Using ChatGPT and other LLM tools effectively", "Prompt Engineering for better results", "AI automation in your work processes", "Data & AI risks and ethics", "Agentic AI and autonomous systems"]
+    },
+    "trading_courses": {
+      "description": "From stock investing to cryptocurrency trading — learn to understand financial markets and trade strategically.",
+      "title": "Trading Courses", "subtitle": "Understanding and leveraging financial markets.",
+      "topicsTitle": "What you will learn", "topicsTitleEn": "What you will learn",
+      "topics": ["Fundamentals of investing and trading", "Technical and fundamental analysis", "Cryptocurrency and blockchain", "Risk management and portfolio building", "Trading platforms and tools", "Taxes and regulations in Suriname"]
+    },
+    "it_courses": {
+      "description": "Practical IT training in programming, networking and cybersecurity — from beginner to advanced level.",
+      "title": "IT Courses", "subtitle": "Technical skills for the digital world.",
+      "topicsTitle": "What you will learn", "topicsTitleEn": "What you will learn",
+      "topics": ["Programming (Python, JavaScript, SQL)", "Networking and infrastructure", "Cybersecurity and information security", "Cloud computing and DevOps basics", "Database management", "IT project management"]
+    },
+    "business_courses": {
+      "description": "Entrepreneurship training and management programmes for professionals and starters in the Caribbean market.",
+      "title": "Business Courses", "subtitle": "Entrepreneurship and leadership in practice.",
+      "topicsTitle": "What you will learn", "topicsTitleEn": "What you will learn",
+      "topics": ["Writing and pitching a business plan", "Financial management and cashflow", "Marketing and customer acquisition", "Leadership and team management", "Digital transformation for businesses", "Growth strategy and scalability"]
+    },
+    "knowledge_base_rag": {
+      "description": "An AI-powered knowledge base that lets teams quickly find information in documents, manuals and internal knowledge bases using Retrieval-Augmented Generation.",
+      "title": "Knowledge Base RAG", "subtitle": "Smart search across your own knowledge base.",
+      "topicsTitle": "Features", "topicsTitleEn": "Features",
+      "topics": ["Upload and index documents (PDF, Word, URLs)", "AI-powered search with source citations", "API integration with existing systems", "Role-based access control", "Multilingual support", "Usage statistics and analytics"]
+    },
+    "research_development": {
+      "description": "Tools and guidance for researchers, universities and R&D teams looking to streamline data-driven innovation and knowledge management.",
+      "title": "Research & Development", "subtitle": "Data-driven innovation and knowledge management.",
+      "topicsTitle": "What we offer", "topicsTitleEn": "What we offer",
+      "topics": ["Manage and structure research data", "Automate literature research with AI", "Team collaboration and version control", "Reporting and publication support", "API connections to external databases", "Compliant storage and archiving of data"]
+    },
+    "data_aggregation": {
+      "description": "Software for collecting, merging and analysing educational data from multiple sources — for institutions that want to drive decisions on learning outcomes.",
+      "title": "Data Aggregation", "subtitle": "Insights into learning outcomes and educational data.",
+      "topicsTitle": "Platform capabilities", "topicsTitleEn": "Platform capabilities",
+      "topics": ["Read data from multiple sources (LMS, API, CSV)", "Custom dashboards and visualisations", "Performance indicators per student, class or institution", "Automated reports for management and policy", "Secure storage and privacy compliance (GDPR)", "Export to Excel, PDF and BI tools"]
+    },
+    "finance_claude": {
+      "description": "Hands-on in-house training for accounting and advisory firms — Claude Desktop, Cowork and Excel integrated into your daily financial workflows.",
+      "title": "Finance & Accounting Inhouse Training",
+      "subtitle": "Claude Desktop + Excel for your accounting firm."
+    },
+    "ai_hands_on_deck": {
+      "description": "Quarterly hands-on AI training for professionals — updated every quarter with the latest tools, models and real-world applications.",
+      "title": "AI – Hands On Deck",
+      "subtitle": "Q3 2026 · Practical AI for your team."
+    }
   }
 }

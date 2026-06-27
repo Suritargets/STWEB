@@ -37,6 +37,34 @@
     "casesDesc": "Resultados que hablan por sí mismos",
     "insights": "Perspectivas",
     "insightsDesc": "Análisis y tendencias de la región",
+    "portfolio": "Portafolio",
+    "portfolioDesc": "Sitios web y proyectos que hemos construido",
+    "education": "Educación",
+    "eduSoftware": "Edu Software",
+    "eduSoftwareDesc": "Plataforma de software para instituciones educativas",
+    "aiCourses": "Cursos de IA",
+    "aiCoursesDesc": "Aprende a trabajar con herramientas de IA y automatización",
+    "tradingCourses": "Cursos de Trading",
+    "tradingCoursesDesc": "Acciones, criptomonedas y mercados financieros",
+    "itCourses": "Cursos de IT",
+    "itCoursesDesc": "Programación, redes y ciberseguridad",
+    "businessCourses": "Cursos de Negocios",
+    "businessCoursesDesc": "Emprendimiento, gestión y crecimiento",
+    "courses": "Cursos",
+    "eduSoftwareLabel": "Education Software",
+    "aiHandsOnDeck": "AI – Hands On Deck",
+    "aiHandsOnDeckDesc": "Formación práctica en IA · edición Q3 2026",
+    "inhouseLabel": "Formación In-house",
+    "financeClaudeInhouse": "Finance & Accounting Training",
+    "financeClaudeInhouseDesc": "Claude Desktop + Excel para despachos contables",
+    "eduPlatform": "Education Platform",
+    "eduPlatformDesc": "Plataforma LMS para escuelas y centros de formación",
+    "knowledgeBase": "Knowledge Base RAG",
+    "knowledgeBaseDesc": "Base de conocimiento inteligente con búsqueda por IA",
+    "researchDev": "Research & Development",
+    "researchDevDesc": "Herramientas R&D para investigadores y equipos de innovación",
+    "dataAggregation": "Data Aggregation",
+    "dataAggregationDesc": "Análisis y agregación de conjuntos de datos educativos",
     "businessConsulting": "Business Consulting",
     "businessConsultingDesc": "Asesoría estratégica y orientación para el crecimiento y la optimización.",
     "startupToFounder": "From Startup to Founder",
@@ -49,6 +77,7 @@
     "company": "Empresa",
     "overOns": "Sobre nosotros",
     "cases": "Casos",
+    "portfolio": "Portafolio",
     "insights": "Artículos",
     "contact": "Contacto",
     "rights": "Todos los derechos reservados.",
@@ -514,5 +543,60 @@
     "ctaBody": "Contáctenos para una conversación sin compromiso.",
     "ctaButton": "Ponerse en contacto",
     "ctaGhost": "Más perspectivas"
+  },
+  "portfolio": {
+    "meta": {
+      "title": "Portafolio — Suritargets",
+      "description": "Sitios web y proyectos digitales construidos por Suritargets para clientes en Surinam y la región del Caribe."
+    },
+    "hero": {
+      "label": "Portafolio",
+      "title": "Nuestros proyectos",
+      "subtitle": "Sitios web y productos digitales que hemos diseñado y construido."
+    },
+    "work": {
+      "label": "Trabajo",
+      "title": "Lo que hemos construido",
+      "titleEn": "What we built"
+    },
+    "northresort": { "description": "Sitio web moderno para un resort surinamés — completamente responsive, con integración de reservas y un diseño visual elegante que refleja la atmósfera del lugar." },
+    "melkcentrale": { "description": "Sitio web corporativo para Melk Centrale Suriname — claro, profesional y adaptado a su público objetivo en el mercado surinamés." },
+    "edu": { "description": "Plataforma de e-learning de Suritargets — creada para formaciones online, cursos e intercambio de conocimiento en toda la región del Caribe." },
+    "logixlayer": { "description": "Plataforma de automatización con IA para empresas del Caribe — de código abierto, escalable y diseñada para hacer los procesos empresariales más inteligentes y eficientes." },
+    "cta": {
+      "label": "Colaborar",
+      "title": "¿Listo para iniciar un proyecto?",
+      "body": "Contáctenos y cuéntenos qué quiere construir.",
+      "button": "Contáctenos"
+    },
+    "screenshotAlt": "Captura de pantalla de"
+  },
+  "education": {
+    "meta": { "title": "Educación — Suritargets", "description": "Formaciones, cursos y software educativo de Suritargets para el mercado del Caribe." },
+    "hero": { "label": "Educación", "title": "Aprender y crecer", "subtitle": "Formación práctica y software para personas y organizaciones en la región del Caribe." },
+    "categories": { "label": "Oferta", "title": "Nuestros programas educativos", "titleEn": "Our educational programs" },
+    "software": { "title": "Nuestro software educativo", "titleEn": "Our education software" },
+    "inhouse": { "title": "Formación In-house", "titleEn": "Tailored programmes for your team" },
+    "more": "Más información",
+    "topicsLabel": "Contenido",
+    "cta": { "label": "Inscribirse", "title": "¿Listo para empezar?", "body": "Contáctenos para más información o para registrarse.", "button": "Contáctenos" },
+    "edu_software": { "description": "Una plataforma de software completa para escuelas, centros de formación e instituciones educativas.", "title": "Edu Software", "subtitle": "Plataforma inteligente para instituciones educativas.", "topicsTitle": "Lo que ofrece la plataforma", "topicsTitleEn": "Platform features", "topics": ["Gestión de cursos y programación", "Gestión de participantes y seguimiento del progreso", "Combinar clases online y presenciales", "Emisión de certificados y badge de LinkedIn", "Informes y analíticas", "Marca personalizada para su institución"] },
+    "ai_courses": { "description": "Aprenda a trabajar con herramientas de IA como ChatGPT, automatización y análisis de datos.", "title": "Cursos de IA", "subtitle": "Comprender y aplicar la IA en la práctica.", "topicsTitle": "Lo que aprenderás", "topicsTitleEn": "What you will learn", "topics": ["Qué es la IA y cómo funciona (2026 Q3)", "Usar ChatGPT y otros LLMs eficazmente", "Prompt Engineering para mejores resultados", "Automatización con IA en sus procesos", "Riesgos y ética de datos e IA", "IA agéntica y sistemas autónomos"] },
+    "trading_courses": { "description": "Desde inversión en acciones hasta trading de criptomonedas — aprenda los mercados financieros.", "title": "Cursos de Trading", "subtitle": "Comprender y aprovechar los mercados financieros.", "topicsTitle": "Lo que aprenderás", "topicsTitleEn": "What you will learn", "topics": ["Fundamentos de inversión y trading", "Análisis técnico y fundamental", "Criptomonedas y blockchain", "Gestión de riesgos y cartera", "Plataformas y herramientas de trading", "Impuestos y regulaciones en Surinam"] },
+    "it_courses": { "description": "Formación práctica en programación, redes y ciberseguridad — de principiante a avanzado.", "title": "Cursos de IT", "subtitle": "Habilidades técnicas para el mundo digital.", "topicsTitle": "Lo que aprenderás", "topicsTitleEn": "What you will learn", "topics": ["Programación (Python, JavaScript, SQL)", "Redes e infraestructura", "Ciberseguridad y seguridad de la información", "Computación en la nube y DevOps básico", "Gestión de bases de datos", "Gestión de proyectos IT"] },
+    "business_courses": { "description": "Formación en emprendimiento y gestión para profesionales y emprendedores en el mercado caribeño.", "title": "Cursos de Negocios", "subtitle": "Emprendimiento y liderazgo en la práctica.", "topicsTitle": "Lo que aprenderás", "topicsTitleEn": "What you will learn", "topics": ["Escribir y presentar un plan de negocios", "Gestión financiera y flujo de caja", "Marketing y adquisición de clientes", "Liderazgo y gestión de equipos", "Transformación digital para empresas", "Estrategia de crecimiento y escalabilidad"] },
+    "knowledge_base_rag": { "description": "Una base de conocimiento con IA que permite a los equipos encontrar información rápidamente mediante RAG.", "title": "Knowledge Base RAG", "subtitle": "Búsqueda inteligente en su propia base de conocimiento.", "topicsTitle": "Funcionalidades", "topicsTitleEn": "Features", "topics": ["Cargar e indexar documentos (PDF, Word, URLs)", "Búsqueda con IA y citas de fuentes", "Integración API con sistemas existentes", "Control de acceso por roles", "Soporte multilingüe", "Estadísticas y análisis de uso"] },
+    "research_development": { "description": "Herramientas para investigadores, universidades y equipos de I+D que quieren optimizar la innovación basada en datos.", "title": "Research & Development", "subtitle": "Innovación y gestión del conocimiento basada en datos.", "topicsTitle": "Lo que ofrecemos", "topicsTitleEn": "What we offer", "topics": ["Gestionar y estructurar datos de investigación", "Automatizar revisión bibliográfica con IA", "Colaboración y control de versiones en equipo", "Informes y apoyo a publicaciones", "Conexiones API con bases de datos externas", "Almacenamiento y archivo cumpliendo normativa"] },
+    "data_aggregation": { "description": "Software para recopilar, fusionar y analizar datos educativos de múltiples fuentes para instituciones orientadas a resultados.", "title": "Data Aggregation", "subtitle": "Información sobre resultados de aprendizaje y datos educativos.", "topicsTitle": "Capacidades de la plataforma", "topicsTitleEn": "Platform capabilities", "topics": ["Leer datos de múltiples fuentes (LMS, API, CSV)", "Paneles y visualizaciones personalizados", "Indicadores de rendimiento por alumno, clase o institución", "Informes automáticos para dirección y política", "Almacenamiento seguro y cumplimiento de privacidad (GDPR)", "Exportar a Excel, PDF y herramientas BI"] },
+    "finance_claude": {
+      "description": "Formación in-house para despachos de contabilidad y asesoría — Claude Desktop, Cowork y Excel integrados en sus flujos de trabajo financieros.",
+      "title": "Finance & Accounting Inhouse Training",
+      "subtitle": "Claude Desktop + Excel para su despacho contable."
+    },
+    "ai_hands_on_deck": {
+      "description": "Formación práctica en IA actualizada trimestralmente — las últimas herramientas, modelos y aplicaciones del mundo real.",
+      "title": "AI – Hands On Deck",
+      "subtitle": "Q3 2026 · IA práctica para su equipo."
+    }
   }
 }

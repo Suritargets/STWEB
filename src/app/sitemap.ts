@@ -5,11 +5,24 @@ import { getAllSlugs } from '@/lib/mdx'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com'
 
-  const staticPages = ['', '/about', '/services', '/contact'].map((path) => ({
+  const staticPages = [
+    '', '/about', '/services', '/contact', '/pricing',
+    '/portfolio',
+    '/education',
+    '/education/ai-hands-on-deck',
+    '/education/finance-accounting-claude',
+    '/education/ai-courses',
+    '/education/trading-courses',
+    '/education/it-courses',
+    '/education/business-courses',
+    '/education/knowledge-base-rag',
+    '/education/research-development',
+    '/education/data-aggregation',
+  ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: path === '' ? 1 : 0.8,
+    priority: path === '' ? 1 : path.startsWith('/education') ? 0.8 : 0.8,
   }))
 
   const servicePages = services.map((s) => ({

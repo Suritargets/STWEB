@@ -6,6 +6,7 @@ function sql() {
 
 export type Submission = {
   id: number
+  client_type: 'zakelijk' | 'particulier'
   naam: string
   bedrijfsnaam: string
   email: string
@@ -22,8 +23,9 @@ export async function ensureSubmissionsTable() {
   await db`
     CREATE TABLE IF NOT EXISTS submissions (
       id            SERIAL PRIMARY KEY,
+      client_type   TEXT NOT NULL DEFAULT 'zakelijk',
       naam          TEXT NOT NULL,
-      bedrijfsnaam  TEXT NOT NULL,
+      bedrijfsnaam  TEXT NOT NULL DEFAULT '',
       email         TEXT NOT NULL,
       telefoon      TEXT,
       services      TEXT[],
@@ -33,9 +35,14 @@ export async function ensureSubmissionsTable() {
       created_at    TIMESTAMPTZ DEFAULT NOW()
     )
   `
+  // Add client_type column if table already exists without it
+  await db`
+    ALTER TABLE submissions ADD COLUMN IF NOT EXISTS client_type TEXT NOT NULL DEFAULT 'zakelijk'
+  `
 }
 
 export async function insertSubmission(data: {
+  clientType?: string
   naam: string
   bedrijfsnaam: string
   email: string
@@ -47,8 +54,9 @@ export async function insertSubmission(data: {
 }) {
   const db = sql()
   const rows = await db`
-    INSERT INTO submissions (naam, bedrijfsnaam, email, telefoon, services, budget, bericht, anders_text)
+    INSERT INTO submissions (client_type, naam, bedrijfsnaam, email, telefoon, services, budget, bericht, anders_text)
     VALUES (
+      ${data.clientType ?? 'zakelijk'},
       ${data.naam},
       ${data.bedrijfsnaam},
       ${data.email},

@@ -84,6 +84,7 @@ export default function Footer() {
           <ul className="space-y-2">
             <li><Link href="/about" className="text-sm text-white/70 hover:text-white transition-colors">{t('overOns')}</Link></li>
             <li><Link href="/case-studies" className="text-sm text-white/70 hover:text-white transition-colors">{t('cases')}</Link></li>
+            <li><Link href="/portfolio" className="text-sm text-white/70 hover:text-white transition-colors">{t('portfolio')}</Link></li>
             <li><Link href="/insights" className="text-sm text-white/70 hover:text-white transition-colors">{t('insights')}</Link></li>
             <li><Link href="/contact" className="text-sm text-white/70 hover:text-white transition-colors">{t('contact')}</Link></li>
           </ul>

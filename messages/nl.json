@@ -37,6 +37,34 @@
     "casesDesc": "Resultaten die voor zich spreken",
     "insights": "Insights",
     "insightsDesc": "Analyses en trends uit de regio",
+    "portfolio": "Portfolio",
+    "portfolioDesc": "Websites en projecten die wij hebben gebouwd",
+    "education": "Education",
+    "eduSoftware": "Edu Software",
+    "eduSoftwareDesc": "Softwareplatform voor onderwijsinstellingen",
+    "aiCourses": "AI Courses",
+    "aiCoursesDesc": "Leer werken met AI-tools en automatisering",
+    "tradingCourses": "Trading Courses",
+    "tradingCoursesDesc": "Aandelen, crypto en financiële markten",
+    "itCourses": "IT Courses",
+    "itCoursesDesc": "Programmeren, netwerken en cybersecurity",
+    "businessCourses": "Business Courses",
+    "businessCoursesDesc": "Ondernemerschap, management en groei",
+    "courses": "Courses",
+    "eduSoftwareLabel": "Education Software",
+    "aiHandsOnDeck": "AI – Hands On Deck",
+    "aiHandsOnDeckDesc": "Praktische AI-training · editie Q3 2026",
+    "inhouseLabel": "In-house Training",
+    "financeClaudeInhouse": "Finance & Accounting Training",
+    "financeClaudeInhouseDesc": "Claude Desktop + Excel voor accountantskantoren",
+    "eduPlatform": "Education Platform",
+    "eduPlatformDesc": "LMS platform voor scholen en trainingsbureaus",
+    "knowledgeBase": "Knowledge Base RAG",
+    "knowledgeBaseDesc": "Slimme kennisbank met AI-gestuurde zoekfunctie",
+    "researchDev": "Research & Development",
+    "researchDevDesc": "R&D tools voor onderzoekers en innovatieteams",
+    "dataAggregation": "Data Aggregation",
+    "dataAggregationDesc": "Analyse en aggregatie van educatieve datasets",
     "businessConsulting": "Business Consulting",
     "businessConsultingDesc": "Strategisch advies en begeleiding voor groei en optimalisatie.",
     "startupToFounder": "From Startup to Founder",
@@ -49,6 +77,7 @@
     "company": "Company",
     "overOns": "Over ons",
     "cases": "Cases",
+    "portfolio": "Portfolio",
     "insights": "Insights",
     "contact": "Contact",
     "rights": "Alle rechten voorbehouden.",
@@ -514,5 +543,100 @@
     "ctaBody": "Neem contact op voor een vrijblijvend gesprek.",
     "ctaButton": "Contact opnemen",
     "ctaGhost": "Meer inzichten"
+  },
+  "portfolio": {
+    "meta": {
+      "title": "Portfolio — Suritargets",
+      "description": "Websites en digitale projecten gebouwd door Suritargets voor klanten in Suriname en de Caribische regio."
+    },
+    "hero": {
+      "label": "Portfolio",
+      "title": "Onze projecten",
+      "subtitle": "Websites en digitale producten die wij hebben ontworpen en gebouwd."
+    },
+    "work": {
+      "label": "Werk",
+      "title": "Wat wij hebben gebouwd",
+      "titleEn": "What we built"
+    },
+    "northresort": { "description": "Moderne website voor een Surinaams resort — volledig responsive, met booking-integratie en een strak visueel ontwerp dat de sfeer van de locatie weerspiegelt." },
+    "melkcentrale": { "description": "Bedrijfswebsite voor Melk Centrale Suriname — overzichtelijk, professioneel en afgestemd op hun doelgroep in de Surinaamse markt." },
+    "edu": { "description": "E-learning platform van Suritargets — gebouwd voor online trainingen, cursussen en kennisdeling binnen de Caribische regio." },
+    "logixlayer": { "description": "AI-gedreven automatiseringsplatform voor Caribische bedrijven — open-source, schaalbaar en ontworpen om bedrijfsprocessen slimmer en efficiënter te maken." },
+    "cta": {
+      "label": "Samenwerken",
+      "title": "Ook een project starten?",
+      "body": "Neem contact op en vertel ons wat je wilt bouwen.",
+      "button": "Neem contact op"
+    },
+    "screenshotAlt": "Screenshot van"
+  },
+  "education": {
+    "meta": { "title": "Education — Suritargets", "description": "Opleidingen, cursussen en educatieve software van Suritargets voor de Caribische markt." },
+    "hero": { "label": "Education", "title": "Leren & groeien", "subtitle": "Praktische opleidingen en software voor individuen en organisaties in de Caribische regio." },
+    "categories": { "label": "Aanbod", "title": "Onze educatieve programma's", "titleEn": "Our educational programs" },
+    "software": { "title": "Onze educatieve software", "titleEn": "Our education software" },
+    "inhouse": { "title": "In-house Trainingen", "titleEn": "Maatwerk programma's voor uw team" },
+    "more": "Meer informatie",
+    "topicsLabel": "Inhoud",
+    "cta": { "label": "Aanmelden", "title": "Klaar om te starten?", "body": "Neem contact op voor meer informatie of om je in te schrijven.", "button": "Neem contact op" },
+    "edu_software": {
+      "description": "Een volledig softwareplatform voor scholen, trainingsbureaus en onderwijsinstellingen — beheer cursussen, deelnemers en certificaten op één plek.",
+      "title": "Edu Software", "subtitle": "Slim platform voor onderwijsinstellingen.",
+      "topicsTitle": "Wat het platform biedt", "topicsTitleEn": "Platform features",
+      "topics": ["Cursusbeheer en planning", "Deelnemersbeheer en voortgangsregistratie", "Online en fysieke klassen combineren", "Certificaatuitgifte en LinkedIn-badge", "Rapportages en analytics", "Branding op maat voor uw instelling"]
+    },
+    "ai_courses": {
+      "description": "Leer werken met AI-tools zoals ChatGPT, automatisering en data-analyse — praktisch en direct toepasbaar in uw werk.",
+      "title": "AI Courses", "subtitle": "AI begrijpen en gebruiken in de praktijk.",
+      "topicsTitle": "Wat je leert", "topicsTitleEn": "What you will learn",
+      "topics": ["Wat is AI en hoe werkt het (2026 Q3)", "ChatGPT en andere LLM-tools effectief gebruiken", "Prompt Engineering voor betere resultaten", "AI-automatisering in uw werkprocessen", "Data & AI risico's en ethiek", "Agentic AI en autonome systemen"]
+    },
+    "trading_courses": {
+      "description": "Van beleggen in aandelen tot cryptocurrency trading — leer de financiële markten begrijpen en strategisch handelen.",
+      "title": "Trading Courses", "subtitle": "Financiële markten begrijpen en benutten.",
+      "topicsTitle": "Wat je leert", "topicsTitleEn": "What you will learn",
+      "topics": ["Basisprincipes van beleggen en trading", "Technische en fundamentele analyse", "Cryptocurrency en blockchain", "Risicobeheer en portfolioopbouw", "Trading platforms en tools", "Belastingen en regelgeving in Suriname"]
+    },
+    "it_courses": {
+      "description": "Praktische IT-opleidingen in programmeren, netwerken en cybersecurity — van beginner tot gevorderd niveau.",
+      "title": "IT Courses", "subtitle": "Technische vaardigheden voor de digitale wereld.",
+      "topicsTitle": "Wat je leert", "topicsTitleEn": "What you will learn",
+      "topics": ["Programmeren (Python, JavaScript, SQL)", "Netwerken en infrastructuur", "Cybersecurity en informatiebeveiliging", "Cloud computing en DevOps basics", "Databasebeheer", "IT-projectmanagement"]
+    },
+    "business_courses": {
+      "description": "Ondernemerschapstrainingen en managementopleidingen voor professionals en starters in de Caribische markt.",
+      "title": "Business Courses", "subtitle": "Ondernemerschap en leiderschap in de praktijk.",
+      "topicsTitle": "Wat je leert", "topicsTitleEn": "What you will learn",
+      "topics": ["Businessplan schrijven en pitchen", "Financieel management en cashflow", "Marketing en klantacquisitie", "Leiderschap en teammanagement", "Digitale transformatie voor bedrijven", "Groeistrategie en schaalbaarheid"]
+    },
+    "knowledge_base_rag": {
+      "description": "Een AI-gestuurde kennisbank waarmee teams snel informatie vinden in documenten, handleidingen en interne kennisbases via Retrieval-Augmented Generation.",
+      "title": "Knowledge Base RAG", "subtitle": "Slimme zoekfunctie in uw eigen kennisbank.",
+      "topicsTitle": "Functionaliteiten", "topicsTitleEn": "Features",
+      "topics": ["Documenten uploaden en indexeren (PDF, Word, URLs)", "AI-gestuurde zoekfunctie met bronverwijzing", "Integratie met bestaande systemen via API", "Rolgebaseerde toegangscontrole", "Multilinguale ondersteuning", "Statistieken en gebruiksanalyse"]
+    },
+    "research_development": {
+      "description": "Tools en begeleiding voor onderzoekers, universiteiten en R&D-teams die data-gedreven innovatie en kennisbeheer willen stroomlijnen.",
+      "title": "Research & Development", "subtitle": "Data-gedreven innovatie en kennisbeheer.",
+      "topicsTitle": "Wat wij bieden", "topicsTitleEn": "What we offer",
+      "topics": ["Onderzoeksdata beheren en structureren", "Literatuuronderzoek automatiseren met AI", "Samenwerking en versiebeheer voor teams", "Rapportages en publicatie-ondersteuning", "API-koppelingen met externe databases", "Compliant opslaan en archiveren van data"]
+    },
+    "data_aggregation": {
+      "description": "Software voor het verzamelen, samenvoegen en analyseren van educatieve data uit meerdere bronnen — voor instellingen die willen sturen op leerresultaten.",
+      "title": "Data Aggregation", "subtitle": "Inzicht in leerresultaten en educatieve data.",
+      "topicsTitle": "Wat het platform doet", "topicsTitleEn": "Platform capabilities",
+      "topics": ["Data inlezen uit meerdere bronnen (LMS, API, CSV)", "Dashboards en visualisaties op maat", "Prestatie-indicatoren per leerling, klas of instelling", "Automatische rapportages voor bestuur en beleid", "Veilige opslag en privacybescherming (AVG)", "Exporteren naar Excel, PDF en BI-tools"]
+    },
+    "finance_claude": {
+      "description": "Hands-on in-house training voor accountants- en advieskantoren — Claude Desktop, Cowork en Excel geïntegreerd in uw dagelijkse financiële workflows.",
+      "title": "Finance & Accounting Inhouse Training",
+      "subtitle": "Claude Desktop + Excel voor uw accountantskantoor."
+    },
+    "ai_hands_on_deck": {
+      "description": "Kwartaalse hands-on AI-training voor professionals — elk kwartaal bijgewerkt met de nieuwste tools, modellen en toepassingen.",
+      "title": "AI – Hands On Deck",
+      "subtitle": "Q3 2026 · Praktische AI voor uw team."
+    }
   }
 }

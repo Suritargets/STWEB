@@ -33,7 +33,7 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="px-5 py-5 border-b border-zinc-100">
         <div className="flex items-center gap-2.5">
-          <Image src="/logo.svg" alt="Suritargets" width={28} height={28} className="shrink-0" />
+          <Image src="/logo-icon.svg" alt="Suritargets" width={28} height={28} className="shrink-0" />
           <div>
             <p className="text-sm font-bold text-zinc-900 leading-none">Suritargets</p>
             <p className="text-[10px] text-zinc-400 mt-0.5">Admin Panel</p>

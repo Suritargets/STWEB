@@ -5,7 +5,7 @@ import SubmissionsTable from '../_components/submissions-table'
 
 const SERVICE_LABELS: Record<string, string> = {
   'dashboarding':    'Dashboarding',
-  'web-applicaties': 'Web & Apps',
+  'web-applications': 'Web & Apps',
   'marketing-ai':    'Marketing AI',
   'forensics':       'Forensics',
   'education':       'Education',
