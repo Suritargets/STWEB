@@ -1,4 +1,4 @@
-import { CtaButton } from '@/components/shared/cta-button'
+import Link from 'next/link'
 
 export default function NotFound() {
   return (
@@ -21,9 +21,12 @@ export default function NotFound() {
           Deze pagina bestaat niet of is verplaatst.
         </p>
 
-        <CtaButton href="/" variant="primary">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wide bg-gold text-white hover:opacity-90 transition-opacity"
+        >
           Terug naar home
-        </CtaButton>
+        </Link>
       </div>
     </section>
   )

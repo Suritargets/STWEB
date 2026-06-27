@@ -1,15 +1,13 @@
-import { CtaButton } from '@/components/shared/cta-button'
+import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-8">
+    <section className="min-h-screen flex items-center justify-center px-8">
       <div className="text-center max-w-lg">
-        {/* Large 404 */}
         <p className="text-[8rem] md:text-[12rem] font-mono font-bold leading-none text-gold select-none tabular-nums">
           404
         </p>
 
-        {/* Divider */}
         <div className="flex items-center justify-center gap-3 my-8">
           <div className="h-px w-16 bg-border" />
           <div className="w-1.5 h-1.5 rotate-45 bg-gold" />
@@ -23,9 +21,12 @@ export default function NotFound() {
           Deze pagina bestaat niet of is verplaatst.
         </p>
 
-        <CtaButton href="/" variant="primary">
+        <Link
+          href="/nl"
+          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold tracking-wide bg-gold text-white hover:opacity-90 transition-opacity"
+        >
           Terug naar home
-        </CtaButton>
+        </Link>
       </div>
     </section>
   )
