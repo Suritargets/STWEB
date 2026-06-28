@@ -151,9 +151,9 @@ export async function sendEnrollmentNotification(data: EnrollmentFormData, id: n
       <!-- Total box -->
       <div style="margin-top:16px;background:#0B1628;border-radius:6px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center">
         <span style="color:rgba(255,255,255,0.7);font-size:13px">Totaal</span>
-        <span style="color:#C9A84C;font-size:22px;font-weight:800;font-family:monospace">${fmtUsd(data.totalUsd)}</span>
+        <span style="color:#2B3494;font-size:22px;font-weight:800;font-family:monospace">${fmtUsd(data.totalUsd)}</span>
       </div>
-      ${data.opmerkingen ? `<div style="margin-top:20px"><p style="margin:0 0 8px;color:#6b7280;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em">Opmerkingen</p><div style="background:#f9fafb;border-left:3px solid #C9A84C;padding:14px 16px;font-size:14px;color:#374151;line-height:1.6;white-space:pre-wrap">${escapeHtml(data.opmerkingen)}</div></div>` : ''}
+      ${data.opmerkingen ? `<div style="margin-top:20px"><p style="margin:0 0 8px;color:#6b7280;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em">Opmerkingen</p><div style="background:#f9fafb;border-left:3px solid #2B3494;padding:14px 16px;font-size:14px;color:#374151;line-height:1.6;white-space:pre-wrap">${escapeHtml(data.opmerkingen)}</div></div>` : ''}
       <p style="margin-top:24px">
         <a href="mailto:${escapeHtml(data.email)}" style="display:inline-block;background:#2B3494;color:white;padding:10px 24px;text-decoration:none;font-size:13px;font-weight:600;border-radius:4px">Beantwoorden</a>
       </p>
@@ -179,7 +179,7 @@ export async function sendEnrollmentInvoice(data: EnrollmentFormData, id: number
         <tr>
           <td style="color:rgba(255,255,255,0.5);font-size:22px;font-weight:800;letter-spacing:0.05em">FACTUUR</td>
           <td align="right">
-            <p style="margin:0;color:#C9A84C;font-size:13px;font-family:monospace">${escapeHtml(invNr)}</p>
+            <p style="margin:0;color:#2B3494;font-size:13px;font-family:monospace">${escapeHtml(invNr)}</p>
             <p style="margin:4px 0 0;color:rgba(255,255,255,0.5);font-size:12px">${dateStr}</p>
           </td>
         </tr>
@@ -229,7 +229,7 @@ export async function sendEnrollmentInvoice(data: EnrollmentFormData, id: number
       <table role="presentation" width="100%" style="margin-top:0;border-collapse:collapse">
         <tr style="background:#0B1628">
           <td style="padding:14px 12px;color:rgba(255,255,255,0.7);font-size:13px;font-weight:600">TOTAAL</td>
-          <td style="padding:14px 12px;text-align:right;color:#C9A84C;font-size:20px;font-weight:800;font-family:monospace">${fmtUsd(data.totalUsd)}</td>
+          <td style="padding:14px 12px;text-align:right;color:#2B3494;font-size:20px;font-weight:800;font-family:monospace">${fmtUsd(data.totalUsd)}</td>
         </tr>
       </table>
       <!-- Payment info -->

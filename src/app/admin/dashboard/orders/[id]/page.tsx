@@ -52,7 +52,7 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
               </div>
               <div className="text-right">
                 <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Factuur</p>
-                <p className="text-[#C9A84C] font-mono font-bold text-lg">{invNr}</p>
+                <p className="text-white font-mono font-bold text-lg">{invNr}</p>
                 <p className="text-white/50 text-xs mt-1">{fmtDate(enrollment.created_at)}</p>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
           {/* Total */}
           <div className="bg-[#0B1628] px-8 py-4 flex justify-between items-center">
             <span className="text-white/60 text-sm font-semibold uppercase tracking-widest">Totaal</span>
-            <span className="text-[#C9A84C] font-mono font-black text-2xl">{fmtUsd(enrollment.total_usd)}</span>
+            <span className="text-white font-mono font-black text-2xl">{fmtUsd(enrollment.total_usd)}</span>
           </div>
 
           {/* Payment info + notes */}
