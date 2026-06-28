@@ -149,7 +149,7 @@ export default function OrdersTable({ enrollments }: { enrollments: Enrollment[]
         <table className="w-full text-sm">
           <thead className="bg-zinc-50 border-b border-zinc-200">
             <tr>
-              {['Datum', 'Course', 'Type', 'Naam', 'Bedrijf', 'Deelnemers', 'Totaal', 'Status'].map(h => (
+              {['Datum', 'Course', 'Type', 'Naam', 'Bedrijf', 'Deelnemers', 'Totaal', 'Status', 'Factuur'].map(h => (
                 <th
                   key={h}
                   className="text-left px-4 py-3 text-xs font-semibold text-zinc-500 uppercase tracking-wide whitespace-nowrap"
@@ -162,7 +162,7 @@ export default function OrdersTable({ enrollments }: { enrollments: Enrollment[]
           <tbody className="divide-y divide-zinc-100">
             {filtered.length === 0 && (
               <tr>
-                <td colSpan={8} className="text-center py-8 text-zinc-400">
+                <td colSpan={9} className="text-center py-8 text-zinc-400">
                   Geen orders gevonden
                 </td>
               </tr>
@@ -191,6 +191,16 @@ export default function OrdersTable({ enrollments }: { enrollments: Enrollment[]
                         <option key={v} value={v}>{l}</option>
                       ))}
                     </select>
+                  </td>
+                  <td className="px-4 py-3">
+                    <a
+                      href={`/admin/dashboard/orders/${e.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-[#2B3494] hover:underline font-medium whitespace-nowrap"
+                    >
+                      Bekijk →
+                    </a>
                   </td>
                 </tr>
               )

@@ -89,6 +89,12 @@ export async function getEnrollments(): Promise<Enrollment[]> {
   return rows as Enrollment[]
 }
 
+export async function getEnrollmentById(id: number): Promise<Enrollment | null> {
+  const db = sql()
+  const rows = await db`SELECT * FROM enrollments WHERE id = ${id}`
+  return (rows[0] as Enrollment) ?? null
+}
+
 export async function updateEnrollmentStatus(
   id: number,
   status: 'pending' | 'confirmed' | 'paid'

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { enrollmentSchema } from '@/lib/validations'
 import { ensureEnrollmentsTable, insertEnrollment } from '@/lib/enrollments'
-import { sendEnrollmentNotification, sendEnrollmentConfirmation } from '@/lib/email'
+import { sendEnrollmentNotification, sendEnrollmentInvoice } from '@/lib/email'
 
 export async function POST(request: Request) {
   try {
@@ -36,8 +36,8 @@ export async function POST(request: Request) {
 
     if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
       await Promise.allSettled([
-        sendEnrollmentNotification(data),
-        sendEnrollmentConfirmation(data),
+        sendEnrollmentNotification(data, record.id),
+        sendEnrollmentInvoice(data, record.id),
       ])
     } else {
       console.warn('SMTP not configured — skipping enrollment email send')
