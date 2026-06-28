@@ -1,5 +1,7 @@
 import { getEnrollmentById } from '@/lib/enrollments'
 import { notFound } from 'next/navigation'
+import PrintButton from './_components/print-button'
+import InvoiceActions from './_components/invoice-actions'
 
 function fmtUsd(n: number | string) {
   return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
@@ -14,9 +16,15 @@ function fmtDate(iso: string) {
 }
 
 const STATUS_LABELS: Record<string, string> = {
-  pending: 'In behandeling',
+  pending:   'In behandeling',
   confirmed: 'Bevestigd',
-  paid: 'Betaald',
+  paid:      'Betaald',
+}
+
+const STATUS_COLORS: Record<string, string> = {
+  pending:   'bg-amber-100 text-amber-700',
+  confirmed: 'bg-blue-100 text-blue-700',
+  paid:      'bg-emerald-100 text-emerald-700',
 }
 
 export default async function InvoicePage({ params }: { params: Promise<{ id: string }> }) {
@@ -26,23 +34,30 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
 
   const invNr = invoiceNumber(enrollment.id)
   const typeLabel = enrollment.enrollment_type === 'team' ? 'Team / In-house' : 'Individueel'
+  const isPaid = enrollment.status === 'paid'
 
   return (
     <div className="min-h-screen bg-zinc-100 py-10 px-4 print:bg-white print:py-0 print:px-0">
       <div className="max-w-2xl mx-auto">
-        {/* Print controls */}
+        {/* Controls */}
         <div className="flex items-center gap-3 mb-6 print:hidden">
           <a href="/admin/dashboard/orders" className="text-sm text-zinc-500 hover:text-zinc-900">← Terug</a>
-          <button
-            onClick={() => window.print()}
-            className="ml-auto bg-[#2B3494] text-white text-sm px-5 py-2 rounded-md hover:opacity-90 transition-opacity"
-          >
-            Afdrukken / PDF
-          </button>
+          <InvoiceActions id={enrollment.id} currentStatus={enrollment.status} />
+          <PrintButton />
         </div>
 
         {/* Invoice card */}
-        <div className="bg-white shadow-sm rounded-lg overflow-hidden print:shadow-none print:rounded-none">
+        <div className="relative bg-white shadow-sm rounded-lg overflow-hidden print:shadow-none print:rounded-none">
+
+          {/* PAID stamp */}
+          {isPaid && (
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center z-10 print:flex">
+              <div className="rotate-[-20deg] border-[5px] border-emerald-500 text-emerald-500 text-5xl font-black tracking-widest px-6 py-2 rounded-lg opacity-20 select-none uppercase">
+                Betaald
+              </div>
+            </div>
+          )}
+
           {/* Header */}
           <div className="bg-[#0B1628] px-8 py-6">
             <div className="flex justify-between items-start">
@@ -77,13 +92,9 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
           </div>
 
           {/* Status badge */}
-          <div className="px-8 py-3 border-b border-zinc-100 flex items-center gap-2">
+          <div className="px-8 py-3 border-b border-zinc-100 flex items-center gap-2 print:hidden">
             <span className="text-xs text-zinc-400">Status:</span>
-            <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
-              enrollment.status === 'paid' ? 'bg-emerald-100 text-emerald-700' :
-              enrollment.status === 'confirmed' ? 'bg-blue-100 text-blue-700' :
-              'bg-amber-100 text-amber-700'
-            }`}>
+            <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${STATUS_COLORS[enrollment.status] ?? 'bg-zinc-100 text-zinc-700'}`}>
               {STATUS_LABELS[enrollment.status] ?? enrollment.status}
             </span>
           </div>
@@ -117,10 +128,28 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
 
           {/* Payment info + notes */}
           <div className="px-8 py-6 space-y-4">
-            <div className="bg-zinc-50 rounded-lg p-4">
-              <p className="text-xs font-bold text-zinc-700 uppercase tracking-widest mb-2">Betaalinformatie</p>
-              <p className="text-sm text-zinc-500 leading-relaxed">Neem contact op via <a href="mailto:info@suritargets.com" className="text-[#2B3494] hover:underline">info@suritargets.com</a> voor betalingsinstructies.</p>
-            </div>
+            {!isPaid && (
+              <div className="bg-zinc-50 rounded-lg p-4">
+                <p className="text-xs font-bold text-zinc-700 uppercase tracking-widest mb-2">Betaalinformatie</p>
+                <p className="text-sm text-zinc-500 leading-relaxed">
+                  Neem contact op via{' '}
+                  <a href="mailto:info@suritargets.com" className="text-[#2B3494] hover:underline">
+                    info@suritargets.com
+                  </a>{' '}
+                  voor betalingsinstructies.
+                </p>
+              </div>
+            )}
+            {isPaid && (
+              <div className="bg-emerald-50 rounded-lg p-4 flex items-center gap-3">
+                <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p className="text-sm font-medium text-emerald-700">Betaling ontvangen en bevestigd</p>
+              </div>
+            )}
             {enrollment.opmerkingen && (
               <div>
                 <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Opmerkingen</p>
