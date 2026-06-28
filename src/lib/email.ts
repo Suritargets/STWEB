@@ -85,9 +85,6 @@ export async function sendEnrollmentNotification(data: EnrollmentFormData): Prom
   const transporter = getTransporter()
   const typeLabel = data.enrollmentType === 'team' ? 'Team / In-house' : 'Individueel'
   const urenRow = data.uren ? `<tr><td style="padding:8px 0;color:#6b7280;width:130px">Uren</td><td style="padding:8px 0">${data.uren}u</td></tr>` : ''
-  const calcRow = data.calculatorData
-    ? `<tr><td colspan="2" style="padding:8px 0;color:#6b7280;font-size:12px">Calculator: ${escapeHtml(JSON.stringify(data.calculatorData))}</td></tr>`
-    : ''
 
   await transporter.sendMail({
     from:    process.env.SMTP_FROM,
@@ -110,7 +107,6 @@ export async function sendEnrollmentNotification(data: EnrollmentFormData): Prom
             <tr><td style="padding:8px 0;color:#6b7280">Deelnemers</td><td style="padding:8px 0">${data.deelnemers}</td></tr>
             ${urenRow}
             <tr><td style="padding:8px 0;color:#6b7280">Totaal</td><td style="padding:8px 0;font-weight:700;color:#2B3494">$${data.totalUsd.toLocaleString('en-US')}</td></tr>
-            ${calcRow}
           </table>
           ${data.opmerkingen ? `<hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0"/><p style="color:#6b7280;font-size:12px;margin-bottom:8px">Opmerkingen:</p><p style="background:#f9fafb;padding:16px;border-left:3px solid #2B3494;white-space:pre-wrap;font-size:14px">${escapeHtml(data.opmerkingen)}</p>` : ''}
           <p style="margin-top:24px">
