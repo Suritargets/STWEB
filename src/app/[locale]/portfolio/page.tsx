@@ -39,6 +39,14 @@ const PROJECTS = [
     screenshot: '/portfolio/logixlayer.jpg',
     tags: ['Web Design', 'Automation'],
   },
+  {
+    key: 'vliet' as const,
+    name: 'Vliet Accountants & Consultants',
+    url: 'https://www.vlietaccountants.com/en',
+    display: 'vlietaccountants.com',
+    screenshot: '/portfolio/vliet-accountants.jpg',
+    tags: ['Web Design', 'Development'],
+  },
 ]
 
 export async function generateMetadata({

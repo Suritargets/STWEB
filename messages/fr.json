@@ -563,6 +563,7 @@
     "melkcentrale": { "description": "Site web d'entreprise pour Melk Centrale Suriname — clair, professionnel et adapté à leur public cible sur le marché surinamais." },
     "edu": { "description": "Plateforme e-learning de Suritargets — conçue pour les formations en ligne, les cours et le partage de connaissances dans toute la région des Caraïbes." },
     "logixlayer": { "description": "Plateforme d'automatisation IA pour les entreprises caribéennes — open-source, évolutive et conçue pour rendre les processus métier plus intelligents et efficaces." },
+    "vliet": { "description": "Site web d'entreprise pour Vliet Accountants & Consultants — une plateforme bilingue pour un cabinet d'audit et de conseil financier, avec pages de services, profils d'équipe et prise de rendez-vous en ligne." },
     "cta": {
       "label": "Collaborer",
       "title": "Prêt à démarrer un projet ?",
