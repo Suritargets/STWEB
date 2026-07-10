@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
 import ServicesClient from './services-client'
+import { buildMetadata } from '@/lib/page-metadata'
 
 export async function generateMetadata({
   params,
@@ -13,7 +14,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'services.meta' })
-  return { title: t('title'), description: t('description') }
+  return buildMetadata({ locale, path: 'services', title: t('title'), description: t('description') })
 }
 
 function ServicesContent() {

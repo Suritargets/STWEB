@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing'
 import Nav from '@/components/layout/nav'
 import Footer from '@/components/layout/footer'
 import { LangSetter } from '@/components/shared/lang-setter'
+import { siteConfig } from '@/lib/site-config'
 
 export async function generateMetadata({
   params,
@@ -63,8 +64,30 @@ export default async function LocaleLayout({
   }
   const messages = await getMessages()
 
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/logo.svg`,
+    description: siteConfig.description,
+    email: siteConfig.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressCountry: siteConfig.address.country,
+    },
+    sameAs: Object.values(siteConfig.social),
+  }
+
   return (
     <div className="flex flex-col min-h-full bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
       <LangSetter locale={locale} />
       <NextIntlClientProvider messages={messages}>
         <Nav />

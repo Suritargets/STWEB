@@ -6,6 +6,7 @@ import { GraduationCap, Sparkles, TrendingUp, Monitor, Briefcase, BookOpen, Comp
 import { SectionHeading } from '@/components/shared/section-heading'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
+import { buildMetadata } from '@/lib/page-metadata'
 
 const ICON_CLS = 'text-[#2B3494] bg-[#2B3494]/8 group-hover:bg-[#2B3494] group-hover:text-white'
 
@@ -34,7 +35,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'education.meta' })
-  return { title: t('title'), description: t('description') }
+  return buildMetadata({ locale, path: 'education', title: t('title'), description: t('description') })
 }
 
 function EducationContent() {

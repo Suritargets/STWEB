@@ -12,6 +12,7 @@ import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
 import { ExplainerSection } from '@/components/shared/explainer-section'
 import { services } from '@/lib/services-data'
+import { buildMetadata } from '@/lib/page-metadata'
 import { HeroMockup } from '@/components/home/hero-mockup'
 import { ParticleBackground } from '@/components/home/particle-background'
 import { FlyerCarousel } from '@/components/home/flyer-carousel'
@@ -39,7 +40,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'home.meta' })
-  return { title: t('title'), description: t('description') }
+  return buildMetadata({ locale, title: t('title'), description: t('description') })
 }
 
 function HomeContent() {

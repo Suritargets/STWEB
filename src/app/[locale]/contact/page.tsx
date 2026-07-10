@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import { ContactForm } from '@/components/contact/contact-form'
 import { siteConfig } from '@/lib/site-config'
+import { buildMetadata } from '@/lib/page-metadata'
 
 export async function generateMetadata({
   params,
@@ -11,7 +12,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'contact.meta' })
-  return { title: t('title'), description: t('description') }
+  return buildMetadata({ locale, path: 'contact', title: t('title'), description: t('description') })
 }
 
 function ContactContent() {

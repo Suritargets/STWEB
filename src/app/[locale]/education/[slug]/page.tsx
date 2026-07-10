@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { SlugPageContent } from './_components/page-content'
+import { buildMetadata } from '@/lib/page-metadata'
 
 const VALID_SLUGS = [
   'ai-courses', 'trading-courses', 'it-courses', 'business-courses',
@@ -32,10 +33,12 @@ export async function generateMetadata({
   if (!VALID_SLUGS.includes(slug as Slug)) return {}
   const t = await getTranslations({ locale, namespace: 'education' })
   const key = SLUG_KEY[slug as Slug]
-  return {
+  return buildMetadata({
+    locale,
+    path: `education/${slug}`,
     title: `${t(`${key}.title`)} — Suritargets`,
     description: t(`${key}.description`),
-  }
+  })
 }
 
 export default async function EducationSlugPage({

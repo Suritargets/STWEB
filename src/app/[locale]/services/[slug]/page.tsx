@@ -6,6 +6,7 @@ import { getTranslations } from 'next-intl/server'
 import { services } from '@/lib/services-data'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
+import { buildMetadata } from '@/lib/page-metadata'
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -20,10 +21,12 @@ export async function generateMetadata({
   const service = services.find((s) => s.slug === slug)
   if (!service) return {}
   const ts = await getTranslations({ locale, namespace: 'servicesData' })
-  return {
+  return buildMetadata({
+    locale,
+    path: `services/${slug}`,
     title: ts(`${slug}.name`),
     description: ts(`${slug}.description`),
-  }
+  })
 }
 
 function ServiceDetailContent({ slug }: { slug: string }) {

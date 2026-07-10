@@ -5,6 +5,7 @@ import { ExternalLink } from 'lucide-react'
 import { SectionHeading } from '@/components/shared/section-heading'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
+import { buildMetadata } from '@/lib/page-metadata'
 
 const PROJECTS = [
   {
@@ -56,7 +57,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'portfolio.meta' })
-  return { title: t('title'), description: t('description') }
+  return buildMetadata({ locale, path: 'portfolio', title: t('title'), description: t('description') })
 }
 
 function PortfolioContent() {
