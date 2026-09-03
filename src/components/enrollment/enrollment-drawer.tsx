@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { CalculatorFlat, type CalcResult } from './calculator-flat'
 import { CalculatorMonthly } from './calculator-monthly'
 import { CalculatorHourly } from './calculator-hourly'
-import { WEBINAR_COUPON_CODE, WEBINAR_COUPON_COURSE_SLUG, WEBINAR_COUPON_DISCOUNT_USD } from '@/lib/coupon'
+import { WEBINAR_COUPON_COURSE_SLUG, WEBINAR_COUPON_DISCOUNT_USD, isKnownDiscountCode } from '@/lib/coupon'
 
 export type CourseConfig = {
   slug: string
@@ -58,7 +58,7 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
   const isFinance = course.type === 'finance'
   const showTeamToggle = !isFinance
   const supportsCoupon = course.slug === WEBINAR_COUPON_COURSE_SLUG
-  const couponValid = supportsCoupon && couponCode.trim().toUpperCase() === WEBINAR_COUPON_CODE
+  const couponValid = supportsCoupon && isKnownDiscountCode(couponCode)
   const discount = couponValid ? WEBINAR_COUPON_DISCOUNT_USD : 0
 
   function resetAndClose() {
@@ -86,7 +86,7 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
       ? Number((financeData as Record<string, unknown>)?.totalUsd ?? 0)
       : (calcResult?.totalUsd ?? 0)
     const finalTotal = Math.max(0, baseTotal - discount)
-    const couponNote = discount > 0 ? `Kortingscode toegepast: ${WEBINAR_COUPON_CODE} (-$${discount})` : ''
+    const couponNote = discount > 0 ? `Kortingscode toegepast: ${couponCode.trim().toUpperCase()} (-$${discount})` : ''
 
     const payload = {
       courseSlug:     course.slug,
@@ -262,7 +262,7 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
                       </div>
                       {discount > 0 && (
                         <div className="flex justify-between items-center">
-                          <span className="text-sm text-emerald-400">Korting ({WEBINAR_COUPON_CODE})</span>
+                          <span className="text-sm text-emerald-400">Korting ({couponCode.trim().toUpperCase()})</span>
                           <span className="font-bold text-emerald-400">-{fmt(discount)}</span>
                         </div>
                       )}

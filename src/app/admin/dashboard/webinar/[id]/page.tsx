@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getWebinarRegistrationById } from '@/lib/webinar-registrations'
-import { webinarVoucherValue, WEBINAR_COUPON_CODE } from '@/lib/coupon'
+import { webinarVoucherValue, findAffiliateCode } from '@/lib/coupon'
 import { notFound } from 'next/navigation'
 import PrintButton from './_components/print-button'
 
@@ -22,7 +22,7 @@ export default async function WebinarInvoicePage({ params }: { params: Promise<{
   if (!registration) notFound()
 
   const invNr = invoiceNumber(registration.id)
-  const isAffiliate = (registration.referral_source ?? '').trim().toUpperCase() === WEBINAR_COUPON_CODE
+  const affiliate = findAffiliateCode(registration.referral_source)
   const voucherValue = webinarVoucherValue(registration.referral_source)
 
   return (
@@ -113,9 +113,9 @@ export default async function WebinarInvoicePage({ params }: { params: Promise<{
               <p className="text-xs font-bold text-amber-800 uppercase tracking-widest mb-2">Kortingswaarde (informatief)</p>
               <p className="text-2xl font-black text-amber-900 mb-1">{fmtUsd(voucherValue)}</p>
               <p className="text-sm text-amber-700 leading-relaxed">
-                Standaard ${70} korting op de AI Hands-On Deck training
-                {isAffiliate
-                  ? ` + $30 affiliate-bonus (code ${WEBINAR_COUPON_CODE}) = $100 totaal.`
+                Standaard $70 korting op de AI Hands-On Deck training
+                {affiliate
+                  ? ` + $30 affiliate-bonus (code ${affiliate.code}, ${affiliate.owner}) = $100 totaal.`
                   : '. Geen affiliate-code gebruikt.'}
                 {' '}Dit bedrag staat los van het echte kortingsbedrag dat op de inschrijfpagina wordt toegepast.
               </p>
