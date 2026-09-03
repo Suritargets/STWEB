@@ -122,7 +122,6 @@
         "Ingeniería de prompts",
         "Datos y riesgos de la IA"
       ],
-      "perkNote": "Cada participante recibe un código de descuento de ${amount} para la capacitación paga AI Hands-On Deck después de registrarse.",
       "formTitle": "Regístrate gratis",
       "nameLabel": "Nombre *",
       "namePlaceholder": "Su nombre",
@@ -130,6 +129,8 @@
       "emailPlaceholder": "usted@empresa.com",
       "phoneLabel": "Teléfono",
       "phonePlaceholder": "+597 ...",
+      "referralLabel": "Código de cupón / referido (opcional)",
+      "referralPlaceholder": "Ej. SALESCONNECT",
       "submitButton": "Regístrate ahora",
       "registrationRequiredNote": "El registro es obligatorio para participar.",
       "errorMessage": "Algo salió mal. Inténtalo de nuevo.",

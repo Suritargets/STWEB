@@ -122,7 +122,6 @@
         "Prompt engineering",
         "Data & AI-risico's"
       ],
-      "perkNote": "Elke deelnemer ontvangt na aanmelding een kortingscode van ${amount} voor de betaalde AI Hands-On Deck training.",
       "formTitle": "Meld je gratis aan",
       "nameLabel": "Naam *",
       "namePlaceholder": "Uw naam",
@@ -130,6 +129,8 @@
       "emailPlaceholder": "u@bedrijf.com",
       "phoneLabel": "Telefoon",
       "phonePlaceholder": "+597 ...",
+      "referralLabel": "Kortingscode / referral (optioneel)",
+      "referralPlaceholder": "Bijv. SALESCONNECT",
       "submitButton": "Meld je aan",
       "registrationRequiredNote": "Inschrijving is verplicht om deel te nemen.",
       "errorMessage": "Er is iets misgegaan. Probeer het opnieuw.",

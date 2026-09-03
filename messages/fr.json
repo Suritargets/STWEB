@@ -122,7 +122,6 @@
         "Ingénierie des prompts",
         "Données et risques liés à l'IA"
       ],
-      "perkNote": "Chaque participant reçoit un code de réduction de ${amount} pour la formation payante AI Hands-On Deck après inscription.",
       "formTitle": "Inscrivez-vous gratuitement",
       "nameLabel": "Nom *",
       "namePlaceholder": "Votre nom",
@@ -130,6 +129,8 @@
       "emailPlaceholder": "vous@entreprise.com",
       "phoneLabel": "Téléphone",
       "phonePlaceholder": "+597 ...",
+      "referralLabel": "Code de réduction / parrainage (facultatif)",
+      "referralPlaceholder": "Ex. SALESCONNECT",
       "submitButton": "S'inscrire",
       "registrationRequiredNote": "L'inscription est obligatoire pour participer.",
       "errorMessage": "Une erreur s'est produite. Veuillez réessayer.",

@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { CalendarClock, Loader2, Radio, Sparkles, Ticket } from 'lucide-react'
+import { CalendarClock, Loader2, Radio, Sparkles } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { WEBINAR_COUPON_CODE, WEBINAR_COUPON_DISCOUNT_USD } from '@/lib/coupon'
+import { WEBINAR_COUPON_CODE } from '@/lib/coupon'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -92,11 +92,6 @@ export function WebinarCtaSection() {
               </li>
             ))}
           </ul>
-
-          <div className="flex items-start gap-3 border border-gold/30 bg-gold/10 rounded-lg px-4 py-3 max-w-xl">
-            <Ticket size={18} className="text-gold flex-shrink-0 mt-0.5" />
-            <p className="text-sm text-white/80 leading-relaxed">{t('perkNote', { amount: WEBINAR_COUPON_DISCOUNT_USD })}</p>
-          </div>
         </div>
 
         {/* ── Form card ── */}
@@ -143,6 +138,15 @@ export function WebinarCtaSection() {
                   value={telefoon}
                   onChange={e => setTelefoon(e.target.value)}
                   placeholder={t('phonePlaceholder')}
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/30"
+                />
+              </div>
+              <div>
+                <Label className="text-white/70 text-xs mb-1 block">{t('referralLabel')}</Label>
+                <Input
+                  value={referralSource}
+                  onChange={e => setReferralSource(e.target.value)}
+                  placeholder={t('referralPlaceholder')}
                   className="bg-white/5 border-white/10 text-white placeholder:text-white/30"
                 />
               </div>

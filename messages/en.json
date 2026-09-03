@@ -122,7 +122,6 @@
         "Prompt engineering",
         "Data & AI risk"
       ],
-      "perkNote": "Every attendee receives a discount code worth ${amount} off the paid AI Hands-On Deck training after registering.",
       "formTitle": "Register for free",
       "nameLabel": "Name *",
       "namePlaceholder": "Your name",
@@ -130,6 +129,8 @@
       "emailPlaceholder": "you@company.com",
       "phoneLabel": "Phone",
       "phonePlaceholder": "+597 ...",
+      "referralLabel": "Coupon / referral code (optional)",
+      "referralPlaceholder": "e.g. SALESCONNECT",
       "submitButton": "Register now",
       "registrationRequiredNote": "Registration is required to attend.",
       "errorMessage": "Something went wrong. Please try again.",
