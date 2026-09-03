@@ -107,6 +107,36 @@
       "cta1": "Bekijk onze diensten",
       "cta2": "Gratis gesprek"
     },
+    "webinar": {
+      "label": "GRATIS WEBINAR · LIVE DEMO",
+      "title": "Free AI Demo",
+      "subtitle": "De nieuwste AI — live en praktisch, in 20 minuten.",
+      "badge1": "20 minuten",
+      "badge2": "Live online",
+      "badge3": "Gratis",
+      "dateNote": "Datum & tijd worden binnenkort bekendgemaakt",
+      "topics": [
+        "Wat is AI? — de nieuwste stand van zaken",
+        "Wat kan het voor jou betekenen",
+        "Toepassingen in organisaties & bedrijven",
+        "Prompt engineering",
+        "Data & AI-risico's"
+      ],
+      "perkNote": "Elke deelnemer ontvangt na aanmelding een kortingscode van ${amount} voor de betaalde AI Hands-On Deck training.",
+      "formTitle": "Meld je gratis aan",
+      "nameLabel": "Naam *",
+      "namePlaceholder": "Uw naam",
+      "emailLabel": "E-mail *",
+      "emailPlaceholder": "u@bedrijf.com",
+      "phoneLabel": "Telefoon",
+      "phonePlaceholder": "+597 ...",
+      "submitButton": "Meld je aan",
+      "registrationRequiredNote": "Inschrijving is verplicht om deel te nemen.",
+      "errorMessage": "Er is iets misgegaan. Probeer het opnieuw.",
+      "successTitle": "Je bent aangemeld!",
+      "successMessage": "Check je e-mail voor de bevestiging.",
+      "successCodeLabel": "Uw kortingscode"
+    },
     "services": {
       "label": "DIENSTEN",
       "title": "Wat wij doen",

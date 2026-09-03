@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { CalculatorFlat, type CalcResult } from './calculator-flat'
 import { CalculatorMonthly } from './calculator-monthly'
 import { CalculatorHourly } from './calculator-hourly'
+import { WEBINAR_COUPON_CODE, WEBINAR_COUPON_COURSE_SLUG, WEBINAR_COUPON_DISCOUNT_USD } from '@/lib/coupon'
 
 export type CourseConfig = {
   slug: string
@@ -46,6 +47,7 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
   const [email, setEmail]                   = useState('')
   const [telefoon, setTelefoon]             = useState('')
   const [opmerkingen, setOpmerkingen]       = useState('')
+  const [couponCode, setCouponCode]         = useState('')
   const [status, setStatus]                 = useState<Status>('idle')
   const [error, setError]                   = useState('')
 
@@ -55,6 +57,9 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
 
   const isFinance = course.type === 'finance'
   const showTeamToggle = !isFinance
+  const supportsCoupon = course.slug === WEBINAR_COUPON_COURSE_SLUG
+  const couponValid = supportsCoupon && couponCode.trim().toUpperCase() === WEBINAR_COUPON_CODE
+  const discount = couponValid ? WEBINAR_COUPON_DISCOUNT_USD : 0
 
   function resetAndClose() {
     setStep('calc')
@@ -65,6 +70,7 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
     setEmail('')
     setTelefoon('')
     setOpmerkingen('')
+    setCouponCode('')
     setStatus('idle')
     setError('')
     onClose()
@@ -75,6 +81,12 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
     if (!calcResult && !isFinance) return
     setStatus('loading')
     setError('')
+
+    const baseTotal = isFinance
+      ? Number((financeData as Record<string, unknown>)?.totalUsd ?? 0)
+      : (calcResult?.totalUsd ?? 0)
+    const finalTotal = Math.max(0, baseTotal - discount)
+    const couponNote = discount > 0 ? `Kortingscode toegepast: ${WEBINAR_COUPON_CODE} (-$${discount})` : ''
 
     const payload = {
       courseSlug:     course.slug,
@@ -87,11 +99,9 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
       telefoon:       telefoon || undefined,
       deelnemers:     calcResult?.deelnemers ?? 5,
       uren:           calcResult?.uren,
-      totalUsd:       isFinance
-        ? Number((financeData as Record<string, unknown>)?.totalUsd ?? 0)
-        : (calcResult?.totalUsd ?? 0),
+      totalUsd:       finalTotal,
       calculatorData: isFinance ? financeData : calcResult?.calculatorData,
-      opmerkingen:    opmerkingen || undefined,
+      opmerkingen:    [couponNote, opmerkingen].filter(Boolean).join('\n\n') || undefined,
     }
 
     try {
@@ -240,12 +250,40 @@ export function EnrollmentDrawer({ open, onClose, course, financeData }: Props) 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Calc summary pill */}
                   {calcResult && (
-                    <div className="bg-[#2B3494]/40 rounded-lg px-4 py-3 flex justify-between items-center">
-                      <span className="text-sm text-white/70">
-                        {calcResult.deelnemers} deelnemer{calcResult.deelnemers > 1 ? 's' : ''}
-                        {calcResult.uren ? ` · ${calcResult.uren}u` : ''}
-                      </span>
-                      <span className="font-bold text-white">{fmt(calcResult.totalUsd)}</span>
+                    <div className="bg-[#2B3494]/40 rounded-lg px-4 py-3 space-y-1">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-white/70">
+                          {calcResult.deelnemers} deelnemer{calcResult.deelnemers > 1 ? 's' : ''}
+                          {calcResult.uren ? ` · ${calcResult.uren}u` : ''}
+                        </span>
+                        <span className={`font-bold text-white ${discount > 0 ? 'line-through text-white/40' : ''}`}>
+                          {fmt(calcResult.totalUsd)}
+                        </span>
+                      </div>
+                      {discount > 0 && (
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-emerald-400">Korting ({WEBINAR_COUPON_CODE})</span>
+                          <span className="font-bold text-emerald-400">-{fmt(discount)}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Coupon code (AI Hands-On Deck only) */}
+                  {supportsCoupon && (
+                    <div>
+                      <Label className="text-white/70 text-xs mb-1 block">Kortingscode</Label>
+                      <Input
+                        value={couponCode}
+                        onChange={e => setCouponCode(e.target.value)}
+                        placeholder="Bijv. EH2026Q3"
+                        className="bg-white/5 border-white/10 text-white placeholder:text-white/30 uppercase"
+                      />
+                      {couponCode.trim() !== '' && (
+                        <p className={`text-xs mt-1 ${couponValid ? 'text-emerald-400' : 'text-white/40'}`}>
+                          {couponValid ? `Code toegepast: -${fmt(WEBINAR_COUPON_DISCOUNT_USD)}` : 'Ongeldige kortingscode'}
+                        </p>
+                      )}
                     </div>
                   )}
 

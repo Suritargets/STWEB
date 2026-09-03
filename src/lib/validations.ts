@@ -70,3 +70,12 @@ export const enrollmentSchema = z.object({
 })
 
 export type EnrollmentFormData = z.infer<typeof enrollmentSchema>
+
+export const webinarRegistrationSchema = z.object({
+  naam:            z.string().min(2, 'Naam is verplicht'),
+  email:           z.string().email('Ongeldig e-mailadres'),
+  telefoon:        z.string().optional(),
+  referralSource:  z.string().max(120).optional(),
+})
+
+export type WebinarRegistrationFormData = z.infer<typeof webinarRegistrationSchema>

@@ -107,6 +107,36 @@
       "cta1": "Ver nuestros servicios",
       "cta2": "Consulta gratuita"
     },
+    "webinar": {
+      "label": "SEMINARIO GRATUITO · DEMO EN VIVO",
+      "title": "Demo Gratuita de IA",
+      "subtitle": "La IA más reciente — en vivo y práctica, en 20 minutos.",
+      "badge1": "20 minutos",
+      "badge2": "En línea, en vivo",
+      "badge3": "Gratis",
+      "dateNote": "Fecha y hora se anunciarán pronto",
+      "topics": [
+        "¿Qué es la IA? — lo último",
+        "Qué puede significar para ti",
+        "Aplicaciones en organizaciones y empresas",
+        "Ingeniería de prompts",
+        "Datos y riesgos de la IA"
+      ],
+      "perkNote": "Cada participante recibe un código de descuento de ${amount} para la capacitación paga AI Hands-On Deck después de registrarse.",
+      "formTitle": "Regístrate gratis",
+      "nameLabel": "Nombre *",
+      "namePlaceholder": "Su nombre",
+      "emailLabel": "Correo electrónico *",
+      "emailPlaceholder": "usted@empresa.com",
+      "phoneLabel": "Teléfono",
+      "phonePlaceholder": "+597 ...",
+      "submitButton": "Regístrate ahora",
+      "registrationRequiredNote": "El registro es obligatorio para participar.",
+      "errorMessage": "Algo salió mal. Inténtalo de nuevo.",
+      "successTitle": "¡Estás registrado!",
+      "successMessage": "Revisa tu correo para la confirmación.",
+      "successCodeLabel": "Su código de descuento"
+    },
     "services": {
       "label": "SERVICIOS",
       "title": "Lo que hacemos",

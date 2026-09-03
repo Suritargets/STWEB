@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer'
-import type { ContactFormData, EnrollmentFormData } from './validations'
+import type { ContactFormData, EnrollmentFormData, WebinarRegistrationFormData } from './validations'
+import { WEBINAR_COUPON_CODE, WEBINAR_COUPON_DISCOUNT_USD } from './coupon'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com'
 
@@ -250,4 +251,61 @@ export async function sendEnrollmentInvoice(data: EnrollmentFormData, id: number
 // Keep for backwards compat — now delegates to invoice
 export async function sendEnrollmentConfirmation(data: EnrollmentFormData, id: number): Promise<void> {
   return sendEnrollmentInvoice(data, id)
+}
+
+// ─── Webinar registration ────────────────────────────────────────────────────
+
+export async function sendWebinarRegistrationConfirmation(data: WebinarRegistrationFormData): Promise<void> {
+  const transporter = getTransporter()
+  const content = `
+    <div style="padding:32px">
+      <p style="margin:0 0 16px;font-size:16px;color:#111827">Beste ${escapeHtml(data.naam)},</p>
+      <p style="margin:0 0 16px;color:#374151;line-height:1.6">Bedankt voor uw aanmelding voor de gratis <strong>AI Demo webinar</strong>. Wij sturen de datum en het toegangslink zo snel mogelijk toe.</p>
+      <div style="margin:24px 0;background:#0B1628;border-radius:8px;padding:20px 24px;text-align:center">
+        <p style="margin:0 0 6px;color:rgba(255,255,255,0.6);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em">Uw exclusieve kortingscode</p>
+        <p style="margin:0;color:#ffffff;font-size:24px;font-weight:800;font-family:monospace;letter-spacing:0.1em">${escapeHtml(WEBINAR_COUPON_CODE)}</p>
+        <p style="margin:8px 0 0;color:rgba(255,255,255,0.6);font-size:13px">Goed voor $${WEBINAR_COUPON_DISCOUNT_USD} korting op de AI Hands-On Deck training</p>
+      </div>
+      <p style="margin:0 0 24px;text-align:center">
+        <a href="${SITE_URL}/nl/education/ai-hands-on-deck" style="display:inline-block;background:#2B3494;color:white;padding:12px 28px;text-decoration:none;font-size:13px;font-weight:600;border-radius:4px">Bekijk AI Hands-On Deck training</a>
+      </p>
+      <hr style="border:none;border-top:1px solid #e5e7eb;margin:24px 0"/>
+      <p style="margin:0;color:#9ca3af;font-size:13px">Heeft u vragen? Stuur een e-mail naar <a href="mailto:info@suritargets.com" style="color:#2B3494">info@suritargets.com</a></p>
+    </div>`
+  await transporter.sendMail({
+    from: process.env.SMTP_FROM,
+    to: data.email,
+    subject: 'Uw aanmelding voor de Free AI Demo — Suritargets',
+    html: emailWrapper(content),
+  })
+}
+
+export async function sendWebinarRegistrationNotification(data: WebinarRegistrationFormData, id: number): Promise<void> {
+  const transporter = getTransporter()
+  const row = (label: string, value: string) =>
+    `<tr><td style="padding:8px 12px;color:#6b7280;font-size:13px;width:120px;vertical-align:top">${label}</td><td style="padding:8px 12px;font-size:14px;color:#111827;font-weight:500">${value}</td></tr>`
+
+  const content = `
+    <div style="background:#2B3494;padding:16px 32px">
+      <p style="margin:0;color:white;font-weight:700;font-size:17px">Nieuwe webinar-aanmelding</p>
+    </div>
+    <div style="padding:24px 32px">
+      <table role="presentation" width="100%" style="border-collapse:collapse;background:#f9fafb;border-radius:6px;overflow:hidden">
+        ${row('#', String(id))}
+        ${row('Naam', escapeHtml(data.naam))}
+        ${row('E-mail', `<a href="mailto:${escapeHtml(data.email)}" style="color:#2B3494">${escapeHtml(data.email)}</a>`)}
+        ${data.telefoon ? row('Telefoon', escapeHtml(data.telefoon)) : ''}
+        ${row('Bron', escapeHtml(data.referralSource || '—'))}
+      </table>
+      <p style="margin-top:24px">
+        <a href="mailto:${escapeHtml(data.email)}" style="display:inline-block;background:#2B3494;color:white;padding:10px 24px;text-decoration:none;font-size:13px;font-weight:600;border-radius:4px">Beantwoorden</a>
+      </p>
+    </div>`
+  await transporter.sendMail({
+    from: process.env.SMTP_FROM,
+    to: process.env.CONTACT_TO,
+    replyTo: data.email,
+    subject: `Nieuwe webinar-aanmelding: ${escapeHtml(data.naam)}`,
+    html: emailWrapper(content),
+  })
 }

@@ -107,6 +107,36 @@
       "cta1": "Explore our services",
       "cta2": "Free consultation"
     },
+    "webinar": {
+      "label": "FREE WEBINAR · LIVE DEMO",
+      "title": "Free AI Demo",
+      "subtitle": "The latest AI — live and hands-on, in 20 minutes.",
+      "badge1": "20 minutes",
+      "badge2": "Live online",
+      "badge3": "Free",
+      "dateNote": "Date & time to be announced soon",
+      "topics": [
+        "What is AI? — the latest state of the art",
+        "What it can mean for you",
+        "Applications in organisations & businesses",
+        "Prompt engineering",
+        "Data & AI risk"
+      ],
+      "perkNote": "Every attendee receives a discount code worth ${amount} off the paid AI Hands-On Deck training after registering.",
+      "formTitle": "Register for free",
+      "nameLabel": "Name *",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "you@company.com",
+      "phoneLabel": "Phone",
+      "phonePlaceholder": "+597 ...",
+      "submitButton": "Register now",
+      "registrationRequiredNote": "Registration is required to attend.",
+      "errorMessage": "Something went wrong. Please try again.",
+      "successTitle": "You're registered!",
+      "successMessage": "Check your email for the confirmation.",
+      "successCodeLabel": "Your discount code"
+    },
     "services": {
       "label": "SERVICES",
       "title": "What we do",

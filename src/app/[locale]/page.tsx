@@ -16,6 +16,7 @@ import { buildMetadata } from '@/lib/page-metadata'
 import { HeroMockup } from '@/components/home/hero-mockup'
 import { ParticleBackground } from '@/components/home/particle-background'
 import { FlyerCarousel } from '@/components/home/flyer-carousel'
+import { WebinarCtaSection } from '@/components/home/webinar-cta-section'
 
 const SERVICE_ICONS: Record<string, LucideIcon> = {
   'bar-chart':        BarChart2,
@@ -89,6 +90,9 @@ function HomeContent() {
           aria-hidden="true"
         />
       </section>
+
+      {/* ── 1b. WEBINAR CTA ─────────────────────────────────────────── */}
+      <WebinarCtaSection />
 
       {/* ── 2. SERVICES GRID ────────────────────────────────────────── */}
       <AnimatedSection>
