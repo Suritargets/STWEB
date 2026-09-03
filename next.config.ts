@@ -9,7 +9,7 @@ const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''};
   style-src 'self' 'unsafe-inline';
-  img-src 'self' blob: data: https://cdn.jsdelivr.net;
+  img-src 'self' blob: data: https://cdn.jsdelivr.net https://www.etitconsultancy.net https://logixlayer.com;
   font-src 'self';
   connect-src 'self';
   object-src 'none';
