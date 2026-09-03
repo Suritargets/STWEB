@@ -14,7 +14,7 @@ export default async function OrdersPage() {
     ...enrollments.map((e): OrderRow => ({
       key:             `enrollment-${e.id}`,
       kind:            'enrollment',
-      enrollmentId:    e.id,
+      sourceId:        e.id,
       created_at:      e.created_at,
       course_slug:     e.course_slug,
       course_name:     e.course_name,
@@ -30,7 +30,7 @@ export default async function OrdersPage() {
     ...webinarRegistrations.map((w): OrderRow => ({
       key:             `webinar-${w.id}`,
       kind:            'webinar',
-      enrollmentId:    null,
+      sourceId:        w.id,
       created_at:      w.created_at,
       course_slug:     'free-ai-demo',
       course_name:     'Free AI Demo',

@@ -51,3 +51,14 @@ export async function getWebinarRegistrations(): Promise<WebinarRegistration[]> 
   const rows = await db`SELECT * FROM webinar_registrations ORDER BY created_at DESC`
   return rows as WebinarRegistration[]
 }
+
+export async function getWebinarRegistrationById(id: number): Promise<WebinarRegistration | null> {
+  const db = sql()
+  const rows = await db`SELECT * FROM webinar_registrations WHERE id = ${id}`
+  return (rows[0] as WebinarRegistration) ?? null
+}
+
+export async function deleteWebinarRegistration(id: number): Promise<void> {
+  const db = sql()
+  await db`DELETE FROM webinar_registrations WHERE id = ${id}`
+}

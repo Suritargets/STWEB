@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { isAuthenticated } from '@/lib/auth'
-import { updateEnrollmentStatus } from '@/lib/enrollments'
+import { updateEnrollmentStatus, deleteEnrollment } from '@/lib/enrollments'
 
 async function checkAuth() {
   const cookieStore = await cookies()
@@ -31,5 +31,24 @@ export async function PATCH(
   } catch (error) {
     console.error('Enrollment status update error:', error)
     return NextResponse.json({ error: 'Update failed' }, { status: 500 })
+  }
+}
+
+export async function DELETE(
+  _request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  if (!(await checkAuth())) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
+  const { id } = await params
+
+  try {
+    await deleteEnrollment(Number(id))
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error('Enrollment delete error:', error)
+    return NextResponse.json({ error: 'Delete failed' }, { status: 500 })
   }
 }

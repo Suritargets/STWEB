@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
   { href: '/admin/dashboard/webinar',  label: 'Webinar',       icon: Radio },
   { href: '/admin/dashboard/cms',      label: 'CMS',           icon: Pencil },
   { href: '/admin/dashboard/seo',      label: 'SEO',           icon: Search },
-  { href: '#',                         label: 'Analytics',     icon: BarChart3, soon: true },
+  { href: '/admin/dashboard/analytics', label: 'Analytics',    icon: BarChart3 },
   { href: '/admin/dashboard/settings', label: 'Instellingen',  icon: Settings },
 ]
 

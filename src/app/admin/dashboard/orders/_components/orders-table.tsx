@@ -1,11 +1,12 @@
 'use client'
 import { useState, useMemo } from 'react'
+import { useRouter } from 'next/navigation'
 import type { Enrollment } from '@/lib/enrollments'
 
 export type OrderRow = {
   key: string
   kind: 'enrollment' | 'webinar'
-  enrollmentId: number | null
+  sourceId: number
   created_at: string
   course_slug: string
   course_name: string
@@ -33,6 +34,18 @@ const STATUS_COLORS: Record<string, string> = {
   aangemeld: 'bg-zinc-100 text-zinc-600',
 }
 
+function detailHref(row: OrderRow) {
+  return row.kind === 'enrollment'
+    ? `/admin/dashboard/orders/${row.sourceId}`
+    : `/admin/dashboard/webinar/${row.sourceId}`
+}
+
+function deleteEndpoint(row: OrderRow) {
+  return row.kind === 'enrollment'
+    ? `/api/admin/enrollments/${row.sourceId}`
+    : `/api/admin/webinar/${row.sourceId}`
+}
+
 function formatDate(iso: string) {
   return new Date(iso).toLocaleString('nl-NL', {
     day: '2-digit', month: '2-digit', year: 'numeric',
@@ -45,6 +58,7 @@ function fmt(n: number | string) {
 }
 
 export default function OrdersTable({ rows }: { rows: OrderRow[] }) {
+  const router = useRouter()
   const [search, setSearch] = useState('')
   const [courseFilter, setCourseFilter] = useState('all')
   const [typeFilter, setTypeFilter] = useState('all')
@@ -53,6 +67,8 @@ export default function OrdersTable({ rows }: { rows: OrderRow[] }) {
     () => Object.fromEntries(rows.map(r => [r.key, r.status]))
   )
   const [updating, setUpdating] = useState<Record<string, boolean>>({})
+  const [selected, setSelected] = useState<Set<string>>(new Set())
+  const [deleting, setDeleting] = useState(false)
 
   const courses = useMemo(
     () => ['all', ...Array.from(new Set(rows.map(r => r.course_slug)))],
@@ -76,10 +92,10 @@ export default function OrdersTable({ rows }: { rows: OrderRow[] }) {
   }, [rows, search, courseFilter, typeFilter, statusFilter, statuses])
 
   async function handleStatusChange(row: OrderRow, newStatus: Enrollment['status']) {
-    if (row.kind !== 'enrollment' || row.enrollmentId === null) return
+    if (row.kind !== 'enrollment') return
     setUpdating(u => ({ ...u, [row.key]: true }))
     try {
-      const res = await fetch(`/api/admin/enrollments/${row.enrollmentId}`, {
+      const res = await fetch(`/api/admin/enrollments/${row.sourceId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),
@@ -89,6 +105,38 @@ export default function OrdersTable({ rows }: { rows: OrderRow[] }) {
       }
     } finally {
       setUpdating(u => ({ ...u, [row.key]: false }))
+    }
+  }
+
+  function toggleSelect(key: string) {
+    setSelected(prev => {
+      const next = new Set(prev)
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
+      return next
+    })
+  }
+
+  function toggleAll() {
+    if (selected.size === filtered.length) {
+      setSelected(new Set())
+    } else {
+      setSelected(new Set(filtered.map(r => r.key)))
+    }
+  }
+
+  async function handleBulkDelete() {
+    if (selected.size === 0) return
+    if (!window.confirm(`Weet je zeker dat je ${selected.size} order(s) wilt verwijderen? Dit kan niet ongedaan worden gemaakt.`)) return
+
+    setDeleting(true)
+    try {
+      const targets = rows.filter(r => selected.has(r.key))
+      await Promise.all(targets.map(row => fetch(deleteEndpoint(row), { method: 'DELETE' })))
+      setSelected(new Set())
+      router.refresh()
+    } finally {
+      setDeleting(false)
     }
   }
 
@@ -164,11 +212,39 @@ export default function OrdersTable({ rows }: { rows: OrderRow[] }) {
         </button>
       </div>
 
+      {/* Bulk action bar */}
+      {selected.size > 0 && (
+        <div className="px-4 py-2 bg-red-50 border border-red-100 rounded-md flex items-center gap-3">
+          <span className="text-xs font-medium text-red-700">{selected.size} geselecteerd</span>
+          <button
+            onClick={handleBulkDelete}
+            disabled={deleting}
+            className="text-xs bg-red-600 text-white px-3 py-1.5 rounded-md hover:bg-red-700 transition-colors disabled:opacity-50 font-medium"
+          >
+            {deleting ? 'Bezig…' : 'Verwijder geselecteerde'}
+          </button>
+          <button
+            onClick={() => setSelected(new Set())}
+            className="text-xs text-zinc-500 hover:text-zinc-700 ml-auto"
+          >
+            Deselecteer
+          </button>
+        </div>
+      )}
+
       {/* Table */}
       <div className="overflow-x-auto rounded-lg border border-zinc-200">
         <table className="w-full text-sm">
           <thead className="bg-zinc-50 border-b border-zinc-200">
             <tr>
+              <th className="w-10 px-4 py-3">
+                <input
+                  type="checkbox"
+                  checked={selected.size === filtered.length && filtered.length > 0}
+                  onChange={toggleAll}
+                  className="rounded border-zinc-300 accent-[#2B3494]"
+                />
+              </th>
               {['Datum', 'Course', 'Type', 'Naam', 'Bedrijf', 'Deelnemers', 'Totaal', 'Status', 'Factuur'].map(h => (
                 <th
                   key={h}
@@ -182,7 +258,7 @@ export default function OrdersTable({ rows }: { rows: OrderRow[] }) {
           <tbody className="divide-y divide-zinc-100">
             {filtered.length === 0 && (
               <tr>
-                <td colSpan={9} className="text-center py-8 text-zinc-400">
+                <td colSpan={10} className="text-center py-8 text-zinc-400">
                   Geen orders gevonden
                 </td>
               </tr>
@@ -190,7 +266,15 @@ export default function OrdersTable({ rows }: { rows: OrderRow[] }) {
             {filtered.map(row => {
               const currentStatus = statuses[row.key] ?? row.status
               return (
-                <tr key={row.key} className="hover:bg-zinc-50 transition-colors">
+                <tr key={row.key} className={`hover:bg-zinc-50 transition-colors ${selected.has(row.key) ? 'bg-blue-50/40' : ''}`}>
+                  <td className="px-4 py-3">
+                    <input
+                      type="checkbox"
+                      checked={selected.has(row.key)}
+                      onChange={() => toggleSelect(row.key)}
+                      className="rounded border-zinc-300 accent-[#2B3494]"
+                    />
+                  </td>
                   <td className="px-4 py-3 whitespace-nowrap text-zinc-500">{formatDate(row.created_at)}</td>
                   <td className="px-4 py-3 font-medium text-zinc-900 whitespace-nowrap">{row.course_name}</td>
                   <td className="px-4 py-3 capitalize text-zinc-600">{row.enrollment_type ?? '—'}</td>
@@ -221,18 +305,14 @@ export default function OrdersTable({ rows }: { rows: OrderRow[] }) {
                     )}
                   </td>
                   <td className="px-4 py-3">
-                    {row.kind === 'enrollment' ? (
-                      <a
-                        href={`/admin/dashboard/orders/${row.enrollmentId}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-[#2B3494] hover:underline font-medium whitespace-nowrap"
-                      >
-                        Bekijk →
-                      </a>
-                    ) : (
-                      <span className="text-xs text-zinc-300">—</span>
-                    )}
+                    <a
+                      href={detailHref(row)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-[#2B3494] hover:underline font-medium whitespace-nowrap"
+                    >
+                      Bekijk →
+                    </a>
                   </td>
                 </tr>
               )

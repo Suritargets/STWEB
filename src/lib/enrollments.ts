@@ -102,3 +102,8 @@ export async function updateEnrollmentStatus(
   const db = sql()
   await db`UPDATE enrollments SET status = ${status} WHERE id = ${id}`
 }
+
+export async function deleteEnrollment(id: number): Promise<void> {
+  const db = sql()
+  await db`DELETE FROM enrollments WHERE id = ${id}`
+}
