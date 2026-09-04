@@ -54,6 +54,8 @@
     "eduSoftwareLabel": "Education Software",
     "aiHandsOnDeck": "AI – Hands On Deck",
     "aiHandsOnDeckDesc": "Formation IA pratique · édition Q3 2026",
+    "freeAiDemo": "Démo IA Gratuite",
+    "freeAiDemoDesc": "Webinaire gratuit en direct · tous les vendredis, 20 minutes",
     "inhouseLabel": "Formation In-house",
     "financeClaudeInhouse": "Finance & Accounting Training",
     "financeClaudeInhouseDesc": "Claude Desktop + Excel pour les cabinets comptables",
@@ -114,7 +116,7 @@
       "badge1": "20 minutes",
       "badge2": "En ligne, en direct",
       "badge3": "Gratuit",
-      "dateNote": "Date et heure bientôt annoncées",
+      "dateNote": "Tous les vendredis en ligne · prochaines dates : 11, 18 et 25 septembre 2026",
       "topics": [
         "Qu'est-ce que l'IA ? — les dernières avancées",
         "Ce que cela peut signifier pour vous",
@@ -136,7 +138,8 @@
       "errorMessage": "Une erreur s'est produite. Veuillez réessayer.",
       "successTitle": "Vous êtes inscrit(e) !",
       "successMessage": "Consultez votre e-mail pour la confirmation.",
-      "successCodeLabel": "Votre code de réduction"
+      "successCodeLabel": "Votre code de réduction",
+      "moreInfoLink": "En savoir plus sur la Démo IA Gratuite"
     },
     "services": {
       "label": "SERVICES",

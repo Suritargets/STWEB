@@ -54,6 +54,8 @@
     "eduSoftwareLabel": "Education Software",
     "aiHandsOnDeck": "AI – Hands On Deck",
     "aiHandsOnDeckDesc": "Praktische AI-training · editie Q3 2026",
+    "freeAiDemo": "Free AI Demo",
+    "freeAiDemoDesc": "Gratis live webinar · elke vrijdag, 20 minuten",
     "inhouseLabel": "In-house Training",
     "financeClaudeInhouse": "Finance & Accounting Training",
     "financeClaudeInhouseDesc": "Claude Desktop + Excel voor accountantskantoren",
@@ -114,7 +116,7 @@
       "badge1": "20 minuten",
       "badge2": "Live online",
       "badge3": "Gratis",
-      "dateNote": "Datum & tijd worden binnenkort bekendgemaakt",
+      "dateNote": "Elke vrijdag online · eerstvolgende data: 11, 18 & 25 september 2026",
       "topics": [
         "Wat is AI? — de nieuwste stand van zaken",
         "Wat kan het voor jou betekenen",
@@ -136,7 +138,8 @@
       "errorMessage": "Er is iets misgegaan. Probeer het opnieuw.",
       "successTitle": "Je bent aangemeld!",
       "successMessage": "Check je e-mail voor de bevestiging.",
-      "successCodeLabel": "Uw kortingscode"
+      "successCodeLabel": "Uw kortingscode",
+      "moreInfoLink": "Meer informatie over de Free AI Demo"
     },
     "services": {
       "label": "DIENSTEN",

@@ -8,7 +8,7 @@ import {
   BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
   Shield, BookOpen, Rocket, Bitcoin, UserCircle,
   Briefcase, TrendingUp, Compass, Calculator, Zap,
-  Users, FolderOpen, Lightbulb, LayoutGrid,
+  Users, FolderOpen, Lightbulb, LayoutGrid, Radio,
 } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
@@ -233,6 +233,25 @@ export default function Nav() {
 
                     </div>
 
+                    {/* Free AI Demo — full-width row */}
+                    <div className="mt-3 pt-3 border-t border-border">
+                      <Link
+                        href="/education/free-ai-demo"
+                        className="flex items-center gap-3 select-none rounded-md px-2 py-2.5 hover:bg-[#2B3494]/5 transition-colors group"
+                      >
+                        <span className="shrink-0 w-7 h-7 flex items-center justify-center rounded-md bg-[#E8192C]/10 text-[#E8192C] group-hover:bg-[#2B3494] group-hover:text-white transition-colors">
+                          <Radio size={14} />
+                        </span>
+                        <span className="flex-1">
+                          <p className="text-sm font-medium text-foreground group-hover:text-[#2B3494] leading-tight">{t('freeAiDemo')}</p>
+                          <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{t('freeAiDemoDesc')}</p>
+                        </span>
+                        <span className="font-mono text-[10px] tracking-widest uppercase font-bold text-[#E8192C] bg-[#E8192C]/8 px-2 py-0.5 rounded-full whitespace-nowrap">
+                          Gratis · 20 min
+                        </span>
+                      </Link>
+                    </div>
+
                     {/* In-house Training — full-width row */}
                     <div className="mt-3 pt-3 border-t border-border">
                       <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-muted-foreground mb-2 px-1">
@@ -415,6 +434,10 @@ export default function Nav() {
               <Link href="/education/knowledge-base-rag" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('knowledgeBase')}</Link>
               <Link href="/education/research-development" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('researchDev')}</Link>
               <Link href="/education/data-aggregation" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('dataAggregation')}</Link>
+              <Link href="/education/free-ai-demo" className="text-sm text-white/70 hover:text-white transition-colors py-1.5 flex items-center gap-2" onClick={() => setOpen(false)}>
+                {t('freeAiDemo')}
+                <span className="font-mono text-[9px] tracking-widest uppercase font-bold text-[#E8192C]">Gratis</span>
+              </Link>
               <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/40 pt-2 pb-0.5">{t('inhouseLabel')}</p>
               <Link href="/education/finance-accounting-claude" className="text-sm text-white/70 hover:text-white transition-colors py-1.5" onClick={() => setOpen(false)}>{t('financeClaudeInhouse')}</Link>
             </div>

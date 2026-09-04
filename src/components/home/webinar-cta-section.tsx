@@ -3,13 +3,14 @@
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { CalendarClock, Loader2, Radio, Sparkles } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { WEBINAR_COUPON_CODE } from '@/lib/coupon'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
-export function WebinarCtaSection() {
+export function WebinarCtaSection({ showMoreInfoLink = true }: { showMoreInfoLink?: boolean }) {
   const t = useTranslations('home.webinar')
 
   const [naam, setNaam]         = useState('')
@@ -92,6 +93,12 @@ export function WebinarCtaSection() {
               </li>
             ))}
           </ul>
+
+          {showMoreInfoLink && (
+            <Link href="/education/free-ai-demo" className="inline-flex items-center gap-1 text-sm font-semibold text-gold hover:underline">
+              {t('moreInfoLink')} →
+            </Link>
+          )}
         </div>
 
         {/* ── Form card ── */}

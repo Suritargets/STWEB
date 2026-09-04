@@ -54,6 +54,8 @@
     "eduSoftwareLabel": "Education Software",
     "aiHandsOnDeck": "AI – Hands On Deck",
     "aiHandsOnDeckDesc": "Practical AI training · Q3 2026 edition",
+    "freeAiDemo": "Free AI Demo",
+    "freeAiDemoDesc": "Free live webinar · every Friday, 20 minutes",
     "inhouseLabel": "In-house Training",
     "financeClaudeInhouse": "Finance & Accounting Training",
     "financeClaudeInhouseDesc": "Claude Desktop + Excel for accounting firms",
@@ -114,7 +116,7 @@
       "badge1": "20 minutes",
       "badge2": "Live online",
       "badge3": "Free",
-      "dateNote": "Date & time to be announced soon",
+      "dateNote": "Every Friday online · upcoming dates: Sep 11, 18 & 25, 2026",
       "topics": [
         "What is AI? — the latest state of the art",
         "What it can mean for you",
@@ -136,7 +138,8 @@
       "errorMessage": "Something went wrong. Please try again.",
       "successTitle": "You're registered!",
       "successMessage": "Check your email for the confirmation.",
-      "successCodeLabel": "Your discount code"
+      "successCodeLabel": "Your discount code",
+      "moreInfoLink": "More about the Free AI Demo"
     },
     "services": {
       "label": "SERVICES",
