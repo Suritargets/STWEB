@@ -9,11 +9,12 @@ const individualServices = services.filter((s) => s.type === 'individual')
 
 export default function Footer() {
   const t = useTranslations('footer')
+  const tn = useTranslations('nav')
   const ts = useTranslations('servicesData')
 
   return (
     <footer className="border-t border-border bg-[#2B3494] mt-0">
-      <div className="max-w-[1440px] mx-auto px-[var(--section-padding-x)] py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="max-w-[1440px] mx-auto px-[var(--section-padding-x)] py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
         {/* Brand */}
         <div>
           <p className="font-mono text-sm font-bold tracking-widest uppercase text-white mb-4">
@@ -73,6 +74,19 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+          </ul>
+        </div>
+
+        {/* Education */}
+        <div>
+          <p className="text-xs font-mono tracking-[0.2em] uppercase text-white/70 mb-4">
+            {tn('education')}
+          </p>
+          <ul className="space-y-2">
+            <li><Link href="/education/ai-courses" className="text-sm text-white/70 hover:text-white transition-colors">{tn('aiCourses')}</Link></li>
+            <li><Link href="/education/ai-hands-on-deck" className="text-sm text-white/70 hover:text-white transition-colors">{tn('aiHandsOnDeck')}</Link></li>
+            <li><Link href="/education/free-ai-demo" className="text-sm text-white/70 hover:text-white transition-colors">{tn('freeAiDemo')}</Link></li>
+            <li><a href="https://edu.suritargets.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">{tn('eduPlatform')}</a></li>
           </ul>
         </div>
 
