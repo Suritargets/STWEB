@@ -6,7 +6,7 @@ import { CalendarClock, Loader2, Radio, Sparkles } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { WEBINAR_COUPON_CODE } from '@/lib/coupon'
+import { WEBINAR_COUPON_CODE, findAffiliateCode } from '@/lib/coupon'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -48,6 +48,7 @@ export function WebinarCtaSection({ showMoreInfoLink = true }: { showMoreInfoLin
 
   const topics = [0, 1, 2, 3, 4].map(i => t(`topics.${i}`))
   const badges = [t('badge1'), t('badge2'), t('badge3')]
+  const displayedCode = findAffiliateCode(referralSource)?.code ?? WEBINAR_COUPON_CODE
 
   return (
     <section
@@ -112,7 +113,7 @@ export function WebinarCtaSection({ showMoreInfoLink = true }: { showMoreInfoLin
               <p className="text-white/60 text-sm">{t('successMessage')}</p>
               <div className="w-full bg-[#0B1628] border border-gold/40 rounded-lg px-4 py-4 mt-2">
                 <p className="text-[10px] uppercase tracking-widest text-white/50 mb-1">{t('successCodeLabel')}</p>
-                <p className="font-mono text-2xl font-extrabold text-gold tracking-widest">{WEBINAR_COUPON_CODE}</p>
+                <p className="font-mono text-2xl font-extrabold text-gold tracking-widest">{displayedCode}</p>
               </div>
             </div>
           ) : (

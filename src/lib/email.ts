@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer'
 import type { ContactFormData, EnrollmentFormData, WebinarRegistrationFormData } from './validations'
-import { WEBINAR_COUPON_CODE, WEBINAR_COUPON_DISCOUNT_USD } from './coupon'
+import { WEBINAR_COUPON_CODE, WEBINAR_COUPON_DISCOUNT_USD, findAffiliateCode } from './coupon'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com'
 
@@ -301,13 +301,14 @@ export async function sendEnrollmentConfirmation(data: EnrollmentFormData, id: n
 
 export async function sendWebinarRegistrationConfirmation(data: WebinarRegistrationFormData): Promise<void> {
   const transporter = getTransporter()
+  const discountCode = findAffiliateCode(data.referralSource)?.code ?? WEBINAR_COUPON_CODE
   const content = `
     <div style="padding:32px">
       <p style="margin:0 0 16px;font-size:16px;color:${FOREGROUND}">Beste ${escapeHtml(data.naam)},</p>
       <p style="margin:0 0 16px;color:#374151;line-height:1.6">Bedankt voor uw aanmelding voor de gratis <strong>AI Demo webinar</strong>. Wij sturen de datum en het toegangslink zo snel mogelijk toe.</p>
       <div style="margin:24px 0;background:${NAVY};border-radius:8px;padding:22px 24px;text-align:center">
         <p style="margin:0 0 8px;font-family:${FONT_MONO};color:rgba(255,255,255,0.6);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.2em">Uw exclusieve kortingscode</p>
-        <p style="margin:0;color:#ffffff;font-size:26px;font-weight:800;font-family:${FONT_MONO};letter-spacing:0.12em">${escapeHtml(WEBINAR_COUPON_CODE)}</p>
+        <p style="margin:0;color:#ffffff;font-size:26px;font-weight:800;font-family:${FONT_MONO};letter-spacing:0.12em">${escapeHtml(discountCode)}</p>
         <p style="margin:10px 0 0;color:rgba(255,255,255,0.6);font-size:13px">Goed voor $${WEBINAR_COUPON_DISCOUNT_USD} korting op de AI Hands-On Deck training</p>
       </div>
       <p style="margin:0 0 24px;text-align:center">
