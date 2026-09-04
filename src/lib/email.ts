@@ -89,11 +89,11 @@ function emailWrapper(content: string): string {
       <!-- Accent strip -->
       <tr><td style="background:${ACCENT};height:4px;font-size:0;line-height:0">&nbsp;</td></tr>
       <!-- Logo header -->
-      <tr><td style="background:${NAVY};padding:22px 32px">
+      <tr><td style="background:${PRIMARY};padding:22px 32px">
         <table role="presentation" width="100%">
           <tr>
             <td><img src="${SITE_URL}/logo-white.svg" alt="Suritargets" height="26" style="height:26px;width:auto;display:block" /></td>
-            <td align="right" style="color:rgba(255,255,255,0.5);font-size:11px;font-family:${FONT_MONO};letter-spacing:0.15em">SURITARGETS.COM</td>
+            <td align="right" style="color:rgba(255,255,255,0.6);font-size:11px;font-family:${FONT_MONO};letter-spacing:0.15em">SURITARGETS.COM</td>
           </tr>
         </table>
       </td></tr>
@@ -312,7 +312,7 @@ export async function sendWebinarRegistrationConfirmation(data: WebinarRegistrat
         <p style="margin:10px 0 0;color:rgba(255,255,255,0.6);font-size:13px">Goed voor $${WEBINAR_COUPON_DISCOUNT_USD} korting op de AI Hands-On Deck training</p>
       </div>
       <p style="margin:0 0 24px;text-align:center">
-        ${button(`${SITE_URL}/nl/education/ai-hands-on-deck`, 'Bekijk AI Hands-On Deck training')}
+        ${button(`${SITE_URL}/nl/education/free-ai-demo`, 'Bekijk Free AI Demo pagina')}
       </p>
       <hr style="border:none;border-top:1px solid ${BORDER};margin:24px 0"/>
       <p style="margin:0;color:${MUTED};font-size:13px">Heeft u vragen? Stuur een e-mail naar <a href="mailto:info@suritargets.com" style="color:${PRIMARY}">info@suritargets.com</a></p>
