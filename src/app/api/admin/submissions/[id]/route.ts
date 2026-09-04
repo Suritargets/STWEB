@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { isAuthenticated } from '@/lib/auth'
+import { getSessionUser } from '@/lib/auth'
 import { updateSubmission, deleteSubmission } from '@/lib/db'
 
 async function checkAuth() {
   const cookieStore = await cookies()
   const session = cookieStore.get('admin_session')?.value
-  return isAuthenticated(session)
+  return (await getSessionUser(session)) !== null
 }
 
 export async function PUT(

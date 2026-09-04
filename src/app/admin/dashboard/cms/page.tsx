@@ -1,3 +1,5 @@
+import { requireAdminUser } from '@/lib/auth'
+
 export const dynamic = 'force-dynamic'
 
 const locales = ['nl', 'en', 'es', 'pt-BR', 'fr']
@@ -37,7 +39,9 @@ const STATUS: Record<PageStatus, { label: string; cls: string }> = {
 
 const livePct = Math.round(pages.filter(p => p.status === 'live').length / pages.length * 100)
 
-export default function CmsPage() {
+export default async function CmsPage() {
+  await requireAdminUser(['admin', 'super_admin'])
+
   return (
     <div className="p-8 max-w-350">
       <div className="mb-8">

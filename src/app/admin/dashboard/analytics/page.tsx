@@ -8,6 +8,7 @@ import {
 } from '@/lib/analytics'
 import StatsCard from '../../_components/stats-card'
 import MiniChart from '../../_components/mini-chart'
+import { requireAdminUser } from '@/lib/auth'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,6 +17,7 @@ function fmtUsd(n: number) {
 }
 
 export default async function AnalyticsPage() {
+  await requireAdminUser(['admin', 'super_admin'])
   const [revenue, revenueDaily, webinarDaily, topCourses, topReferrals, webinar] = await Promise.all([
     getRevenueOverview(),
     getRevenueDailyCounts(14),

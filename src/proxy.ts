@@ -11,7 +11,7 @@ export default function middleware(request: NextRequest) {
   if (pathname.startsWith('/admin')) {
     if (pathname !== '/admin/login') {
       const session = request.cookies.get('admin_session')?.value
-      if (!session || session.length !== 64) {
+      if (!session || !/^\d+\.[0-9a-f]{64}$/.test(session)) {
         const loginUrl = new URL('/admin/login', request.url)
         loginUrl.searchParams.set('from', pathname)
         return NextResponse.redirect(loginUrl)

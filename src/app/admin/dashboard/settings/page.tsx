@@ -1,9 +1,11 @@
 import { getSettings, getIntegrations } from '@/lib/settings'
+import { requireAdminUser } from '@/lib/auth'
 import SettingsForm from '../../_components/settings-form'
 
 export const dynamic = 'force-dynamic'
 
 export default async function SettingsPage() {
+  await requireAdminUser(['admin', 'super_admin'])
   const settings = await getSettings()
   const integrations = await getIntegrations()
 

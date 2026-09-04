@@ -1,3 +1,5 @@
+import { requireAdminUser } from '@/lib/auth'
+
 export const dynamic = 'force-dynamic'
 
 type Check = boolean | 'partial'
@@ -41,7 +43,9 @@ const ogScore = seoPages.filter(p => p.og === true).length
 const structuredScore = seoPages.filter(p => p.structured === true).length
 const hreflangScore = seoPages.filter(p => p.hreflang === true).length
 
-export default function SeoPage() {
+export default async function SeoPage() {
+  await requireAdminUser(['admin', 'super_admin'])
+
   return (
     <div className="p-8 max-w-350">
       <div className="mb-8">
