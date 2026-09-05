@@ -1,32 +1,29 @@
+import { readFileSync } from 'fs'
+import { join } from 'path'
 import { ImageResponse } from 'next/og'
 import { loadOgFonts } from '@/lib/og-fonts'
 
 export const size = { width: 1200, height: 630 }
 
-const LogoSvg = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 100 100"
-    width="120"
-    height="120"
+// Real brand mark (not a hand-drawn approximation) — read as base64 since Satori's
+// ImageResponse needs a URL or data URI, not a filesystem path.
+function loadLogoMarkDataUri(): string {
+  const data = readFileSync(join(process.cwd(), 'public/logo-mark.png'))
+  return `data:image/png;base64,${data.toString('base64')}`
+}
+
+const LOGO_WIDTH = 120
+const LOGO_HEIGHT = 99 // matches Asset 2.png's 431:356 aspect ratio
+
+const LogoMark = () => (
+  // eslint-disable-next-line @next/next/no-img-element
+  <img
+    src={loadLogoMarkDataUri()}
+    width={LOGO_WIDTH}
+    height={LOGO_HEIGHT}
     style={{ marginBottom: 32 }}
-  >
-    {/* Blue outer ring */}
-    <circle cx="58" cy="50" r="42" fill="#2B3494" />
-    {/* White ring */}
-    <circle cx="58" cy="50" r="29" fill="#FFFFFF" />
-    {/* Red center */}
-    <circle cx="58" cy="50" r="16" fill="#E8192C" />
-    {/* Arrow 1 (back) */}
-    <polygon points="4,10 4,90 36,50" fill="#2B3494" />
-    {/* Arrow 2 (front) */}
-    <polygon points="18,22 18,78 44,50" fill="#2B3494" />
-    {/* White separator lines */}
-    <line x1="4" y1="10" x2="18" y2="22" stroke="#FFFFFF" strokeWidth="3" />
-    <line x1="4" y1="90" x2="18" y2="78" stroke="#FFFFFF" strokeWidth="3" />
-    <line x1="18" y1="22" x2="36" y2="50" stroke="#FFFFFF" strokeWidth="3" />
-    <line x1="18" y1="78" x2="36" y2="50" stroke="#FFFFFF" strokeWidth="3" />
-  </svg>
+    alt=""
+  />
 )
 
 export async function makeOgImage(title: string, subtitle?: string): Promise<ImageResponse> {
@@ -73,7 +70,7 @@ export async function makeOgImage(title: string, subtitle?: string): Promise<Ima
         />
 
         {/* Logo */}
-        <LogoSvg />
+        <LogoMark />
 
         {/* Brand name */}
         <div
