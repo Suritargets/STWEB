@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { ExternalLink } from 'lucide-react'
 import { SectionHeading } from '@/components/shared/section-heading'
 import { AnimatedSection } from '@/components/shared/animated-section'
@@ -168,6 +168,12 @@ function PortfolioContent() {
   )
 }
 
-export default function PortfolioPage() {
+export default async function PortfolioPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return <PortfolioContent />
 }

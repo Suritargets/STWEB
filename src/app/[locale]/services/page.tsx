@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
 import ServicesClient from './services-client'
@@ -58,6 +58,12 @@ function ServicesContent() {
   )
 }
 
-export default function ServicesPage() {
+export default async function ServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return <ServicesContent />
 }

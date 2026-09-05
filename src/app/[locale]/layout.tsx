@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, getTranslations } from 'next-intl/server'
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import Nav from '@/components/layout/nav'
@@ -62,6 +62,9 @@ export default async function LocaleLayout({
   if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound()
   }
+  // Populates next-intl's request-scoped locale from the route param (not headers()),
+  // so this layout and every page under it can stay statically rendered and cacheable.
+  setRequestLocale(locale)
   const messages = await getMessages()
 
   const organizationJsonLd = {

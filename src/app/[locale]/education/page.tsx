@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import { GraduationCap, Sparkles, TrendingUp, Monitor, Briefcase, BookOpen, Compass, BarChart2, ArrowRight, Calculator, Zap } from 'lucide-react'
 import { SectionHeading } from '@/components/shared/section-heading'
@@ -225,6 +225,12 @@ function EducationContent() {
   )
 }
 
-export default function EducationPage() {
+export default async function EducationPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return <EducationContent />
 }

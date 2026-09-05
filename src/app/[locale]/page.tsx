@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import {
   BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
   Briefcase, TrendingUp, Compass, BookOpen, Rocket, Bitcoin,
@@ -243,6 +243,12 @@ function HomeContent() {
   )
 }
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return <HomeContent />
 }
