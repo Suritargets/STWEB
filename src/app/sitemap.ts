@@ -6,7 +6,7 @@ import { routing } from '@/i18n/routing'
 const LOCALES = routing.locales
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.suritargets.com'
 
   const staticPaths = [
     '', '/about', '/services', '/contact', '/pricing',

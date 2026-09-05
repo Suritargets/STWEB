@@ -21,16 +21,14 @@ export async function generateMetadata({
       template: '%s | Suritargets',
     },
     description: t('description'),
-    metadataBase: new URL(
-      process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com'
-    ),
+    metadataBase: new URL(siteConfig.url),
     openGraph: {
       type: 'website',
       locale: locale.replace('-', '_'),
       siteName: 'Suritargets',
       title: 'Suritargets — Business Intelligence & Digital Solutions',
       description: t('description'),
-      url: `https://suritargets.com/${locale}`,
+      url: `${siteConfig.url}/${locale}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -39,9 +37,9 @@ export async function generateMetadata({
     },
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `https://suritargets.com/${locale}`,
+      canonical: `${siteConfig.url}/${locale}`,
       languages: Object.fromEntries(
-        routing.locales.map((l) => [l, `https://suritargets.com/${l}`])
+        routing.locales.map((l) => [l, `${siteConfig.url}/${l}`])
       ),
     },
   }

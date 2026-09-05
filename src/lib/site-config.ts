@@ -4,7 +4,7 @@ export const siteConfig = {
   taglineEn: 'Not off the shelf. Fully tailored.',
   description:
     'Business tech support op maat voor het Caribisch gebied. Research, FinTech, Web & App Services, Forensics en Education.',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.suritargets.com',
   address: {
     street: 'Dr. Sophie Redmonstraat 244',
     city: 'Paramaribo',

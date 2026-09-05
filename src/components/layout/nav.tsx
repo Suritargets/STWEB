@@ -343,7 +343,7 @@ export default function Nav() {
               className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors px-2 py-1"
               aria-label={t('langLabel')}
             >
-              <ReactCountryFlag countryCode={LANGS.find((l) => l.locale === locale)?.code ?? 'NL'} svg style={{ width: '1.25em', height: '1.25em', borderRadius: 2 }} />
+              <ReactCountryFlag alt="" countryCode={LANGS.find((l) => l.locale === locale)?.code ?? 'NL'} svg style={{ width: '1.25em', height: '1.25em', borderRadius: 2 }} />
               <ChevronDown size={11} className={cn('transition-transform', langOpen && 'rotate-180')} />
             </button>
             {langOpen && (
@@ -358,7 +358,7 @@ export default function Nav() {
                     )}
                   >
                     <span className="flex items-center gap-2">
-                      <ReactCountryFlag countryCode={code} svg style={{ width: '1.25em', height: '1.25em', borderRadius: 2 }} />
+                      <ReactCountryFlag alt="" countryCode={code} svg style={{ width: '1.25em', height: '1.25em', borderRadius: 2 }} />
                       {label}
                     </span>
                   </button>
@@ -496,7 +496,7 @@ export default function Nav() {
                   locale === loc ? 'bg-white text-[#2B3494] font-semibold' : 'text-white/70 hover:text-white border border-white/20'
                 )}
               >
-                <ReactCountryFlag countryCode={code} svg style={{ width: '1.25em', height: '1.25em', borderRadius: 2 }} />
+                <ReactCountryFlag alt="" countryCode={code} svg style={{ width: '1.25em', height: '1.25em', borderRadius: 2 }} />
                 <span>{label}</span>
               </button>
             ))}

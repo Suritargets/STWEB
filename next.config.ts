@@ -40,6 +40,11 @@ const nextConfig: NextConfig = {
         destination: '/:locale/services/web-applications',
         permanent: true,
       },
+      {
+        source: '/security.txt',
+        destination: '/.well-known/security.txt',
+        permanent: true,
+      },
     ]
   },
   async headers() {

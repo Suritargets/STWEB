@@ -24,7 +24,7 @@ export type Integration = {
 
 const DEFAULT_SETTINGS: SiteSettings = {
   site_name: 'Suritargets',
-  site_url: 'https://suritargets.com',
+  site_url: 'https://www.suritargets.com',
   default_locale: 'nl',
   contact_email: '',
   company_name: 'Suritargets',

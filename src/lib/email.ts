@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer'
 import type { ContactFormData, EnrollmentFormData, WebinarRegistrationFormData } from './validations'
 import { WEBINAR_COUPON_CODE, WEBINAR_COUPON_DISCOUNT_USD, findAffiliateCode } from './coupon'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.suritargets.com'
 
 // ─── Design tokens (mirrors src/app/globals.css — inlined for email-client support) ──
 const NAVY      = '#0B1628'
