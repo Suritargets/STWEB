@@ -21,6 +21,8 @@
     "forensicsDesc": "Forensisch onderzoek en compliance-audits voor organisaties.",
     "educationTeams": "Education (Teams)",
     "educationTeamsDesc": "AI, automatisering en tech-workshops voor teams.",
+    "socialMediaDesigns": "Social Media Design Pakket",
+    "socialMediaDesignsDesc": "Professionele social media visuals, elke maand. Vanaf $15/maand.",
     "education1op1": "Education 1-op-1",
     "education1op1Desc": "Persoonlijke begeleiding in AI, tech en moderne skills.",
     "begeleidingInnovation": "Begeleiding in Innovation",
@@ -95,6 +97,46 @@
     "home": "Home",
     "services": "Diensten",
     "gratisgesprek": "Gratis gesprek"
+  },
+  "digitalVisualDesigns": {
+    "meta": {
+      "title": "Social Media Design Pakket | Suritargets",
+      "description": "Professionele social media visuals, elke maand. Vanaf $15/maand — 8 visuals, 3 correcties, geoptimaliseerd voor uw platform."
+    },
+    "label": "SOCIAL MEDIA · MAANDELIJKS PAKKET",
+    "badge": "Vanaf $15 / maand",
+    "heroTitle": "Uw social posts op auto-pilot",
+    "heroSubtitle": "Professioneel. Creatief. Consistent. Elke maand nieuwe, kant-en-klare content voor uw social media.",
+    "featuresLabel": "Wat u krijgt",
+    "features": [
+      { "title": "8 Visuals", "description": "Professioneel ontworpen posts, elke maand" },
+      { "title": "3 Correcties", "description": "Aanpassingen inbegrepen — geen extra kosten" },
+      { "title": "1 Formaat", "description": "Geoptimaliseerd voor uw gekozen platform" }
+    ],
+    "platformsLabel": "Beschikbaar voor",
+    "benefitsLabel": "Waarom dit pakket",
+    "benefits": [
+      { "title": "Bespaar tijd", "description": "Focus op uw business" },
+      { "title": "Groei uw publiek", "description": "Bereik meer mensen" },
+      { "title": "Professionele kwaliteit", "description": "Content die converteert" }
+    ],
+    "tagline": "Social Made Simple.",
+    "ctaTitle": "Klaar om te starten?",
+    "ctaSubtitle": "Meld u vandaag aan en ontvang binnen 2 werkdagen een voorstel op maat.",
+    "formTitle": "Meld u aan",
+    "nameLabel": "Naam *",
+    "namePlaceholder": "Uw naam",
+    "companyLabel": "Bedrijfsnaam (optioneel)",
+    "companyPlaceholder": "Uw bedrijf",
+    "emailLabel": "E-mail *",
+    "emailPlaceholder": "u@bedrijf.com",
+    "phoneLabel": "Telefoon (optioneel)",
+    "phonePlaceholder": "+597 ...",
+    "submitButton": "Aanmelden",
+    "submittingButton": "Bezig...",
+    "successTitle": "Aanmelding ontvangen!",
+    "successMessage": "We nemen binnen 2 werkdagen contact met u op.",
+    "errorMessage": "Er ging iets mis. Probeer het later opnieuw."
   },
   "home": {
     "meta": {

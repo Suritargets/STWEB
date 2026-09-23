@@ -21,6 +21,8 @@
     "forensicsDesc": "Investigações forenses e auditorias de conformidade.",
     "educationTeams": "Educação (Equipes)",
     "educationTeamsDesc": "Workshops de IA, automação e tecnologia para equipes.",
+    "socialMediaDesigns": "Pacote de Design para Redes Sociais",
+    "socialMediaDesignsDesc": "Visuais profissionais para redes sociais, todo mês. A partir de $15/mês.",
     "education1op1": "Educação 1 a 1",
     "education1op1Desc": "Orientação pessoal em IA, tecnologia e habilidades modernas.",
     "begeleidingInnovation": "Orientação em Inovação",
@@ -95,6 +97,46 @@
     "home": "Início",
     "services": "Serviços",
     "gratisgesprek": "Consulta gratuita"
+  },
+  "digitalVisualDesigns": {
+    "meta": {
+      "title": "Pacote de Design para Redes Sociais | Suritargets",
+      "description": "Visuais profissionais para redes sociais, todo mês. A partir de $15/mês — 8 visuais, 3 correções, otimizado para sua plataforma."
+    },
+    "label": "REDES SOCIAIS · PACOTE MENSAL",
+    "badge": "A partir de $15 / mês",
+    "heroTitle": "Suas postagens no piloto automático",
+    "heroSubtitle": "Profissional. Criativo. Consistente. Conteúdo novo e pronto para postar nas suas redes sociais todo mês.",
+    "featuresLabel": "O que você recebe",
+    "features": [
+      { "title": "8 Visuais", "description": "Posts projetados profissionalmente todo mês" },
+      { "title": "3 Correções", "description": "Ajustes incluídos — sem custo extra" },
+      { "title": "1 Formato", "description": "Otimizado para a plataforma escolhida" }
+    ],
+    "platformsLabel": "Disponível para",
+    "benefitsLabel": "Por que este pacote",
+    "benefits": [
+      { "title": "Economize tempo", "description": "Foque no seu negócio" },
+      { "title": "Cresça seu público", "description": "Alcance mais pessoas" },
+      { "title": "Qualidade profissional", "description": "Conteúdo que converte" }
+    ],
+    "tagline": "Social Made Simple.",
+    "ctaTitle": "Pronto para começar?",
+    "ctaSubtitle": "Cadastre-se hoje e receba uma proposta sob medida em até 2 dias úteis.",
+    "formTitle": "Cadastre-se",
+    "nameLabel": "Nome *",
+    "namePlaceholder": "Seu nome",
+    "companyLabel": "Nome da empresa (opcional)",
+    "companyPlaceholder": "Sua empresa",
+    "emailLabel": "E-mail *",
+    "emailPlaceholder": "voce@empresa.com",
+    "phoneLabel": "Telefone (opcional)",
+    "phonePlaceholder": "+597 ...",
+    "submitButton": "Cadastrar",
+    "submittingButton": "Enviando...",
+    "successTitle": "Cadastro recebido!",
+    "successMessage": "Entraremos em contato em até 2 dias úteis.",
+    "errorMessage": "Algo deu errado. Tente novamente mais tarde."
   },
   "home": {
     "meta": {

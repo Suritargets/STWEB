@@ -1,13 +1,15 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X, ZoomIn, ArrowRight } from 'lucide-react'
+import { Link } from '@/i18n/navigation'
 
 const FLYERS = [
-  { src: '/flyers/flyer-suritargets-en.png',      alt: 'Social Media Visuals that sell' },
-  { src: '/flyers/flyer-webinar-ai-demo.png',     alt: 'Free AI Demo — Webinar' },
-  { src: '/flyers/flyer-masterclass-ai.png',      alt: 'Hands-On-Deck AI Technology · $750/seat' },
-  { src: '/flyers/flyer-masterclass-inhouse.png', alt: 'Hands-On-Deck AI Technology In-House · $400/person' },
+  { src: '/flyers/flyer-suritargets-en.png',          alt: 'Social Media Visuals that sell' },
+  { src: '/flyers/flyer-webinar-ai-demo.png',         alt: 'Free AI Demo — Webinar' },
+  { src: '/flyers/flyer-social-media-autopilot.png',  alt: 'Your Social Posts on Auto-Pilot · from $15/month', href: '/services/digital-visual-designs' },
+  { src: '/flyers/flyer-masterclass-ai.png',          alt: 'Hands-On-Deck AI Technology · $750/seat' },
+  { src: '/flyers/flyer-masterclass-inhouse.png',     alt: 'Hands-On-Deck AI Technology In-House · $400/person' },
 ]
 
 export function FlyerCarousel() {
@@ -118,6 +120,18 @@ export function FlyerCarousel() {
                 className="max-h-[75vh] w-auto object-contain"
               />
             </div>
+
+            {/* Meer info CTA — only for flyers with a dedicated page */}
+            {FLYERS[lightbox].href && (
+              <div className="px-5 py-3 border-t border-gray-100 bg-gray-50">
+                <Link
+                  href={FLYERS[lightbox].href}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2B3494] hover:underline"
+                >
+                  Meer info &amp; aanmelden <ArrowRight size={14} />
+                </Link>
+              </div>
+            )}
 
             {/* Footer: prev / dots / next */}
             <div className="flex items-center justify-between px-5 py-3 border-t border-gray-100">

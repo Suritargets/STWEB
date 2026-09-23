@@ -21,6 +21,8 @@
     "forensicsDesc": "Investigations forensiques et audits de conformité.",
     "educationTeams": "Formation (Équipes)",
     "educationTeamsDesc": "Ateliers IA, automatisation et technologie pour équipes.",
+    "socialMediaDesigns": "Pack Design Réseaux Sociaux",
+    "socialMediaDesignsDesc": "Visuels professionnels pour réseaux sociaux, chaque mois. Dès 15 $/mois.",
     "education1op1": "Formation individuelle",
     "education1op1Desc": "Accompagnement personnel en IA, technologie et compétences modernes.",
     "begeleidingInnovation": "Accompagnement Innovation",
@@ -95,6 +97,46 @@
     "home": "Accueil",
     "services": "Services",
     "gratisgesprek": "Consultation gratuite"
+  },
+  "digitalVisualDesigns": {
+    "meta": {
+      "title": "Pack Design Réseaux Sociaux | Suritargets",
+      "description": "Visuels professionnels pour réseaux sociaux, chaque mois. Dès 15 $/mois — 8 visuels, 3 corrections, optimisé pour votre plateforme."
+    },
+    "label": "RÉSEAUX SOCIAUX · FORFAIT MENSUEL",
+    "badge": "Dès 15 $ / mois",
+    "heroTitle": "Vos publications en pilote automatique",
+    "heroSubtitle": "Professionnel. Créatif. Cohérent. Du contenu prêt à publier pour vos réseaux sociaux, chaque mois.",
+    "featuresLabel": "Ce que vous obtenez",
+    "features": [
+      { "title": "8 Visuels", "description": "Publications conçues professionnellement chaque mois" },
+      { "title": "3 Corrections", "description": "Ajustements inclus — sans frais supplémentaires" },
+      { "title": "1 Format", "description": "Optimisé pour la plateforme de votre choix" }
+    ],
+    "platformsLabel": "Disponible pour",
+    "benefitsLabel": "Pourquoi ce forfait",
+    "benefits": [
+      { "title": "Gagnez du temps", "description": "Concentrez-vous sur votre activité" },
+      { "title": "Développez votre audience", "description": "Touchez plus de monde" },
+      { "title": "Qualité professionnelle", "description": "Un contenu qui convertit" }
+    ],
+    "tagline": "Social Made Simple.",
+    "ctaTitle": "Prêt à commencer ?",
+    "ctaSubtitle": "Inscrivez-vous aujourd'hui et recevez une proposition sur mesure sous 2 jours ouvrés.",
+    "formTitle": "Inscrivez-vous",
+    "nameLabel": "Nom *",
+    "namePlaceholder": "Votre nom",
+    "companyLabel": "Nom de l'entreprise (facultatif)",
+    "companyPlaceholder": "Votre entreprise",
+    "emailLabel": "E-mail *",
+    "emailPlaceholder": "vous@entreprise.com",
+    "phoneLabel": "Téléphone (facultatif)",
+    "phonePlaceholder": "+597 ...",
+    "submitButton": "S'inscrire",
+    "submittingButton": "Envoi...",
+    "successTitle": "Inscription reçue !",
+    "successMessage": "Nous vous contacterons sous 2 jours ouvrés.",
+    "errorMessage": "Une erreur s'est produite. Veuillez réessayer plus tard."
   },
   "home": {
     "meta": {

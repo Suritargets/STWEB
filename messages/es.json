@@ -21,6 +21,8 @@
     "forensicsDesc": "Investigaciones forenses y auditorías de cumplimiento.",
     "educationTeams": "Educación (Equipos)",
     "educationTeamsDesc": "Talleres de IA, automatización y tecnología para equipos.",
+    "socialMediaDesigns": "Paquete de Diseño para Redes Sociales",
+    "socialMediaDesignsDesc": "Visuales profesionales para redes sociales, cada mes. Desde $15/mes.",
     "education1op1": "Educación 1 a 1",
     "education1op1Desc": "Acompañamiento personal en IA, tecnología y habilidades modernas.",
     "begeleidingInnovation": "Guía en Innovación",
@@ -95,6 +97,46 @@
     "home": "Inicio",
     "services": "Servicios",
     "gratisgesprek": "Consulta gratuita"
+  },
+  "digitalVisualDesigns": {
+    "meta": {
+      "title": "Paquete de Diseño para Redes Sociales | Suritargets",
+      "description": "Visuales profesionales para redes sociales, cada mes. Desde $15/mes — 8 visuales, 3 correcciones, optimizado para su plataforma."
+    },
+    "label": "REDES SOCIALES · PAQUETE MENSUAL",
+    "badge": "Desde $15 / mes",
+    "heroTitle": "Sus publicaciones en piloto automático",
+    "heroSubtitle": "Profesional. Creativo. Consistente. Contenido nuevo y listo para publicar en sus redes sociales cada mes.",
+    "featuresLabel": "Qué incluye",
+    "features": [
+      { "title": "8 Visuales", "description": "Publicaciones diseñadas profesionalmente cada mes" },
+      { "title": "3 Correcciones", "description": "Ajustes incluidos — sin costo adicional" },
+      { "title": "1 Formato", "description": "Optimizado para la plataforma elegida" }
+    ],
+    "platformsLabel": "Disponible para",
+    "benefitsLabel": "Por qué este paquete",
+    "benefits": [
+      { "title": "Ahorre tiempo", "description": "Enfóquese en su negocio" },
+      { "title": "Haga crecer su audiencia", "description": "Llegue a más personas" },
+      { "title": "Calidad profesional", "description": "Contenido que convierte" }
+    ],
+    "tagline": "Social Made Simple.",
+    "ctaTitle": "¿Listo para empezar?",
+    "ctaSubtitle": "Regístrese hoy y reciba una propuesta a medida en 2 días hábiles.",
+    "formTitle": "Regístrese",
+    "nameLabel": "Nombre *",
+    "namePlaceholder": "Su nombre",
+    "companyLabel": "Nombre de la empresa (opcional)",
+    "companyPlaceholder": "Su empresa",
+    "emailLabel": "Correo electrónico *",
+    "emailPlaceholder": "usted@empresa.com",
+    "phoneLabel": "Teléfono (opcional)",
+    "phonePlaceholder": "+597 ...",
+    "submitButton": "Registrarse",
+    "submittingButton": "Enviando...",
+    "successTitle": "¡Registro recibido!",
+    "successMessage": "Nos pondremos en contacto en un plazo de 2 días hábiles.",
+    "errorMessage": "Algo salió mal. Inténtelo de nuevo más tarde."
   },
   "home": {
     "meta": {

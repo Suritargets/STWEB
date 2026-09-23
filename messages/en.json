@@ -21,6 +21,8 @@
     "forensicsDesc": "Forensic investigations and compliance audits for organisations.",
     "educationTeams": "Education (Teams)",
     "educationTeamsDesc": "AI, automation and tech workshops for teams.",
+    "socialMediaDesigns": "Social Media Design Package",
+    "socialMediaDesignsDesc": "Professional social media visuals, every month. From $15/month.",
     "education1op1": "Education 1-on-1",
     "education1op1Desc": "Personal coaching in AI, tech and modern skills.",
     "begeleidingInnovation": "Innovation Guidance",
@@ -95,6 +97,46 @@
     "home": "Home",
     "services": "Services",
     "gratisgesprek": "Free consultation"
+  },
+  "digitalVisualDesigns": {
+    "meta": {
+      "title": "Social Media Design Package | Suritargets",
+      "description": "Professional social media visuals, every month. From $15/month — 8 visuals, 3 corrections, optimized for your platform."
+    },
+    "label": "SOCIAL MEDIA · MONTHLY PACKAGE",
+    "badge": "From $15 / month",
+    "heroTitle": "Your social posts on auto-pilot",
+    "heroSubtitle": "Professional. Creative. Consistent. Fresh, ready-to-post content for your social media every month.",
+    "featuresLabel": "What you get",
+    "features": [
+      { "title": "8 Visuals", "description": "Professionally designed posts every month" },
+      { "title": "3 Corrections", "description": "Adjustments included — no extra cost" },
+      { "title": "1 Format", "description": "Optimized for your chosen platform" }
+    ],
+    "platformsLabel": "Available for",
+    "benefitsLabel": "Why this package",
+    "benefits": [
+      { "title": "Save time", "description": "Focus on your business" },
+      { "title": "Grow your audience", "description": "Reach more people" },
+      { "title": "Professional quality", "description": "Content that converts" }
+    ],
+    "tagline": "Social Made Simple.",
+    "ctaTitle": "Ready to get started?",
+    "ctaSubtitle": "Sign up today and receive a tailored proposal within 2 business days.",
+    "formTitle": "Sign up",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Your name",
+    "companyLabel": "Company name (optional)",
+    "companyPlaceholder": "Your company",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "you@company.com",
+    "phoneLabel": "Phone (optional)",
+    "phonePlaceholder": "+597 ...",
+    "submitButton": "Sign up",
+    "submittingButton": "Submitting...",
+    "successTitle": "Signup received!",
+    "successMessage": "We'll get in touch within 2 business days.",
+    "errorMessage": "Something went wrong. Please try again later."
   },
   "home": {
     "meta": {

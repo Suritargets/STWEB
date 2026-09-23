@@ -8,7 +8,7 @@ import {
   BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
   Shield, BookOpen, Rocket, Bitcoin, UserCircle,
   Briefcase, TrendingUp, Compass, Calculator, Zap,
-  Users, FolderOpen, Lightbulb, LayoutGrid, Radio,
+  Users, FolderOpen, Lightbulb, LayoutGrid, Radio, Camera,
 } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
@@ -32,6 +32,7 @@ const businessLinks: NavService[] = [
   { labelKey: 'startupToFounder', href: '/services/startup-to-founder', descKey: 'startupToFounderDesc', Icon: TrendingUp },
   { labelKey: 'forensics', href: '/services/forensics', descKey: 'forensicsDesc', Icon: ShieldCheck },
   { labelKey: 'educationTeams', href: '/services/education', descKey: 'educationTeamsDesc', Icon: GraduationCap },
+  { labelKey: 'socialMediaDesigns', href: '/services/digital-visual-designs', descKey: 'socialMediaDesignsDesc', Icon: Camera },
 ]
 
 const individualLinks: NavService[] = [
