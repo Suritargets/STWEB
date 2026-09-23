@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { Image as ImageIcon, Pencil, Maximize2, Clock, Users, TrendingUp, Check, ZoomIn, X, Camera, Music2, Play, Heart, MessageCircle, Send, Sparkles, Palette, RefreshCw, CheckCircle2 } from 'lucide-react'
+import { Image as ImageIcon, Pencil, Maximize2, Clock, Users, TrendingUp, Check, ZoomIn, X, Camera, Music2, Play, Sparkles, Palette, RefreshCw, CheckCircle2 } from 'lucide-react'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -94,35 +94,17 @@ export function DigitalVisualDesignsContent() {
             </p>
           </AnimatedSection>
 
-          {/* Decorative post-preview stack */}
+          {/* Live look: how our design team works with AI */}
           <AnimatedSection delay={80}>
-            <div className="hidden lg:block relative h-72">
-              <div
-                className="absolute right-16 top-4 w-40 h-52 rounded-2xl shadow-2xl -rotate-6 border border-white/10"
-                style={{ background: 'linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7)' }}
-              >
-                <div className="absolute top-3 left-3 w-6 h-6 rounded-full bg-white/25 flex items-center justify-center">
-                  <Camera size={13} className="text-white" />
-                </div>
-                <div className="absolute bottom-3 left-3 flex gap-2 text-white/90">
-                  <Heart size={14} />
-                  <MessageCircle size={14} />
-                  <Send size={14} />
-                </div>
-              </div>
-              <div
-                className="absolute right-0 top-24 w-40 h-52 rounded-2xl shadow-2xl rotate-6 border border-white/10"
-                style={{ background: 'linear-gradient(135deg,#2B3494,#00c6ff)' }}
-              >
-                <div className="absolute top-3 left-3 w-6 h-6 rounded-full bg-white/25 flex items-center justify-center">
-                  <Play size={12} className="text-white fill-white" />
-                </div>
-                <div className="absolute bottom-3 left-3 flex gap-2 text-white/90">
-                  <Heart size={14} />
-                  <MessageCircle size={14} />
-                  <Send size={14} />
-                </div>
-              </div>
+            <div className="hidden lg:block rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <video
+                src="/videos/hero-designer-ai.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto aspect-[4/3] object-cover"
+              />
             </div>
           </AnimatedSection>
         </div>
