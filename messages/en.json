@@ -114,6 +114,17 @@
       { "title": "3 Corrections", "description": "Adjustments included — no extra cost" },
       { "title": "1 Format", "description": "Optimized for your chosen platform" }
     ],
+    "processLabel": "How we work",
+    "processTitle": "Faster with AI. Never lower quality.",
+    "process": [
+      { "title": "AI-driven concepts", "description": "Our design team uses AI tools to generate multiple directions within minutes — no more waiting days for a first draft." },
+      { "title": "Refined by our designers", "description": "Every concept is hand-finished in professional software like Photoshop, Illustrator and Figma to match your brand." },
+      { "title": "Fast revisions", "description": "AI-assisted workflows let us process your feedback quickly, without cutting corners on quality." },
+      { "title": "Consistent delivery", "description": "Fresh, ready-to-post visuals every month — on time, every time." }
+    ],
+    "portfolioLabel": "Portfolio",
+    "portfolioTitle": "Examples coming soon",
+    "portfolioText": "We're putting together a portfolio of real work. Reach out and we'll gladly share references in the meantime.",
     "platformsLabel": "Available for",
     "benefitsLabel": "Why this package",
     "benefits": [

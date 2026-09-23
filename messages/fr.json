@@ -114,6 +114,17 @@
       { "title": "3 Corrections", "description": "Ajustements inclus — sans frais supplémentaires" },
       { "title": "1 Format", "description": "Optimisé pour la plateforme de votre choix" }
     ],
+    "processLabel": "Comment nous travaillons",
+    "processTitle": "Plus rapide grâce à l'IA. Sans jamais sacrifier la qualité.",
+    "process": [
+      { "title": "Concepts pilotés par l'IA", "description": "Notre équipe de design utilise des outils d'IA pour générer plusieurs pistes en quelques minutes — fini l'attente de plusieurs jours pour une première ébauche." },
+      { "title": "Peaufiné par nos designers", "description": "Chaque concept est finalisé à la main avec des logiciels professionnels comme Photoshop, Illustrator et Figma, adapté à votre marque." },
+      { "title": "Corrections rapides", "description": "Grâce à des workflows assistés par IA, nous traitons vos retours rapidement, sans compromis sur la qualité." },
+      { "title": "Livraison constante", "description": "De nouveaux visuels prêts à publier chaque mois — à temps, à chaque fois." }
+    ],
+    "portfolioLabel": "Portfolio",
+    "portfolioTitle": "Exemples à venir",
+    "portfolioText": "Nous préparons un portfolio avec de vrais exemples de notre travail. Contactez-nous et nous partagerons volontiers des références en attendant.",
     "platformsLabel": "Disponible pour",
     "benefitsLabel": "Pourquoi ce forfait",
     "benefits": [

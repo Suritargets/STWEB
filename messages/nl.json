@@ -114,6 +114,17 @@
       { "title": "3 Correcties", "description": "Aanpassingen inbegrepen — geen extra kosten" },
       { "title": "1 Formaat", "description": "Geoptimaliseerd voor uw gekozen platform" }
     ],
+    "processLabel": "Hoe wij werken",
+    "processTitle": "Sneller met AI. Nooit ingeleverd op kwaliteit.",
+    "process": [
+      { "title": "AI-gestuurde concepten", "description": "Onze grafische afdeling gebruikt AI-tools om binnen minuten meerdere richtingen te genereren — geen dagen wachten op een eerste ontwerp." },
+      { "title": "Verfijnd door onze designers", "description": "Elk concept wordt met de hand afgewerkt in professionele software zoals Photoshop, Illustrator en Figma, passend bij uw merk." },
+      { "title": "Razendsnelle correcties", "description": "Dankzij AI-ondersteunde workflows verwerken we uw feedback snel, zonder in te leveren op kwaliteit." },
+      { "title": "Consistente levering", "description": "Elke maand nieuwe, kant-en-klare visuals — op tijd, elke keer." }
+    ],
+    "portfolioLabel": "Portfolio",
+    "portfolioTitle": "Voorbeelden volgen binnenkort",
+    "portfolioText": "We werken aan een portfolio met echte voorbeelden van ons werk. Neem gerust contact op, dan delen we in de tussentijd graag referenties.",
     "platformsLabel": "Beschikbaar voor",
     "benefitsLabel": "Waarom dit pakket",
     "benefits": [

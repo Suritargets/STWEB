@@ -114,6 +114,17 @@
       { "title": "3 Correções", "description": "Ajustes incluídos — sem custo extra" },
       { "title": "1 Formato", "description": "Otimizado para a plataforma escolhida" }
     ],
+    "processLabel": "Como trabalhamos",
+    "processTitle": "Mais rápido com IA. Sem abrir mão da qualidade.",
+    "process": [
+      { "title": "Conceitos guiados por IA", "description": "Nossa equipe de design usa ferramentas de IA para gerar várias direções em minutos — sem esperar dias por um primeiro rascunho." },
+      { "title": "Refinado pelos nossos designers", "description": "Cada conceito é finalizado manualmente com softwares profissionais como Photoshop, Illustrator e Figma, alinhado à sua marca." },
+      { "title": "Correções rápidas", "description": "Fluxos de trabalho com apoio de IA nos permitem processar seu feedback rapidamente, sem perder qualidade." },
+      { "title": "Entrega consistente", "description": "Visuais novos e prontos para postar todo mês — sempre no prazo." }
+    ],
+    "portfolioLabel": "Portfólio",
+    "portfolioTitle": "Exemplos em breve",
+    "portfolioText": "Estamos preparando um portfólio com trabalhos reais. Entre em contato e teremos prazer em compartilhar referências enquanto isso.",
     "platformsLabel": "Disponível para",
     "benefitsLabel": "Por que este pacote",
     "benefits": [

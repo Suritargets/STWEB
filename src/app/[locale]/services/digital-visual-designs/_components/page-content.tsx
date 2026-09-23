@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { Image as ImageIcon, Pencil, Maximize2, Clock, Users, TrendingUp, Check, ZoomIn, X, Camera, Music2, Play, Heart, MessageCircle, Send } from 'lucide-react'
+import { Image as ImageIcon, Pencil, Maximize2, Clock, Users, TrendingUp, Check, ZoomIn, X, Camera, Music2, Play, Heart, MessageCircle, Send, Sparkles, Palette, RefreshCw, CheckCircle2 } from 'lucide-react'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -17,6 +17,7 @@ const PLATFORMS = [
 ]
 const FEATURE_ICONS = [ImageIcon, Pencil, Maximize2]
 const BENEFIT_ICONS = [Clock, Users, TrendingUp]
+const PROCESS_ICONS = [Sparkles, Palette, RefreshCw, CheckCircle2]
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -63,6 +64,10 @@ export function DigitalVisualDesignsContent() {
   const benefits = [0, 1, 2].map(i => ({
     title: t(`benefits.${i}.title`),
     description: t(`benefits.${i}.description`),
+  }))
+  const process = [0, 1, 2, 3].map(i => ({
+    title: t(`process.${i}.title`),
+    description: t(`process.${i}.description`),
   }))
 
   return (
@@ -192,6 +197,48 @@ export function DigitalVisualDesignsContent() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      {/* AI-powered process */}
+      <section className="px-(--section-padding-x) py-(--section-padding-y) border-b border-border bg-surface">
+        <div className="max-w-360 mx-auto">
+          <p className="text-xs font-mono tracking-[0.2em] uppercase text-[#2B3494] mb-3">{t('processLabel')}</p>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-10 max-w-2xl">
+            {t('processTitle')}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {process.map((step, i) => {
+              const Icon = PROCESS_ICONS[i]
+              return (
+                <AnimatedSection key={step.title} delay={i * 60}>
+                  <div className="relative h-full">
+                    <span className="text-4xl font-bold font-mono text-[#2B3494]/15 leading-none select-none">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#2B3494]/8 text-[#2B3494] my-4">
+                      <Icon size={19} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-bold text-foreground mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                  </div>
+                </AnimatedSection>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio teaser */}
+      <section className="px-(--section-padding-x) py-12 border-b border-border">
+        <div className="max-w-360 mx-auto">
+          <AnimatedSection>
+            <div className="border border-dashed border-border rounded-xl px-8 py-10 text-center">
+              <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-gold mb-2">{t('portfolioLabel')}</p>
+              <p className="font-bold text-foreground mb-2">{t('portfolioTitle')}</p>
+              <p className="text-sm text-muted-foreground max-w-lg mx-auto">{t('portfolioText')}</p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
