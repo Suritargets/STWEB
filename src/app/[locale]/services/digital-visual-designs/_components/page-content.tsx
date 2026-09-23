@@ -17,14 +17,6 @@ const PLATFORMS = [
 ]
 const FEATURE_ICONS = [ImageIcon, Pencil, Maximize2]
 const BENEFIT_ICONS = [Clock, Users, TrendingUp]
-const EXAMPLE_TILES = [
-  'linear-gradient(135deg,#E8192C,#f9ce34)',
-  'linear-gradient(135deg,#6228d7,#ee2a7b)',
-  'linear-gradient(135deg,#2B3494,#00c6ff)',
-  'linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7)',
-  'linear-gradient(135deg,#00b09b,#2B3494)',
-  'linear-gradient(135deg,#E8192C,#6228d7)',
-]
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -199,26 +191,6 @@ export function DigitalVisualDesignsContent() {
                 </AnimatedSection>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Examples */}
-      <section className="px-(--section-padding-x) py-(--section-padding-y) border-b border-border bg-surface">
-        <div className="max-w-360 mx-auto">
-          <p className="text-xs font-mono tracking-[0.2em] uppercase text-[#2B3494] mb-8">{t('examplesLabel')}</p>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4">
-            {EXAMPLE_TILES.map((bg, i) => (
-              <AnimatedSection key={bg} delay={i * 30}>
-                <div
-                  className="aspect-square rounded-xl shadow-md relative overflow-hidden"
-                  style={{ background: bg }}
-                >
-                  <div className="absolute inset-0 bg-black/10" />
-                  <ImageIcon size={18} className="absolute bottom-2 right-2 text-white/80" strokeWidth={1.5} />
-                </div>
-              </AnimatedSection>
-            ))}
           </div>
         </div>
       </section>
