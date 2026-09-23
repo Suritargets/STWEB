@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { Image as ImageIcon, Pencil, Maximize2, Clock, Users, TrendingUp, Check } from 'lucide-react'
+import { Image as ImageIcon, Pencil, Maximize2, Clock, Users, TrendingUp, Check, ZoomIn, X } from 'lucide-react'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -21,6 +21,7 @@ export function DigitalVisualDesignsContent() {
   const [email, setEmail] = useState('')
   const [telefoon, setTelefoon] = useState('')
   const [status, setStatus] = useState<Status>('idle')
+  const [lightbox, setLightbox] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -78,6 +79,55 @@ export function DigitalVisualDesignsContent() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* Flyer */}
+      <section className="px-(--section-padding-x) py-(--section-padding-y) border-b border-border">
+        <div className="max-w-360 mx-auto flex justify-center">
+          <AnimatedSection>
+            <button
+              type="button"
+              onClick={() => setLightbox(true)}
+              aria-label={`Open: ${t('flyerAlt')}`}
+              className="group relative block w-full max-w-sm rounded-lg overflow-hidden shadow-lg border border-border focus-visible:ring-2 focus-visible:ring-gold outline-none"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/flyers/flyer-social-media-autopilot.png"
+                alt={t('flyerAlt')}
+                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                <ZoomIn className="text-white w-8 h-8 drop-shadow" />
+              </div>
+            </button>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setLightbox(false)}
+        >
+          <div className="relative max-h-[92vh] max-w-2xl w-full" onClick={e => e.stopPropagation()}>
+            <button
+              type="button"
+              onClick={() => setLightbox(false)}
+              aria-label="Close"
+              className="absolute -top-10 right-0 text-white/80 hover:text-white"
+            >
+              <X size={24} />
+            </button>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/flyers/flyer-social-media-autopilot.png"
+              alt={t('flyerAlt')}
+              className="w-full h-auto rounded-lg shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Features */}
       <section className="px-(--section-padding-x) py-(--section-padding-y) border-b border-border">
