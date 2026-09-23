@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "migrate": "npx tsx --tsconfig tsconfig.json scripts/migrate.ts",
+    "generate:service-images": "npx tsx --tsconfig tsconfig.json scripts/generate-service-images.ts",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "video:preview": "npx remotion studio",

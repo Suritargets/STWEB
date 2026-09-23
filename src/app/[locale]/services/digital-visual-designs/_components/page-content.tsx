@@ -2,14 +2,29 @@
 
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { Image as ImageIcon, Pencil, Maximize2, Clock, Users, TrendingUp, Check, ZoomIn, X } from 'lucide-react'
+import { Image as ImageIcon, Pencil, Maximize2, Clock, Users, TrendingUp, Check, ZoomIn, X, Camera, Music2, Play, Heart, MessageCircle, Send } from 'lucide-react'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-const PLATFORMS = ['Instagram', 'Facebook', 'TikTok', 'LinkedIn', 'YouTube', 'X (Twitter)']
+const PLATFORMS = [
+  { name: 'Instagram', icon: Camera, bg: 'linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7)' },
+  { name: 'Facebook', label: 'f', bg: '#1877F2' },
+  { name: 'TikTok', icon: Music2, bg: '#000000' },
+  { name: 'LinkedIn', label: 'in', bg: '#0A66C2' },
+  { name: 'YouTube', icon: Play, bg: '#FF0000' },
+  { name: 'X (Twitter)', label: 'X', bg: '#000000' },
+]
 const FEATURE_ICONS = [ImageIcon, Pencil, Maximize2]
 const BENEFIT_ICONS = [Clock, Users, TrendingUp]
+const EXAMPLE_TILES = [
+  'linear-gradient(135deg,#E8192C,#f9ce34)',
+  'linear-gradient(135deg,#6228d7,#ee2a7b)',
+  'linear-gradient(135deg,#2B3494,#00c6ff)',
+  'linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7)',
+  'linear-gradient(135deg,#00b09b,#2B3494)',
+  'linear-gradient(135deg,#E8192C,#6228d7)',
+]
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -61,8 +76,12 @@ export function DigitalVisualDesignsContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#2B3494] px-(--section-padding-x) py-(--section-padding-y)">
-        <div className="max-w-360 mx-auto">
+      <section className="relative overflow-hidden bg-[#2B3494] px-(--section-padding-x) py-(--section-padding-y)">
+        <div
+          className="pointer-events-none absolute -right-40 -top-40 w-140 h-140 rounded-full opacity-30 blur-3xl"
+          style={{ background: 'radial-gradient(circle,#ee2a7b,#6228d7,transparent 70%)' }}
+        />
+        <div className="max-w-360 mx-auto relative grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 items-center">
           <AnimatedSection>
             <div className="inline-flex items-center gap-2.5 border border-white/20 bg-white/10 rounded-full px-4 py-1.5 mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E8192C] animate-pulse" />
@@ -76,6 +95,38 @@ export function DigitalVisualDesignsContent() {
             <p className="mt-6 text-xl md:text-2xl text-white/65 font-mono max-w-2xl">
               {t('heroSubtitle')}
             </p>
+          </AnimatedSection>
+
+          {/* Decorative post-preview stack */}
+          <AnimatedSection delay={80}>
+            <div className="hidden lg:block relative h-72">
+              <div
+                className="absolute right-16 top-4 w-40 h-52 rounded-2xl shadow-2xl -rotate-6 border border-white/10"
+                style={{ background: 'linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7)' }}
+              >
+                <div className="absolute top-3 left-3 w-6 h-6 rounded-full bg-white/25 flex items-center justify-center">
+                  <Camera size={13} className="text-white" />
+                </div>
+                <div className="absolute bottom-3 left-3 flex gap-2 text-white/90">
+                  <Heart size={14} />
+                  <MessageCircle size={14} />
+                  <Send size={14} />
+                </div>
+              </div>
+              <div
+                className="absolute right-0 top-24 w-40 h-52 rounded-2xl shadow-2xl rotate-6 border border-white/10"
+                style={{ background: 'linear-gradient(135deg,#2B3494,#00c6ff)' }}
+              >
+                <div className="absolute top-3 left-3 w-6 h-6 rounded-full bg-white/25 flex items-center justify-center">
+                  <Play size={12} className="text-white fill-white" />
+                </div>
+                <div className="absolute bottom-3 left-3 flex gap-2 text-white/90">
+                  <Heart size={14} />
+                  <MessageCircle size={14} />
+                  <Send size={14} />
+                </div>
+              </div>
+            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -152,20 +203,49 @@ export function DigitalVisualDesignsContent() {
         </div>
       </section>
 
-      {/* Platforms */}
-      <section className="px-(--section-padding-x) py-16 border-b border-border bg-surface">
+      {/* Examples */}
+      <section className="px-(--section-padding-x) py-(--section-padding-y) border-b border-border bg-surface">
         <div className="max-w-360 mx-auto">
-          <p className="text-center text-[10px] font-mono tracking-[0.2em] uppercase text-muted-foreground mb-6">
+          <p className="text-xs font-mono tracking-[0.2em] uppercase text-[#2B3494] mb-8">{t('examplesLabel')}</p>
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-4">
+            {EXAMPLE_TILES.map((bg, i) => (
+              <AnimatedSection key={bg} delay={i * 30}>
+                <div
+                  className="aspect-square rounded-xl shadow-md relative overflow-hidden"
+                  style={{ background: bg }}
+                >
+                  <div className="absolute inset-0 bg-black/10" />
+                  <ImageIcon size={18} className="absolute bottom-2 right-2 text-white/80" strokeWidth={1.5} />
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Platforms */}
+      <section className="px-(--section-padding-x) py-16 border-b border-border">
+        <div className="max-w-360 mx-auto">
+          <p className="text-center text-[10px] font-mono tracking-[0.2em] uppercase text-muted-foreground mb-8">
             {t('platformsLabel')}
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {PLATFORMS.map(platform => (
-              <span
-                key={platform}
-                className="font-mono text-xs tracking-widest uppercase font-bold text-[#2B3494] bg-[#2B3494]/8 px-4 py-2 rounded-full"
-              >
-                {platform}
-              </span>
+              <div key={platform.name} className="flex flex-col items-center gap-2">
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center text-white shadow-sm"
+                  style={{ background: platform.bg }}
+                >
+                  {platform.icon ? (
+                    <platform.icon size={19} />
+                  ) : (
+                    <span className="font-bold text-sm">{platform.label}</span>
+                  )}
+                </div>
+                <span className="font-mono text-[10px] tracking-wide uppercase font-bold text-muted-foreground">
+                  {platform.name}
+                </span>
+              </div>
             ))}
           </div>
         </div>

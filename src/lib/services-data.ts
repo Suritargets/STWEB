@@ -9,6 +9,8 @@ export type ServiceCluster = {
   whoIsItFor: string
   deliverables: string[]
   icon: string
+  /** Path under /public to a hero photo generated via scripts/generate-service-images.ts (optional, not yet generated for most services). */
+  heroImage?: string
 }
 
 export const services: ServiceCluster[] = [

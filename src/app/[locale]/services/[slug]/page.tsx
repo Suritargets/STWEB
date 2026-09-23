@@ -72,27 +72,41 @@ function ServiceDetailContent({ slug }: { slug: string }) {
 
       {/* Hero */}
       <section className="px-[var(--section-padding-x)] pt-12 pb-[var(--section-padding-y)] border-b border-border">
-        <div className="max-w-[1440px] mx-auto">
-          <AnimatedSection>
-            <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-4">
-              {label} — Suritargets
-            </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#2B3494] mb-3">
-              {ts(`${slug}.name`)}
-            </h1>
-            <p className="text-lg md:text-xl font-mono text-gold mb-8">
-              {ts(`${slug}.nameEn`)}
-            </p>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-              {ts(`${slug}.description`)}
-            </p>
-          </AnimatedSection>
-          <AnimatedSection delay={120} className="mt-10">
-            <div className="inline-block border-l-2 border-gold pl-6 py-1 max-w-2xl">
-              <p className="text-xs font-mono tracking-[0.15em] uppercase text-gold mb-2">{t('forWhom')}</p>
-              <p className="text-foreground leading-relaxed">{ts(`${slug}.whoIsItFor`)}</p>
-            </div>
-          </AnimatedSection>
+        <div
+          className={`max-w-[1440px] mx-auto grid grid-cols-1 gap-12 items-start ${service.heroImage ? 'lg:grid-cols-[1.3fr_1fr]' : ''}`}
+        >
+          <div>
+            <AnimatedSection>
+              <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-4">
+                {label} — Suritargets
+              </p>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#2B3494] mb-3">
+                {ts(`${slug}.name`)}
+              </h1>
+              <p className="text-lg md:text-xl font-mono text-gold mb-8">
+                {ts(`${slug}.nameEn`)}
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
+                {ts(`${slug}.description`)}
+              </p>
+            </AnimatedSection>
+            <AnimatedSection delay={120} className="mt-10">
+              <div className="inline-block border-l-2 border-gold pl-6 py-1 max-w-2xl">
+                <p className="text-xs font-mono tracking-[0.15em] uppercase text-gold mb-2">{t('forWhom')}</p>
+                <p className="text-foreground leading-relaxed">{ts(`${slug}.whoIsItFor`)}</p>
+              </div>
+            </AnimatedSection>
+          </div>
+          {service.heroImage && (
+            <AnimatedSection delay={80}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={service.heroImage}
+                alt={ts(`${slug}.name`)}
+                className="hidden lg:block w-full h-auto rounded-2xl shadow-lg object-cover aspect-[4/3]"
+              />
+            </AnimatedSection>
+          )}
         </div>
       </section>
 
