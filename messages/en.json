@@ -160,6 +160,13 @@
     "label": "01 / ENGINEERING",
     "heroTitle": "Technical Design & Project Support",
     "heroSubtitle": "Technical design support and clear project documentation to help teams visualize, prepare and communicate their work.",
+    "heroAlt": "Architect and contractor reviewing building plans on a construction site in Suriname",
+    "galleryLabel": "Example work",
+    "galleryTitle": "Drawings, visuals and site-ready documents",
+    "deskAlt": "Technical designer producing 2D CAD floor plans at a desk",
+    "buildingAlt": "House under construction with scaffolding in a tropical setting",
+    "drawingAlt": "Kitchen interior drawing sheet with floor plan, elevations, appliance list and materials",
+    "flyerAlt": "Building Drawings flyer — complete building drawing package from $500",
     "itemsLabel": "What's included",
     "itemsTitle": "Everything your team needs to get a project ready",
     "items": [
@@ -179,16 +186,14 @@
       { "title": "Implement", "description": "Coordinate delivery, configuration and training." },
       { "title": "Deliver", "description": "Document, hand over and identify improvements." }
     ],
-    "pricingLabel": "Project-based",
-    "pricingTitle": "Technical Project Support",
-    "priceRange": "US$500–2,500+",
-    "pricingIncludes": [
-      "Drawing / visualization scope",
-      "Material list and estimate",
-      "Planning and documentation",
-      "Coordination and handover"
+    "pricingLabel": "Ways to work together",
+    "pricingTitle": "Engagement built around your requirements",
+    "pricingTiers": [
+      { "label": "START WITH CLARITY", "title": "Business & AI Assessment", "price": "US$150–350", "description": "For organizations that need a clear view of opportunities and priorities.", "includes": ["Discovery session","Process and opportunity review","Recommendations","Practical action roadmap"], "button": "Request assessment" },
+      { "label": "PROJECT-BASED", "title": "Technical Project Support", "price": "US$500–2,500+", "description": "For teams preparing a technical project or coordinating deliverables.", "includes": ["Drawing / visualization scope","Material list and estimate","Planning and documentation","Coordination and handover"], "button": "Discuss a project" },
+      { "label": "IMPLEMENT & IMPROVE", "title": "AI Implementation & Advisory", "price": "US$750–5,000+", "description": "For businesses ready to implement a defined automation or AI initiative.", "includes": ["Workflow assessment","Solution design","Implementation support","Team enablement","Documentation"], "button": "Plan implementation" }
     ],
-    "pricingNote": "Illustrative starting range. Final pricing is confirmed after scope, complexity and deliverables are agreed. Engineering approvals, specialist calculations, third-party licenses and taxes may be scoped separately.",
+    "pricingNote": "Prices are indicative planning examples, not a binding quotation. Final pricing is confirmed after scope, complexity and deliverables are agreed. Engineering approvals, specialist calculations, third-party licenses and taxes may be scoped separately.",
     "ctaTitle": "Have a technical project to prepare?",
     "ctaSubtitle": "Tell us what you are trying to achieve. We can help define the scope, identify practical options and outline the next steps.",
     "ctaButton": "Discuss a project",

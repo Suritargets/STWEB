@@ -160,6 +160,13 @@
     "label": "01 / ENGINEERING",
     "heroTitle": "Technisch Ontwerp & Projectondersteuning",
     "heroSubtitle": "Ondersteuning bij technisch ontwerp en heldere projectdocumentatie, zodat teams hun werk kunnen visualiseren, voorbereiden en communiceren.",
+    "heroAlt": "Architect en aannemer bekijken bouwtekeningen op een bouwplaats in Suriname",
+    "galleryLabel": "Voorbeelden van ons werk",
+    "galleryTitle": "Tekeningen, visuals en documenten voor op de bouwplaats",
+    "deskAlt": "Technisch ontwerper maakt 2D CAD-plattegronden aan een bureau",
+    "buildingAlt": "Woning in aanbouw met steigers in een tropische omgeving",
+    "drawingAlt": "Tekenblad van een keukeninterieur met plattegrond, aanzichten, apparatenlijst en materialen",
+    "flyerAlt": "Flyer Bouwtekeningen — compleet bouwtekeningpakket vanaf $500",
     "itemsLabel": "Wat is inbegrepen",
     "itemsTitle": "Alles wat uw team nodig heeft om een project klaar te maken",
     "items": [
@@ -179,16 +186,14 @@
       { "title": "Implementeren", "description": "Oplevering, configuratie en training coördineren." },
       { "title": "Opleveren", "description": "Documenteren, overdragen en verbeterpunten benoemen." }
     ],
-    "pricingLabel": "Projectgebaseerd",
-    "pricingTitle": "Technische projectondersteuning",
-    "priceRange": "US$500–2.500+",
-    "pricingIncludes": [
-      "Scope voor tekeningen / visualisatie",
-      "Materiaallijst en raming",
-      "Planning en documentatie",
-      "Coördinatie en overdracht"
+    "pricingLabel": "Manieren van samenwerken",
+    "pricingTitle": "Samenwerking afgestemd op uw eisen",
+    "pricingTiers": [
+      { "label": "START MET HELDERHEID", "title": "Business & AI Assessment", "price": "US$150–350", "description": "Voor organisaties die een helder beeld willen van kansen en prioriteiten.", "includes": ["Kennismakingssessie","Proces- en kansenanalyse","Aanbevelingen","Praktische actieroadmap"], "button": "Assessment aanvragen" },
+      { "label": "PROJECTGEBASEERD", "title": "Technische projectondersteuning", "price": "US$500–2.500+", "description": "Voor teams die een technisch project voorbereiden of op te leveren producten coördineren.", "includes": ["Scope voor tekeningen / visualisatie","Materiaallijst en raming","Planning en documentatie","Coördinatie en overdracht"], "button": "Bespreek een project" },
+      { "label": "IMPLEMENTEREN & VERBETEREN", "title": "AI-implementatie & advies", "price": "US$750–5.000+", "description": "Voor bedrijven die klaar zijn om een afgebakend automatiserings- of AI-initiatief uit te voeren.", "includes": ["Workflow-analyse","Oplossingsontwerp","Implementatieondersteuning","Teamtraining","Documentatie"], "button": "Plan implementatie" }
     ],
-    "pricingNote": "Indicatieve instapprijs. De definitieve prijs wordt bevestigd nadat scope, complexiteit en op te leveren producten zijn afgesproken. Engineeringgoedkeuringen, gespecialiseerde berekeningen, licenties van derden en belastingen kunnen apart worden begroot.",
+    "pricingNote": "Prijzen zijn indicatieve planningsvoorbeelden, geen bindende offerte. De definitieve prijs wordt bevestigd nadat scope, complexiteit en op te leveren producten zijn afgesproken. Engineeringgoedkeuringen, gespecialiseerde berekeningen, licenties van derden en belastingen kunnen apart worden begroot.",
     "ctaTitle": "Een technisch project voor te bereiden?",
     "ctaSubtitle": "Vertel ons wat u wilt bereiken. Wij helpen de scope te bepalen, praktische opties te vinden en de vervolgstappen uit te stippelen.",
     "ctaButton": "Bespreek een project",

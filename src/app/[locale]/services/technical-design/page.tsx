@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Ruler, Box, PencilRuler, FileText, ListChecks, Calculator, Check } from 'lucide-react'
@@ -42,7 +43,15 @@ export default async function TechnicalDesignPage({
     title: t(`process.${i}.title`),
     description: t(`process.${i}.description`),
   }))
-  const pricingIncludes = [0, 1, 2, 3].map((i) => t(`pricingIncludes.${i}`))
+  const tiers = [0, 1, 2].map((i) => ({
+    label: t(`pricingTiers.${i}.label`),
+    title: t(`pricingTiers.${i}.title`),
+    price: t(`pricingTiers.${i}.price`),
+    description: t(`pricingTiers.${i}.description`),
+    includes: t.raw(`pricingTiers.${i}.includes`) as string[],
+    button: t(`pricingTiers.${i}.button`),
+    featured: i === 1,
+  }))
 
   return (
     <>
@@ -65,14 +74,79 @@ export default async function TechnicalDesignPage({
 
       {/* Hero */}
       <section className="px-(--section-padding-x) pt-12 pb-(--section-padding-y) border-b border-border">
-        <div className="max-w-360 mx-auto">
+        <div className="max-w-360 mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
           <AnimatedSection>
             <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-4">{t('label')}</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#2B3494] mb-6 max-w-4xl">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-[#2B3494] mb-6">
               {t('heroTitle')}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">{t('heroSubtitle')}</p>
           </AnimatedSection>
+          <AnimatedSection delay={80}>
+            <Image
+              src="/services/technical-design/hero-site-review.jpg"
+              alt={t('heroAlt')}
+              width={2368}
+              height={1776}
+              priority
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="w-full h-auto rounded-2xl shadow-lg object-cover aspect-4/3"
+            />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Example work */}
+      <section className="px-(--section-padding-x) py-(--section-padding-y) border-b border-border">
+        <div className="max-w-360 mx-auto">
+          <AnimatedSection>
+            <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-3">{t('galleryLabel')}</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-12">{t('galleryTitle')}</h2>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <AnimatedSection>
+              <Image
+                src="/services/technical-design/drafting-desk.jpg"
+                alt={t('deskAlt')}
+                width={2368}
+                height={1776}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="w-full h-auto rounded-2xl shadow-lg object-cover aspect-4/3"
+              />
+            </AnimatedSection>
+            <AnimatedSection delay={80}>
+              <Image
+                src="/services/technical-design/building-progress.jpg"
+                alt={t('buildingAlt')}
+                width={2688}
+                height={2016}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="w-full h-auto rounded-2xl shadow-lg object-cover aspect-4/3"
+              />
+            </AnimatedSection>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-6 items-start">
+            <AnimatedSection>
+              <Image
+                src="/services/technical-design/kitchen-drawing-sheet.jpg"
+                alt={t('drawingAlt')}
+                width={1536}
+                height={1024}
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                className="w-full h-auto border border-border shadow-lg"
+              />
+            </AnimatedSection>
+            <AnimatedSection delay={80}>
+              <Image
+                src="/services/technical-design/building-drawings-flyer.png"
+                alt={t('flyerAlt')}
+                width={1024}
+                height={1536}
+                sizes="(min-width: 1024px) 35vw, 100vw"
+                className="w-full max-w-md mx-auto lg:max-w-none h-auto border border-border shadow-lg"
+              />
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
@@ -127,21 +201,37 @@ export default async function TechnicalDesignPage({
       <section className="px-(--section-padding-x) py-(--section-padding-y) border-t border-border">
         <div className="max-w-360 mx-auto">
           <AnimatedSection>
-            <div className="bg-surface border border-border p-8 md:p-12 max-w-3xl">
-              <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-3">{t('pricingLabel')}</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-2">{t('pricingTitle')}</h2>
-              <p className="text-3xl font-bold font-mono text-[#2B3494] mb-6">{t('priceRange')}</p>
-              <ul className="space-y-3 mb-6">
-                {pricingIncludes.map((line) => (
-                  <li key={line} className="flex items-start gap-3 text-foreground">
-                    <Check size={18} className="text-gold mt-0.5 shrink-0" />
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-xs text-muted-foreground leading-relaxed">{t('pricingNote')}</p>
-            </div>
+            <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-3">{t('pricingLabel')}</p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-12">{t('pricingTitle')}</h2>
           </AnimatedSection>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {tiers.map((tier, i) => (
+              <AnimatedSection key={tier.title} delay={i * 80}>
+                <div
+                  className={`flex flex-col h-full p-8 border ${
+                    tier.featured ? 'bg-surface border-[#2B3494] shadow-lg' : 'bg-surface border-border'
+                  }`}
+                >
+                  <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-3">{tier.label}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-4">{tier.title}</h3>
+                  <p className="text-3xl font-bold font-mono text-[#2B3494] mb-4">{tier.price}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{tier.description}</p>
+                  <ul className="space-y-2 mb-8 flex-1">
+                    {tier.includes.map((line) => (
+                      <li key={line} className="flex items-start gap-3 text-sm text-foreground">
+                        <Check size={16} className="text-gold mt-0.5 shrink-0" />
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <CtaButton href="/contact" variant={tier.featured ? 'primary' : 'ghost'} className="justify-center">
+                    {tier.button}
+                  </CtaButton>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+          <p className="mt-6 text-xs text-muted-foreground leading-relaxed max-w-3xl">{t('pricingNote')}</p>
         </div>
       </section>
 

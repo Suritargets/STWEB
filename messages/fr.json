@@ -160,6 +160,13 @@
     "label": "01 / INGÉNIERIE",
     "heroTitle": "Conception Technique & Appui aux Projets",
     "heroSubtitle": "Appui à la conception technique et documentation claire du projet pour aider les équipes à visualiser, préparer et communiquer leur travail.",
+    "heroAlt": "Architecte et entrepreneur examinant des plans sur un chantier au Suriname",
+    "galleryLabel": "Exemples de travaux",
+    "galleryTitle": "Plans, visuels et documents prêts pour le chantier",
+    "deskAlt": "Concepteur technique réalisant des plans CAO 2D à son bureau",
+    "buildingAlt": "Maison en construction avec échafaudages dans un cadre tropical",
+    "drawingAlt": "Planche de dessin d'une cuisine avec plan, élévations, liste des équipements et matériaux",
+    "flyerAlt": "Flyer Plans de Construction — pack complet dès 500 $",
     "itemsLabel": "Ce qui est inclus",
     "itemsTitle": "Tout ce dont votre équipe a besoin pour préparer un projet",
     "items": [
@@ -179,16 +186,14 @@
       { "title": "Mettre en œuvre", "description": "Coordonner la livraison, la configuration et la formation." },
       { "title": "Livrer", "description": "Documenter, transmettre et identifier les améliorations." }
     ],
-    "pricingLabel": "Par projet",
-    "pricingTitle": "Appui aux Projets Techniques",
-    "priceRange": "US$500–2 500+",
-    "pricingIncludes": [
-      "Périmètre des plans / de la visualisation",
-      "Liste de matériaux et estimation",
-      "Planification et documentation",
-      "Coordination et transmission"
+    "pricingLabel": "Façons de travailler ensemble",
+    "pricingTitle": "Un engagement construit autour de vos besoins",
+    "pricingTiers": [
+      { "label": "COMMENCEZ AVEC CLARTÉ", "title": "Évaluation Business & IA", "price": "US$150–350", "description": "Pour les organisations qui ont besoin d'une vision claire des opportunités et des priorités.", "includes": ["Séance de découverte","Revue des processus et opportunités","Recommandations","Feuille de route pratique"], "button": "Demander une évaluation" },
+      { "label": "PAR PROJET", "title": "Appui aux Projets Techniques", "price": "US$500–2 500+", "description": "Pour les équipes qui préparent un projet technique ou coordonnent des livrables.", "includes": ["Périmètre des plans / de la visualisation","Liste de matériaux et estimation","Planification et documentation","Coordination et transmission"], "button": "Discuter d'un projet" },
+      { "label": "METTRE EN ŒUVRE & AMÉLIORER", "title": "Mise en œuvre & Conseil IA", "price": "US$750–5 000+", "description": "Pour les entreprises prêtes à mettre en œuvre une initiative d'automatisation ou d'IA définie.", "includes": ["Évaluation des flux de travail","Conception de la solution","Appui à la mise en œuvre","Formation de l'équipe","Documentation"], "button": "Planifier la mise en œuvre" }
     ],
-    "pricingNote": "Fourchette de départ indicative. Le prix final est confirmé une fois le périmètre, la complexité et les livrables convenus. Les validations d'ingénierie, les calculs spécialisés, les licences tierces et les taxes peuvent être chiffrés séparément.",
+    "pricingNote": "Les prix sont des exemples indicatifs de planification, et non un devis contractuel. Le prix final est confirmé une fois le périmètre, la complexité et les livrables convenus. Les validations d'ingénierie, les calculs spécialisés, les licences tierces et les taxes peuvent être chiffrés séparément.",
     "ctaTitle": "Un projet technique à préparer ?",
     "ctaSubtitle": "Dites-nous ce que vous souhaitez accomplir. Nous vous aidons à définir le périmètre, à identifier des options concrètes et à tracer les prochaines étapes.",
     "ctaButton": "Discuter d'un projet",

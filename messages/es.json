@@ -160,6 +160,13 @@
     "label": "01 / INGENIERÍA",
     "heroTitle": "Diseño Técnico y Apoyo a Proyectos",
     "heroSubtitle": "Apoyo en diseño técnico y documentación clara del proyecto para que los equipos visualicen, preparen y comuniquen su trabajo.",
+    "heroAlt": "Arquitecto y contratista revisando planos en una obra en Surinam",
+    "galleryLabel": "Ejemplos de trabajo",
+    "galleryTitle": "Planos, visuales y documentos listos para obra",
+    "deskAlt": "Diseñador técnico elaborando planos CAD 2D en un escritorio",
+    "buildingAlt": "Casa en construcción con andamios en un entorno tropical",
+    "drawingAlt": "Lámina de dibujo de una cocina con planta, alzados, lista de equipos y materiales",
+    "flyerAlt": "Folleto de Planos de Construcción — paquete completo desde $500",
     "itemsLabel": "Qué incluye",
     "itemsTitle": "Todo lo que su equipo necesita para preparar un proyecto",
     "items": [
@@ -179,16 +186,14 @@
       { "title": "Implementar", "description": "Coordinar la entrega, la configuración y la capacitación." },
       { "title": "Entregar", "description": "Documentar, traspasar e identificar mejoras." }
     ],
-    "pricingLabel": "Por proyecto",
-    "pricingTitle": "Apoyo a Proyectos Técnicos",
-    "priceRange": "US$500–2,500+",
-    "pricingIncludes": [
-      "Alcance de planos / visualización",
-      "Lista de materiales y estimación",
-      "Planificación y documentación",
-      "Coordinación y traspaso"
+    "pricingLabel": "Formas de trabajar juntos",
+    "pricingTitle": "Un compromiso adaptado a sus necesidades",
+    "pricingTiers": [
+      { "label": "EMPIECE CON CLARIDAD", "title": "Evaluación de Negocio e IA", "price": "US$150–350", "description": "Para organizaciones que necesitan una visión clara de oportunidades y prioridades.", "includes": ["Sesión de descubrimiento","Revisión de procesos y oportunidades","Recomendaciones","Hoja de ruta práctica"], "button": "Solicitar evaluación" },
+      { "label": "POR PROYECTO", "title": "Apoyo a Proyectos Técnicos", "price": "US$500–2,500+", "description": "Para equipos que preparan un proyecto técnico o coordinan entregables.", "includes": ["Alcance de planos / visualización","Lista de materiales y estimación","Planificación y documentación","Coordinación y traspaso"], "button": "Hablar de un proyecto" },
+      { "label": "IMPLEMENTAR Y MEJORAR", "title": "Implementación y Asesoría de IA", "price": "US$750–5,000+", "description": "Para empresas listas para implementar una iniciativa definida de automatización o IA.", "includes": ["Evaluación de flujos de trabajo","Diseño de la solución","Apoyo a la implementación","Capacitación del equipo","Documentación"], "button": "Planificar implementación" }
     ],
-    "pricingNote": "Rango inicial orientativo. El precio final se confirma tras acordar el alcance, la complejidad y los entregables. Las aprobaciones de ingeniería, los cálculos especializados, las licencias de terceros y los impuestos pueden presupuestarse por separado.",
+    "pricingNote": "Los precios son ejemplos orientativos de planificación, no una cotización vinculante. El precio final se confirma tras acordar el alcance, la complejidad y los entregables. Las aprobaciones de ingeniería, los cálculos especializados, las licencias de terceros y los impuestos pueden presupuestarse por separado.",
     "ctaTitle": "¿Tiene un proyecto técnico que preparar?",
     "ctaSubtitle": "Cuéntenos qué quiere lograr. Le ayudamos a definir el alcance, identificar opciones prácticas y trazar los siguientes pasos.",
     "ctaButton": "Hablar de un proyecto",
