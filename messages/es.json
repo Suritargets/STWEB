@@ -23,6 +23,8 @@
     "educationTeamsDesc": "Talleres de IA, automatización y tecnología para equipos.",
     "socialMediaDesigns": "Paquete de Diseño para Redes Sociales",
     "socialMediaDesignsDesc": "Visuales profesionales para redes sociales, cada mes. Desde $15/mes.",
+    "technicalDesign": "Diseño Técnico y Apoyo a Proyectos",
+    "technicalDesignDesc": "Planos CAD, visualización 3D, listas de materiales y presupuestos.",
     "education1op1": "Educación 1 a 1",
     "education1op1Desc": "Acompañamiento personal en IA, tecnología y habilidades modernas.",
     "begeleidingInnovation": "Guía en Innovación",
@@ -149,6 +151,48 @@
     "successTitle": "¡Registro recibido!",
     "successMessage": "Nos pondremos en contacto en un plazo de 2 días hábiles.",
     "errorMessage": "Algo salió mal. Inténtelo de nuevo más tarde."
+  },
+  "technicalDesign": {
+    "meta": {
+      "title": "Diseño Técnico y Apoyo a Proyectos | Suritargets",
+      "description": "Apoyo en CAD 2D, visualización 3D, documentación técnica, listas de materiales y presupuestos para preparar y comunicar proyectos técnicos."
+    },
+    "label": "01 / INGENIERÍA",
+    "heroTitle": "Diseño Técnico y Apoyo a Proyectos",
+    "heroSubtitle": "Apoyo en diseño técnico y documentación clara del proyecto para que los equipos visualicen, preparen y comuniquen su trabajo.",
+    "itemsLabel": "Qué incluye",
+    "itemsTitle": "Todo lo que su equipo necesita para preparar un proyecto",
+    "items": [
+      { "title": "Apoyo en dibujo CAD 2D", "description": "Planos técnicos claros a partir de sus bocetos, medidas y requisitos." },
+      { "title": "Visualización 3D", "description": "Modelos visuales que hacen el diseño fácil de entender para clientes, equipos y partes interesadas." },
+      { "title": "Modificaciones de diseño", "description": "Actualizaciones y revisiones de planos existentes a medida que cambia el alcance." },
+      { "title": "Documentación técnica", "description": "Documentos de proyecto estructurados y legibles que mantienen a todos alineados." },
+      { "title": "Listas de materiales / BOM", "description": "Listas completas de materiales derivadas del diseño, listas para compras." },
+      { "title": "Estimación de presupuesto", "description": "Una estimación de costos realista basada en los planos y la lista de materiales." }
+    ],
+    "processLabel": "Nuestro método",
+    "processTitle": "De la necesidad del negocio a un resultado práctico",
+    "process": [
+      { "title": "Descubrir", "description": "Entender la necesidad, las restricciones y el resultado deseado." },
+      { "title": "Diseñar", "description": "Desarrollar el concepto, los planos o la solución técnica." },
+      { "title": "Planificar", "description": "Definir alcance, cronograma, recursos y presupuesto." },
+      { "title": "Implementar", "description": "Coordinar la entrega, la configuración y la capacitación." },
+      { "title": "Entregar", "description": "Documentar, traspasar e identificar mejoras." }
+    ],
+    "pricingLabel": "Por proyecto",
+    "pricingTitle": "Apoyo a Proyectos Técnicos",
+    "priceRange": "US$500–2,500+",
+    "pricingIncludes": [
+      "Alcance de planos / visualización",
+      "Lista de materiales y estimación",
+      "Planificación y documentación",
+      "Coordinación y traspaso"
+    ],
+    "pricingNote": "Rango inicial orientativo. El precio final se confirma tras acordar el alcance, la complejidad y los entregables. Las aprobaciones de ingeniería, los cálculos especializados, las licencias de terceros y los impuestos pueden presupuestarse por separado.",
+    "ctaTitle": "¿Tiene un proyecto técnico que preparar?",
+    "ctaSubtitle": "Cuéntenos qué quiere lograr. Le ayudamos a definir el alcance, identificar opciones prácticas y trazar los siguientes pasos.",
+    "ctaButton": "Hablar de un proyecto",
+    "ctaGhost": "Todos los servicios"
   },
   "home": {
     "meta": {

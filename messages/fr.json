@@ -23,6 +23,8 @@
     "educationTeamsDesc": "Ateliers IA, automatisation et technologie pour équipes.",
     "socialMediaDesigns": "Pack Design Réseaux Sociaux",
     "socialMediaDesignsDesc": "Visuels professionnels pour réseaux sociaux, chaque mois. Dès 15 $/mois.",
+    "technicalDesign": "Conception Technique & Appui aux Projets",
+    "technicalDesignDesc": "Plans CAO, visualisation 3D, listes de matériaux et estimations budgétaires.",
     "education1op1": "Formation individuelle",
     "education1op1Desc": "Accompagnement personnel en IA, technologie et compétences modernes.",
     "begeleidingInnovation": "Accompagnement Innovation",
@@ -149,6 +151,48 @@
     "successTitle": "Inscription reçue !",
     "successMessage": "Nous vous contacterons sous 2 jours ouvrés.",
     "errorMessage": "Une erreur s'est produite. Veuillez réessayer plus tard."
+  },
+  "technicalDesign": {
+    "meta": {
+      "title": "Conception Technique & Appui aux Projets | Suritargets",
+      "description": "Appui en CAO 2D, visualisation 3D, documentation technique, métrés de matériaux et estimations budgétaires pour préparer et communiquer vos projets techniques."
+    },
+    "label": "01 / INGÉNIERIE",
+    "heroTitle": "Conception Technique & Appui aux Projets",
+    "heroSubtitle": "Appui à la conception technique et documentation claire du projet pour aider les équipes à visualiser, préparer et communiquer leur travail.",
+    "itemsLabel": "Ce qui est inclus",
+    "itemsTitle": "Tout ce dont votre équipe a besoin pour préparer un projet",
+    "items": [
+      { "title": "Appui au dessin CAO 2D", "description": "Des plans techniques clairs établis à partir de vos croquis, mesures et exigences." },
+      { "title": "Visualisation 3D", "description": "Des modèles visuels qui rendent la conception facile à comprendre pour les clients, les équipes et les parties prenantes." },
+      { "title": "Modifications de conception", "description": "Mises à jour et révisions des plans existants à mesure que le périmètre évolue." },
+      { "title": "Documentation technique", "description": "Des documents de projet structurés et lisibles qui alignent tout le monde." },
+      { "title": "Métrés de matériaux / BOM", "description": "Des listes complètes de matériaux issues de la conception, prêtes pour les achats." },
+      { "title": "Estimation budgétaire", "description": "Une estimation de coûts réaliste fondée sur les plans et la liste de matériaux." }
+    ],
+    "processLabel": "Notre méthode",
+    "processTitle": "Du besoin métier au résultat concret",
+    "process": [
+      { "title": "Découvrir", "description": "Comprendre le besoin, les contraintes et le résultat souhaité." },
+      { "title": "Concevoir", "description": "Élaborer le concept, les plans ou la solution technique." },
+      { "title": "Planifier", "description": "Définir le périmètre, le calendrier, les ressources et le budget." },
+      { "title": "Mettre en œuvre", "description": "Coordonner la livraison, la configuration et la formation." },
+      { "title": "Livrer", "description": "Documenter, transmettre et identifier les améliorations." }
+    ],
+    "pricingLabel": "Par projet",
+    "pricingTitle": "Appui aux Projets Techniques",
+    "priceRange": "US$500–2 500+",
+    "pricingIncludes": [
+      "Périmètre des plans / de la visualisation",
+      "Liste de matériaux et estimation",
+      "Planification et documentation",
+      "Coordination et transmission"
+    ],
+    "pricingNote": "Fourchette de départ indicative. Le prix final est confirmé une fois le périmètre, la complexité et les livrables convenus. Les validations d'ingénierie, les calculs spécialisés, les licences tierces et les taxes peuvent être chiffrés séparément.",
+    "ctaTitle": "Un projet technique à préparer ?",
+    "ctaSubtitle": "Dites-nous ce que vous souhaitez accomplir. Nous vous aidons à définir le périmètre, à identifier des options concrètes et à tracer les prochaines étapes.",
+    "ctaButton": "Discuter d'un projet",
+    "ctaGhost": "Tous les services"
   },
   "home": {
     "meta": {

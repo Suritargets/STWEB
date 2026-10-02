@@ -23,6 +23,8 @@
     "educationTeamsDesc": "AI, automatisering en tech-workshops voor teams.",
     "socialMediaDesigns": "Social Media Design Pakket",
     "socialMediaDesignsDesc": "Professionele social media visuals, elke maand. Vanaf $15/maand.",
+    "technicalDesign": "Technisch Ontwerp & Projectondersteuning",
+    "technicalDesignDesc": "CAD-tekeningen, 3D-visualisatie, materiaallijsten en budgetramingen.",
     "education1op1": "Education 1-op-1",
     "education1op1Desc": "Persoonlijke begeleiding in AI, tech en moderne skills.",
     "begeleidingInnovation": "Begeleiding in Innovation",
@@ -149,6 +151,48 @@
     "successTitle": "Aanmelding ontvangen!",
     "successMessage": "We nemen binnen 2 werkdagen contact met u op.",
     "errorMessage": "Er ging iets mis. Probeer het later opnieuw."
+  },
+  "technicalDesign": {
+    "meta": {
+      "title": "Technisch Ontwerp & Projectondersteuning | Suritargets",
+      "description": "2D CAD-ondersteuning, 3D-visualisatie, technische documentatie, materiaalstaten en budgetramingen om technische projecten voor te bereiden en te communiceren."
+    },
+    "label": "01 / ENGINEERING",
+    "heroTitle": "Technisch Ontwerp & Projectondersteuning",
+    "heroSubtitle": "Ondersteuning bij technisch ontwerp en heldere projectdocumentatie, zodat teams hun werk kunnen visualiseren, voorbereiden en communiceren.",
+    "itemsLabel": "Wat is inbegrepen",
+    "itemsTitle": "Alles wat uw team nodig heeft om een project klaar te maken",
+    "items": [
+      { "title": "2D CAD-tekenondersteuning", "description": "Duidelijke technische tekeningen op basis van uw schetsen, maten en eisen." },
+      { "title": "3D-visualisatie", "description": "Visuele modellen die een ontwerp begrijpelijk maken voor klanten, teams en stakeholders." },
+      { "title": "Ontwerpaanpassingen", "description": "Aanpassingen en revisies van bestaande tekeningen als de projectscope verandert." },
+      { "title": "Technische documentatie", "description": "Gestructureerde, leesbare projectdocumenten die iedereen op één lijn houden." },
+      { "title": "Materiaalstaten / BOM", "description": "Complete materiaallijsten afgeleid van het ontwerp, klaar voor inkoop." },
+      { "title": "Budgetraming", "description": "Een realistische kostenraming op basis van de tekeningen en materiaallijst." }
+    ],
+    "processLabel": "Onze werkwijze",
+    "processTitle": "Van bedrijfsbehoefte naar praktisch resultaat",
+    "process": [
+      { "title": "Ontdekken", "description": "De behoefte, randvoorwaarden en het gewenste resultaat begrijpen." },
+      { "title": "Ontwerpen", "description": "Het concept, de tekeningen of de technische oplossing uitwerken." },
+      { "title": "Plannen", "description": "Scope, planning, middelen en budget vastleggen." },
+      { "title": "Implementeren", "description": "Oplevering, configuratie en training coördineren." },
+      { "title": "Opleveren", "description": "Documenteren, overdragen en verbeterpunten benoemen." }
+    ],
+    "pricingLabel": "Projectgebaseerd",
+    "pricingTitle": "Technische projectondersteuning",
+    "priceRange": "US$500–2.500+",
+    "pricingIncludes": [
+      "Scope voor tekeningen / visualisatie",
+      "Materiaallijst en raming",
+      "Planning en documentatie",
+      "Coördinatie en overdracht"
+    ],
+    "pricingNote": "Indicatieve instapprijs. De definitieve prijs wordt bevestigd nadat scope, complexiteit en op te leveren producten zijn afgesproken. Engineeringgoedkeuringen, gespecialiseerde berekeningen, licenties van derden en belastingen kunnen apart worden begroot.",
+    "ctaTitle": "Een technisch project voor te bereiden?",
+    "ctaSubtitle": "Vertel ons wat u wilt bereiken. Wij helpen de scope te bepalen, praktische opties te vinden en de vervolgstappen uit te stippelen.",
+    "ctaButton": "Bespreek een project",
+    "ctaGhost": "Alle diensten"
   },
   "home": {
     "meta": {

@@ -23,6 +23,8 @@
     "educationTeamsDesc": "AI, automation and tech workshops for teams.",
     "socialMediaDesigns": "Social Media Design Package",
     "socialMediaDesignsDesc": "Professional social media visuals, every month. From $15/month.",
+    "technicalDesign": "Technical Design & Project Support",
+    "technicalDesignDesc": "CAD drawings, 3D visualization, material lists and budget estimates.",
     "education1op1": "Education 1-on-1",
     "education1op1Desc": "Personal coaching in AI, tech and modern skills.",
     "begeleidingInnovation": "Innovation Guidance",
@@ -149,6 +151,48 @@
     "successTitle": "Signup received!",
     "successMessage": "We'll get in touch within 2 business days.",
     "errorMessage": "Something went wrong. Please try again later."
+  },
+  "technicalDesign": {
+    "meta": {
+      "title": "Technical Design & Project Support | Suritargets",
+      "description": "2D CAD support, 3D visualization, technical documentation, material take-offs and budget estimates to help your team prepare and communicate technical projects."
+    },
+    "label": "01 / ENGINEERING",
+    "heroTitle": "Technical Design & Project Support",
+    "heroSubtitle": "Technical design support and clear project documentation to help teams visualize, prepare and communicate their work.",
+    "itemsLabel": "What's included",
+    "itemsTitle": "Everything your team needs to get a project ready",
+    "items": [
+      { "title": "2D CAD drawing support", "description": "Clear technical drawings prepared from your sketches, measurements and requirements." },
+      { "title": "3D visualization", "description": "Visual models that make a design easy to understand for clients, teams and stakeholders." },
+      { "title": "Design modifications", "description": "Updates and revisions to existing drawings as the project scope evolves." },
+      { "title": "Technical documentation", "description": "Structured, readable project documents that keep everyone aligned." },
+      { "title": "Material take-offs / BOM", "description": "Complete material lists derived from the design, ready for procurement." },
+      { "title": "Budget estimation", "description": "A realistic cost estimate based on the drawings and material list." }
+    ],
+    "processLabel": "Our delivery method",
+    "processTitle": "From business need to practical outcome",
+    "process": [
+      { "title": "Discover", "description": "Understand the need, constraints and desired outcome." },
+      { "title": "Design", "description": "Develop the concept, drawings or technical solution." },
+      { "title": "Plan", "description": "Define scope, timeline, resources and budget." },
+      { "title": "Implement", "description": "Coordinate delivery, configuration and training." },
+      { "title": "Deliver", "description": "Document, hand over and identify improvements." }
+    ],
+    "pricingLabel": "Project-based",
+    "pricingTitle": "Technical Project Support",
+    "priceRange": "US$500–2,500+",
+    "pricingIncludes": [
+      "Drawing / visualization scope",
+      "Material list and estimate",
+      "Planning and documentation",
+      "Coordination and handover"
+    ],
+    "pricingNote": "Illustrative starting range. Final pricing is confirmed after scope, complexity and deliverables are agreed. Engineering approvals, specialist calculations, third-party licenses and taxes may be scoped separately.",
+    "ctaTitle": "Have a technical project to prepare?",
+    "ctaSubtitle": "Tell us what you are trying to achieve. We can help define the scope, identify practical options and outline the next steps.",
+    "ctaButton": "Discuss a project",
+    "ctaGhost": "All services"
   },
   "home": {
     "meta": {
