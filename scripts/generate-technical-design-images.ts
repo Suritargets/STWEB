@@ -20,7 +20,7 @@ const SHOTS = [
   },
   {
     file: 'drafting-desk.jpg',
-    prompt: `Close-up of a technical designer working on 2D CAD floor plans on a large monitor at a tidy desk, printed blueprints and a scale ruler beside the keyboard. ${STYLE}`,
+    prompt: `Close-up of a technical designer working on 2D CAD floor plans on a large monitor at a tidy desk, right hand on a computer mouse resting on a mousepad, left hand on the keyboard, printed blueprints and a scale ruler on the desk. ${STYLE}`,
   },
   {
     file: 'building-progress.jpg',
@@ -32,7 +32,11 @@ async function main() {
   const force = process.argv.includes('--force')
   mkdirSync(OUTPUT_DIR, { recursive: true })
 
+  // Optional filter: pass a file name (e.g. drafting-desk.jpg) to only (re)generate that shot.
+  const only = process.argv.find(a => a.endsWith('.jpg'))
+
   for (const shot of SHOTS) {
+    if (only && shot.file !== only) continue
     const outPath = join(OUTPUT_DIR, shot.file)
     if (existsSync(outPath) && !force) {
       console.log(`Skip ${shot.file} (exists, use --force to regenerate)`)
