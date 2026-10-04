@@ -88,13 +88,13 @@ export default function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           <NavigationMenu>
             <NavigationMenuList className="gap-0">
 
               {/* Services mega menu */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-4">
+                <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-2 xl:px-4">
                   {t('services')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -164,7 +164,7 @@ export default function Nav() {
 
               {/* Education mega menu */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-4">
+                <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-2 xl:px-4">
                   {t('education')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -282,7 +282,7 @@ export default function Nav() {
 
               {/* Company dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-4">
+                <NavigationMenuTrigger className="bg-transparent! text-white/80 hover:text-white hover:bg-white/10! data-popup-open:bg-white/10! data-popup-open:text-white data-open:bg-white/10! data-open:text-white text-sm h-9 px-2 xl:px-4">
                   {t('company')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -312,29 +312,29 @@ export default function Nav() {
           </NavigationMenu>
           <Link
             href="/portfolio"
-            className="text-sm text-white/80 hover:text-white transition-colors px-4 h-9 flex items-center"
+            className="text-sm text-white/80 hover:text-white transition-colors px-2 xl:px-4 h-9 flex items-center"
           >
             {t('portfolio')}
           </Link>
           <Link
             href="/pricing"
-            className="text-sm text-white/80 hover:text-white transition-colors px-4 h-9 flex items-center"
+            className="text-sm text-white/80 hover:text-white transition-colors px-2 xl:px-4 h-9 flex items-center"
           >
             {t('pricing')}
           </Link>
         </div>
 
         {/* Desktop CTAs */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-3">
           <button
             onClick={() => setSignupOpen(true)}
-            className="inline-flex items-center px-4 py-2 text-xs font-semibold border border-white/40 text-white hover:bg-white/10 transition-colors"
+            className="inline-flex items-center whitespace-nowrap px-3 xl:px-4 py-2 text-xs font-semibold border border-white/40 text-white hover:bg-white/10 transition-colors"
           >
             {t('signUp')}
           </button>
           <Link
             href="/contact"
-            className="inline-flex items-center px-4 py-2 text-xs font-semibold bg-white text-[#2B3494] hover:bg-white/90 transition-colors"
+            className="inline-flex items-center whitespace-nowrap px-3 xl:px-4 py-2 text-xs font-semibold bg-white text-[#2B3494] hover:bg-white/90 transition-colors"
           >
             {t('getStarted')}
           </Link>
@@ -372,7 +372,7 @@ export default function Nav() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-white"
+          className="lg:hidden text-white"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -382,7 +382,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#2B3494] border-t border-white/20 px-[var(--section-padding-x)] py-6 flex flex-col gap-2">
+        <div className="lg:hidden bg-[#2B3494] border-t border-white/20 px-[var(--section-padding-x)] py-6 flex flex-col gap-2">
           <button
             className="flex items-center justify-between w-full text-sm text-white/80 hover:text-white transition-colors py-2"
             onClick={() => setServicesOpen(!servicesOpen)}
