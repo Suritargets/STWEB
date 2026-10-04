@@ -5,7 +5,9 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Ruler, Box, PencilRuler, FileText, ListChecks, Calculator, Check } from 'lucide-react'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
+import { JsonLd } from '@/components/shared/json-ld'
 import { buildMetadata } from '@/lib/page-metadata'
+import { siteConfig } from '@/lib/site-config'
 
 const ITEM_ICONS = [Ruler, Box, PencilRuler, FileText, ListChecks, Calculator]
 
@@ -53,8 +55,39 @@ export default async function TechnicalDesignPage({
     featured: i === 1,
   }))
 
+  const pageUrl = `${siteConfig.url}/${locale}/services/technical-design`
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: t('heroTitle'),
+    description: t('meta.description'),
+    url: pageUrl,
+    inLanguage: locale,
+    serviceType: 'Technical design and project support',
+    areaServed: ['Suriname', 'Caribbean'],
+    provider: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      lowPrice: 500,
+      highPrice: 2500,
+      url: pageUrl,
+    },
+  }
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: tc('home'), item: `${siteConfig.url}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: ts('breadcrumbServices'), item: `${siteConfig.url}/${locale}/services` },
+      { '@type': 'ListItem', position: 3, name: t('heroTitle'), item: pageUrl },
+    ],
+  }
+
   return (
     <>
+      <JsonLd data={serviceJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="px-(--section-padding-x) pt-8">
         <div className="max-w-360 mx-auto">

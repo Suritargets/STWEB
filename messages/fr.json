@@ -102,7 +102,7 @@
   },
   "digitalVisualDesigns": {
     "meta": {
-      "title": "Pack Design Réseaux Sociaux | Suritargets",
+      "title": "Pack Design Réseaux Sociaux",
       "description": "Visuels professionnels pour réseaux sociaux, chaque mois. Dès 15 $/mois — 8 visuels, 3 corrections, optimisé pour votre plateforme."
     },
     "label": "RÉSEAUX SOCIAUX · FORFAIT MENSUEL",
@@ -154,7 +154,7 @@
   },
   "technicalDesign": {
     "meta": {
-      "title": "Conception Technique & Appui aux Projets | Suritargets",
+      "title": "Conception Technique & Appui aux Projets",
       "description": "Appui en CAO 2D, visualisation 3D, documentation technique, métrés de matériaux et estimations budgétaires pour préparer et communiquer vos projets techniques."
     },
     "label": "01 / INGÉNIERIE",
@@ -292,8 +292,8 @@
       "description": "Suritargets est basé à Paramaribo et offre une qualité internationale aux entreprises caribéennes."
     },
     "hero": {
-      "label": "Ã€ propos de Suritargets",
-      "title": "Ã€ propos de Suritargets",
+      "label": "À propos de Suritargets",
+      "title": "À propos de Suritargets",
       "subtitle": "Basé à Paramaribo. Focalisé sur la région."
     },
     "mission": {
@@ -683,7 +683,7 @@
   },
   "portfolio": {
     "meta": {
-      "title": "Portfolio — Suritargets",
+      "title": "Portfolio",
       "description": "Sites web et projets numériques réalisés par Suritargets pour des clients au Suriname et dans la région des Caraïbes."
     },
     "hero": {
@@ -710,7 +710,7 @@
     "screenshotAlt": "Capture d'écran de"
   },
   "education": {
-    "meta": { "title": "Formation — Suritargets", "description": "Formations, cours et logiciels éducatifs de Suritargets pour le marché des Caraïbes." },
+    "meta": { "title": "Formation", "description": "Formations, cours et logiciels éducatifs de Suritargets pour le marché des Caraïbes." },
     "hero": { "label": "Formation", "title": "Apprendre et grandir", "subtitle": "Formations pratiques et logiciels pour les individus et organisations de la région caribéenne." },
     "categories": { "label": "Offre", "title": "Nos programmes éducatifs", "titleEn": "Our educational programs" },
     "software": { "title": "Nos logiciels éducatifs", "titleEn": "Our education software" },

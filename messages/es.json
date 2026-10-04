@@ -102,7 +102,7 @@
   },
   "digitalVisualDesigns": {
     "meta": {
-      "title": "Paquete de Diseño para Redes Sociales | Suritargets",
+      "title": "Paquete de Diseño para Redes Sociales",
       "description": "Visuales profesionales para redes sociales, cada mes. Desde $15/mes — 8 visuales, 3 correcciones, optimizado para su plataforma."
     },
     "label": "REDES SOCIALES · PAQUETE MENSUAL",
@@ -154,7 +154,7 @@
   },
   "technicalDesign": {
     "meta": {
-      "title": "Diseño Técnico y Apoyo a Proyectos | Suritargets",
+      "title": "Diseño Técnico y Apoyo a Proyectos",
       "description": "Apoyo en CAD 2D, visualización 3D, documentación técnica, listas de materiales y presupuestos para preparar y comunicar proyectos técnicos."
     },
     "label": "01 / INGENIERÍA",
@@ -683,7 +683,7 @@
   },
   "portfolio": {
     "meta": {
-      "title": "Portafolio — Suritargets",
+      "title": "Portafolio",
       "description": "Sitios web y proyectos digitales construidos por Suritargets para clientes en Surinam y la región del Caribe."
     },
     "hero": {
@@ -710,7 +710,7 @@
     "screenshotAlt": "Captura de pantalla de"
   },
   "education": {
-    "meta": { "title": "Educación — Suritargets", "description": "Formaciones, cursos y software educativo de Suritargets para el mercado del Caribe." },
+    "meta": { "title": "Educación", "description": "Formaciones, cursos y software educativo de Suritargets para el mercado del Caribe." },
     "hero": { "label": "Educación", "title": "Aprender y crecer", "subtitle": "Formación práctica y software para personas y organizaciones en la región del Caribe." },
     "categories": { "label": "Oferta", "title": "Nuestros programas educativos", "titleEn": "Our educational programs" },
     "software": { "title": "Nuestro software educativo", "titleEn": "Our education software" },

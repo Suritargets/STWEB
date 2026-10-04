@@ -36,7 +36,7 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: `education/${slug}`,
-    title: `${t(`${key}.title`)} — Suritargets`,
+    title: t(`${key}.title`),
     description: t(`${key}.description`),
   })
 }

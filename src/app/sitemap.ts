@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '', '/about', '/services', '/contact', '/pricing',
     '/portfolio',
     '/services/technical-design',
+    '/services/digital-visual-designs',
     '/education',
     '/education/ai-hands-on-deck',
     '/education/finance-accounting-claude',

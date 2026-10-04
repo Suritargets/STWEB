@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing'
 import Nav from '@/components/layout/nav'
 import Footer from '@/components/layout/footer'
 import { LangSetter } from '@/components/shared/lang-setter'
+import { JsonLd } from '@/components/shared/json-ld'
 import { siteConfig } from '@/lib/site-config'
 
 export async function generateMetadata({
@@ -64,6 +65,7 @@ export default async function LocaleLayout({
   // so this layout and every page under it can stay statically rendered and cacheable.
   setRequestLocale(locale)
   const messages = await getMessages()
+  const tHome = await getTranslations({ locale, namespace: 'home.meta' })
 
   const organizationJsonLd = {
     '@context': 'https://schema.org',
@@ -71,7 +73,10 @@ export default async function LocaleLayout({
     name: siteConfig.name,
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.svg`,
-    description: siteConfig.description,
+    description: tHome('description'),
+    founder: { '@type': 'Person', name: siteConfig.founder },
+    areaServed: ['Suriname', 'Caribbean'],
+    inLanguage: locale,
     email: siteConfig.email,
     address: {
       '@type': 'PostalAddress',
@@ -84,11 +89,7 @@ export default async function LocaleLayout({
 
   return (
     <div className="flex flex-col min-h-full bg-background text-foreground">
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-      />
+      <JsonLd data={organizationJsonLd} />
       <LangSetter locale={locale} />
       <NextIntlClientProvider messages={messages}>
         <Nav />

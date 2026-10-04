@@ -102,7 +102,7 @@
   },
   "digitalVisualDesigns": {
     "meta": {
-      "title": "Social Media Design Pakket | Suritargets",
+      "title": "Social Media Design Pakket",
       "description": "Professionele social media visuals, elke maand. Vanaf $15/maand — 8 visuals, 3 correcties, geoptimaliseerd voor uw platform."
     },
     "label": "SOCIAL MEDIA · MAANDELIJKS PAKKET",
@@ -154,7 +154,7 @@
   },
   "technicalDesign": {
     "meta": {
-      "title": "Technisch Ontwerp & Projectondersteuning | Suritargets",
+      "title": "Technisch Ontwerp & Projectondersteuning",
       "description": "2D CAD-ondersteuning, 3D-visualisatie, technische documentatie, materiaalstaten en budgetramingen om technische projecten voor te bereiden en te communiceren."
     },
     "label": "01 / ENGINEERING",
@@ -683,7 +683,7 @@
   },
   "portfolio": {
     "meta": {
-      "title": "Portfolio — Suritargets",
+      "title": "Portfolio",
       "description": "Websites en digitale projecten gebouwd door Suritargets voor klanten in Suriname en de Caribische regio."
     },
     "hero": {
@@ -710,7 +710,7 @@
     "screenshotAlt": "Screenshot van"
   },
   "education": {
-    "meta": { "title": "Education — Suritargets", "description": "Opleidingen, cursussen en educatieve software van Suritargets voor de Caribische markt." },
+    "meta": { "title": "Education", "description": "Opleidingen, cursussen en educatieve software van Suritargets voor de Caribische markt." },
     "hero": { "label": "Education", "title": "Leren & groeien", "subtitle": "Praktische opleidingen en software voor individuen en organisaties in de Caribische regio." },
     "categories": { "label": "Aanbod", "title": "Onze educatieve programma's", "titleEn": "Our educational programs" },
     "software": { "title": "Onze educatieve software", "titleEn": "Our education software" },

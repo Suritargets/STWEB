@@ -102,7 +102,7 @@
   },
   "digitalVisualDesigns": {
     "meta": {
-      "title": "Social Media Design Package | Suritargets",
+      "title": "Social Media Design Package",
       "description": "Professional social media visuals, every month. From $15/month — 8 visuals, 3 corrections, optimized for your platform."
     },
     "label": "SOCIAL MEDIA · MONTHLY PACKAGE",
@@ -154,7 +154,7 @@
   },
   "technicalDesign": {
     "meta": {
-      "title": "Technical Design & Project Support | Suritargets",
+      "title": "Technical Design & Project Support",
       "description": "2D CAD support, 3D visualization, technical documentation, material take-offs and budget estimates to help your team prepare and communicate technical projects."
     },
     "label": "01 / ENGINEERING",
@@ -683,7 +683,7 @@
   },
   "portfolio": {
     "meta": {
-      "title": "Portfolio — Suritargets",
+      "title": "Portfolio",
       "description": "Websites and digital projects built by Suritargets for clients in Suriname and the Caribbean region."
     },
     "hero": {
@@ -710,7 +710,7 @@
     "screenshotAlt": "Screenshot of"
   },
   "education": {
-    "meta": { "title": "Education — Suritargets", "description": "Training, courses and educational software by Suritargets for the Caribbean market." },
+    "meta": { "title": "Education", "description": "Training, courses and educational software by Suritargets for the Caribbean market." },
     "hero": { "label": "Education", "title": "Learn & grow", "subtitle": "Practical training and software for individuals and organisations across the Caribbean region." },
     "categories": { "label": "Offerings", "title": "Our educational programs", "titleEn": "Our educational programs" },
     "software": { "title": "Our education software", "titleEn": "Our education software" },

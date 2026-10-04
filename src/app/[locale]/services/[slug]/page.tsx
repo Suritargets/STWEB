@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import { JsonLd } from '@/components/shared/json-ld'
+import { siteConfig } from '@/lib/site-config'
 import { getTranslations } from 'next-intl/server'
 import { services } from '@/lib/services-data'
 import { AnimatedSection } from '@/components/shared/animated-section'
@@ -30,6 +32,7 @@ export async function generateMetadata({
 }
 
 function ServiceDetailContent({ slug }: { slug: string }) {
+  const locale = useLocale()
   const t = useTranslations('services.detail')
   const tc = useTranslations('common')
   const ts = useTranslations('servicesData')
@@ -49,8 +52,32 @@ function ServiceDetailContent({ slug }: { slug: string }) {
 
   const deliverables = ts.raw(`${slug}.deliverables`) as string[]
 
+  const pageUrl = `${siteConfig.url}/${locale}/services/${slug}`
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: ts(`${slug}.name`),
+    description: ts(`${slug}.description`),
+    url: pageUrl,
+    inLanguage: locale,
+    areaServed: ['Suriname', 'Caribbean'],
+    provider: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+    ...(service.heroImage ? { image: `${siteConfig.url}${service.heroImage}` } : {}),
+  }
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: tc('home'), item: `${siteConfig.url}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: t('breadcrumbServices'), item: `${siteConfig.url}/${locale}/services` },
+      { '@type': 'ListItem', position: 3, name: ts(`${slug}.name`), item: pageUrl },
+    ],
+  }
+
   return (
     <>
+      <JsonLd data={serviceJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="px-[var(--section-padding-x)] pt-8 pb-0">
         <div className="max-w-[1440px] mx-auto">
