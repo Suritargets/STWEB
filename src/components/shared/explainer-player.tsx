@@ -15,7 +15,7 @@ export function ExplainerPlayer() {
     <Player
       component={ExplainerVideo}
       inputProps={{ locale }}
-      durationInFrames={2700}
+      durationInFrames={2930}
       fps={30}
       compositionWidth={1920}
       compositionHeight={1080}

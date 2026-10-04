@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import Nav from '@/components/layout/nav'
 import Footer from '@/components/layout/footer'
-import { LangSetter } from '@/components/shared/lang-setter'
+import { HtmlShell } from '@/components/layout/html-shell'
 import { JsonLd } from '@/components/shared/json-ld'
 import { siteConfig } from '@/lib/site-config'
 
@@ -88,14 +88,15 @@ export default async function LocaleLayout({
   }
 
   return (
-    <div className="flex flex-col min-h-full bg-background text-foreground">
-      <JsonLd data={organizationJsonLd} />
-      <LangSetter locale={locale} />
-      <NextIntlClientProvider messages={messages}>
-        <Nav />
-        <main className="flex-1 pt-16">{children}</main>
-        <Footer />
-      </NextIntlClientProvider>
-    </div>
+    <HtmlShell lang={locale}>
+      <div className="flex flex-col min-h-full bg-background text-foreground">
+        <JsonLd data={organizationJsonLd} />
+        <NextIntlClientProvider messages={messages}>
+          <Nav />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
+      </div>
+    </HtmlShell>
   )
 }

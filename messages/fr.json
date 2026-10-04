@@ -273,7 +273,7 @@
       ]
     },
     "video": {
-      "label": "VIDÃ‰O",
+      "label": "VIDÉO",
       "title": "Qui sommes-nous ?",
       "titleEn": "Watch our explainer"
     },
@@ -288,7 +288,7 @@
   },
   "about": {
     "meta": {
-      "title": "Ã€ propos",
+      "title": "À propos",
       "description": "Suritargets est basé à Paramaribo et offre une qualité internationale aux entreprises caribéennes."
     },
     "hero": {
@@ -342,7 +342,7 @@
       ]
     },
     "team": {
-      "label": "NOTRE Ã‰QUIPE",
+      "label": "NOTRE ÉQUIPE",
       "title": "Des spécialistes. Pas des généralistes.",
       "titleEn": "The people behind Suritargets",
       "body": "Notre équipe est composée de spécialistes en intelligence d'affaires, développement logiciel, recherche juridique et éducation. Chaque projet est guidé par la bonne expertise — pas par celui qui est disponible.",
