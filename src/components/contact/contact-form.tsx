@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
@@ -27,7 +26,6 @@ const BUDGET_OPTIONS = [
 ]
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
-type KlantType = 'bedrijf' | 'individu' | ''
 
 function ValidCheck() {
   return (
@@ -43,7 +41,6 @@ export function ContactForm() {
   const [bedrijfsnaam,  setBedrijfsnaam]  = useState('')
   const [email,         setEmail]         = useState('')
   const [telefoon,      setTelefoon]      = useState('')
-  const [klantType,     setKlantType]     = useState<KlantType>('')
   const [services,      setServices]      = useState<string[]>([])
   const [andersText,    setAndersText]    = useState('')
   const [budget,        setBudget]        = useState('')
@@ -233,7 +230,7 @@ export function ContactForm() {
       {/* Email */}
       <div className="space-y-1.5">
         <Label htmlFor="email" className="text-foreground">
-          {t('email')} <span className="text-destructive" aria-hidden="true">*</span>
+          E-mailadres <span className="text-destructive" aria-hidden="true">*</span>
         </Label>
         <div className="relative">
           <Input
@@ -255,8 +252,8 @@ export function ContactForm() {
       {/* Telefoon */}
       <div className="space-y-1.5">
         <Label htmlFor="telefoon" className="text-foreground">
-          {t('telefoon')}{' '}
-          <span className="text-muted-foreground font-normal">{t('telefonOptional')}</span>
+          Telefoonnummer{' '}
+          <span className="text-muted-foreground font-normal">(optioneel)</span>
         </Label>
         <div className="relative">
           <Input
@@ -321,36 +318,6 @@ export function ContactForm() {
               )}
             </div>
           ))}
-          {/* Anders */}
-          <div>
-            <label className="flex items-center gap-3 cursor-pointer group">
-              <input
-                type="checkbox"
-                checked={andersSelected}
-                onChange={() => toggleService('anders')}
-                disabled={isLoading}
-                className="w-4 h-4 accent-[#C9A84C] cursor-pointer shrink-0"
-              />
-              <span className="text-sm text-foreground group-hover:text-[#2B3494] transition-colors">
-                {t('services.anders')}
-              </span>
-            </label>
-            {andersSelected && (
-              <div className="mt-2 pl-7">
-                <Input
-                  type="text"
-                  disabled={isLoading}
-                  value={andersText}
-                  onChange={e => setAndersText(e.target.value)}
-                  placeholder={t('andersPlaceholder')}
-                  aria-invalid={!!errors.andersText}
-                />
-                {errors.andersText && (
-                  <p className="text-xs text-destructive mt-1">{errors.andersText}</p>
-                )}
-              </div>
-            )}
-          </div>
         </div>
         {errors.services && <p className="text-xs text-destructive">{errors.services}</p>}
       </div>
@@ -409,7 +376,9 @@ export function ContactForm() {
       </div>
 
       {status === 'error' && (
-        <p role="alert" className="text-sm text-destructive">{t('errorMsg')}</p>
+        <p role="alert" className="text-sm text-destructive">
+          Er ging iets mis. Probeer het later opnieuw.
+        </p>
       )}
 
       <button
@@ -418,7 +387,7 @@ export function ContactForm() {
         className="w-full bg-gold text-white font-semibold py-3 px-6 text-sm tracking-wide
                    hover:bg-[var(--gold-hover)] transition-colors disabled:opacity-50"
       >
-        {isLoading ? t('sending') : t('submit')}
+        {isLoading ? 'Verzenden...' : 'Offerte aanvragen'}
       </button>
 
     </form>

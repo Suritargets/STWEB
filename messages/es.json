@@ -284,14 +284,6 @@
       "title": "¿Listo para crecer?",
       "subtitle": "Ready to grow your business?",
       "button": "Contáctenos"
-    },
-    "heroMockup": {
-      "tabs": {
-        "dashboard": "Dashboard & BI",
-        "webapp": "Aplicación Web",
-        "erp": "Sistema ERP",
-        "marketing": "Marketing con IA"
-      }
     }
   },
   "about": {
@@ -333,17 +325,17 @@
       "description": "Tres principios que guían cada decisión y cada entregable.",
       "items": [
         {
-          "nl": "Integridad",
+          "nl": "Integriteit",
           "en": "Integrity",
           "description": "Sin rodeos, sin agenda oculta. Comunicación directa y asesoramiento honesto — incluso cuando no es lo que quiere escuchar."
         },
         {
-          "nl": "Excelencia",
+          "nl": "Vakmanschap",
           "en": "Craftsmanship",
           "description": "Cada entregable lleva nuestro nombre. Entregamos al más alto nivel o no entregamos en absoluto."
         },
         {
-          "nl": "Confianza",
+          "nl": "Vertrouwen",
           "en": "Trust",
           "description": "Construimos relaciones a largo plazo. Las victorias rápidas están bien; las asociaciones sostenibles son nuestro objetivo."
         }

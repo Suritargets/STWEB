@@ -72,11 +72,11 @@
     "dataAggregation": "Data Aggregation",
     "dataAggregationDesc": "Analyse et agrégation de données éducatives",
     "businessConsulting": "Business Consulting",
-    "businessConsultingDesc": "Conseils stratégiques et accompagnement pour la croissance et l'optimisation.",
+    "businessConsultingDesc": "Conseils stratégiques et accompagnement pour la croissance et l’optimisation.",
     "startupToFounder": "From Startup to Founder",
-    "startupToFounderDesc": "De l'idée à une entreprise réelle — pour les entrepreneurs ambitieux.",
+    "startupToFounderDesc": "De l’idée à une entreprise réelle — pour les entrepreneurs ambitieux.",
     "pioneeringFundamentals": "Pioneering Fundamentals",
-    "pioneeringFundamentalsDesc": "Les fondamentaux de l'entrepreneuriat et de l'innovation."
+    "pioneeringFundamentalsDesc": "Les fondamentaux de l’entrepreneuriat et de l’innovation."
   },
   "footer": {
     "services": "Services",
@@ -284,14 +284,6 @@
       "title": "Prêt à grandir ?",
       "subtitle": "Ready to grow your business?",
       "button": "Nous contacter"
-    },
-    "heroMockup": {
-      "tabs": {
-        "dashboard": "Tableau de Bord & BI",
-        "webapp": "Application Web",
-        "erp": "Système ERP",
-        "marketing": "Marketing avec IA"
-      }
     }
   },
   "about": {
@@ -333,17 +325,17 @@
       "description": "Trois principes qui guident chaque décision et chaque livrable.",
       "items": [
         {
-          "nl": "Intégrité",
+          "nl": "Integriteit",
           "en": "Integrity",
           "description": "Pas de détours, pas d'agenda caché. Communication directe et conseils honnêtes — même quand ce n'est pas ce que vous voulez entendre."
         },
         {
-          "nl": "Excellence",
+          "nl": "Vakmanschap",
           "en": "Craftsmanship",
           "description": "Chaque livrable porte notre nom. Nous livrons au plus haut niveau ou nous ne livrons pas."
         },
         {
-          "nl": "Confiance",
+          "nl": "Vertrouwen",
           "en": "Trust",
           "description": "Nous construisons des relations à long terme. Les victoires rapides sont agréables ; les partenariats durables sont notre objectif."
         }

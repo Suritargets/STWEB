@@ -11,7 +11,6 @@ export type Submission = {
   bedrijfsnaam: string
   email: string
   telefoon: string | null
-  klant_type: 'bedrijf' | 'individu' | null
   services: string[]
   budget: string | null
   bericht: string
@@ -29,7 +28,6 @@ export async function ensureSubmissionsTable() {
       bedrijfsnaam  TEXT NOT NULL DEFAULT '',
       email         TEXT NOT NULL,
       telefoon      TEXT,
-      klant_type    TEXT,
       services      TEXT[],
       budget        TEXT,
       bericht       TEXT,
@@ -49,7 +47,6 @@ export async function insertSubmission(data: {
   bedrijfsnaam: string
   email: string
   telefoon?: string
-  klantType?: string
   services: string[]
   budget?: string
   bericht: string
@@ -64,7 +61,6 @@ export async function insertSubmission(data: {
       ${data.bedrijfsnaam},
       ${data.email},
       ${data.telefoon ?? null},
-      ${data.klantType ?? null},
       ${data.services},
       ${data.budget ?? null},
       ${data.bericht},
@@ -94,7 +90,6 @@ export async function updateSubmission(id: number, data: {
   bedrijfsnaam: string
   email: string
   telefoon: string | null
-  klant_type: string | null
   services: string[]
   budget: string | null
   bericht: string
@@ -107,7 +102,6 @@ export async function updateSubmission(id: number, data: {
       bedrijfsnaam = ${data.bedrijfsnaam},
       email = ${data.email},
       telefoon = ${data.telefoon},
-      klant_type = ${data.klant_type},
       services = ${data.services},
       budget = ${data.budget},
       bericht = ${data.bericht},

@@ -23,7 +23,7 @@ export default async function InsightsPage({
 }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'insights' })
-  const posts = getAllPosts('insights', locale)
+  const posts = getAllPosts('insights')
 
   return (
     <div className="min-h-screen">

@@ -26,7 +26,6 @@ export async function PUT(
       bedrijfsnaam: body.bedrijfsnaam,
       email:       body.email,
       telefoon:    body.telefoon || null,
-      klant_type:  body.klant_type || null,
       services:    body.services ?? [],
       budget:      body.budget || null,
       bericht:     body.bericht,

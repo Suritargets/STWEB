@@ -2,18 +2,10 @@ import { z } from 'zod'
 
 export const SERVICE_OPTIONS = [
   'dashboarding',
-  'web-applications',
+  'web-applicaties',
   'marketing-ai',
   'forensics',
   'education',
-  'business-consulting',
-  'startup-to-founder',
-  'pioneering-fundamentals',
-  'education-1op1',
-  'begeleiding-innovation',
-  'begeleiding-blockchain',
-  'digital-trail',
-  'forensics-personal',
   'anders',
 ] as const
 

@@ -1,13 +1,13 @@
 {
   "nav": {
-    "services": "Diensten",
-    "company": "Bedrijf",
-    "pricing": "Prijzen",
-    "signUp": "Aanmelden",
-    "getStarted": "Aan de slag",
+    "services": "Services",
+    "company": "Company",
+    "pricing": "Pricing",
+    "signUp": "Sign up",
+    "getStarted": "Get started",
     "voorBedrijven": "Voor Bedrijven",
     "voorIndividuen": "Voor Individuen",
-    "comingSoonTitle": "We werken eraan",
+    "comingSoonTitle": "We are working on it",
     "comingSoonBody": "Ons platform wordt momenteel gebouwd. Binnenkort kunt u hier een account aanmaken en direct aan de slag.",
     "comingSoonClose": "Sluiten",
     "langLabel": "Taal kiezen",
@@ -79,8 +79,8 @@
     "pioneeringFundamentalsDesc": "De grondbeginselen van ondernemerschap en innovatie."
   },
   "footer": {
-    "services": "Diensten",
-    "company": "Bedrijf",
+    "services": "Services",
+    "company": "Company",
     "overOns": "Over ons",
     "cases": "Cases",
     "portfolio": "Portfolio",
@@ -284,14 +284,6 @@
       "title": "Klaar om te groeien?",
       "subtitle": "Ready to grow your business?",
       "button": "Neem contact op"
-    },
-    "heroMockup": {
-      "tabs": {
-        "dashboard": "Dashboard & BI",
-        "webapp": "Web Applicatie",
-        "erp": "ERP Systeem",
-        "marketing": "Marketing met AI"
-      }
     }
   },
   "about": {

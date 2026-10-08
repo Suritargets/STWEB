@@ -30,7 +30,7 @@ export default async function CaseStudyPage({
   params: Promise<{ locale: string; slug: string }>
 }) {
   const { locale, slug } = await params
-  const post = getPostBySlug('case-studies', slug, locale)
+  const post = getPostBySlug('case-studies', slug)
   if (!post) notFound()
 
   const t = await getTranslations({ locale, namespace: 'caseStudies' })

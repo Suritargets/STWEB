@@ -30,7 +30,7 @@ export default async function InsightPage({
   params: Promise<{ locale: string; slug: string }>
 }) {
   const { locale, slug } = await params
-  const post = getPostBySlug('insights', slug, locale)
+  const post = getPostBySlug('insights', slug)
   if (!post) notFound()
 
   const t = await getTranslations({ locale, namespace: 'insights' })

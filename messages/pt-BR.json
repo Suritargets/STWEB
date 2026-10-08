@@ -284,14 +284,6 @@
       "title": "Pronto para crescer?",
       "subtitle": "Ready to grow your business?",
       "button": "Entre em contato"
-    },
-    "heroMockup": {
-      "tabs": {
-        "dashboard": "Dashboard & BI",
-        "webapp": "Aplicação Web",
-        "erp": "Sistema ERP",
-        "marketing": "Marketing com IA"
-      }
     }
   },
   "about": {
@@ -333,17 +325,17 @@
       "description": "Três princípios que guiam cada decisão e cada entregável.",
       "items": [
         {
-          "nl": "Integridade",
+          "nl": "Integriteit",
           "en": "Integrity",
           "description": "Sem rodeios, sem agenda oculta. Comunicação direta e conselhos honestos — mesmo quando não é o que você quer ouvir."
         },
         {
-          "nl": "Excelência",
+          "nl": "Vakmanschap",
           "en": "Craftsmanship",
           "description": "Cada entregável carrega nosso nome. Entregamos no mais alto nível ou não entregamos."
         },
         {
-          "nl": "Confiança",
+          "nl": "Vertrouwen",
           "en": "Trust",
           "description": "Construímos relacionamentos de longo prazo. Vitórias rápidas são boas; parcerias sustentáveis são nosso objetivo."
         }

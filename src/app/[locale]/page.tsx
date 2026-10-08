@@ -49,13 +49,6 @@ function HomeContent() {
   const tc = useTranslations('common')
   const ts = useTranslations('servicesData')
 
-  const heroMockupLabels = {
-    dashboard: t('heroMockup.tabs.dashboard'),
-    webapp:    t('heroMockup.tabs.webapp'),
-    erp:       t('heroMockup.tabs.erp'),
-    marketing: t('heroMockup.tabs.marketing'),
-  }
-
   const whyItems = [0, 1, 2].map((i) => ({
     number: t(`why.items.${i}.number`),
     title: t(`why.items.${i}.title`),
@@ -88,7 +81,7 @@ function HomeContent() {
             <CtaButton href="/contact" variant="ghost">{t('hero.cta2')}</CtaButton>
           </div>
           <div className="w-full max-w-6xl mx-auto">
-            <HeroMockup labels={heroMockupLabels} />
+            <HeroMockup />
           </div>
         </div>
         <div

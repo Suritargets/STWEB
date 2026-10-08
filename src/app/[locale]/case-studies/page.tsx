@@ -23,7 +23,7 @@ export default async function CaseStudiesPage({
 }) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'caseStudies' })
-  const posts = getAllPosts('case-studies', locale)
+  const posts = getAllPosts('case-studies')
 
   return (
     <div className="min-h-screen">
