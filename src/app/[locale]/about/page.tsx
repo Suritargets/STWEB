@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { SectionHeading } from '@/components/shared/section-heading'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
+import { buildMetadata } from '@/lib/page-metadata'
 
 export async function generateMetadata({
   params,
@@ -12,7 +13,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'about.meta' })
-  return { title: t('title'), description: t('description') }
+  return buildMetadata({ locale, path: 'about', title: t('title'), description: t('description') })
 }
 
 function AboutContent() {
@@ -141,6 +142,12 @@ function AboutContent() {
   )
 }
 
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return <AboutContent />
 }

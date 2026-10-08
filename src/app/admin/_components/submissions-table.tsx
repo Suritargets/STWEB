@@ -298,7 +298,7 @@ export default function SubmissionsTable({ submissions }: { submissions: Submiss
                   className="rounded border-zinc-300 accent-[#2B3494]"
                 />
               </th>
-              {['Naam', 'Bedrijf', 'Email', 'Type', 'Diensten', 'Budget', 'Status', 'Datum'].map(h => (
+              {['Type', 'Naam', 'Bedrijf', 'Email', 'Diensten', 'Budget', 'Status', 'Datum'].map(h => (
                 <th key={h} className="text-left px-4 py-3 text-xs font-medium text-zinc-500 whitespace-nowrap">{h}</th>
               ))}
               <th className="w-8" />
@@ -327,6 +327,15 @@ export default function SubmissionsTable({ submissions }: { submissions: Submiss
                       onChange={() => toggleSelect(s.id)}
                       className="rounded border-zinc-300 accent-[#2B3494]"
                     />
+                  </td>
+                  <td className="px-4 py-3">
+                    <span className={`inline-flex items-center text-[10px] font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ${
+                      (s.client_type ?? 'zakelijk') === 'zakelijk'
+                        ? 'bg-[#2B3494]/10 text-[#2B3494]'
+                        : 'bg-amber-100 text-amber-700'
+                    }`}>
+                      {(s.client_type ?? 'zakelijk') === 'zakelijk' ? 'Zakelijk' : 'Particulier'}
+                    </span>
                   </td>
                   <td className="px-4 py-3 font-medium text-zinc-900 whitespace-nowrap">{s.naam}</td>
                   <td className="px-4 py-3 text-zinc-600 whitespace-nowrap">{s.bedrijfsnaam}</td>

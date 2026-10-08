@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, getTranslations } from 'next-intl/server'
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import Nav from '@/components/layout/nav'
 import Footer from '@/components/layout/footer'
-import { LangSetter } from '@/components/shared/lang-setter'
+import { HtmlShell } from '@/components/layout/html-shell'
+import { JsonLd } from '@/components/shared/json-ld'
+import { siteConfig } from '@/lib/site-config'
 
 export async function generateMetadata({
   params,
@@ -20,16 +22,14 @@ export async function generateMetadata({
       template: '%s | Suritargets',
     },
     description: t('description'),
-    metadataBase: new URL(
-      process.env.NEXT_PUBLIC_SITE_URL ?? 'https://suritargets.com'
-    ),
+    metadataBase: new URL(siteConfig.url),
     openGraph: {
       type: 'website',
       locale: locale.replace('-', '_'),
       siteName: 'Suritargets',
       title: 'Suritargets — Business Intelligence & Digital Solutions',
       description: t('description'),
-      url: `https://suritargets.com/${locale}`,
+      url: `${siteConfig.url}/${locale}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -37,6 +37,12 @@ export async function generateMetadata({
       description: t('description'),
     },
     robots: { index: true, follow: true },
+    alternates: {
+      canonical: `${siteConfig.url}/${locale}`,
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, `${siteConfig.url}/${l}`])
+      ),
+    },
   }
 }
 
@@ -55,16 +61,42 @@ export default async function LocaleLayout({
   if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound()
   }
+  // Populates next-intl's request-scoped locale from the route param (not headers()),
+  // so this layout and every page under it can stay statically rendered and cacheable.
+  setRequestLocale(locale)
   const messages = await getMessages()
+  const tHome = await getTranslations({ locale, namespace: 'home.meta' })
+
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/logo.svg`,
+    description: tHome('description'),
+    founder: { '@type': 'Person', name: siteConfig.founder },
+    areaServed: ['Suriname', 'Caribbean'],
+    inLanguage: locale,
+    email: siteConfig.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressCountry: siteConfig.address.country,
+    },
+    sameAs: Object.values(siteConfig.social),
+  }
 
   return (
-    <div className="flex flex-col min-h-full bg-background text-foreground">
-      <LangSetter locale={locale} />
-      <NextIntlClientProvider messages={messages}>
-        <Nav />
-        <main className="flex-1 pt-16">{children}</main>
-        <Footer />
-      </NextIntlClientProvider>
-    </div>
+    <HtmlShell lang={locale}>
+      <div className="flex flex-col min-h-full bg-background text-foreground">
+        <JsonLd data={organizationJsonLd} />
+        <NextIntlClientProvider messages={messages}>
+          <Nav />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
+      </div>
+    </HtmlShell>
   )
 }

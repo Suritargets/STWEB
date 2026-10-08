@@ -1,20 +1,20 @@
 import { NextResponse } from 'next/server'
-import { makeSessionToken } from '@/lib/auth'
+import { makeSessionToken, verifyPassword } from '@/lib/auth'
+import { ensureAdminUsersTable, ensureBootstrapSuperAdmin, getAdminUserByEmail } from '@/lib/admin-users'
 
 export async function POST(request: Request) {
   try {
     const { email, password } = await request.json() as { email: string; password: string }
-    const adminEmail = process.env.ADMIN_EMAIL
-    const adminPassword = process.env.ADMIN_PASSWORD
 
-    if (!adminEmail || !adminPassword) {
-      return NextResponse.json({ error: 'Server not configured' }, { status: 500 })
-    }
-    if (email !== adminEmail || password !== adminPassword) {
+    await ensureAdminUsersTable()
+    await ensureBootstrapSuperAdmin()
+
+    const user = await getAdminUserByEmail(email)
+    if (!user || !verifyPassword(password, user.password_hash)) {
       return NextResponse.json({ error: 'Ongeldige inloggegevens' }, { status: 401 })
     }
 
-    const token = makeSessionToken(password)
+    const token = makeSessionToken(user.id, user.password_hash)
     const response = NextResponse.json({ success: true })
     response.cookies.set('admin_session', token, {
       httpOnly: true,

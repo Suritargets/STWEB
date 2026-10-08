@@ -21,6 +21,10 @@
     "forensicsDesc": "Forensic investigations and compliance audits for organisations.",
     "educationTeams": "Education (Teams)",
     "educationTeamsDesc": "AI, automation and tech workshops for teams.",
+    "socialMediaDesigns": "Social Media Design Package",
+    "socialMediaDesignsDesc": "Professional social media visuals, every month. From $15/month.",
+    "technicalDesign": "Technical Design & Project Support",
+    "technicalDesignDesc": "CAD drawings, 3D visualization, material lists and budget estimates.",
     "education1op1": "Education 1-on-1",
     "education1op1Desc": "Personal coaching in AI, tech and modern skills.",
     "begeleidingInnovation": "Innovation Guidance",
@@ -37,6 +41,36 @@
     "casesDesc": "Results that speak for themselves",
     "insights": "Insights",
     "insightsDesc": "Analysis and trends from the region",
+    "portfolio": "Portfolio",
+    "portfolioDesc": "Websites and projects we have built",
+    "education": "Education",
+    "eduSoftware": "Edu Software",
+    "eduSoftwareDesc": "Software platform for educational institutions",
+    "aiCourses": "AI Courses",
+    "aiCoursesDesc": "Learn to work with AI tools and automation",
+    "tradingCourses": "Trading Courses",
+    "tradingCoursesDesc": "Stocks, crypto and financial markets",
+    "itCourses": "IT Courses",
+    "itCoursesDesc": "Programming, networking and cybersecurity",
+    "businessCourses": "Business Courses",
+    "businessCoursesDesc": "Entrepreneurship, management and growth",
+    "courses": "Courses",
+    "eduSoftwareLabel": "Education Software",
+    "aiHandsOnDeck": "AI – Hands On Deck",
+    "aiHandsOnDeckDesc": "Practical AI training · Q3 2026 edition",
+    "freeAiDemo": "Free AI Demo",
+    "freeAiDemoDesc": "Free live webinar · every Friday, 20 minutes",
+    "inhouseLabel": "In-house Training",
+    "financeClaudeInhouse": "Finance & Accounting Training",
+    "financeClaudeInhouseDesc": "Claude Desktop + Excel for accounting firms",
+    "eduPlatform": "Education Platform",
+    "eduPlatformDesc": "LMS platform for schools and training bureaus",
+    "knowledgeBase": "Knowledge Base RAG",
+    "knowledgeBaseDesc": "Smart knowledge base with AI-powered search",
+    "researchDev": "Research & Development",
+    "researchDevDesc": "R&D tools for researchers and innovation teams",
+    "dataAggregation": "Data Aggregation",
+    "dataAggregationDesc": "Analysis and aggregation of educational datasets",
     "businessConsulting": "Business Consulting",
     "businessConsultingDesc": "Strategic advice and guidance for growth and optimization.",
     "startupToFounder": "From Startup to Founder",
@@ -49,6 +83,7 @@
     "company": "Company",
     "overOns": "About us",
     "cases": "Cases",
+    "portfolio": "Portfolio",
     "insights": "Insights",
     "contact": "Contact",
     "rights": "All rights reserved.",
@@ -65,6 +100,105 @@
     "services": "Services",
     "gratisgesprek": "Free consultation"
   },
+  "digitalVisualDesigns": {
+    "meta": {
+      "title": "Social Media Design Package",
+      "description": "Professional social media visuals, every month. From $15/month — 8 visuals, 3 corrections, optimized for your platform."
+    },
+    "label": "SOCIAL MEDIA · MONTHLY PACKAGE",
+    "badge": "From $15 / month",
+    "heroTitle": "Your social posts on auto-pilot",
+    "heroSubtitle": "Professional. Creative. Consistent. Fresh, ready-to-post content for your social media every month.",
+    "flyerAlt": "Your Social Posts on Auto-Pilot — flyer",
+    "featuresLabel": "What you get",
+    "features": [
+      { "title": "8 Visuals", "description": "Professionally designed posts every month" },
+      { "title": "3 Corrections", "description": "Adjustments included — no extra cost" },
+      { "title": "1 Format", "description": "Optimized for your chosen platform" }
+    ],
+    "processLabel": "How we work",
+    "processTitle": "Faster with AI. Never lower quality.",
+    "process": [
+      { "title": "AI-driven concepts", "description": "Our design team uses AI tools to generate multiple directions within minutes — no more waiting days for a first draft." },
+      { "title": "Refined by our designers", "description": "Every concept is hand-finished in professional software like Photoshop, Illustrator and Figma to match your brand." },
+      { "title": "Fast revisions", "description": "AI-assisted workflows let us process your feedback quickly, without cutting corners on quality." },
+      { "title": "Consistent delivery", "description": "Fresh, ready-to-post visuals every month — on time, every time." }
+    ],
+    "portfolioLabel": "Portfolio",
+    "portfolioTitle": "Examples coming soon",
+    "portfolioText": "We're putting together a portfolio of real work. Reach out and we'll gladly share references in the meantime.",
+    "platformsLabel": "Available for",
+    "benefitsLabel": "Why this package",
+    "benefits": [
+      { "title": "Save time", "description": "Focus on your business" },
+      { "title": "Grow your audience", "description": "Reach more people" },
+      { "title": "Professional quality", "description": "Content that converts" }
+    ],
+    "tagline": "Social Made Simple.",
+    "ctaTitle": "Ready to get started?",
+    "ctaSubtitle": "Sign up today and receive a tailored proposal within 2 business days.",
+    "formTitle": "Sign up",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Your name",
+    "companyLabel": "Company name (optional)",
+    "companyPlaceholder": "Your company",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "you@company.com",
+    "phoneLabel": "Phone (optional)",
+    "phonePlaceholder": "+597 ...",
+    "submitButton": "Sign up",
+    "submittingButton": "Submitting...",
+    "successTitle": "Signup received!",
+    "successMessage": "We'll get in touch within 2 business days.",
+    "errorMessage": "Something went wrong. Please try again later."
+  },
+  "technicalDesign": {
+    "meta": {
+      "title": "Technical Design & Project Support",
+      "description": "2D CAD support, 3D visualization, technical documentation, material take-offs and budget estimates to help your team prepare and communicate technical projects."
+    },
+    "label": "01 / ENGINEERING",
+    "heroTitle": "Technical Design & Project Support",
+    "heroSubtitle": "Technical design support and clear project documentation to help teams visualize, prepare and communicate their work.",
+    "heroAlt": "Architect and contractor reviewing building plans on a construction site in Suriname",
+    "galleryLabel": "Example work",
+    "galleryTitle": "Drawings, visuals and site-ready documents",
+    "deskAlt": "Technical designer producing 2D CAD floor plans at a desk",
+    "buildingAlt": "House under construction with scaffolding in a tropical setting",
+    "drawingAlt": "Kitchen interior drawing sheet with floor plan, elevations, appliance list and materials",
+    "flyerAlt": "Building Drawings flyer — complete building drawing package from $500",
+    "itemsLabel": "What's included",
+    "itemsTitle": "Everything your team needs to get a project ready",
+    "items": [
+      { "title": "2D CAD drawing support", "description": "Clear technical drawings prepared from your sketches, measurements and requirements." },
+      { "title": "3D visualization", "description": "Visual models that make a design easy to understand for clients, teams and stakeholders." },
+      { "title": "Design modifications", "description": "Updates and revisions to existing drawings as the project scope evolves." },
+      { "title": "Technical documentation", "description": "Structured, readable project documents that keep everyone aligned." },
+      { "title": "Material take-offs / BOM", "description": "Complete material lists derived from the design, ready for procurement." },
+      { "title": "Budget estimation", "description": "A realistic cost estimate based on the drawings and material list." }
+    ],
+    "processLabel": "Our delivery method",
+    "processTitle": "From business need to practical outcome",
+    "process": [
+      { "title": "Discover", "description": "Understand the need, constraints and desired outcome." },
+      { "title": "Design", "description": "Develop the concept, drawings or technical solution." },
+      { "title": "Plan", "description": "Define scope, timeline, resources and budget." },
+      { "title": "Implement", "description": "Coordinate delivery, configuration and training." },
+      { "title": "Deliver", "description": "Document, hand over and identify improvements." }
+    ],
+    "pricingLabel": "Ways to work together",
+    "pricingTitle": "Engagement built around your requirements",
+    "pricingTiers": [
+      { "label": "START WITH CLARITY", "title": "Business & AI Assessment", "price": "US$150–350", "description": "For organizations that need a clear view of opportunities and priorities.", "includes": ["Discovery session","Process and opportunity review","Recommendations","Practical action roadmap"], "button": "Request assessment" },
+      { "label": "PROJECT-BASED", "title": "Technical Project Support", "price": "US$500–2,500+", "description": "For teams preparing a technical project or coordinating deliverables.", "includes": ["Drawing / visualization scope","Material list and estimate","Planning and documentation","Coordination and handover"], "button": "Discuss a project" },
+      { "label": "IMPLEMENT & IMPROVE", "title": "AI Implementation & Advisory", "price": "US$750–5,000+", "description": "For businesses ready to implement a defined automation or AI initiative.", "includes": ["Workflow assessment","Solution design","Implementation support","Team enablement","Documentation"], "button": "Plan implementation" }
+    ],
+    "pricingNote": "Prices are indicative planning examples, not a binding quotation. Final pricing is confirmed after scope, complexity and deliverables are agreed. Engineering approvals, specialist calculations, third-party licenses and taxes may be scoped separately.",
+    "ctaTitle": "Have a technical project to prepare?",
+    "ctaSubtitle": "Tell us what you are trying to achieve. We can help define the scope, identify practical options and outline the next steps.",
+    "ctaButton": "Discuss a project",
+    "ctaGhost": "All services"
+  },
   "home": {
     "meta": {
       "title": "Business Technology & Innovation Solutions",
@@ -77,6 +211,38 @@
       "subtitle": "From dashboards and web applications to ERP systems and AI marketing — custom-built for the Caribbean market.",
       "cta1": "Explore our services",
       "cta2": "Free consultation"
+    },
+    "webinar": {
+      "label": "FREE WEBINAR · LIVE DEMO",
+      "title": "Free AI Demo",
+      "subtitle": "The latest AI — live and hands-on, in 20 minutes.",
+      "badge1": "20 minutes",
+      "badge2": "Live online",
+      "badge3": "Free",
+      "dateNote": "Every Friday online · upcoming dates: Sep 11, 18 & 25, 2026",
+      "topics": [
+        "What is AI? — the latest state of the art",
+        "What it can mean for you",
+        "Applications in organisations & businesses",
+        "Prompt engineering",
+        "Data & AI risk"
+      ],
+      "formTitle": "Register for free",
+      "nameLabel": "Name *",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "you@company.com",
+      "phoneLabel": "Phone",
+      "phonePlaceholder": "+597 ...",
+      "referralLabel": "Coupon / referral code (optional)",
+      "referralPlaceholder": "e.g. SALESCONNECT",
+      "submitButton": "Register now",
+      "registrationRequiredNote": "Registration is required to attend.",
+      "errorMessage": "Something went wrong. Please try again.",
+      "successTitle": "You're registered!",
+      "successMessage": "Check your email for the confirmation.",
+      "successCodeLabel": "Your discount code",
+      "moreInfoLink": "More about the Free AI Demo"
     },
     "services": {
       "label": "SERVICES",
@@ -523,59 +689,100 @@
     "ctaButton": "Get in touch",
     "ctaGhost": "More insights"
   },
-  "contactForm": {
-    "formTitle": "Request a quote",
-    "naam": "Name",
-    "naamPlaceholder": "Your full name",
-    "naamError": "Name is required",
-    "bedrijf": "Company name",
-    "bedrijfPlaceholder": "Your company name",
-    "bedrijfError": "Company name is required",
-    "email": "Email address",
-    "emailPlaceholder": "you@company.com",
-    "emailError": "A valid email address is required",
-    "telefoon": "Phone number",
-    "telefonOptional": "(optional)",
-    "diensten": "Service(s)",
-    "dienstenError": "Please select at least one service",
-    "andersPlaceholder": "Which service are you looking for?",
-    "andersError": "Please specify the service you need",
-    "budget": "Budget indication",
-    "toelichting": "Message",
-    "toelichtingPlaceholder": "Describe your project, wishes or questions...",
-    "toelichtingError": "Message is too short",
-    "submit": "Request quote",
-    "sending": "Sending...",
-    "successTitle": "Request received",
-    "successBody": "Your quote request has been received. We will be in touch within 2 business days.",
-    "errorMsg": "Something went wrong. Please try again later.",
-    "services": {
-      "dashboarding": "Dashboarding & Data Visualization",
-      "web-applications": "Web & Applications",
-      "marketing-ai": "Marketing with AI",
-      "forensics": "Forensics & Integrity",
-      "education": "Education & Training",
-      "business-consulting": "Business Consulting & Advisory",
-      "startup-to-founder": "From Startup to Founder",
-      "pioneering-fundamentals": "Pioneering Fundamentals",
-      "education-1op1": "Personal Education 1-on-1",
-      "begeleiding-innovation": "Innovation Coaching",
-      "begeleiding-blockchain": "Blockchain Guidance",
-      "digital-trail": "Digital Trail / Resume Social",
-      "forensics-personal": "Personal Forensics & Integrity",
-      "anders": "Other"
+  "portfolio": {
+    "meta": {
+      "title": "Portfolio",
+      "description": "Websites and digital projects built by Suritargets for clients in Suriname and the Caribbean region."
     },
-    "budget_options": {
-      "placeholder": "Select an indication",
-      "onder5k": "Under $5,000",
-      "v5k15k": "$5,000 – $15,000",
-      "v15k50k": "$15,000 – $50,000",
-      "boven50k": "Above $50,000",
-      "onbekend": "Not yet determined"
+    "hero": {
+      "label": "Portfolio",
+      "title": "Our projects",
+      "subtitle": "Websites and digital products we have designed and built."
     },
-    "klantTypeLabel": "I am a",
-    "klantTypeBedrijf": "Business",
-    "klantTypeIndividu": "Individual",
-    "klantTypeError": "Please select business or individual"
+    "work": {
+      "label": "Work",
+      "title": "What we have built",
+      "titleEn": "What we built"
+    },
+    "northresort": { "description": "Modern website for a Surinamese resort — fully responsive, with booking integration and a sleek visual design that reflects the atmosphere of the location." },
+    "melkcentrale": { "description": "Corporate website for Melk Centrale Suriname — clear, professional and tailored to their target audience in the Surinamese market." },
+    "edu": { "description": "E-learning platform by Suritargets — built for online training, courses and knowledge sharing across the Caribbean region." },
+    "logixlayer": { "description": "AI-powered automation platform for Caribbean businesses — open-source, scalable and designed to make business processes smarter and more efficient." },
+    "vliet": { "description": "Corporate website for Vliet Accountants & Consultants — a bilingual platform for an audit and financial advisory firm, with service pages, team profiles and online consultation booking." },
+    "cta": {
+      "label": "Collaborate",
+      "title": "Ready to start a project?",
+      "body": "Get in touch and tell us what you want to build.",
+      "button": "Get in touch"
+    },
+    "screenshotAlt": "Screenshot of"
+  },
+  "education": {
+    "meta": { "title": "Education", "description": "Training, courses and educational software by Suritargets for the Caribbean market." },
+    "hero": { "label": "Education", "title": "Learn & grow", "subtitle": "Practical training and software for individuals and organisations across the Caribbean region." },
+    "categories": { "label": "Offerings", "title": "Our educational programs", "titleEn": "Our educational programs" },
+    "software": { "title": "Our education software", "titleEn": "Our education software" },
+    "inhouse": { "title": "In-house Training", "titleEn": "Tailored programmes for your team" },
+    "more": "Learn more",
+    "topicsLabel": "Content",
+    "cta": { "label": "Enroll", "title": "Ready to get started?", "body": "Get in touch for more information or to register.", "button": "Get in touch" },
+    "edu_software": {
+      "description": "A complete software platform for schools, training bureaus and educational institutions — manage courses, participants and certificates in one place.",
+      "title": "Edu Software", "subtitle": "Smart platform for educational institutions.",
+      "topicsTitle": "What the platform offers", "topicsTitleEn": "Platform features",
+      "topics": ["Course management and scheduling", "Participant management and progress tracking", "Combine online and in-person classes", "Certificate issuance and LinkedIn badge", "Reports and analytics", "Custom branding for your institution"]
+    },
+    "ai_courses": {
+      "description": "Learn to work with AI tools like ChatGPT, automation and data analysis — practical and immediately applicable in your work.",
+      "title": "AI Courses", "subtitle": "Understanding and applying AI in practice.",
+      "topicsTitle": "What you will learn", "topicsTitleEn": "What you will learn",
+      "topics": ["What is AI and how does it work (2026 Q3)", "Using ChatGPT and other LLM tools effectively", "Prompt Engineering for better results", "AI automation in your work processes", "Data & AI risks and ethics", "Agentic AI and autonomous systems"]
+    },
+    "trading_courses": {
+      "description": "From stock investing to cryptocurrency trading — learn to understand financial markets and trade strategically.",
+      "title": "Trading Courses", "subtitle": "Understanding and leveraging financial markets.",
+      "topicsTitle": "What you will learn", "topicsTitleEn": "What you will learn",
+      "topics": ["Fundamentals of investing and trading", "Technical and fundamental analysis", "Cryptocurrency and blockchain", "Risk management and portfolio building", "Trading platforms and tools", "Taxes and regulations in Suriname"]
+    },
+    "it_courses": {
+      "description": "Practical IT training in programming, networking and cybersecurity — from beginner to advanced level.",
+      "title": "IT Courses", "subtitle": "Technical skills for the digital world.",
+      "topicsTitle": "What you will learn", "topicsTitleEn": "What you will learn",
+      "topics": ["Programming (Python, JavaScript, SQL)", "Networking and infrastructure", "Cybersecurity and information security", "Cloud computing and DevOps basics", "Database management", "IT project management"]
+    },
+    "business_courses": {
+      "description": "Entrepreneurship training and management programmes for professionals and starters in the Caribbean market.",
+      "title": "Business Courses", "subtitle": "Entrepreneurship and leadership in practice.",
+      "topicsTitle": "What you will learn", "topicsTitleEn": "What you will learn",
+      "topics": ["Writing and pitching a business plan", "Financial management and cashflow", "Marketing and customer acquisition", "Leadership and team management", "Digital transformation for businesses", "Growth strategy and scalability"]
+    },
+    "knowledge_base_rag": {
+      "description": "An AI-powered knowledge base that lets teams quickly find information in documents, manuals and internal knowledge bases using Retrieval-Augmented Generation.",
+      "title": "Knowledge Base RAG", "subtitle": "Smart search across your own knowledge base.",
+      "topicsTitle": "Features", "topicsTitleEn": "Features",
+      "topics": ["Upload and index documents (PDF, Word, URLs)", "AI-powered search with source citations", "API integration with existing systems", "Role-based access control", "Multilingual support", "Usage statistics and analytics"]
+    },
+    "research_development": {
+      "description": "Tools and guidance for researchers, universities and R&D teams looking to streamline data-driven innovation and knowledge management.",
+      "title": "Research & Development", "subtitle": "Data-driven innovation and knowledge management.",
+      "topicsTitle": "What we offer", "topicsTitleEn": "What we offer",
+      "topics": ["Manage and structure research data", "Automate literature research with AI", "Team collaboration and version control", "Reporting and publication support", "API connections to external databases", "Compliant storage and archiving of data"]
+    },
+    "data_aggregation": {
+      "description": "Software for collecting, merging and analysing educational data from multiple sources — for institutions that want to drive decisions on learning outcomes.",
+      "title": "Data Aggregation", "subtitle": "Insights into learning outcomes and educational data.",
+      "topicsTitle": "Platform capabilities", "topicsTitleEn": "Platform capabilities",
+      "topics": ["Read data from multiple sources (LMS, API, CSV)", "Custom dashboards and visualisations", "Performance indicators per student, class or institution", "Automated reports for management and policy", "Secure storage and privacy compliance (GDPR)", "Export to Excel, PDF and BI tools"]
+    },
+    "finance_claude": {
+      "description": "Hands-on in-house training for accounting and advisory firms — Claude Desktop, Cowork and Excel integrated into your daily financial workflows.",
+      "title": "Finance & Accounting Inhouse Training",
+      "subtitle": "Claude Desktop + Excel for your accounting firm."
+    },
+    "ai_hands_on_deck": {
+      "description": "Quarterly hands-on AI training for professionals — updated every quarter with the latest tools, models and real-world applications.",
+      "title": "AI – Hands On Deck",
+      "subtitle": "Q3 2026 · Practical AI for your team."
+    }
   }
 }

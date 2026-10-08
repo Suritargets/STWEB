@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import {
   BarChart2, Monitor, Sparkles, ShieldCheck, GraduationCap,
   Briefcase, TrendingUp, Compass, BookOpen, Rocket, Bitcoin,
@@ -12,8 +12,11 @@ import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
 import { ExplainerSection } from '@/components/shared/explainer-section'
 import { services } from '@/lib/services-data'
+import { buildMetadata } from '@/lib/page-metadata'
 import { HeroMockup } from '@/components/home/hero-mockup'
 import { ParticleBackground } from '@/components/home/particle-background'
+import { FlyerCarousel } from '@/components/home/flyer-carousel'
+import { WebinarCtaSection } from '@/components/home/webinar-cta-section'
 
 const SERVICE_ICONS: Record<string, LucideIcon> = {
   'bar-chart':        BarChart2,
@@ -38,7 +41,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'home.meta' })
-  return { title: t('title'), description: t('description') }
+  return buildMetadata({ locale, title: t('title'), description: t('description') })
 }
 
 function HomeContent() {
@@ -94,6 +97,9 @@ function HomeContent() {
           aria-hidden="true"
         />
       </section>
+
+      {/* ── 1b. WEBINAR CTA ─────────────────────────────────────────── */}
+      <WebinarCtaSection />
 
       {/* ── 2. SERVICES GRID ────────────────────────────────────────── */}
       <AnimatedSection>
@@ -159,6 +165,18 @@ function HomeContent() {
         </section>
       </AnimatedSection>
 
+      {/* ── 3b. FLYERS / ADS ────────────────────────────────────────── */}
+      <AnimatedSection delay={65}>
+        <section className="px-[var(--section-padding-x)] py-10 border-t border-border" aria-label="Promoties en evenementen">
+          <div className="max-w-[1440px] mx-auto">
+            <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-muted-foreground mb-6">
+              Actueel
+            </p>
+            <FlyerCarousel />
+          </div>
+        </section>
+      </AnimatedSection>
+
       {/* ── 4. EXPLAINER VIDEO ──────────────────────────────────────── */}
       <AnimatedSection delay={70}>
         <section className="px-[var(--section-padding-x)] py-[var(--section-padding-y)] border-t border-border">
@@ -176,10 +194,35 @@ function HomeContent() {
             <p className="text-center text-[10px] font-mono tracking-[0.3em] uppercase text-muted-foreground mb-8">
               {t('partners.label')}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div key={i} className="w-32 h-10 rounded bg-border/60 animate-pulse" aria-hidden="true" />
-              ))}
+            <div className="flex flex-wrap items-center justify-center gap-12 md:gap-20">
+              <a
+                href="https://www.etitconsultancy.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-60 hover:opacity-100 transition-opacity duration-200 grayscale hover:grayscale-0"
+                aria-label="ETIT Consultancy"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://www.etitconsultancy.net/logo.png"
+                  alt="ETIT Consultancy"
+                  className="h-14 w-auto object-contain"
+                />
+              </a>
+              <a
+                href="https://logixlayer.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-60 hover:opacity-100 transition-opacity duration-200 grayscale hover:grayscale-0"
+                aria-label="LogixLayer"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://logixlayer.com/image/Asset 6.png"
+                  alt="LogixLayer"
+                  className="h-10 w-auto object-contain"
+                />
+              </a>
             </div>
           </div>
         </section>
@@ -207,6 +250,12 @@ function HomeContent() {
   )
 }
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   return <HomeContent />
 }

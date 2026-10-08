@@ -9,6 +9,8 @@ export type ServiceCluster = {
   whoIsItFor: string
   deliverables: string[]
   icon: string
+  /** Path under /public to a hero photo generated via scripts/generate-service-images.ts (optional, not yet generated for most services). */
+  heroImage?: string
 }
 
 export const services: ServiceCluster[] = [
@@ -32,6 +34,7 @@ export const services: ServiceCluster[] = [
       'ERP & systeem koppelingen',
     ],
     icon: 'bar-chart',
+    heroImage: '/services/images/dashboarding.jpg',
   },
   {
     slug: 'web-applications',
@@ -53,6 +56,7 @@ export const services: ServiceCluster[] = [
       'Mobile-first responsive interfaces',
     ],
     icon: 'monitor',
+    heroImage: '/services/images/web-applications.jpg',
   },
   {
     slug: 'marketing-ai',
@@ -74,6 +78,7 @@ export const services: ServiceCluster[] = [
       'Marketingperformance rapportage',
     ],
     icon: 'sparkles',
+    heroImage: '/services/images/marketing-ai.jpg',
   },
   {
     slug: 'forensics',
@@ -93,6 +98,7 @@ export const services: ServiceCluster[] = [
       'Incident response begeleiding',
     ],
     icon: 'shield-check',
+    heroImage: '/services/images/forensics.jpg',
   },
   {
     slug: 'education',
@@ -115,6 +121,7 @@ export const services: ServiceCluster[] = [
       'ERP op maat — implementatie en beheer',
     ],
     icon: 'graduation-cap',
+    heroImage: '/services/images/education.jpg',
   },
 
   {
@@ -138,6 +145,7 @@ export const services: ServiceCluster[] = [
       'Managementrapportages en KPI-frameworks',
     ],
     icon: 'briefcase',
+    heroImage: '/services/images/business-consulting.jpg',
   },
   {
     slug: 'startup-to-founder',
@@ -161,6 +169,7 @@ export const services: ServiceCluster[] = [
       'Mentorschap en accountability sessies',
     ],
     icon: 'trending-up',
+    heroImage: '/services/images/startup-to-founder.jpg',
   },
 
   /* ─── Individual services ──────────────────────────────── */
@@ -185,6 +194,7 @@ export const services: ServiceCluster[] = [
       '1-op-1 coachingssessies',
     ],
     icon: 'compass',
+    heroImage: '/services/images/pioneering-fundamentals.jpg',
   },
   {
     slug: 'education-1op1',
@@ -206,6 +216,7 @@ export const services: ServiceCluster[] = [
       'Follow-up via chat na de sessie',
     ],
     icon: 'book-open',
+    heroImage: '/services/images/education-1op1.jpg',
   },
   {
     slug: 'begeleiding-innovation',
@@ -227,6 +238,7 @@ export const services: ServiceCluster[] = [
       'Schriftelijke samenvatting van het plan',
     ],
     icon: 'rocket',
+    heroImage: '/services/images/begeleiding-innovation.jpg',
   },
   {
     slug: 'begeleiding-blockchain',
@@ -248,6 +260,7 @@ export const services: ServiceCluster[] = [
       'Praktische voorbeelden uit de regio',
     ],
     icon: 'bitcoin',
+    heroImage: '/services/images/begeleiding-blockchain.jpg',
   },
   {
     slug: 'digital-trail',
@@ -269,6 +282,7 @@ export const services: ServiceCluster[] = [
       'Actieplan voor online aanwezigheid',
     ],
     icon: 'user-circle',
+    heroImage: '/services/images/digital-trail.jpg',
   },
   {
     slug: 'forensics-personal',
@@ -288,5 +302,6 @@ export const services: ServiceCluster[] = [
       'Begeleiding bij vervolgstappen',
     ],
     icon: 'shield',
+    heroImage: '/services/images/forensics-personal.jpg',
   },
 ]

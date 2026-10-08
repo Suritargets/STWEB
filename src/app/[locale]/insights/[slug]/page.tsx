@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import { getAllSlugs, getPostBySlug } from '@/lib/mdx'
 import { CtaButton } from '@/components/shared/cta-button'
+import { buildMetadata } from '@/lib/page-metadata'
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs('insights')
@@ -18,9 +19,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>
 }): Promise<Metadata> {
   const { locale, slug } = await params
-  const post = getPostBySlug('insights', slug, locale)
+  const post = getPostBySlug('insights', slug)
   if (!post) return {}
-  return { title: post.title, description: post.summary }
+  return buildMetadata({ locale, path: `insights/${slug}`, title: post.title, description: post.summary })
 }
 
 export default async function InsightPage({

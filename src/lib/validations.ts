@@ -17,22 +17,73 @@ export const SERVICE_OPTIONS = [
   'anders',
 ] as const
 
-export const KLANT_TYPE_OPTIONS = ['bedrijf', 'individu'] as const
+export const CLIENT_TYPES = ['zakelijk', 'particulier'] as const
+export type ClientType = (typeof CLIENT_TYPES)[number]
 
-export const offerteSchema = z.object({
-  naam:           z.string().min(2, 'Naam is verplicht'),
-  bedrijfsnaam:   z.string().min(1, 'Bedrijfsnaam is verplicht'),
-  email:          z.string().email('Ongeldig e-mailadres'),
-  telefoon:       z.string().optional(),
-  klantType:      z.enum(KLANT_TYPE_OPTIONS),
-  services:       z.array(z.enum(SERVICE_OPTIONS)).min(1, 'Selecteer minimaal één dienst'),
-  andersText:     z.string().optional(),
-  budget:         z.string().optional(),
-  bericht:        z.string().min(10, 'Toelichting moet minimaal 10 tekens bevatten'),
-})
+export const offerteSchema = z.discriminatedUnion('clientType', [
+  // Zakelijk (business)
+  z.object({
+    clientType:     z.literal('zakelijk'),
+    naam:           z.string().min(2, 'Naam is verplicht'),
+    bedrijfsnaam:   z.string().min(1, 'Bedrijfsnaam is verplicht'),
+    email:          z.string().email('Ongeldig e-mailadres'),
+    telefoon:       z.string().optional(),
+    services:       z.array(z.enum(SERVICE_OPTIONS)).min(1, 'Selecteer minimaal één dienst'),
+    andersText:     z.string().optional(),
+    budget:         z.string().optional(),
+    bericht:        z.string().min(10, 'Toelichting moet minimaal 10 tekens bevatten'),
+  }),
+  // Particulier (individual)
+  z.object({
+    clientType:     z.literal('particulier'),
+    naam:           z.string().min(2, 'Naam is verplicht'),
+    bedrijfsnaam:   z.string().optional().default(''),
+    email:          z.string().email('Ongeldig e-mailadres'),
+    telefoon:       z.string().optional(),
+    services:       z.array(z.enum(SERVICE_OPTIONS)).min(1, 'Selecteer minimaal één dienst'),
+    andersText:     z.string().optional(),
+    budget:         z.string().optional(),
+    bericht:        z.string().min(10, 'Toelichting moet minimaal 10 tekens bevatten'),
+  }),
+])
 
 export type OfferteFormData = z.infer<typeof offerteSchema>
 
 // Keep old alias for any other imports
 export const contactSchema = offerteSchema
 export type ContactFormData = OfferteFormData
+
+export const enrollmentSchema = z.object({
+  courseSlug:      z.string().min(1),
+  courseName:      z.string().min(1),
+  enrollmentType:  z.enum(['individual', 'team']),
+  clientType:      z.enum(['zakelijk', 'particulier']),
+  naam:            z.string().min(2, 'Naam is verplicht'),
+  bedrijfsnaam:    z.string().optional(),
+  email:           z.string().email('Ongeldig e-mailadres'),
+  telefoon:        z.string().optional(),
+  deelnemers:      z.number().int().min(1),
+  uren:            z.number().int().optional(),
+  totalUsd:        z.number().positive(),
+  calculatorData:  z.record(z.string(), z.unknown()).optional(),
+  opmerkingen:     z.string().optional(),
+}).superRefine((data, ctx) => {
+  if (data.clientType === 'zakelijk' && !data.bedrijfsnaam?.trim()) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Bedrijfsnaam is verplicht voor zakelijke inschrijvingen',
+      path: ['bedrijfsnaam'],
+    })
+  }
+})
+
+export type EnrollmentFormData = z.infer<typeof enrollmentSchema>
+
+export const webinarRegistrationSchema = z.object({
+  naam:            z.string().min(2, 'Naam is verplicht'),
+  email:           z.string().email('Ongeldig e-mailadres'),
+  telefoon:        z.string().optional(),
+  referralSource:  z.string().max(120).optional(),
+})
+
+export type WebinarRegistrationFormData = z.infer<typeof webinarRegistrationSchema>

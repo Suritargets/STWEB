@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import { JsonLd } from '@/components/shared/json-ld'
+import { siteConfig } from '@/lib/site-config'
 import { getTranslations } from 'next-intl/server'
 import { services } from '@/lib/services-data'
 import { AnimatedSection } from '@/components/shared/animated-section'
 import { CtaButton } from '@/components/shared/cta-button'
+import { buildMetadata } from '@/lib/page-metadata'
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -20,13 +23,16 @@ export async function generateMetadata({
   const service = services.find((s) => s.slug === slug)
   if (!service) return {}
   const ts = await getTranslations({ locale, namespace: 'servicesData' })
-  return {
+  return buildMetadata({
+    locale,
+    path: `services/${slug}`,
     title: ts(`${slug}.name`),
     description: ts(`${slug}.description`),
-  }
+  })
 }
 
 function ServiceDetailContent({ slug }: { slug: string }) {
+  const locale = useLocale()
   const t = useTranslations('services.detail')
   const tc = useTranslations('common')
   const ts = useTranslations('servicesData')
@@ -46,8 +52,32 @@ function ServiceDetailContent({ slug }: { slug: string }) {
 
   const deliverables = ts.raw(`${slug}.deliverables`) as string[]
 
+  const pageUrl = `${siteConfig.url}/${locale}/services/${slug}`
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: ts(`${slug}.name`),
+    description: ts(`${slug}.description`),
+    url: pageUrl,
+    inLanguage: locale,
+    areaServed: ['Suriname', 'Caribbean'],
+    provider: { '@type': 'Organization', name: siteConfig.name, url: siteConfig.url },
+    ...(service.heroImage ? { image: `${siteConfig.url}${service.heroImage}` } : {}),
+  }
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: tc('home'), item: `${siteConfig.url}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: t('breadcrumbServices'), item: `${siteConfig.url}/${locale}/services` },
+      { '@type': 'ListItem', position: 3, name: ts(`${slug}.name`), item: pageUrl },
+    ],
+  }
+
   return (
     <>
+      <JsonLd data={serviceJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="px-[var(--section-padding-x)] pt-8 pb-0">
         <div className="max-w-[1440px] mx-auto">
@@ -69,27 +99,41 @@ function ServiceDetailContent({ slug }: { slug: string }) {
 
       {/* Hero */}
       <section className="px-[var(--section-padding-x)] pt-12 pb-[var(--section-padding-y)] border-b border-border">
-        <div className="max-w-[1440px] mx-auto">
-          <AnimatedSection>
-            <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-4">
-              {label} — Suritargets
-            </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#2B3494] mb-3">
-              {ts(`${slug}.name`)}
-            </h1>
-            <p className="text-lg md:text-xl font-mono text-gold mb-8">
-              {ts(`${slug}.nameEn`)}
-            </p>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-              {ts(`${slug}.description`)}
-            </p>
-          </AnimatedSection>
-          <AnimatedSection delay={120} className="mt-10">
-            <div className="inline-block border-l-2 border-gold pl-6 py-1 max-w-2xl">
-              <p className="text-xs font-mono tracking-[0.15em] uppercase text-gold mb-2">{t('forWhom')}</p>
-              <p className="text-foreground leading-relaxed">{ts(`${slug}.whoIsItFor`)}</p>
-            </div>
-          </AnimatedSection>
+        <div
+          className={`max-w-[1440px] mx-auto grid grid-cols-1 gap-12 items-start ${service.heroImage ? 'lg:grid-cols-[1.3fr_1fr]' : ''}`}
+        >
+          <div>
+            <AnimatedSection>
+              <p className="text-xs font-mono tracking-[0.2em] uppercase text-gold mb-4">
+                {label} — Suritargets
+              </p>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#2B3494] mb-3">
+                {ts(`${slug}.name`)}
+              </h1>
+              <p className="text-lg md:text-xl font-mono text-gold mb-8">
+                {ts(`${slug}.nameEn`)}
+              </p>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
+                {ts(`${slug}.description`)}
+              </p>
+            </AnimatedSection>
+            <AnimatedSection delay={120} className="mt-10">
+              <div className="inline-block border-l-2 border-gold pl-6 py-1 max-w-2xl">
+                <p className="text-xs font-mono tracking-[0.15em] uppercase text-gold mb-2">{t('forWhom')}</p>
+                <p className="text-foreground leading-relaxed">{ts(`${slug}.whoIsItFor`)}</p>
+              </div>
+            </AnimatedSection>
+          </div>
+          {service.heroImage && (
+            <AnimatedSection delay={80}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={service.heroImage}
+                alt={ts(`${slug}.name`)}
+                className="hidden lg:block w-full h-auto rounded-2xl shadow-lg object-cover aspect-[4/3]"
+              />
+            </AnimatedSection>
+          )}
         </div>
       </section>
 

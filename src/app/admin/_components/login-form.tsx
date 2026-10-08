@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 export default function LoginForm() {
   const [email, setEmail]       = useState('')
@@ -30,18 +31,17 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="w-full max-w-[400px] border border-zinc-200 rounded-xl p-8 bg-white shadow-sm">
-      {/* Logo */}
-      <div className="mb-6">
-        <div className="flex items-center gap-2 mb-6">
-          <div className="w-7 h-7 bg-[#2B3494] rounded-md flex items-center justify-center">
-            <span className="text-white text-xs font-black">S</span>
-          </div>
-          <span className="font-bold text-sm text-zinc-900">Suritargets</span>
-        </div>
-        <h1 className="text-xl font-semibold text-zinc-900 mb-1">Login to your account</h1>
-        <p className="text-sm text-zinc-500">Enter your email below to login to your account</p>
+    <div className="w-full max-w-[400px] border border-zinc-200 rounded-xl overflow-hidden bg-white shadow-sm">
+      {/* Logo header */}
+      <div className="bg-[#2B3494] px-8 py-5 flex items-center justify-center">
+        <Image src="/logo-white.svg" alt="Suritargets" width={180} height={36} priority className="h-9 w-auto" />
       </div>
+
+      <div className="p-8">
+        <div className="mb-6">
+          <h1 className="text-xl font-semibold text-zinc-900 mb-1">Login to your account</h1>
+          <p className="text-sm text-zinc-500">Enter your email below to login to your account</p>
+        </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div className="flex flex-col gap-1.5">
@@ -83,6 +83,7 @@ export default function LoginForm() {
           {loading ? 'Bezig…' : 'Login'}
         </button>
       </form>
+      </div>
     </div>
   )
 }

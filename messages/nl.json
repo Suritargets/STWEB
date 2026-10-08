@@ -21,6 +21,10 @@
     "forensicsDesc": "Forensisch onderzoek en compliance-audits voor organisaties.",
     "educationTeams": "Education (Teams)",
     "educationTeamsDesc": "AI, automatisering en tech-workshops voor teams.",
+    "socialMediaDesigns": "Social Media Design Pakket",
+    "socialMediaDesignsDesc": "Professionele social media visuals, elke maand. Vanaf $15/maand.",
+    "technicalDesign": "Technisch Ontwerp & Projectondersteuning",
+    "technicalDesignDesc": "CAD-tekeningen, 3D-visualisatie, materiaallijsten en budgetramingen.",
     "education1op1": "Education 1-op-1",
     "education1op1Desc": "Persoonlijke begeleiding in AI, tech en moderne skills.",
     "begeleidingInnovation": "Begeleiding in Innovation",
@@ -37,6 +41,36 @@
     "casesDesc": "Resultaten die voor zich spreken",
     "insights": "Insights",
     "insightsDesc": "Analyses en trends uit de regio",
+    "portfolio": "Portfolio",
+    "portfolioDesc": "Websites en projecten die wij hebben gebouwd",
+    "education": "Education",
+    "eduSoftware": "Edu Software",
+    "eduSoftwareDesc": "Softwareplatform voor onderwijsinstellingen",
+    "aiCourses": "AI Courses",
+    "aiCoursesDesc": "Leer werken met AI-tools en automatisering",
+    "tradingCourses": "Trading Courses",
+    "tradingCoursesDesc": "Aandelen, crypto en financiële markten",
+    "itCourses": "IT Courses",
+    "itCoursesDesc": "Programmeren, netwerken en cybersecurity",
+    "businessCourses": "Business Courses",
+    "businessCoursesDesc": "Ondernemerschap, management en groei",
+    "courses": "Courses",
+    "eduSoftwareLabel": "Education Software",
+    "aiHandsOnDeck": "AI – Hands On Deck",
+    "aiHandsOnDeckDesc": "Praktische AI-training · editie Q3 2026",
+    "freeAiDemo": "Free AI Demo",
+    "freeAiDemoDesc": "Gratis live webinar · elke vrijdag, 20 minuten",
+    "inhouseLabel": "In-house Training",
+    "financeClaudeInhouse": "Finance & Accounting Training",
+    "financeClaudeInhouseDesc": "Claude Desktop + Excel voor accountantskantoren",
+    "eduPlatform": "Education Platform",
+    "eduPlatformDesc": "LMS platform voor scholen en trainingsbureaus",
+    "knowledgeBase": "Knowledge Base RAG",
+    "knowledgeBaseDesc": "Slimme kennisbank met AI-gestuurde zoekfunctie",
+    "researchDev": "Research & Development",
+    "researchDevDesc": "R&D tools voor onderzoekers en innovatieteams",
+    "dataAggregation": "Data Aggregation",
+    "dataAggregationDesc": "Analyse en aggregatie van educatieve datasets",
     "businessConsulting": "Business Consulting",
     "businessConsultingDesc": "Strategisch advies en begeleiding voor groei en optimalisatie.",
     "startupToFounder": "From Startup to Founder",
@@ -49,6 +83,7 @@
     "company": "Bedrijf",
     "overOns": "Over ons",
     "cases": "Cases",
+    "portfolio": "Portfolio",
     "insights": "Insights",
     "contact": "Contact",
     "rights": "Alle rechten voorbehouden.",
@@ -65,6 +100,105 @@
     "services": "Diensten",
     "gratisgesprek": "Gratis gesprek"
   },
+  "digitalVisualDesigns": {
+    "meta": {
+      "title": "Social Media Design Pakket",
+      "description": "Professionele social media visuals, elke maand. Vanaf $15/maand — 8 visuals, 3 correcties, geoptimaliseerd voor uw platform."
+    },
+    "label": "SOCIAL MEDIA · MAANDELIJKS PAKKET",
+    "badge": "Vanaf $15 / maand",
+    "heroTitle": "Uw social posts op auto-pilot",
+    "heroSubtitle": "Professioneel. Creatief. Consistent. Elke maand nieuwe, kant-en-klare content voor uw social media.",
+    "flyerAlt": "Uw social posts op auto-pilot — flyer",
+    "featuresLabel": "Wat u krijgt",
+    "features": [
+      { "title": "8 Visuals", "description": "Professioneel ontworpen posts, elke maand" },
+      { "title": "3 Correcties", "description": "Aanpassingen inbegrepen — geen extra kosten" },
+      { "title": "1 Formaat", "description": "Geoptimaliseerd voor uw gekozen platform" }
+    ],
+    "processLabel": "Hoe wij werken",
+    "processTitle": "Sneller met AI. Nooit ingeleverd op kwaliteit.",
+    "process": [
+      { "title": "AI-gestuurde concepten", "description": "Onze grafische afdeling gebruikt AI-tools om binnen minuten meerdere richtingen te genereren — geen dagen wachten op een eerste ontwerp." },
+      { "title": "Verfijnd door onze designers", "description": "Elk concept wordt met de hand afgewerkt in professionele software zoals Photoshop, Illustrator en Figma, passend bij uw merk." },
+      { "title": "Razendsnelle correcties", "description": "Dankzij AI-ondersteunde workflows verwerken we uw feedback snel, zonder in te leveren op kwaliteit." },
+      { "title": "Consistente levering", "description": "Elke maand nieuwe, kant-en-klare visuals — op tijd, elke keer." }
+    ],
+    "portfolioLabel": "Portfolio",
+    "portfolioTitle": "Voorbeelden volgen binnenkort",
+    "portfolioText": "We werken aan een portfolio met echte voorbeelden van ons werk. Neem gerust contact op, dan delen we in de tussentijd graag referenties.",
+    "platformsLabel": "Beschikbaar voor",
+    "benefitsLabel": "Waarom dit pakket",
+    "benefits": [
+      { "title": "Bespaar tijd", "description": "Focus op uw business" },
+      { "title": "Groei uw publiek", "description": "Bereik meer mensen" },
+      { "title": "Professionele kwaliteit", "description": "Content die converteert" }
+    ],
+    "tagline": "Social Made Simple.",
+    "ctaTitle": "Klaar om te starten?",
+    "ctaSubtitle": "Meld u vandaag aan en ontvang binnen 2 werkdagen een voorstel op maat.",
+    "formTitle": "Meld u aan",
+    "nameLabel": "Naam *",
+    "namePlaceholder": "Uw naam",
+    "companyLabel": "Bedrijfsnaam (optioneel)",
+    "companyPlaceholder": "Uw bedrijf",
+    "emailLabel": "E-mail *",
+    "emailPlaceholder": "u@bedrijf.com",
+    "phoneLabel": "Telefoon (optioneel)",
+    "phonePlaceholder": "+597 ...",
+    "submitButton": "Aanmelden",
+    "submittingButton": "Bezig...",
+    "successTitle": "Aanmelding ontvangen!",
+    "successMessage": "We nemen binnen 2 werkdagen contact met u op.",
+    "errorMessage": "Er ging iets mis. Probeer het later opnieuw."
+  },
+  "technicalDesign": {
+    "meta": {
+      "title": "Technisch Ontwerp & Projectondersteuning",
+      "description": "2D CAD-ondersteuning, 3D-visualisatie, technische documentatie, materiaalstaten en budgetramingen om technische projecten voor te bereiden en te communiceren."
+    },
+    "label": "01 / ENGINEERING",
+    "heroTitle": "Technisch Ontwerp & Projectondersteuning",
+    "heroSubtitle": "Ondersteuning bij technisch ontwerp en heldere projectdocumentatie, zodat teams hun werk kunnen visualiseren, voorbereiden en communiceren.",
+    "heroAlt": "Architect en aannemer bekijken bouwtekeningen op een bouwplaats in Suriname",
+    "galleryLabel": "Voorbeelden van ons werk",
+    "galleryTitle": "Tekeningen, visuals en documenten voor op de bouwplaats",
+    "deskAlt": "Technisch ontwerper maakt 2D CAD-plattegronden aan een bureau",
+    "buildingAlt": "Woning in aanbouw met steigers in een tropische omgeving",
+    "drawingAlt": "Tekenblad van een keukeninterieur met plattegrond, aanzichten, apparatenlijst en materialen",
+    "flyerAlt": "Flyer Bouwtekeningen — compleet bouwtekeningpakket vanaf $500",
+    "itemsLabel": "Wat is inbegrepen",
+    "itemsTitle": "Alles wat uw team nodig heeft om een project klaar te maken",
+    "items": [
+      { "title": "2D CAD-tekenondersteuning", "description": "Duidelijke technische tekeningen op basis van uw schetsen, maten en eisen." },
+      { "title": "3D-visualisatie", "description": "Visuele modellen die een ontwerp begrijpelijk maken voor klanten, teams en stakeholders." },
+      { "title": "Ontwerpaanpassingen", "description": "Aanpassingen en revisies van bestaande tekeningen als de projectscope verandert." },
+      { "title": "Technische documentatie", "description": "Gestructureerde, leesbare projectdocumenten die iedereen op één lijn houden." },
+      { "title": "Materiaalstaten / BOM", "description": "Complete materiaallijsten afgeleid van het ontwerp, klaar voor inkoop." },
+      { "title": "Budgetraming", "description": "Een realistische kostenraming op basis van de tekeningen en materiaallijst." }
+    ],
+    "processLabel": "Onze werkwijze",
+    "processTitle": "Van bedrijfsbehoefte naar praktisch resultaat",
+    "process": [
+      { "title": "Ontdekken", "description": "De behoefte, randvoorwaarden en het gewenste resultaat begrijpen." },
+      { "title": "Ontwerpen", "description": "Het concept, de tekeningen of de technische oplossing uitwerken." },
+      { "title": "Plannen", "description": "Scope, planning, middelen en budget vastleggen." },
+      { "title": "Implementeren", "description": "Oplevering, configuratie en training coördineren." },
+      { "title": "Opleveren", "description": "Documenteren, overdragen en verbeterpunten benoemen." }
+    ],
+    "pricingLabel": "Manieren van samenwerken",
+    "pricingTitle": "Samenwerking afgestemd op uw eisen",
+    "pricingTiers": [
+      { "label": "START MET HELDERHEID", "title": "Business & AI Assessment", "price": "US$150–350", "description": "Voor organisaties die een helder beeld willen van kansen en prioriteiten.", "includes": ["Kennismakingssessie","Proces- en kansenanalyse","Aanbevelingen","Praktische actieroadmap"], "button": "Assessment aanvragen" },
+      { "label": "PROJECTGEBASEERD", "title": "Technische projectondersteuning", "price": "US$500–2.500+", "description": "Voor teams die een technisch project voorbereiden of op te leveren producten coördineren.", "includes": ["Scope voor tekeningen / visualisatie","Materiaallijst en raming","Planning en documentatie","Coördinatie en overdracht"], "button": "Bespreek een project" },
+      { "label": "IMPLEMENTEREN & VERBETEREN", "title": "AI-implementatie & advies", "price": "US$750–5.000+", "description": "Voor bedrijven die klaar zijn om een afgebakend automatiserings- of AI-initiatief uit te voeren.", "includes": ["Workflow-analyse","Oplossingsontwerp","Implementatieondersteuning","Teamtraining","Documentatie"], "button": "Plan implementatie" }
+    ],
+    "pricingNote": "Prijzen zijn indicatieve planningsvoorbeelden, geen bindende offerte. De definitieve prijs wordt bevestigd nadat scope, complexiteit en op te leveren producten zijn afgesproken. Engineeringgoedkeuringen, gespecialiseerde berekeningen, licenties van derden en belastingen kunnen apart worden begroot.",
+    "ctaTitle": "Een technisch project voor te bereiden?",
+    "ctaSubtitle": "Vertel ons wat u wilt bereiken. Wij helpen de scope te bepalen, praktische opties te vinden en de vervolgstappen uit te stippelen.",
+    "ctaButton": "Bespreek een project",
+    "ctaGhost": "Alle diensten"
+  },
   "home": {
     "meta": {
       "title": "Business Technology & Innovation Solutions",
@@ -77,6 +211,38 @@
       "subtitle": "Van dashboards en web applicaties tot ERP-systemen en AI-marketing — op maat gebouwd voor de Caribische markt.",
       "cta1": "Bekijk onze diensten",
       "cta2": "Gratis gesprek"
+    },
+    "webinar": {
+      "label": "GRATIS WEBINAR · LIVE DEMO",
+      "title": "Free AI Demo",
+      "subtitle": "De nieuwste AI — live en praktisch, in 20 minuten.",
+      "badge1": "20 minuten",
+      "badge2": "Live online",
+      "badge3": "Gratis",
+      "dateNote": "Elke vrijdag online · eerstvolgende data: 11, 18 & 25 september 2026",
+      "topics": [
+        "Wat is AI? — de nieuwste stand van zaken",
+        "Wat kan het voor jou betekenen",
+        "Toepassingen in organisaties & bedrijven",
+        "Prompt engineering",
+        "Data & AI-risico's"
+      ],
+      "formTitle": "Meld je gratis aan",
+      "nameLabel": "Naam *",
+      "namePlaceholder": "Uw naam",
+      "emailLabel": "E-mail *",
+      "emailPlaceholder": "u@bedrijf.com",
+      "phoneLabel": "Telefoon",
+      "phonePlaceholder": "+597 ...",
+      "referralLabel": "Kortingscode / referral (optioneel)",
+      "referralPlaceholder": "Bijv. SALESCONNECT",
+      "submitButton": "Meld je aan",
+      "registrationRequiredNote": "Inschrijving is verplicht om deel te nemen.",
+      "errorMessage": "Er is iets misgegaan. Probeer het opnieuw.",
+      "successTitle": "Je bent aangemeld!",
+      "successMessage": "Check je e-mail voor de bevestiging.",
+      "successCodeLabel": "Uw kortingscode",
+      "moreInfoLink": "Meer informatie over de Free AI Demo"
     },
     "services": {
       "label": "DIENSTEN",
@@ -523,59 +689,100 @@
     "ctaButton": "Contact opnemen",
     "ctaGhost": "Meer inzichten"
   },
-  "contactForm": {
-    "formTitle": "Offerte aanvragen",
-    "naam": "Naam",
-    "naamPlaceholder": "Uw volledige naam",
-    "naamError": "Naam is verplicht",
-    "bedrijf": "Bedrijfsnaam",
-    "bedrijfPlaceholder": "Naam van uw bedrijf",
-    "bedrijfError": "Bedrijfsnaam is verplicht",
-    "email": "E-mailadres",
-    "emailPlaceholder": "u@bedrijf.com",
-    "emailError": "Geldig e-mailadres is verplicht",
-    "telefoon": "Telefoonnummer",
-    "telefonOptional": "(optioneel)",
-    "diensten": "Dienst(en)",
-    "dienstenError": "Selecteer minimaal één dienst",
-    "andersPlaceholder": "Welke dienst zoekt u?",
-    "andersError": "Vul in welke dienst u zoekt",
-    "budget": "Budget indicatie",
-    "toelichting": "Toelichting",
-    "toelichtingPlaceholder": "Beschrijf uw project, wensen of vragen...",
-    "toelichtingError": "Toelichting is te kort",
-    "submit": "Offerte aanvragen",
-    "sending": "Verzenden...",
-    "successTitle": "Aanvraag ontvangen",
-    "successBody": "Uw offerte-aanvraag is ontvangen. We nemen binnen 2 werkdagen contact op.",
-    "errorMsg": "Er ging iets mis. Probeer het later opnieuw.",
-    "services": {
-      "dashboarding": "Dashboarding & Data Visualisatie",
-      "web-applications": "Web & Applicaties",
-      "marketing-ai": "Marketing met AI",
-      "forensics": "Forensics & Integriteit",
-      "education": "Education & Training",
-      "business-consulting": "Business Consulting & Advisory",
-      "startup-to-founder": "From Startup to Founder",
-      "pioneering-fundamentals": "Pioneering Fundamentals",
-      "education-1op1": "Education 1-op-1",
-      "begeleiding-innovation": "Begeleiding in Innovation",
-      "begeleiding-blockchain": "Begeleiding in Blockchain",
-      "digital-trail": "Digital Trail / Resume Social",
-      "forensics-personal": "Forensics & Integriteit (Persoonlijk)",
-      "anders": "Anders"
+  "portfolio": {
+    "meta": {
+      "title": "Portfolio",
+      "description": "Websites en digitale projecten gebouwd door Suritargets voor klanten in Suriname en de Caribische regio."
     },
-    "budget_options": {
-      "placeholder": "Selecteer een indicatie",
-      "onder5k": "Onder $5.000",
-      "v5k15k": "$5.000 – $15.000",
-      "v15k50k": "$15.000 – $50.000",
-      "boven50k": "Boven $50.000",
-      "onbekend": "Nog niet bekend"
+    "hero": {
+      "label": "Portfolio",
+      "title": "Onze projecten",
+      "subtitle": "Websites en digitale producten die wij hebben ontworpen en gebouwd."
     },
-    "klantTypeLabel": "Ik ben een",
-    "klantTypeBedrijf": "Bedrijf",
-    "klantTypeIndividu": "Individu",
-    "klantTypeError": "Selecteer bedrijf of individu"
+    "work": {
+      "label": "Werk",
+      "title": "Wat wij hebben gebouwd",
+      "titleEn": "What we built"
+    },
+    "northresort": { "description": "Moderne website voor een Surinaams resort — volledig responsive, met booking-integratie en een strak visueel ontwerp dat de sfeer van de locatie weerspiegelt." },
+    "melkcentrale": { "description": "Bedrijfswebsite voor Melk Centrale Suriname — overzichtelijk, professioneel en afgestemd op hun doelgroep in de Surinaamse markt." },
+    "edu": { "description": "E-learning platform van Suritargets — gebouwd voor online trainingen, cursussen en kennisdeling binnen de Caribische regio." },
+    "logixlayer": { "description": "AI-gedreven automatiseringsplatform voor Caribische bedrijven — open-source, schaalbaar en ontworpen om bedrijfsprocessen slimmer en efficiënter te maken." },
+    "vliet": { "description": "Bedrijfswebsite voor Vliet Accountants & Consultants — een tweetalig platform voor een audit- en financieel adviesbureau, met dienstenpagina's, teamprofielen en online afspraken plannen." },
+    "cta": {
+      "label": "Samenwerken",
+      "title": "Ook een project starten?",
+      "body": "Neem contact op en vertel ons wat je wilt bouwen.",
+      "button": "Neem contact op"
+    },
+    "screenshotAlt": "Screenshot van"
+  },
+  "education": {
+    "meta": { "title": "Education", "description": "Opleidingen, cursussen en educatieve software van Suritargets voor de Caribische markt." },
+    "hero": { "label": "Education", "title": "Leren & groeien", "subtitle": "Praktische opleidingen en software voor individuen en organisaties in de Caribische regio." },
+    "categories": { "label": "Aanbod", "title": "Onze educatieve programma's", "titleEn": "Our educational programs" },
+    "software": { "title": "Onze educatieve software", "titleEn": "Our education software" },
+    "inhouse": { "title": "In-house Trainingen", "titleEn": "Maatwerk programma's voor uw team" },
+    "more": "Meer informatie",
+    "topicsLabel": "Inhoud",
+    "cta": { "label": "Aanmelden", "title": "Klaar om te starten?", "body": "Neem contact op voor meer informatie of om je in te schrijven.", "button": "Neem contact op" },
+    "edu_software": {
+      "description": "Een volledig softwareplatform voor scholen, trainingsbureaus en onderwijsinstellingen — beheer cursussen, deelnemers en certificaten op één plek.",
+      "title": "Edu Software", "subtitle": "Slim platform voor onderwijsinstellingen.",
+      "topicsTitle": "Wat het platform biedt", "topicsTitleEn": "Platform features",
+      "topics": ["Cursusbeheer en planning", "Deelnemersbeheer en voortgangsregistratie", "Online en fysieke klassen combineren", "Certificaatuitgifte en LinkedIn-badge", "Rapportages en analytics", "Branding op maat voor uw instelling"]
+    },
+    "ai_courses": {
+      "description": "Leer werken met AI-tools zoals ChatGPT, automatisering en data-analyse — praktisch en direct toepasbaar in uw werk.",
+      "title": "AI Courses", "subtitle": "AI begrijpen en gebruiken in de praktijk.",
+      "topicsTitle": "Wat je leert", "topicsTitleEn": "What you will learn",
+      "topics": ["Wat is AI en hoe werkt het (2026 Q3)", "ChatGPT en andere LLM-tools effectief gebruiken", "Prompt Engineering voor betere resultaten", "AI-automatisering in uw werkprocessen", "Data & AI risico's en ethiek", "Agentic AI en autonome systemen"]
+    },
+    "trading_courses": {
+      "description": "Van beleggen in aandelen tot cryptocurrency trading — leer de financiële markten begrijpen en strategisch handelen.",
+      "title": "Trading Courses", "subtitle": "Financiële markten begrijpen en benutten.",
+      "topicsTitle": "Wat je leert", "topicsTitleEn": "What you will learn",
+      "topics": ["Basisprincipes van beleggen en trading", "Technische en fundamentele analyse", "Cryptocurrency en blockchain", "Risicobeheer en portfolioopbouw", "Trading platforms en tools", "Belastingen en regelgeving in Suriname"]
+    },
+    "it_courses": {
+      "description": "Praktische IT-opleidingen in programmeren, netwerken en cybersecurity — van beginner tot gevorderd niveau.",
+      "title": "IT Courses", "subtitle": "Technische vaardigheden voor de digitale wereld.",
+      "topicsTitle": "Wat je leert", "topicsTitleEn": "What you will learn",
+      "topics": ["Programmeren (Python, JavaScript, SQL)", "Netwerken en infrastructuur", "Cybersecurity en informatiebeveiliging", "Cloud computing en DevOps basics", "Databasebeheer", "IT-projectmanagement"]
+    },
+    "business_courses": {
+      "description": "Ondernemerschapstrainingen en managementopleidingen voor professionals en starters in de Caribische markt.",
+      "title": "Business Courses", "subtitle": "Ondernemerschap en leiderschap in de praktijk.",
+      "topicsTitle": "Wat je leert", "topicsTitleEn": "What you will learn",
+      "topics": ["Businessplan schrijven en pitchen", "Financieel management en cashflow", "Marketing en klantacquisitie", "Leiderschap en teammanagement", "Digitale transformatie voor bedrijven", "Groeistrategie en schaalbaarheid"]
+    },
+    "knowledge_base_rag": {
+      "description": "Een AI-gestuurde kennisbank waarmee teams snel informatie vinden in documenten, handleidingen en interne kennisbases via Retrieval-Augmented Generation.",
+      "title": "Knowledge Base RAG", "subtitle": "Slimme zoekfunctie in uw eigen kennisbank.",
+      "topicsTitle": "Functionaliteiten", "topicsTitleEn": "Features",
+      "topics": ["Documenten uploaden en indexeren (PDF, Word, URLs)", "AI-gestuurde zoekfunctie met bronverwijzing", "Integratie met bestaande systemen via API", "Rolgebaseerde toegangscontrole", "Multilinguale ondersteuning", "Statistieken en gebruiksanalyse"]
+    },
+    "research_development": {
+      "description": "Tools en begeleiding voor onderzoekers, universiteiten en R&D-teams die data-gedreven innovatie en kennisbeheer willen stroomlijnen.",
+      "title": "Research & Development", "subtitle": "Data-gedreven innovatie en kennisbeheer.",
+      "topicsTitle": "Wat wij bieden", "topicsTitleEn": "What we offer",
+      "topics": ["Onderzoeksdata beheren en structureren", "Literatuuronderzoek automatiseren met AI", "Samenwerking en versiebeheer voor teams", "Rapportages en publicatie-ondersteuning", "API-koppelingen met externe databases", "Compliant opslaan en archiveren van data"]
+    },
+    "data_aggregation": {
+      "description": "Software voor het verzamelen, samenvoegen en analyseren van educatieve data uit meerdere bronnen — voor instellingen die willen sturen op leerresultaten.",
+      "title": "Data Aggregation", "subtitle": "Inzicht in leerresultaten en educatieve data.",
+      "topicsTitle": "Wat het platform doet", "topicsTitleEn": "Platform capabilities",
+      "topics": ["Data inlezen uit meerdere bronnen (LMS, API, CSV)", "Dashboards en visualisaties op maat", "Prestatie-indicatoren per leerling, klas of instelling", "Automatische rapportages voor bestuur en beleid", "Veilige opslag en privacybescherming (AVG)", "Exporteren naar Excel, PDF en BI-tools"]
+    },
+    "finance_claude": {
+      "description": "Hands-on in-house training voor accountants- en advieskantoren — Claude Desktop, Cowork en Excel geïntegreerd in uw dagelijkse financiële workflows.",
+      "title": "Finance & Accounting Inhouse Training",
+      "subtitle": "Claude Desktop + Excel voor uw accountantskantoor."
+    },
+    "ai_hands_on_deck": {
+      "description": "Kwartaalse hands-on AI-training voor professionals — elk kwartaal bijgewerkt met de nieuwste tools, modellen en toepassingen.",
+      "title": "AI – Hands On Deck",
+      "subtitle": "Q3 2026 · Praktische AI voor uw team."
+    }
   }
 }
