@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, X, ZoomIn, ArrowRight } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 
 const FLYERS = [
+  { src: '/flyers/flyer-st-pm-services.webp',         alt: 'ST PM Services — Operations, planned and executed in one place', href: '/contact' },
   { src: '/flyers/flyer-suritargets-en.png',          alt: 'Social Media Visuals that sell' },
   { src: '/flyers/flyer-webinar-ai-demo.png',         alt: 'Free AI Demo — Webinar' },
   { src: '/flyers/flyer-social-media-autopilot.png',  alt: 'Your Social Posts on Auto-Pilot · from $15/month', href: '/services/digital-visual-designs' },
